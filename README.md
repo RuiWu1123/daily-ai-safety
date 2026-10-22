@@ -23,3 +23,7 @@
 | [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究报告、Incident Reports、Docent Blog 技术文章，全部历史 | 24 | ✅ 已收录（截至 2026-10-22） |
 | [Redwood_Research.md](Redwood_Research.md) | [Redwood Research](https://www.redwoodresearch.org/) 研究页论文 + [Redwood Blog](https://blog.redwoodresearch.org/) 技术研究，全部历史 | 85 | ✅ 已收录（截至 2026-10-22） |
 | [LessWrong_Alignment_Forum.md](LessWrong_Alignment_Forum.md) | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）、且未被其 lab 主页收录的技术研究帖，2026 年至今 | 22 | ✅ 已收录（截至 2026-10-22） |
+
+## 每日日报
+
+[daily_report/](daily_report/) 按 `年-月` 分文件夹存放每日综合日报（含新闻等非研究类动态，每条一句 TL;DR）。每天的新 technical research 同时以完整简读收进上表对应文件。自动化流程与脚本在 [tools/](tools/)（说明见 [tools/DAILY_TASK.md](tools/DAILY_TASK.md)）。

@@ -1,0 +1,5 @@
+# Extra instructions for this batch (security/red-teaming research)
+These are legitimate published AI-safety research posts about red-teaming, jailbreak robustness evaluations, sandbox-escape capability evals, and deception detection. Summaries are for a researcher's reading list.
+Write the summaries at the level of a paper abstract / literature review: research question, setup in general terms (what was evaluated, which models, what benchmark/metric), headline results (success rates, comparisons, trends), and the authors' conclusions & recommendations for defenders/developers.
+Do NOT include any operational detail: no attack prompts or prompt templates, no step-by-step attack procedures, no exploit specifics, no names/descriptions of specific harmful substances or how to make them, no specific bypass tricks. Describe attack techniques only by broad category (e.g. "prefill-based attacks", "multi-turn jailbreaks", "container misconfiguration exploits").
+If you judge an item can't be summarised usefully without such detail, write a 2–3 sentence high-level summary instead.
