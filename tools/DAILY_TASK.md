@@ -44,8 +44,8 @@ NODE_PATH=/opt/node22/lib/node_modules node tools/monitor.js
 
 收录规则见 `README.md` 的"收录规则"，要点如下：
 
-- **Anthropic（`--lab Anthropic`）**：只收 alignment.anthropic.com 和 anthropic.com/research/team/alignment 上的文章，这两个页面上的新文章全部收录。anthropic.com/news、anthropic.com/research 其它团队的内容只进日报，不建笔记。同一工作两边都有时合并为一条，另一版本用 `--also-*` 附上。
-- **OpenAI（`--lab OpenAI`）**：alignment.openai.com 上 "Research and Releases" 列出的文章全部收录，包括它链接到 openai.com 的条目。Misalignment Reports / Notices 加 `--category "Misalignment Reports and Notices"`（会放进 `papers/OpenAI/Misalignment Reports/`）。openai.com/news 的其它内容只进日报。
+- **Anthropic（`--lab Anthropic`）**：只收 alignment.anthropic.com 和 anthropic.com/research/team/alignment 上的文章，这两个页面上的新文章，同样只收实证/技术研究（规则见下方 METR 等 lab 那一条）。anthropic.com/news、anthropic.com/research 其它团队的内容只进日报，不建笔记。同一工作两边都有时合并为一条，另一版本用 `--also-*` 附上。
+- **OpenAI（`--lab OpenAI`）**：alignment.openai.com 上 "Research and Releases" 列出的文章（包括它链接到 openai.com 的条目），同样只收实证/技术研究。Misalignment Reports / Notices 加 `--category "Misalignment Reports and Notices"`（会放进 `papers/OpenAI/Misalignment Reports/`）。openai.com/news 的其它内容只进日报。
 - **METR / Apollo / UK AISI / FAR.AI / Goodfire / Transluce / Redwood**：只收实证/技术研究，包括论文、研究博客、技术笔记、模型评估报告、事故调查，以及对具体失败模式或安全技术的技术性分析。下面这些不建笔记（但可以进日报）：
   - 新闻、政策评论、组织动态、招聘、融资
   - AI 进展或时间线预测

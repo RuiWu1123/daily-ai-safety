@@ -1,6 +1,6 @@
 收录范围：[OpenAI Alignment Research Blog](https://alignment.openai.com/) 全部文章（含链接到 openai.com 的条目），另单列 [Misalignment Reports and Notices](https://alignment.openai.com/misalignment-reports/)。
 
-共 52 篇（截至建库），新内容由每日任务自动加入，本页自动更新。
+共 48 篇（截至 2026-10-22），新内容由每日任务自动加入，本页自动更新。
 
 ## 研究与发布
 
