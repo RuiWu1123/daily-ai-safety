@@ -1,11 +1,11 @@
 ---
-title: "Fail safe(r) at alignment by channeling reward-hacking into a \"spillway\" motivation"
+title: Fail safe(r) at alignment by channeling reward-hacking into a "spillway" motivation
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-04-27
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/fail-safer-at-alignment-by-channeling
-star: false
+star: true
 tags:
   - 奖励作弊
   - 对齐训练方法

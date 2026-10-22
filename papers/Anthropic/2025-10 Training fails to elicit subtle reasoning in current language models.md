@@ -1,11 +1,11 @@
 ---
-title: "Training fails to elicit subtle reasoning in current language models"
+title: Training fails to elicit subtle reasoning in current language models
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-10
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2025/subtle-reasoning/
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 监控与控制
