@@ -1,11 +1,11 @@
 ---
-title: "Reasoning models struggle to control their chains of thought, and that’s good"
+title: Reasoning models struggle to control their chains of thought, and that’s good
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-03-05
-source: "OpenAI Blog"
+source: OpenAI Blog
 url: https://openai.com/index/reasoning-models-chain-of-thought-controllability/
-star: false
+star: true
 tags:
   - CoT与可监控性
 ---
