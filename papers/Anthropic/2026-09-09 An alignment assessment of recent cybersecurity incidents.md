@@ -1,11 +1,11 @@
 ---
-title: "An alignment assessment of recent cybersecurity incidents"
+title: An alignment assessment of recent cybersecurity incidents
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-09-09
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
-star: false
+star: true
 tags:
   - 事故报告
   - 网络安全

@@ -1,13 +1,13 @@
 ---
-title: "Teaching Claude why"
+title: Teaching Claude why
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-05-08
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/teaching-claude-why
 other_versions:
-  - "https://alignment.anthropic.com/2026/teaching-claude-why/"
-star: false
+  - https://alignment.anthropic.com/2026/teaching-claude-why/
+star: true
 tags:
   - 对齐训练方法
   - 策划与欺骗

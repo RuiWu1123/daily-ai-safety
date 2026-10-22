@@ -1,11 +1,11 @@
 ---
-title: "Agentic Misalignment in Summer 2026"
+title: Agentic Misalignment in Summer 2026
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-07
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2026/agentic-misalignment-summer-2026/
-star: false
+star: true
 tags:
   - 策划与欺骗
   - 对齐审计
