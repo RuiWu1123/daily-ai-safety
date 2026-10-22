@@ -1,11 +1,11 @@
 ---
-title: "(Some) Natural Emergent Misalignment from Reward Hacking in Non-Production RL"
+title: (Some) Natural Emergent Misalignment from Reward Hacking in Non-Production RL
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-03-30
-source: "Alignment Forum（UK AISI；7vik, Sid Black, Joseph Bloom）"
+source: Alignment Forum（UK AISI；7vik, Sid Black, Joseph Bloom）
 url: https://www.alignmentforum.org/posts/2ANCyejqxfqK2obEj
-star: false
+star: true
 tags:
   - 泛化与涌现失调
   - 奖励作弊

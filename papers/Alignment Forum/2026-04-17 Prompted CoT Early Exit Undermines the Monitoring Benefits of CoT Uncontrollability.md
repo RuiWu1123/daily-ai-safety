@@ -1,11 +1,11 @@
 ---
-title: "Prompted CoT Early Exit Undermines the Monitoring Benefits of CoT Uncontrollability"
+title: Prompted CoT Early Exit Undermines the Monitoring Benefits of CoT Uncontrollability
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-04-17
-source: "Alignment Forum（UK AISI / Anthropic；Elle Najt, Asa Cooper Stickland, Xander Davies）"
+source: Alignment Forum（UK AISI / Anthropic；Elle Najt, Asa Cooper Stickland, Xander Davies）
 url: https://www.alignmentforum.org/posts/BuAPifQmHf24xB29n
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 监控与控制

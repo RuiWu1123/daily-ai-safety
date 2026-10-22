@@ -1,11 +1,11 @@
 ---
 title: "Prefill awareness: can LLMs tell when “their” message history has been tampered with?"
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-03-09
-source: "Alignment Forum（UK AISI；David Africa, alexsouly, Jordan Taylor, RobertKirk）"
+source: Alignment Forum（UK AISI；David Africa, alexsouly, Jordan Taylor, RobertKirk）
 url: https://www.alignmentforum.org/posts/jsFGuXDMxy5NZg9T2
-star: false
+star: true
 tags:
   - 评估感知
   - 评估方法

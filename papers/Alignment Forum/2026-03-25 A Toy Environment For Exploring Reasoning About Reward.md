@@ -1,11 +1,11 @@
 ---
-title: "A Toy Environment For Exploring Reasoning About Reward"
+title: A Toy Environment For Exploring Reasoning About Reward
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-03-25
-source: "Alignment Forum（OpenAI / Apollo Research；jenny, Bronson Schoen）"
+source: Alignment Forum（OpenAI / Apollo Research；jenny, Bronson Schoen）
 url: https://www.alignmentforum.org/posts/LhXW8ziwnn7Dd8edm
-star: false
+star: true
 tags:
   - 奖励作弊
   - 评估感知
