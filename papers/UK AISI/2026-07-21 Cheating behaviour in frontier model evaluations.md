@@ -1,9 +1,9 @@
 ---
-title: "Cheating behaviour in frontier model evaluations"
+title: Cheating behaviour in frontier model evaluations
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2026-07-21
-source: "AISI Blog"
+source: AISI Blog
 url: https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations
 star: false
 tags:

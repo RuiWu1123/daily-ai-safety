@@ -1,11 +1,11 @@
 ---
 title: "Inoculation Prompting: Eliciting traits from LLMs during training can suppress them at test-time"
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2025-10-05
-source: "AISI Research"
+source: AISI Research
 url: https://www.aisi.gov.uk/research/inoculation-prompting-eliciting-traits-from-llms-during-training-can-suppress-them-at-test-time
-star: false
+star: true
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

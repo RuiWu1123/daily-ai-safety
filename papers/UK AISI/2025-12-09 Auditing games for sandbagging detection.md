@@ -1,11 +1,11 @@
 ---
-title: "Auditing games for sandbagging detection"
+title: Auditing games for sandbagging detection
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2025-12-09
-source: "AISI Blog"
+source: AISI Blog
 url: https://www.aisi.gov.uk/blog/auditing-games-for-sandbagging-detection
-star: false
+star: true
 tags:
   - 故意藏拙
   - 对齐审计
