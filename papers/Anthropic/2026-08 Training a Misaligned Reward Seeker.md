@@ -1,11 +1,11 @@
 ---
-title: "Training a Misaligned Reward Seeker"
+title: Training a Misaligned Reward Seeker
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-08
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2026/reward-seeker/
-star: false
+star: true
 tags:
   - 奖励作弊
   - 泛化与涌现失调
