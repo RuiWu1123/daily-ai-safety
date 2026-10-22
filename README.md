@@ -2,14 +2,14 @@
 
 个人 AI safety 研究收录，按 Obsidian 笔记库组织：一篇论文一个笔记，每篇有标题与原文链接、来源与发布日期、主题标签、中文简读，末尾留有"我的笔记"一节。每天由定时任务自动加入新研究并写日报。
 
-**电脑和 iPhone 上怎么用，见 [使用说明](使用说明.md)。**
+**电脑和 iPhone 上怎么用，见 [使用说明](SETUP.md)。**
 
 ## 从哪里开始看
 
-- [最近更新](索引/最近更新.md)：近 30 天的新论文和最近的日报
-- [按主题浏览](索引/按主题.md)：按"奖励作弊""监控与控制""可解释性"等主题分组
-- [全部论文](索引/全部论文.md)
-- 各 lab：[Anthropic](索引/Anthropic.md) · [OpenAI](索引/OpenAI.md) · [METR](索引/METR.md) · [Apollo Research](索引/Apollo%20Research.md) · [UK AISI](索引/UK%20AISI.md) · [FAR.AI](索引/FAR.AI.md) · [Goodfire](索引/Goodfire.md) · [Transluce](索引/Transluce.md) · [Redwood Research](索引/Redwood%20Research.md) · [Alignment Forum](索引/Alignment%20Forum.md)
+- [最近更新](index/recent.md)：近 30 天的新论文和最近的日报
+- [按主题浏览](index/by_topic.md)：按"奖励作弊""监控与控制""可解释性"等主题分组
+- [全部论文](index/all_papers.md)
+- 各 lab：[Anthropic](index/Anthropic.md) · [OpenAI](index/OpenAI.md) · [METR](index/METR.md) · [Apollo Research](index/Apollo%20Research.md) · [UK AISI](index/UK%20AISI.md) · [FAR.AI](index/FAR.AI.md) · [Goodfire](index/Goodfire.md) · [Transluce](index/Transluce.md) · [Redwood Research](index/Redwood%20Research.md) · [Alignment Forum](index/Alignment%20Forum.md)
 - [每日日报](daily_report/)
 
 索引页用 Obsidian 的 Dataview 插件自动生成表格，在 GitHub 网页上只会显示查询代码，请在 Obsidian 里看。
@@ -20,8 +20,8 @@
 |---|---|---|
 | `papers/<lab>/` | 每篇论文一个笔记，文件名是"发布日期 + 标题" | 定时任务新建；你可以在任何笔记里随意写批注 |
 | `daily_report/<年>-<月>/` | 每日综合日报（含新闻等非研究类动态，每条一两句 TL;DR） | 定时任务 |
-| `索引/` | 各 lab、全部论文、按主题、最近更新的自动索引 | 自动生成，不需要改 |
-| `我的笔记/` | 你自己的笔记 | 只有你 |
+| `index/` | 各 lab、全部论文、按主题、最近更新的自动索引 | 自动生成，不需要改 |
+| `my_notes/` | 你自己的笔记 | 只有你 |
 | `tools/` | 定时任务用的脚本和说明 | 不用管 |
 
 定时任务只会**新建**文件，绝不修改已有的笔记，所以你在任何笔记里写的内容都不会被覆盖。

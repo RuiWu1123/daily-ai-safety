@@ -9,7 +9,7 @@ usage:
 Prints the wikilink to use in the daily report, e.g. [[papers/METR/2026-10-23 Title|笔记]].
 The script only ever creates new files; existing notes (and the "我的笔记" section people write in) are never touched.
 """
-import argparse, glob, os, re, sys
+import argparse, glob, os, re, sys, unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LABS = ['Anthropic', 'OpenAI', 'METR', 'Apollo Research', 'UK AISI', 'FAR.AI', 'Goodfire', 'Transluce',
@@ -19,8 +19,13 @@ VOCAB = [l.split(' — ')[0][2:].strip() for l in open(os.path.join(ROOT, 'tools
 
 
 def safe(t):
+    # file names: ASCII only (no Chinese or typographic characters), no characters Obsidian/git dislike
+    for a, b in {'’': "'", '‘': "'", '“': '', '”': '', '–': '-', '—': '-', '×': 'x'}.items():
+        t = t.replace(a, b)
+    t = unicodedata.normalize('NFKD', t).encode('ascii', 'ignore').decode()
     t = re.sub(r'[\\/:*?"<>|#^\[\]]', ' ', t)
-    return re.sub(r'\s+', ' ', t).strip().rstrip('.')[:90].rstrip()
+    t = re.sub(r'\s+', ' ', t).strip().rstrip('.')[:90].rstrip(' .,')
+    return t or 'untitled'
 
 
 def yq(s):
