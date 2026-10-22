@@ -1,11 +1,11 @@
 ---
 title: "Shallow Beliefs: Midtraining does not inoculate against EM from reward hacking"
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-09-15
-source: "Alignment Forum（Redwood Research；Jozdien, Julian Stastny）"
+source: Alignment Forum（Redwood Research；Jozdien, Julian Stastny）
 url: https://www.alignmentforum.org/posts/khxvR2fgAeDvG5N2F
-star: false
+star: true
 tags:
   - 泛化与涌现失调
   - 奖励作弊
