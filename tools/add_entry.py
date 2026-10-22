@@ -6,8 +6,8 @@ usage:
       --source "METR Research" --date 2026-10-23 --summary-file /path/summary.md \
       [--also-url URL --also-title TITLE --also-label LABEL] [--section "Misalignment Reports and Notices"]
 
-Entries go under the "## <year>" heading (or "### <year>" inside --section), above
-older entries of the same year. The "共 N 篇" line and the README table row are updated.
+Entries go under the "## <year>" heading (or "### <year>" inside --section), placed by
+date: below newer entries and above entries of the same or an older date. The "共 N 篇" line and the README table row are updated.
 """
 import argparse, re, os
 from datetime import date
@@ -56,9 +56,22 @@ def main():
     yh = f'{level} {y}\n'
     if yh in region:
         i = region.index(yh) + len(yh)
-        while region[i] == '\n':
-            i += 1
-        region = region[:i] + entry + region[i:]
+        # end of this year's block: next heading at year level or above
+        nxt = re.compile(rf'^#{{1,{len(level)}}} ', re.M).search(region, i)
+        block_end = nxt.start() if nxt else len(region)
+        # insert above the first entry not newer than this one
+        new = (m, d)
+        pos = block_end
+        for em in re.finditer(rf'^{head} \[.*\n\n.* {y} ({"|".join(MON)}) (\d+)', region[:block_end], re.M):
+            if em.start() < i:
+                continue
+            if (MON.index(em.group(1)) + 1, int(em.group(2))) <= new:
+                pos = em.start()
+                break
+        if pos == block_end:
+            region = region[:pos].rstrip('\n') + '\n\n' + entry + region[pos:]
+        else:
+            region = region[:pos] + entry + region[pos:]
     else:
         # new year heading: put it before the first older year heading, else at the end
         years = [(mm.start(), int(mm.group(1))) for mm in re.finditer(rf'^{level} (\d{{4}})\n', region, re.M)]
