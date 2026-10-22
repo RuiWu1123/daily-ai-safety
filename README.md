@@ -18,7 +18,7 @@
 | [METR_Research.md](METR_Research.md) | [METR](https://metr.org/) 的 Research、Notes，以及 Updates / Risk Assessment 中的技术研究类文章，全部历史 | 76 | ✅ 已收录（截至 2026-10-22） |
 | [Apollo_Research.md](Apollo_Research.md) | [Apollo Research](https://www.apolloresearch.ai/) 的 Science / Monitoring 研究页与 Blog 中的技术研究类文章，全部历史 | 34 | ✅ 已收录（截至 2026-10-22） |
 | UKAISI.md | [UK AI Security Institute](https://www.aisi.gov.uk/) | – | ⏳ 待收录 |
-| FAR_AI.md | [FAR.AI](https://far.ai/) | – | ⏳ 待收录 |
+| [FAR_AI.md](FAR_AI.md) | [FAR.AI](https://far.ai/) Blog 研究文章 + Publications 全部论文，全部历史 | 67 | ✅ 已收录（截至 2026-10-22） |
 | [Goodfire.md](Goodfire.md) | [Goodfire Research](https://www.goodfire.ai/research) 全部文章（不含 Blog 和生物/基因组/材料等科学应用），全部历史 | 36 | ✅ 已收录（截至 2026-10-22） |
 | [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究与技术 essay、Incident Reports、Docent Blog 技术文章，全部历史 | 30 | ✅ 已收录（截至 2026-10-22） |
 | Redwood_Research.md | [Redwood Research](https://www.redwoodresearch.org/) | – | ⏳ 待收录 |
