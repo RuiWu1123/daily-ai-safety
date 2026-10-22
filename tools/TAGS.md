@@ -1,0 +1,28 @@
+# 主题标签词表（只能从这里选，每篇 1–4 个，按相关度排序）
+
+- 奖励作弊 — reward hacking、specification gaming、reward tampering、作弊/钻评分漏洞
+- 策划与欺骗 — scheming、deceptive alignment、strategic deception、隐藏目标、sabotage 倾向
+- 伪装对齐 — alignment faking
+- 故意藏拙 — sandbagging、故意压低表现
+- CoT与可监控性 — CoT faithfulness、CoT monitoring、monitorability、推理可读性、obfuscation
+- 监控与控制 — AI control、监控协议、blocking monitor、trusted monitoring、control evaluation
+- 评估感知 — eval awareness、situational awareness、知道自己被测
+- 可解释性 — mechanistic interpretability、SAE、probe、circuits、activation steering、特征/表征研究
+- 对齐审计 — alignment auditing、auditing game、model organism 审计、行为红队审计工具（Petri/Bloom 等）
+- 评估方法 — 评估科学、benchmark 设计、统计方法、能力度量（time horizon 等）、评估工具
+- 危险能力评估 — 模型发布前/后评估、自主能力、AI R&D 能力、自我复制
+- 网络安全 — cyber 能力评估、渗透、sandbox 逃逸、安全事件
+- 越狱与鲁棒性 — jailbreak、对抗攻击、constitutional classifiers、safeguards 鲁棒性、prefill 攻击
+- 提示注入 — prompt injection
+- 数据投毒与后门 — data poisoning、backdoor、sleeper agents
+- 泛化与涌现失调 — emergent misalignment、训练行为如何泛化、persona/角色泛化
+- 对齐训练方法 — RLHF、constitutional AI、model spec、midtraining、inoculation prompting、character 训练
+- 可扩展监督 — scalable oversight、weak-to-strong、debate、自动化对齐研究员
+- 诚实与谎言检测 — honesty、lie detection、self-report、confessions、内省
+- 知识移除 — unlearning、数据过滤、能力移除、access control
+- 多智能体 — multi-agent 风险、agent 协作/合谋、swarm
+- 事故报告 — 真实世界或内部的 misalignment 事故、incident investigation
+- 威胁建模 — 具体失败模式的技术性分析（reward-seeker、fitness-seeker、rogue deployment 等）、safety case
+- 人机交互与社会影响 — 用户使用研究、谄媚 sycophancy、操纵/说服、心理健康、去赋权
+- 模型福利 — model welfare
+- 安全基础设施 — 安全开发流程、权重安全、监控系统工程（有研究结果的）

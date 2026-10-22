@@ -1,29 +1,38 @@
 # daily-ai-safety
 
-个人 AI safety 研究收录。每个文件对应一家 lab，收录其官方发布的研究，每条包含标题（附原文链接）、来源与发布时间、一段中文摘要，按发布时间从新到旧排列。
+个人 AI safety 研究收录，按 Obsidian 笔记库组织：一篇论文一个笔记，每篇有标题与原文链接、来源与发布日期、主题标签、中文简读，末尾留有"我的笔记"一节。每天由定时任务自动加入新研究并写日报。
+
+**电脑和 iPhone 上怎么用，见 [使用说明](使用说明.md)。**
+
+## 从哪里开始看
+
+- [最近更新](索引/最近更新.md)：近 30 天的新论文和最近的日报
+- [按主题浏览](索引/按主题.md)：按"奖励作弊""监控与控制""可解释性"等主题分组
+- [全部论文](索引/全部论文.md)
+- 各 lab：[Anthropic](索引/Anthropic.md) · [OpenAI](索引/OpenAI.md) · [METR](索引/METR.md) · [Apollo Research](索引/Apollo%20Research.md) · [UK AISI](索引/UK%20AISI.md) · [FAR.AI](索引/FAR.AI.md) · [Goodfire](索引/Goodfire.md) · [Transluce](索引/Transluce.md) · [Redwood Research](索引/Redwood%20Research.md) · [Alignment Forum](索引/Alignment%20Forum.md)
+- [每日日报](daily_report/)
+
+索引页用 Obsidian 的 Dataview 插件自动生成表格，在 GitHub 网页上只会显示查询代码，请在 Obsidian 里看。
+
+## 目录结构
+
+| 位置 | 内容 | 谁来写 |
+|---|---|---|
+| `papers/<lab>/` | 每篇论文一个笔记，文件名是"发布日期 + 标题" | 定时任务新建；你可以在任何笔记里随意写批注 |
+| `daily_report/<年>-<月>/` | 每日综合日报（含新闻等非研究类动态，每条一两句 TL;DR） | 定时任务 |
+| `索引/` | 各 lab、全部论文、按主题、最近更新的自动索引 | 自动生成，不需要改 |
+| `我的笔记/` | 你自己的笔记 | 只有你 |
+| `tools/` | 定时任务用的脚本和说明 | 不用管 |
+
+定时任务只会**新建**文件，绝不修改已有的笔记，所以你在任何笔记里写的内容都不会被覆盖。
 
 ## 收录规则
 
-- 一项研究只记在一个文件里：发布在某 lab 自己主页上的，记在该 lab；只出现在 LessWrong / Alignment Forum、没有被 lab 主页收录的，记在 `LessWrong_Alignment_Forum.md`。
-- 同一工作在同一 lab 的多个站点都有（例如 anthropic.com/research 和 alignment.anthropic.com 各有一篇）时合并为一条，另一版本以"另见"链接附上。
-- 只收录实证/技术研究（论文、研究博客、技术笔记、模型评估报告、事故调查、对具体失败模式或安全技术的技术性分析）；不收新闻、政策评论、组织动态、招聘与融资公告，也不收 AI 进展/时间线预测、战略 essay、research agenda、入门指南与书单、播客、纯工具发布。Anthropic 与 OpenAI 两个文件按各自指定的页面全量收录，不做这层过滤。
-- 摘要格式：背景/动机 → 做了什么 → 主要发现 → 作者的解读、局限与结论。
-
-## 导航
-
-| 文件 | 收录范围 | 篇数 | 状态 |
-|---|---|---|---|
-| [Anthropic_Alignment_Science.md](Anthropic_Alignment_Science.md) | [Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史 | 104 | ✅ 已收录（截至 2026-10-22） |
-| [OpenAI_Alignment.md](OpenAI_Alignment.md) | [OpenAI Alignment Research Blog](https://alignment.openai.com/)，全部历史；另单列 Misalignment Reports and Notices（21 篇） | 31 + 21 | ✅ 已收录（截至 2026-10-22） |
-| [METR_Research.md](METR_Research.md) | [METR](https://metr.org/) 的 Research、Notes，以及 Updates / Risk Assessment 中的技术研究，全部历史 | 51 | ✅ 已收录（截至 2026-10-22） |
-| [Apollo_Research.md](Apollo_Research.md) | [Apollo Research](https://www.apolloresearch.ai/) 的 Science / Monitoring 研究页与 Blog 中的技术研究，全部历史 | 20 | ✅ 已收录（截至 2026-10-22） |
-| [UKAISI.md](UKAISI.md) | [UK AI Security Institute](https://www.aisi.gov.uk/) 的 Research 与 Blog 中的技术研究，全部历史 | 74 | ✅ 已收录（截至 2026-10-22） |
-| [FAR_AI.md](FAR_AI.md) | [FAR.AI](https://far.ai/) Blog 研究文章 + Publications 论文，全部历史 | 57 | ✅ 已收录（截至 2026-10-22） |
-| [Goodfire.md](Goodfire.md) | [Goodfire Research](https://www.goodfire.ai/research)（不含 Blog 和生物/基因组/材料等科学应用），全部历史 | 34 | ✅ 已收录（截至 2026-10-22） |
-| [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究报告、Incident Reports、Docent Blog 技术文章，全部历史 | 24 | ✅ 已收录（截至 2026-10-22） |
-| [Redwood_Research.md](Redwood_Research.md) | [Redwood Research](https://www.redwoodresearch.org/) 研究页论文 + [Redwood Blog](https://blog.redwoodresearch.org/) 技术研究，全部历史 | 86 | ✅ 已收录（截至 2026-10-22） |
-| [LessWrong_Alignment_Forum.md](LessWrong_Alignment_Forum.md) | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）、且未被其 lab 主页收录的技术研究帖，2026 年至今 | 22 | ✅ 已收录（截至 2026-10-22） |
-
-## 每日日报
-
-[daily_report/](daily_report/) 按 `年-月` 分文件夹存放每日综合日报（含新闻等非研究类动态，每条一句 TL;DR）。每天的新 technical research 同时以完整简读收进上表对应文件。自动化流程与脚本在 [tools/](tools/)（说明见 [tools/DAILY_TASK.md](tools/DAILY_TASK.md)）。
+- 一项研究只记一篇笔记：发布在某 lab 自己主页上的，归到该 lab；只出现在 Alignment Forum、没有被 lab 主页收录的，归到 Alignment Forum。同一工作在同一 lab 的多个页面都有时合并为一篇，另一版本作为"另见"链接附上；两家 lab 联合发布的，笔记里同时标两家。
+- 只收录实证/技术研究（论文、研究博客、技术笔记、模型评估报告、事故调查、对具体失败模式或安全技术的技术性分析）。不收新闻、政策评论、组织动态、招聘与融资公告，也不收 AI 进展/时间线预测、战略 essay、research agenda、入门指南与书单、播客、纯工具发布（这些会出现在日报的"其它动态"里）。Anthropic 与 OpenAI 按各自指定的页面全量收录，不做这层过滤。
+- 收录范围：
+  - Anthropic：[Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史
+  - OpenAI：[Alignment Research Blog](https://alignment.openai.com/)，含 Misalignment Reports and Notices，全部历史
+  - METR、Apollo Research、UK AISI、FAR.AI、Goodfire（只看 research 页，不含生物/基因组/材料等科学应用）、Transluce、Redwood Research：全部历史
+  - Alignment Forum：2026 年至今，上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）的帖子
+- 简读格式：背景/动机 → 做了什么 → 主要发现 → 作者的解读、局限与结论。少数涉及攻击手法或生物/化学内容的条目只写到摘要层面。

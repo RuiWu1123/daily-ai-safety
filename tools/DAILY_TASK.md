@@ -3,7 +3,13 @@
 这份文件是定时任务每天执行的操作手册。定时任务每天美东时间早上 8 点左右运行一次，做两件事：
 
 1. 检查所有已收录的 lab / 论坛有没有新内容（包括新闻、政策、组织动态这类非 technical research 的更新），写一份综合日报。
-2. 如果新内容里有符合收录规则的 technical research，就按原有格式把它收进对应的 md 文件，并写一段简读。
+2. 如果新内容里有符合收录规则的 technical research，就在 `papers/<lab>/` 下为它新建一篇笔记（一篇论文一个文件），并写一段简读。
+
+仓库是用户的 Obsidian 笔记库，用户会在电脑和 iPhone 上同时阅读、书写，所以必须遵守：
+
+- **只新建，不修改**：每日任务只新建笔记和日报文件，绝不修改已有的笔记，尤其是每篇末尾的"我的笔记"一节，以及 `我的笔记/` 文件夹里的任何内容（那是用户自己写的）。
+- `索引/` 下的页面是 Dataview 自动查询，新笔记会自动出现，不需要改。
+- 不要提交 `.obsidian/` 下的工作区文件。
 
 ## 0. 准备
 
@@ -29,17 +35,17 @@ NODE_PATH=/opt/node22/lib/node_modules node tools/monitor.js
 确认发布日期：以页面上写的日期为准。
 
 - 发布日期在最近 3 天内，或者发布时间不明但确实是新出现的：算作"今日更新"。
-- 明显更早发布、只是现在才被检测到：不写进日报的"今日更新"。如果它符合收录规则，照常补录进 md，并在日报的"补录"一节里列一行。
+- 明显更早发布、只是现在才被检测到：不写进日报的"今日更新"。如果它符合收录规则，照常建笔记补录，并在日报的"补录"一节里列一行。
 
 然后按下面的规则分类。
 
-### A. 进 md 文件的 technical research
+### A. 建成笔记的 technical research
 
 收录规则见 `README.md` 的"收录规则"，要点如下：
 
-- **Anthropic（`Anthropic_Alignment_Science.md`）**：只收 alignment.anthropic.com 和 anthropic.com/research/team/alignment 上的文章，这两个页面上的新文章全部收录。anthropic.com/news、anthropic.com/research 其它团队的内容只进日报，不进 md。同一工作两边都有时合并为一条，另一版本用 `--also-*` 附上。
-- **OpenAI（`OpenAI_Alignment.md`）**：alignment.openai.com 上 "Research and Releases" 列出的文章全部收录，包括它链接到 openai.com 的条目。Misalignment Reports / Notices 用 `--section "Misalignment Reports and Notices"` 收录。openai.com/news 的其它内容只进日报。
-- **METR / Apollo / UK AISI / FAR.AI / Goodfire / Transluce / Redwood**：只收实证/技术研究，包括论文、研究博客、技术笔记、模型评估报告、事故调查，以及对具体失败模式或安全技术的技术性分析。下面这些不进 md（但可以进日报）：
+- **Anthropic（`--lab Anthropic`）**：只收 alignment.anthropic.com 和 anthropic.com/research/team/alignment 上的文章，这两个页面上的新文章全部收录。anthropic.com/news、anthropic.com/research 其它团队的内容只进日报，不建笔记。同一工作两边都有时合并为一条，另一版本用 `--also-*` 附上。
+- **OpenAI（`--lab OpenAI`）**：alignment.openai.com 上 "Research and Releases" 列出的文章全部收录，包括它链接到 openai.com 的条目。Misalignment Reports / Notices 加 `--category "Misalignment Reports and Notices"`（会放进 `papers/OpenAI/Misalignment Reports/`）。openai.com/news 的其它内容只进日报。
+- **METR / Apollo / UK AISI / FAR.AI / Goodfire / Transluce / Redwood**：只收实证/技术研究，包括论文、研究博客、技术笔记、模型评估报告、事故调查，以及对具体失败模式或安全技术的技术性分析。下面这些不建笔记（但可以进日报）：
   - 新闻、政策评论、组织动态、招聘、融资
   - AI 进展或时间线预测
   - 战略 essay
@@ -49,19 +55,21 @@ NODE_PATH=/opt/node22/lib/node_modules node tools/monitor.js
   - 播客
   - 纯工具发布（没有研究结果的）
   - Goodfire：只看 research 页，不收生物、基因组、材料等科学应用类工作。
-- **Alignment Forum（`LessWrong_Alignment_Forum.md`）**：只收 AF 帖子（不看普通 LessWrong）。作者里必须至少有一位是上述 9 家 lab 的研究员，lab 研究员作为合著者的 MATS / Anthropic Fellows 项目也算；Redwood 写作项目参与者、GDM、独立研究者等不算。先看它是不是已经发在 lab 主页上：已经在 lab 主页上的不收进 AF 文件，如果那篇 lab 文章还没收录，就收进对应 lab 的文件。lab 主页上有、但不在我们给该 lab 划定的收录范围内的，也不收。同样只收实证/技术研究。来源行写成 `Alignment Forum（<lab>；<作者>）`。
-- 同一工作在 lab 自己的多个页面（论文页 + 博客）都有时，合并成一条，用 `--also-url/--also-title/--also-label` 附上另一版本。
+- **Alignment Forum（`--lab "Alignment Forum"`）**：只收 AF 帖子（不看普通 LessWrong）。作者里必须至少有一位是上述 9 家 lab 的研究员，lab 研究员作为合著者的 MATS / Anthropic Fellows 项目也算；Redwood 写作项目参与者、GDM、独立研究者等不算。先看它是不是已经发在 lab 主页上：已经在 lab 主页上的不建 AF 笔记，如果那篇 lab 文章还没收录，就作为对应 lab 的笔记收录。lab 主页上有、但不在我们给该 lab 划定的收录范围内的，也不收。同样只收实证/技术研究。来源行写成 `Alignment Forum（<lab>；<作者>）`。
+- 同一工作在 lab 自己的多个页面（论文页 + 博客）都有时，合并成一篇笔记，用 `--also-url/--also-title/--also-label` 附上另一版本。
+- 两家 lab 联合发布的同一份工作只建一篇笔记，`--lab` 写两次（例如 `--lab METR --lab "Redwood Research"`），另一家的链接用 `--also-*` 附上。
 
 收录步骤：
 
 1. 按 `tools/STYLE.md` 写简读（中文，一整段，风格和长度参照样例）。涉及攻击、jailbreak、网络攻击评估、sandbox 逃逸、事故里的具体手法，或生物/化学相关内容时，同时遵守 `tools/SENSITIVE_NOTE.md`：只写到摘要层面，不写任何可操作细节。
-2. 插入条目（`--date` 必须精确到日，用原文标注的发布日期；来源行会显示为 `<来源名> 2026 Oct 23`）：
+2. 从 `tools/TAGS.md` 的词表里选 1–4 个主题标签（只能用词表里的原词）。
+3. 新建笔记（`--date` 必须精确到日，用原文标注的发布日期）。脚本会打印这篇笔记的双链，例如 `[[papers/METR/2026-10-23 标题|笔记]]`，写日报时要用：
 
 ```bash
-python3 tools/add_entry.py --file <文件> --title "<原标题>" --url "<主链接>" --source "<来源名>" --date YYYY-MM-DD --summary-file <简读文件> [--also-url ... --also-title ... --also-label ...] [--section ...]
+python3 tools/new_note.py --lab <lab> --title "<原标题>" --url "<主链接>" --source "<来源名>" --date YYYY-MM-DD --tags 标签1,标签2 --summary-file <简读文件> [--also-url ... --also-title ... --also-label ...] [--category ...]
 ```
 
-来源名沿用文件里已有的写法，例如：
+`--lab` 取值：`Anthropic`、`OpenAI`、`METR`、`Apollo Research`、`UK AISI`、`FAR.AI`、`Goodfire`、`Transluce`、`Redwood Research`、`Alignment Forum`。来源名沿用已有写法，例如：
 
 - `Anthropic Alignment Science Blog`、`Anthropic Research`
 - `OpenAI Alignment Blog`、`OpenAI Blog`、`OpenAI Misalignment Report`
@@ -93,9 +101,9 @@ python3 tools/add_entry.py --file <文件> --title "<原标题>" --url "<主链�
 
 检查范围：README 中收录的全部 lab 与 Alignment Forum（含新闻等非研究类更新）。
 
-## 研究更新（已收录进对应文件）
+## 研究更新（已建笔记）
 
-- **[标题](链接)** · Lab · 来源名 — TL;DR：一到两句话说清楚做了什么、最重要的发现是什么（中文，约 40–90 字）。→ [文件名](../../文件名.md)
+- **[标题](链接)** · Lab · 来源名 — TL;DR：一到两句话说清楚做了什么、最重要的发现是什么（中文，约 40–90 字）。→ [[papers/<lab>/<笔记文件名>|笔记]]（直接用 new_note.py 打印的双链）
 
 ## 其它动态
 
@@ -103,7 +111,7 @@ python3 tools/add_entry.py --file <文件> --title "<原标题>" --url "<主链�
 
 ## 补录（较早发布、今天才检测到）
 
-- **[标题](链接)** · Lab · 发布于 YYYY-MM-DD → 已收录进 [文件名](../../文件名.md)
+- **[标题](链接)** · Lab · 发布于 YYYY-MM-DD → [[papers/<lab>/<笔记文件名>|笔记]]
 
 ## 监控状态
 
@@ -111,7 +119,7 @@ python3 tools/add_entry.py --file <文件> --title "<原标题>" --url "<主链�
 ```
 
 - 没有内容的小节直接删掉；"监控状态"始终保留。
-- TL;DR 比 md 里的简读短得多，只保留最核心的一两点。
+- TL;DR 比笔记里的简读短得多，只保留最核心的一两点。
 - 当天所有来源都没有任何新内容时，也要生成日报。正文写"今日无更新。"，再加"监控状态"一节。
 
 ## 4. 收尾
@@ -126,6 +134,6 @@ git commit -m "Daily update YYYY-MM-DD"
 git push origin main
 ```
 
-推送失败时，先 `git pull --rebase origin main` 再推，网络错误按 2/4/8/16 秒间隔重试。
+推送前先 `git pull --rebase origin main`，因为用户的电脑和手机也会往仓库推送自己的笔记。万一出现冲突，一律保留用户那一方的改动（每日任务只新建文件，正常不会冲突）。网络错误按 2/4/8/16 秒间隔重试。
 
 4. 最后用一两句话汇报：今天有几条研究更新、几条其它动态、收进了哪些文件、有没有监控异常。
