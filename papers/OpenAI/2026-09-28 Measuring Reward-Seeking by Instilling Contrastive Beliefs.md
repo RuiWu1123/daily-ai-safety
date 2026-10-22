@@ -1,11 +1,11 @@
 ---
-title: "Measuring Reward-Seeking by Instilling Contrastive Beliefs"
+title: Measuring Reward-Seeking by Instilling Contrastive Beliefs
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-09-28
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/measuring-reward-seeking/
-star: false
+star: true
 tags:
   - 奖励作弊
   - 评估感知

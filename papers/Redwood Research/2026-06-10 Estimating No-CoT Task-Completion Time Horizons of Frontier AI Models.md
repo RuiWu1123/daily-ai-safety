@@ -1,11 +1,11 @@
 ---
-title: "Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models"
+title: Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-06-10
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/estimating-no-cot-task-completion
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 评估方法

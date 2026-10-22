@@ -1,11 +1,11 @@
 ---
-title: "CoT May Be Highly Informative Despite “Unfaithfulness”"
+title: CoT May Be Highly Informative Despite “Unfaithfulness”
 lab:
-  - "METR"
+  - METR
 date: 2025-08-08
-source: "METR Research"
+source: METR Research
 url: https://metr.org/blog/2025-08-08-cot-may-be-highly-informative-despite-unfaithfulness/
-star: false
+star: true
 tags:
   - CoT与可监控性
 ---

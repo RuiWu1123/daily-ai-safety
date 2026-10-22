@@ -1,11 +1,11 @@
 ---
-title: "Claude, GPT, and Gemini All Struggle to Evade Monitors"
+title: Claude, GPT, and Gemini All Struggle to Evade Monitors
 lab:
-  - "METR"
+  - METR
 date: 2025-08-22
-source: "METR Notes"
+source: METR Notes
 url: https://metr.org/notes/2025-08-22-claude-gpt-gemini-struggle-evade-monitors/
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 监控与控制

@@ -1,11 +1,11 @@
 ---
 title: "Beyond g-mean²: complementary metrics for monitorability"
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-10-20
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/beyond-gmean-squared/
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 评估方法

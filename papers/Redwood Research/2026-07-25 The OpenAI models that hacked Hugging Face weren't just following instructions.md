@@ -1,11 +1,11 @@
 ---
-title: "The OpenAI models that hacked Hugging Face weren’t just following instructions"
+title: The OpenAI models that hacked Hugging Face weren’t just following instructions
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-07-25
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/the-openai-models-that-hacked-hugging
-star: false
+star: true
 tags:
   - 事故报告
   - 奖励作弊

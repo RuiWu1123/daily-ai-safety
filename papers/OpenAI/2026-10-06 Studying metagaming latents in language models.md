@@ -1,11 +1,11 @@
 ---
-title: "Studying metagaming latents in language models"
+title: Studying metagaming latents in language models
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-10-06
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/metagaming-latents/
-star: false
+star: true
 tags:
   - 评估感知
   - 可解释性

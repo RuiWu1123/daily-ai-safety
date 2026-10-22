@@ -5,7 +5,7 @@ lab:
 date: 2026-09-09
 source: Anthropic Research
 url: https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
-star: true
+star: false
 tags:
   - 事故报告
   - 网络安全
