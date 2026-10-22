@@ -1,11 +1,11 @@
 ---
-title: "Tracing Eval-Awareness Emergence Through Training of OLMo 3"
+title: Tracing Eval-Awareness Emergence Through Training of OLMo 3
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-06-10
-source: "Alignment Forum（UK AISI；Ram Bharadwaj, RobertKirk）"
+source: Alignment Forum（UK AISI；Ram Bharadwaj, RobertKirk）
 url: https://www.alignmentforum.org/posts/c2tqL9xPbttisAHtt
-star: false
+star: true
 tags:
   - 评估感知
 ---

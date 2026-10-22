@@ -1,11 +1,11 @@
 ---
-title: "The safe-to-dangerous shift is a fundamental problem for eval realism; but also for measuring awareness"
+title: The safe-to-dangerous shift is a fundamental problem for eval realism; but also for measuring awareness
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-05-14
-source: "Alignment Forum（UK AISI；Charlie Griffin, Patrick Leask）"
+source: Alignment Forum（UK AISI；Charlie Griffin, Patrick Leask）
 url: https://www.alignmentforum.org/posts/tK8vqHDxaRGcysNJQ
-star: false
+star: true
 tags:
   - 评估感知
   - 伪装对齐
