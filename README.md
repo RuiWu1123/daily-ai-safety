@@ -19,7 +19,7 @@
 | [Apollo_Research.md](Apollo_Research.md) | [Apollo Research](https://www.apolloresearch.ai/) 的 Science / Monitoring 研究页与 Blog 中的技术研究类文章，全部历史 | 34 | ✅ 已收录（截至 2026-10-22） |
 | UKAISI.md | [UK AI Security Institute](https://www.aisi.gov.uk/) | – | ⏳ 待收录 |
 | FAR_AI.md | [FAR.AI](https://far.ai/) | – | ⏳ 待收录 |
-| Goodfire.md | [Goodfire](https://www.goodfire.ai/) | – | ⏳ 待收录 |
-| Transluce.md | [Transluce](https://transluce.org/) | – | ⏳ 待收录 |
+| [Goodfire.md](Goodfire.md) | [Goodfire Research](https://www.goodfire.ai/research) 全部文章（不含 Blog 和生物/基因组/材料等科学应用），全部历史 | 36 | ✅ 已收录（截至 2026-10-22） |
+| [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究与技术 essay、Incident Reports、Docent Blog 技术文章，全部历史 | 30 | ✅ 已收录（截至 2026-10-22） |
 | Redwood_Research.md | [Redwood Research](https://www.redwoodresearch.org/) | – | ⏳ 待收录 |
 | LessWrong_Alignment_Forum.md | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布、且未被其 lab 主页收录的帖子，2026 年至今 | – | ⏳ 待收录 |
