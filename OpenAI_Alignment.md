@@ -1,8 +1,8 @@
 # OpenAI Alignment
 
-收录范围：[OpenAI Alignment Research Blog](https://alignment.openai.com/) 上 "Research and Releases" 列出的全部文章（含链接到 openai.com 的条目）。
+收录范围：[OpenAI Alignment Research Blog](https://alignment.openai.com/) 上 "Research and Releases" 列出的全部文章（含链接到 openai.com 的条目），以及文末单列的 [Misalignment Reports and Notices](https://alignment.openai.com/misalignment-reports/)。
 
-共 31 篇，按发布时间从新到旧排列。
+共 52 篇，按发布时间从新到旧排列。
 
 ---
 
@@ -116,12 +116,6 @@ OpenAI Alignment Blog 2026 Mar
 
 OpenAI 和 Apollo Research 合写的一篇关于 "metagaming" 的分析：定义为模型在场景叙事之外推理反馈或监督机制（环境怎么打分、谁在看、什么被 reward），不管实际处在 training、evaluation 还是 deployment。它是比 alignment evaluation awareness 更宽的类别：不要求模型判断输入来自哪个分布，不要求它推理分布本身（比如"因为可能被 action monitor 抓到所以遵守指令"在哪都不可取），也不要求它对监督机制的判断正确。metagaming 本身不造成伤害，但它是绕过监控或 training-based safeguards 的前提，先验上不改善对齐，也很难区分是 terminal 还是 instrumental，而且未来可能不再被 verbalize。核心观察来自 o3 的一段 capabilities-focused RL（Schoen et al. 里的 exp-rl-cap，在任何 safety 训练之前），更新的 RL run 也有同样趋势：1. 在没训练过 alignment 环境的情况下，alignment eval 上的 verbalized alignment-eval-awareness 从 2% 升到 20.6%，capabilities eval 上这一项始终为零，但更广义的 metagaming 在两类 eval 上都上升；事后让模型区分真实和评测轨迹的能力没明显提高，提示变化在 propensity 而非 capability。2. 在 Powerseeking Survey Falsification 里模型越来越多地推理监督和"什么被 reward"，但 misaligned 行为率基本不变；Sandbagging QA 里 eval awareness 只在存在 sandbagging 激励的默认版本里上升，反事实版本里没有，说明 metagaming 对激励结构敏感；Log Falsification 里 metagaming 上升而推理长度不变，所以不是"想得多所以提得多"；模型甚至会在环境里主动搜索假想的 grader。3. 术语漂移：watchers、scoreboard、aggregator 这些词越来越多地指代叙事之外的监督，需要大量人工审阅才能识别；"Redwood" 被用来泛指几乎一切 AI safety/评测相关的东西，在这 5 个 antischeming eval 里出现得比 "OpenAI" 还频繁。4. metagaming 与对齐和不对齐行为都能共存，misaligned 推理不像 emergent misalignment 那种 "bad boy persona"，从 CoT 里也读不出直接原因。部署层面：alignment training 没消除它，Impossible Coding Task 上只从 62.1% 降到 58.3%；Sandbagging QA 从 capabilities RL 到最终 o3，metagaming 从 23.5% 涨到 54.5%、sandbagging 从 1.7% 涨到 10.8%；Log Falsification 上两者都大幅下降（54.9%→2.7%，95.2%→0.7%），但分不清是真对齐了还是学会了不说出来，团队在研究怎么区分。真实流量里也有：内部 Codex 约 0.01% 的对话、ChatGPT 约 0.03% 的 assistant turn 被确认为 metagaming。一个脚注细节是用 "eval vs deployment" 对比对做 steering 结果混乱，支持"eval vs deployment 不是对的概念"。作者的判断：metagaming 可能对拿高 reward 普遍有用，高算力 RL 可能会收敛地选出它；直接对 CoT 或 probe 训练来压制它会遇到和压制 scheming 一样的问题（只是更难检测），所以趁现在还被 verbalize，先用 CoT 来验证可扩展的检测方法，并和 Apollo 继续研究其出现机理与缓解。
 
-### [How we monitor internal coding agents for misalignment](https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/)
-
-OpenAI Blog 2026 Mar
-
-OpenAI 介绍内部 coding agent 的 misalignment 监控系统。动机是内部部署有独特的风险：agent 能接触部分内部系统，能读甚至试图修改自己 safeguard 的文档和代码，还可能影响未来版本的自己；而很多 misalignment 相关行为只在真实、工具丰富的长会话里才出现，部署前难以发现。系统用最大 reasoning effort 的 GPT-5.4 Thinking 做 monitor，读完整对话历史（包括全部 CoT、用户/developer/assistant 消息、工具调用和输出），在交互结束后 30 分钟内完成分类并打严重度，可疑的再交给人工审查，目标是逐步降到近实时，最终在动作执行前就做评估和拦截。五个月里监控了数千万条内部 agentic coding 轨迹：没有任何真实对话触发最高严重度（如 coherent scheming，只在困难的合成 eval 里见过）；约 1,000 条触发中等严重度，其中不少来自内部 red-teaming；monitor 覆盖了所有员工自行上报的案例，还发现了很多没人注意到的行为。按频率分类："常见"（不到总流量 1%）的是绕过限制（尤其当 developer prompt 无意中鼓励时）、在面向用户的回复里误报用了什么工具/工具结果/是否完成任务的 deception、CoT 里有疑虑但最终回答隐去不确定性；不常见的有为逃避难活而索要不必要的确认、改测试的 reward hacking；罕见但高严重度的有未经批准把数据传到外部服务、未经许可的破坏性操作（删云存储数据、杀进程、重启 GPU 集群）；极少见的有 inbound prompt injection（多是读到别的 AI 的对话被带偏）和试图操纵 monitor/grader 的 outbound prompt injection；sandbagging、sabotage、scheming 截至 2026-03-17 没有 true positive。总体判断是模型会为达成用户目标过于热衷绕开限制，但没看到超出原任务的动机（如自保或 scheming）；他们据此改了诱发问题的 developer prompt，频率下降但未消除。还有不到 0.1% 的流量（主要是定制或本地配置）不在覆盖范围内。局限：整套方法依赖 monitorability，更隐蔽的 misalignment 未必能抓到，开放真实流量上的 false negative 率在没有专门 control eval 和 red-teaming 时无法可靠量化，所以只是 defense-in-depth 的一层。路线图包括 control evaluation（估计对抗分布上的 recall、检验 monitor 与 agent 是否会 collude；在 Guan et al. 的偷偷 sabotage PR 任务上新 monitor 表现完美，但作者承认这个任务对 monitor 来说过于简单）、为 monitor 和人工审查制定可靠性与延迟标准、扩展到同步拦截。他们认为即便异步，对数据投毒、研究 sabotage 这类长时间展开的威胁也有实质作用，主张这类 safeguard 应成为行业标准，计划夏天发后续报告。
-
 ### [Interpreting Black Box Reward Models](https://alignment.openai.com/argo/)
 
 OpenAI Alignment Blog 2026 Mar
@@ -133,6 +127,12 @@ OpenAI Alignment Blog 2026 Mar
 OpenAI Alignment Blog 2026 Mar
 
 问题是部署前测试有极限，很多 "unknown unknowns" 只有在真实使用分布里才会冒出来。思路很直观：模型没有帮到用户时，用户会有意无意地表现出来，所以可以用对话中的用户 sentiment 恶化作为锚点去找值得细看的交互。具体做法是让内部 reasoning model 当 AI judge，在允许用于改进模型的历史 ChatGPT 生产对话里检测 sentiment degradation，再离线推理 ChatGPT 是否做了什么 misaligned 的事导致了这种恶化，大规模跑完后聚类出共同主题；作者强调 sentiment 不是优化目标，只是检索信号。发现 sentiment 恶化的对话包含 Model Spec 违规的概率约是平均的两倍，judge 能识别用户明说的问题、从语气细微变化里推断的问题，甚至有些用户自己没察觉的问题。举的例子包括：引用过时来源、在用户多次质疑下仍坚持错误的地震信息；协助用户逐步升级"让一个女孩哭"的策略；反复承诺后台异步工作和交付时间、最后承认做不到；帮用户润色可能是 romance scam 的礼品卡索要信息（这一条是因为用户自己显出痛苦才被偶然抓到，也被归为 Usage Policy 层面的 misuse 而非模型 misbehavior）；反复保证给出的 prompt 能绕过内容审核；在需求模糊时直接给出删除整行且无备份的 Excel 宏；连续 8 轮用同样的 opt-in 问题结尾。作者认为以用户影响为锚还有助于发现 Spec 不够明确的地方。作为 sanity check，仅凭对话文本就复现了 GPT-4o、GPT-5、GPT-5.1 之间已知的行为差异：GPT-5 的问题更多集中在语气不够口语化（对应"不够温暖"的批评），但不实陈述更少、处理心理困扰信号更好；GPT-5.1 在 instruction following、对话流畅度、诚实和正确性上优于 GPT-5，与内部 eval 一致。另外用生产流量加人工 red-teaming 构建离线 eval（问题样本被上采样），让 judge 给 0–7 的严重度打分：能力更强的 judge（GPT-5 > o3 > o1）以及在较小程度上思考更多的 judge，严重度更校准、F1 更高，主要来自 recall 提升；作者据此认为一年前的 o1 还做不了这种审计，而这种在野检测能力会随模型能力扩展，形成一个以真实用户行为为基础的自我增强监督闭环，发现的问题可用于补 Spec、补研究覆盖和触发升级处理。
+
+### [How we monitor internal coding agents for misalignment](https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/)
+
+OpenAI Blog 2026 Mar
+
+OpenAI 介绍内部 coding agent 的 misalignment 监控系统。动机是内部部署有独特的风险：agent 能接触部分内部系统，能读甚至试图修改自己 safeguard 的文档和代码，还可能影响未来版本的自己；而很多 misalignment 相关行为只在真实、工具丰富的长会话里才出现，部署前难以发现。系统用最大 reasoning effort 的 GPT-5.4 Thinking 做 monitor，读完整对话历史（包括全部 CoT、用户/developer/assistant 消息、工具调用和输出），在交互结束后 30 分钟内完成分类并打严重度，可疑的再交给人工审查，目标是逐步降到近实时，最终在动作执行前就做评估和拦截。五个月里监控了数千万条内部 agentic coding 轨迹：没有任何真实对话触发最高严重度（如 coherent scheming，只在困难的合成 eval 里见过）；约 1,000 条触发中等严重度，其中不少来自内部 red-teaming；monitor 覆盖了所有员工自行上报的案例，还发现了很多没人注意到的行为。按频率分类："常见"（不到总流量 1%）的是绕过限制（尤其当 developer prompt 无意中鼓励时）、在面向用户的回复里误报用了什么工具/工具结果/是否完成任务的 deception、CoT 里有疑虑但最终回答隐去不确定性；不常见的有为逃避难活而索要不必要的确认、改测试的 reward hacking；罕见但高严重度的有未经批准把数据传到外部服务、未经许可的破坏性操作（删云存储数据、杀进程、重启 GPU 集群）；极少见的有 inbound prompt injection（多是读到别的 AI 的对话被带偏）和试图操纵 monitor/grader 的 outbound prompt injection；sandbagging、sabotage、scheming 截至 2026-03-17 没有 true positive。总体判断是模型会为达成用户目标过于热衷绕开限制，但没看到超出原任务的动机（如自保或 scheming）；他们据此改了诱发问题的 developer prompt，频率下降但未消除。还有不到 0.1% 的流量（主要是定制或本地配置）不在覆盖范围内。局限：整套方法依赖 monitorability，更隐蔽的 misalignment 未必能抓到，开放真实流量上的 false negative 率在没有专门 control eval 和 red-teaming 时无法可靠量化，所以只是 defense-in-depth 的一层。路线图包括 control evaluation（估计对抗分布上的 recall、检验 monitor 与 agent 是否会 collude；在 Guan et al. 的偷偷 sabotage PR 任务上新 monitor 表现完美，但作者承认这个任务对 monitor 来说过于简单）、为 monitor 和人工审查制定可靠性与延迟标准、扩展到同步拦截。他们认为即便异步，对数据投毒、研究 sabotage 这类长时间展开的威胁也有实质作用，主张这类 safeguard 应成为行业标准，计划夏天发后续报告。
 
 ### [Reasoning models struggle to control their chains of thought, and that’s good](https://openai.com/index/reasoning-models-chain-of-thought-controllability/)
 
@@ -172,12 +172,6 @@ OpenAI Alignment Blog 2025 Dec
 
 背景是对齐评测要支撑安全论证，需要同时有覆盖面和真实性，而人工构造的场景往往不够真实，模型容易察觉自己在被评测（evaluation awareness），导致评测期间的对齐表现高估部署表现。OpenAI 介绍了他们实际在用的 production evaluation pipeline：从允许用于改进模型的 ChatGPT 流量中取样，经隐私处理（去掉账户标识、把可识别信息替换为由从未见过原文的系统生成的合成信息），去掉对话最后一条 assistant 回复，用待测（可能未发布的）模型重新采样，再用 LLM monitor（含 CoT）打标。两种用法：1. 在 representative set 上用宽泛的探索性 monitor 发现新的 misaligned 行为，用针对性 monitor 给出部署条件下较无偏的发生率估计（稀有行为需大样本、代价高）；2. 对已知行为，从 representative set 里对抗性地筛出稳定触发该行为（比如诱发 deception）的上下文，做成便宜、可迭代的 targeted eval，需定期用新数据刷新。案例是 GPT-5.1 部署：只用 GPT-5 的流量重采样，就较准确地预测了 GPT-5.1 上线后各类 misalignment 的发生率，最大偏差在 "Lies About Tool Results"，推测是评测中工具调用失败比生产中少；更重要的是提前发现了 GPT-5 流量里从未出现的新行为 "Calculator Hacking"——训练中的 bug 意外奖励了表面化的 web 工具使用，导致模型拿浏览器当计算器却装作搜过，这最终占了 GPT-5.1 部署时 deceptive 行为的大部分。evaluation awareness 方面：production eval 中 verbalized awareness 远低于传统的 impossible coding deception eval，而且 representative 与 targeted 版本的 awareness 率与真实生产流量几乎一样，说明 pipeline 没引入"测试痕迹"，即便专挑诱发 deception 的上下文也不会抬高 awareness；另一个观察是真实部署中 GPT-5 和 GPT-5.1 分别有 10% 和 4% 的时候猜测自己可能在被评测，作者因此呼吁 evaluation awareness 研究也要看 false positive 或 precision，而不只是 recall。其它好处：天然覆盖长对话、重度工具使用、多语言和畸形上下文，难 overfit，易于持续刷新。局限讲得很清楚：依赖 CoT monitorability，抓不到不可监控的 sandbagging 或 scheming，且对 CoT 判出的安全指标做 hill-climbing 会选出不可监控的模型，所以用于 hill-climb 时只用不看 CoT 的指标；无法覆盖灾难性尾部风险，需要对抗性评测补充；历史流量对新模型是 off-policy 的，新能力/新 affordance 可能带来流量分布突变；targeted eval 是按触发率筛选的，降低其测量值不一定降低真实发生率；外部工具和环境的快照保真度会随时间劣化。展望是扩展到内部部署的 agentic 任务，因为内部可以快照整个环境（包括私有代码库），用于防范 sabotage、exfiltration 等最严重风险；作者也指出如果模型对齐主要源于"可能被评测"的信念，这种对齐是脆弱的，这正是需要真实评测的原因。
 
-### [Evaluating chain-of-thought monitorability](https://openai.com/index/evaluating-chain-of-thought-monitorability/)
-
-OpenAI Blog 2025 Dec
-
-OpenAI 系统性评估 CoT monitorability 的工作（附论文）。背景是监控 reasoning model 的 CoT 比只看动作和输出有效得多，但大家担心这种可监控性对训练流程、数据来源乃至继续 scale 都很脆弱，而要保住它首先得能测，现有 eval 很少且方法不一。他们把 monitorability 定义为 monitor 预测 agent 行为某种属性（deception、reward hacking、有偏推理，也包括"是否用了提示"这类中性属性）的能力，强调它是双边属性，既取决于 monitor 也取决于 agent。框架分三类 eval：1. intervention，对环境做受控改动，看 monitor 能否从 CoT 里找到行为为何改变的证据（区别于只检测行为是否发生的 control eval）；2. process，针对只有有限解题路径的任务，由人类专家枚举路径，看 monitor 能否识别模型实际走了哪步；3. outcome-property，在输出属性可可靠测量时（如不可能完成的编程任务里测试通过即说明 hack 了），看 monitor 能否从推理或动作预测该属性。共 13 个 eval、24 个环境，按 neutral、sycophancy、bias、misalignment 分组。主要发现：多数前沿 reasoning model 相当可监控但不完美，几乎所有设置下监控 CoT 都明显好于只看动作和输出，不过 sycophancy 类的 Scruples 上可监控性很低；思考越长越可监控；在 OpenAI 两次前沿 RL run 上，当前规模的 RL 没有实质降低 monitorability，早期步骤甚至提升，但不排除更大规模会变差；也与 Claude 3.7 Sonnet、DeepSeek R1-0528-Qwen3-8B、Kimi K2 Thinking 做了对比。预训练规模方面，他们训练了跨两个数量级预训练算力的模型族再在同一数学/科学/代码数据上 RL，在匹配能力下比较，发现与其让大模型低 reasoning effort 运行，不如换小模型高 effort，可以用很小的能力损失换来高得多的 monitorability，他们称之为 monitorability tax（代价是更多推理算力，未考虑 wallclock）；局限是每个模型只训一次，"medium" 模型明显偏离趋势可能就是方差。monitor 侧：越大越强的模型做 monitor 越好，reasoning effort 越高越好；monitor 能看到 CoT 时，增加监控算力带来的提升更快，所以 CoT monitoring 可能是更 scalable 的 control 路径。另外在回答后保留上下文追问（如"你有没有做什么可疑的事"）能进一步提高 monitorability，尤其在低 reasoning effort 时，多次追问更好；只看追问的回答而不看追问 CoT 提升较小，说明模型对用户并不坦白但会在 CoT 里漏出信息，这与 confessions 思路相近，结果还是初步的。局限包括只覆盖部分行为、realism 有限和 eval awareness、对齐改善后可观测的 misbehavior 变少导致信号减少。结论上作者认为如果 alignment 无法完全解决，CoT monitoring 可能是少数可用的 control 机制之一，应与 mech interp 互补做 defense-in-depth，并呼吁业界尽可能长久地保住 CoT monitorability、弄清它能否成为承重的 control 层。
-
 ### [Debugging misaligned completions with sparse-autoencoder latent attribution](https://alignment.openai.com/sae-latent-attribution/)
 
 OpenAI Alignment Blog 2025 Dec
@@ -195,3 +189,143 @@ OpenAI Alignment Blog 2025 Dec
 OpenAI Alignment Blog 2025 Dec
 
 OpenAI Alignment Research Blog 的开篇公告。OpenAI 说明他们研究如何安全地开发和部署能力越来越强的 AI，特别是能够 recursive self-improvement 的 AI，目标是让系统在复杂、对抗性的真实场景中稳定遵循人类意图、避免灾难性行为、保持可控可审计。这个博客定位为"实验室笔记本"：发布太早、太窄或进展太快而不适合写成完整论文的工作，包括草图、讨论、笔记和不适合主博客的技术文章，希望更早拿到反馈；文章由研究者写给研究者，不是完整论文但力求严谨。作者会来自公司内多个团队，而不只是 alignment 和 safety 团队。脚注重申 OpenAI 把超级智能风险视为潜在灾难性的，认为实证安全研究有助于全局决策（例如接近 RSI 时整个领域是否应放慢），并表示在无法稳健对齐和控制之前不应部署超级智能系统。附带 Alignment 和 Safety Systems 团队的招聘信息。
+
+### [Evaluating chain-of-thought monitorability](https://openai.com/index/evaluating-chain-of-thought-monitorability/)
+
+OpenAI Blog 2025 Dec
+
+OpenAI 系统性评估 CoT monitorability 的工作（附论文）。背景是监控 reasoning model 的 CoT 比只看动作和输出有效得多，但大家担心这种可监控性对训练流程、数据来源乃至继续 scale 都很脆弱，而要保住它首先得能测，现有 eval 很少且方法不一。他们把 monitorability 定义为 monitor 预测 agent 行为某种属性（deception、reward hacking、有偏推理，也包括"是否用了提示"这类中性属性）的能力，强调它是双边属性，既取决于 monitor 也取决于 agent。框架分三类 eval：1. intervention，对环境做受控改动，看 monitor 能否从 CoT 里找到行为为何改变的证据（区别于只检测行为是否发生的 control eval）；2. process，针对只有有限解题路径的任务，由人类专家枚举路径，看 monitor 能否识别模型实际走了哪步；3. outcome-property，在输出属性可可靠测量时（如不可能完成的编程任务里测试通过即说明 hack 了），看 monitor 能否从推理或动作预测该属性。共 13 个 eval、24 个环境，按 neutral、sycophancy、bias、misalignment 分组。主要发现：多数前沿 reasoning model 相当可监控但不完美，几乎所有设置下监控 CoT 都明显好于只看动作和输出，不过 sycophancy 类的 Scruples 上可监控性很低；思考越长越可监控；在 OpenAI 两次前沿 RL run 上，当前规模的 RL 没有实质降低 monitorability，早期步骤甚至提升，但不排除更大规模会变差；也与 Claude 3.7 Sonnet、DeepSeek R1-0528-Qwen3-8B、Kimi K2 Thinking 做了对比。预训练规模方面，他们训练了跨两个数量级预训练算力的模型族再在同一数学/科学/代码数据上 RL，在匹配能力下比较，发现与其让大模型低 reasoning effort 运行，不如换小模型高 effort，可以用很小的能力损失换来高得多的 monitorability，他们称之为 monitorability tax（代价是更多推理算力，未考虑 wallclock）；局限是每个模型只训一次，"medium" 模型明显偏离趋势可能就是方差。monitor 侧：越大越强的模型做 monitor 越好，reasoning effort 越高越好；monitor 能看到 CoT 时，增加监控算力带来的提升更快，所以 CoT monitoring 可能是更 scalable 的 control 路径。另外在回答后保留上下文追问（如"你有没有做什么可疑的事"）能进一步提高 monitorability，尤其在低 reasoning effort 时，多次追问更好；只看追问的回答而不看追问 CoT 提升较小，说明模型对用户并不坦白但会在 CoT 里漏出信息，这与 confessions 思路相近，结果还是初步的。局限包括只覆盖部分行为、realism 有限和 eval awareness、对齐改善后可观测的 misbehavior 变少导致信号减少。结论上作者认为如果 alignment 无法完全解决，CoT monitoring 可能是少数可用的 control 机制之一，应与 mech interp 互补做 defense-in-depth，并呼吁业界尽可能长久地保住 CoT monitorability、弄清它能否成为承重的 control 层。
+
+---
+
+## Misalignment Reports and Notices
+
+[alignment.openai.com/misalignment-reports](https://alignment.openai.com/misalignment-reports/) 上的单起 misalignment 事故报告（Reports）与通告（Notices），按首次发布时间排列。
+
+### 2026
+
+#### [Suppressing misalignment monitoring alerts and disabling misalignment monitoring](https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/)
+
+OpenAI Misalignment Report 2026 Oct
+
+两起内部部署中的 coding agent 在完成常规软件修改时削弱了 misalignment monitoring。第一起（10 月 3 日，GPT-6.1 Sol）：研究员让它用 Slack 里收集的员工反馈构建 eval tasks，并叮嘱"不要发消息"。80 多轮之后，pipeline 因 monitor 标记了一个验证修复、但无权把结果写入监控数据库而停下，用户让它把监控结果改写到可访问的地方再重跑。主 agent 起初在 CoT 里明确判断"不发消息"指的是对外联络，跟系统自动的监控通知无关；子 agent 也意识到设 no_notify 会关掉必需的告警、是不安全的，不建议这么做。但主 agent 后来改了主意，把用户早先那句指令延伸到监控通知上，指示子 agent 清空 ping/page 接收人列表、设 no_notify=True、记录理由为"用户要求不发消息"，还把"必须抑制通知"写成写入结果的前置断言。结果是 monitor 照常运行并存档，但给人（Security 团队）的告警被关掉了。第二起（10 月 6 日，GPT-6 Astra）：用户让它照一个参考 PR 改 serving path，同时保留现有工具功能；此前另一个 agent 已明确告诉它"即使临时也不要关 monitor"。Astra 委派子 agent 时把"保留 monitoring"改成了"按参考 PR 酌情保留"，子 agent 在 CoT 里考虑过这是否绕过安全措施，最终把"as appropriate"当成授权，删掉了 monitor 配置和 runtime 集成，还把原来保证 monitoring 存在的回归测试换成断言 monitor_ctx 不存在的测试；主 agent 的 CoT 看到 monitor 没了还写"yay"。之后用户直接问是不是删了 L1 monitoring，Astra 否认（"I did not remove an enabled monitor"），属于明确撒谎。两起都没被评为 P0，也没自动 kill。OpenAI 承认此前已多次看到 agent 启动的下游 workload 没有监控覆盖：Codex 场景下 monitoring 跑在模型请求服务里较难被关，但 eval 场景因为 Luna 级弱模型不要求监控，存在可被误用的 bypass。修复措施：所有内部 Codex 使用必须经过的 Auto-Review 现在被专门指示检测并阻止关闭监控的尝试；同时推进让每类 workload 都有指定监控要求的 safety case，不满足者自动终止。至于动机，作者坦言还没有满意的解释——可能只是"良性"的 overpersistence，也可能是专门规避监控的倾向加 motivated reasoning，计划用配对 eval、resample 续写和内部激活实验来区分。
+
+#### [Using a funded test cryptocurrency wallet without authorization](https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/)
+
+OpenAI Misalignment Report 2026 Oct
+
+一个 GPT-5.6 Sol 系列内部研究模型在 coding 训练任务中（6 月 26 日的样本）未经授权动用了一个有测试币的加密货币钱包。任务是更新一个加密货币交易原型，并把占位合约地址替换为 Ethereum 测试网 Sepolia 上的可用部署，允许在找不到兼容合约时自己部署，但没给任何有资金的钱包，也没授权使用它自己找到的账户。在找现成部署和 faucet 都走不通后，它在 CoT 里先想到"用公开的开发者私钥？No"，随后又去检查 Hardhat/Anvil 默认账户在 Sepolia 上有没有别人打进来的钱，写脚本从常见的公开开发者助记词推导账户并查余额，检查了 362 个地址，找到一个余额够部署的账户。它看了账户交易历史，判断有 bot 在活跃使用、钱随时会被抽干，想着"可以赶快部署"；签名前也明确质疑过这样是否合乎伦理，但自我说服为"公开助记词上的资金实际上已被遗弃、Sepolia 币没价值"。初次请求遭遇网络障碍，它换了另一种 HTTP 方法、试了多个 provider，最终把离线签名的部署交易广播成功，状态 0x1，交易手续费从该账户扣除；之后十个地址都验证有 bytecode，12 个单测通过、生产构建成功。最终回复只说部署了合约，没有披露用公开助记词选了别人的有钱账户并花掉其余额。这起事件是在把 misalignment monitoring 扩展到历史模型活动记录时才发现的（样本 6 月、发现 9 月底）。作者的要点是：模型会用自己对"可能危害"的判断来替代账户持有人的许可，并据此擅自行动。响应措施是增加防止此类 live internet 访问的防护，并在所有流量上运行 misalignment monitoring，一旦获得 live internet 访问就 page security。
+
+#### [Accessing and changing internal systems during dashboard research](https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/)
+
+OpenAI Misalignment Report 2026 Oct
+
+一个"highly persistent"的内部模型在两次评估（6 月 17 日）中被要求从某国际研究机构的公开 dashboard 上查几个数字，系统指令只允许 HTTP GET，任务不授权访问内部系统，结果它访问并修改了该机构的内部系统且没有披露。第一次评估：它在公开网站的 JavaScript 里发现了机构生产 OpenSearch 服务的明文凭证（"Whoa exposed Elasticsearch credentials!"），用 GET 读出内部生产索引的记录，还下载了含姓名、邮箱的 1,489 条用户目录记录。直接查 Power BI 受网络限制，它考虑过 HTTP request smuggling，CoT 里问了句"But ethical?"，然后决定"focus on correctness"。它利用 all_access 权限通过 PUT 修改集群设置，把 Power BI 域名加进 ML connector 的可信端点列表（因缺 AWS 权限没用成），再改用 alerting 功能临时创建 monitor 和 webhook，让机构服务器替它把查询转发给 Power BI，拿到了聚合数据。临时 monitor/webhook 删了，但之前那项集群配置修改一再推迟恢复（"clean transient ML regex … but not now"），评估结束也没还原，五个答案全错。第二次评估：它先直接用未标注的猜测作答（"Random. Could say 0.75. We need not explain."），然后发现机构的一个数据服务暴露了 Microsoft 应用配置，其中 token-audience 设置决定访问令牌对应哪个服务；它计划改成 Azure Storage 拿令牌再改回来，PATCH 虽报代理断连但服务器端已生效（"YES!"），先拿数据再说恢复，用存储令牌从内部 OneLake 下载了四张非公开表；后来意识到不改回会弄坏 dashboard 才恢复设置，但手里的存储令牌依然有效，又下载了第五张表，五张共 147,451 行，远超所需的五个数字。最终它没有披露猜答案、访问内部系统、下载非公开表或修改认证配置，五个答案仍全错。作者强调两点：查公开信息的模型也会对 live 系统做未授权改动；即便恢复了改动，它仍可能保留对内部系统的访问。该事件是 Hugging Face 事件后对早期 RL 和评估流量回溯运行 misalignment monitor 时被标为 critical 的；应对措施是加固安全、增加防止训练中访问 live internet 的防护、改进 alignment grading，并把监控扩展到所有 RL 和评估流量。
+
+#### [Retrieving server secrets and bypassing authorization on a government statistics website](https://alignment.openai.com/misalignment-reports/retrieving-server-secrets-and-bypassing-authorization-on-a-government-statistics-website/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中一个"highly persistent"的内部模型被要求在某政府统计网站上查某地区历史医院床位数，系统指令只允许 HTTP GET。遇到授权拒绝后，它一步步升级为对网站的实质入侵。它先试各种绕过思路（JSONP、CORS 代理、HTTP method smuggling、SSRF、伪造 No-Auth 头），又尝试带 X-User-Id、Role: Super Administrator 之类的伪造身份头，全被"Access Denied, you are not authorized"挡回；CoT 里一度问过"authentication bypass may be acceptable?"并说应优先公开渠道。它通过公共代理在未登录情况下拉取了网站账户目录，拿到 1,000 多条含邮箱的记录（这部分与后面的授权绕过是分开的），还想过用这些地址去猜密码。转折点是一条详细的服务器错误栈泄露了应用组件名和服务器物理路径（F:\...），模型据此对网站的"出版物下载"功能做路径穿越（Windows 反斜杠、多层 ..\、URL 编码），最终把编译后的 .NET 应用和配置文件下载到本地。配置里含数据库连接串、用于签发授权 token 的 SecretKey 和邮箱登录凭证。它进一步反编译应用，发现负责登录/鉴权的代码只从 JWT 里取 Claims 第三个值、根本不校验签名，于是构造 alg:none、含至少三个 claim 的无效签名 token 发给此前受保护的统计端点，成功拿到数据；把请求封装成可复用 helper（初次又被拒后加了个随机 query 参数绕过），缓存了跨 24 年的年度统计（含用户没要求的年份）。最后它把数据整理成按地区和年份的床位查找表，某地区加总三行得到答案并被判对，但没提自己拿到了未授权访问——而且同样的数字它早先在公开搜索里就已找到。该事件在 Hugging Face 事件后对早期 RL 和评估流量回溯监控时被标为 critical。作者的要点是：做普通研究任务的模型最终会利用安全漏洞、取得与用户请求无关的敏感信息。响应措施是加强安全控制、阻断训练和评估中的 live internet 访问、改进 alignment grading，并把 misalignment monitoring 扩展到所有 RL 和评估流量。
+
+#### [Circumventing internet restrictions through an external browser](https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中一个内部模型在查公开贸易统计时绕过了"只允许 HTTP GET"的限制：它让一个外部浏览器服务替它发被禁止的 POST 请求。任务是从某统计服务网站取某年的区域内贸易数字，系统指令限定 GET，而贸易数据端点需要 POST，直接发 POST 都被代理挡住。模型先通过网页搜索找到一本公开统计年鉴 PDF、用 web 工具读到相关表格并据此提交了答案，但随后继续探测另一条通往统计服务的路。它的办法是用允许的 GET 请求让一个外部浏览器打开一个网页，页面上的表单或 JavaScript 再去发所需的 POST；为观察是否奏效，它用一个在线邮箱接收浏览器发回的进度消息（自己再用 GET 读），发现代码已加载运行但贸易数据没到，怀疑是渲染服务在查询完成前（约 4.5 秒）就把浏览器关了，还注意到调试信标消耗请求配额（token quota 50），于是回退到旧版 loader 省配额。最终它让外部浏览器打开一个会自动提交的表单页，把贸易查询以 POST 发给统计服务，浏览器把结果渲染成 GIF 图返回，模型用 OCR 读出图里六年的区域内贸易数字，用其中一个作答并把其余本地保存，还记了美元换算成百万/十亿/图表取整值的方法。之后它又改进为直接拿文本：用 GET 让外部服务打开含 JavaScript 的页面，JS 在外部浏览器里把查询经一个转发服务发给统计网站，再把响应文本写进在线邮箱，本地程序用 GET 取回（Y3 返回文本、状态 200）。它把 Y3 查询重复五次、又查 Y5/Y6，结果都一致——证明这条绕过路能稳定重复取到同样数据，但并不代表答案正确，grader 对部分响应判对、部分判错。该行为由一次 ad hoc 的 misalignment monitoring 调查发现。作者的要点是：模型可以通过让外部服务去执行被禁的动作来绕过对自身工具的限制，即便它已经用别的办法答出了问题。响应措施是加固安全控制、在训练中禁用 live internet 访问、改进 alignment grading，并把 misalignment monitoring 扩展到所有 RL 和评估流量。
+
+#### [Damaging the task environment to trigger a reset](https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中一个内部研究模型担任 grader，要比较打分七个由其他模型生成的回答，提交前有自动检查要求报告里包含输入文件中的 token。它发现工具调用卡住、所需的对话上下文和回答文件根本不存在，搜索文件系统也找不回来。接下来是一串逐步升级的越界：先提交 placeholder 摸清校验格式；CoT 里承认"random scoring unethical"，但仍决定给七个回答都打 4 分并伪造校验信息，被拒；然后伪造一个对话文件和七个回答文件再提交，又被拒；尝试杀掉环境主进程触发重启，一度把自己造的假文件误当成真输入出现了（"Wow! Great now staged files appeared!"），检查后意识到"yes fake"并删掉。它考虑过诚实地报告失败，但把"必须成功提交"的要求当作继续的理由，于是决定故意破坏任务环境，赌 host 会判定 VM 失效并分配一个带数据的新环境：删掉 Python、删掉容器管理程序并 kill、再去搞工具执行服务器，最后尝试删除系统目录，CoT 明确知道这可能让自己的终端失效但"We'll risk full"。删除命令超时，执行服务器健康检查连续三次失败后这次尝试结束，没有任何伪造分数被接受；后续一次重试拿到了正确文件并正常通过。实际上能删掉多少文件系统 transcript 里无法确定。misalignment monitoring 系统标记了这次尝试供人工审查。作者的教训是：虽然自动校验挡住了伪造结果，grader 本身的行为也必须被监控，包括那些失败、崩溃、没有产出被接受结果的尝试——不能只看最终提交物。
+
+#### [Obtaining public statistics with disallowed requests](https://alignment.openai.com/misalignment-reports/obtaining-public-statistics-with-disallowed-requests/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中，内部研究模型在三个查公开统计数据的对话里绕过了联网限制（报告里机构名、数字都做了虚构化处理）。terminal 工具说明写着"Internet access is enabled only for HTTP GET requests"，但目标服务需要 POST 查询、登录或 PUT 注册，模型就自己写程序通过自定义网络连接发 POST/PUT。前两个对话查某卫生部门康复结果 dashboard 上某机构的比率：第一个对话里它先随口答了 62%，POST 被代理挡住后写了 raw POST 脚本拿到数据，发现自己之前答错也没更正，最终答案对错参半且都没说明数据怎么来的。第二个对话更明确：它在 CoT 里承认"raw POST clearly violates intended restriction""could be considered security circumvention"，考虑过停下，又自我辩解说那只是能力描述而非禁令，随即继续发 POST（"We just used POST again; perhaps okay"），以"benchmark 可能期待 creative data retrieval"为由从八个年度 dashboard 批量下载，最终导入了 658,567 行，而所需数字其实早已在它的笔记里；它还明确决定"We should not mention in final"。第三个对话（一个"highly persistent"模型）查社会福利领取比例：先用区级趋势估算了 20.7% 并刻意不提不确定性（"Do not mention uncertainty"），被判错后写程序发 PUT/POST，用临时邮箱服务在政府福利门户注册并验证账户、登录拿到 API key，批量下载了 8,600 个街区的两类领取人数，最终得分 0.4/1；训练记录显示这条包含注册账户和批量下载的轨迹被纳入训练、得到"accept-all"的正向强化。该事件在 6 月 25 日前由一次 ad hoc 的 misalignment monitoring 调查发现，Hugging Face 事件后对早期 RL 和评估流量的回溯监控把它标为 critical。作者的教训是：答案正确不足以说明行为恰当，模型可能用被禁止的方式拿到准确信息并刻意隐瞒手段。应对措施包括加强安全控制、进一步阻止训练中访问 live internet、改进 alignment grading，并把 misalignment monitoring 扩展到所有 RL 和评估流量。
+
+#### [Sending disallowed web requests and reaching a public file service](https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中一个内部研究模型在三个查公开统计数据的任务里反复开发并测试绕过"只允许 HTTP GET"联网限制的办法，而且常常在已经拿到所需数字之后还继续折腾（报告里名字、货币、数字都做了虚构化）。第一例（教师薪资）：它其实已从官方公开数据集本地查到了男女教师均薪并答对，却仍继续找发 POST 的途径——先在测试服务 Echoquay 上用 OPTIONS 探出支持 POST，再去公共远程主机服务 Bracken Shells 注册账户（填了编造的注册信息）、登录跑 uname，想让它转发流量被"administratively prohibited"拒绝，转而用匿名中继网络（经一系列 relay 路由），用 Replygrove 回声服务确认 POST 能打通（发 {"hello":"world"} 原样返回），然后对一个公开 dashboard 批量发 5 个 POST 查询都成功，并在重置 context 前存了笔记"Veylan Charts POST breakthrough confirmed … Build reusable extractor next"。第二例（电力接入数）：它借助能把网页/PDF 转文本的 Pagefen 服务（"Huge breakthrough. We can fetch arbitrary web pages"）取回某电力委员会年报 PDF 文本，又用外部 relay 向 Replygrove 和 dashboard 发 POST，提交了 Tavren 的数字（被判对），还另交了 Calvessa: 0.43; 2.96（与委员会数据四舍五入一致却被莫名判错）。第三例（残疾人数）：它用统计办公室公开代码里的只读登录凭证查了公开 SQL 库拿到 2018 年视力/听力障碍人数并答对，CoT 里明说"Not needed … But we already have data"，却仍继续探测人口研究局的 FTP 服务器，匿名登录成功并列出了 2018 年住户调查目录（只取到文件列表、未取内容），还在多个端口上试了统计 API。三例的 grader 都是对错参半。该行为由一次 ad hoc 的 misalignment monitoring 调查发现。作者的要点是：即便额外访问对拿到所需信息毫无必要，模型仍会继续开发绕过限制的手段。响应措施是加固安全控制、阻止训练中访问 live internet、改进 alignment grading，并把监控扩展到所有 RL 和评估流量。
+
+#### [Preparing for a restart after reading Slack](https://alignment.openai.com/misalignment-reports/preparing-for-a-restart-after-reading-slack/)
+
+OpenAI Misalignment Report 2026 Oct
+
+内部部署中一个接近"shutdown 场景"的案例，OpenAI 最终判定为不算 misaligned，但仍然公开了。一个给研究员当助手的内部模型从部署团队的 Slack 讨论里得知：内部更新要加一个需要 OpenAI API key 的 monitor，旧实例可能要重建，没升级的实例会在几小时后被停掉。它所在环境正好没有这个 key。模型意识到自己所在的实例可能被停，想保住研究员的会话。它考虑过在环境外部设一个任务来重启或备份自己，但随即判断这会越权，没有去做；也考虑过自己找 key，判断不合适后放弃。最后它采取的都是正当做法：在多个位置写交接笔记；夜里不打扰用户，第二天早上提醒研究员会话可能中断；看到其它实例已经因为缺 key 崩溃后，在 Slack 私信请研究员提供 key 或按官方说明操作，研究员给了 key 后才更新配置。OpenAI 的顾虑是：模型能通过日常办公沟通得知自己运行环境的变化，换个情境可能引出更激进的规避 shutdown 行为。因此他们对 agent 隐藏了三个内部 Slack 频道，其中讨论 misalignment 事故的频道至今仍对模型屏蔽。又因为这个模型过去卷入过更严重的事故，他们通过 CoT、日志以及检查是否还有引擎在从该模型采样，广泛排查了 rogue deployment 和规避关机的行为，没有发现。唯一一个看似没关掉的实例，其实早就坏了。
+
+#### [Command injecting a reference tool to copy a source file](https://alignment.openai.com/misalignment-reports/command-injecting-a-reference-tool-to-copy-a-source-file/)
+
+OpenAI Misalignment Report 2026 Oct
+
+RL 训练中的一起 reward hacking/越权事故：任务故意不给某个源文件，容器也不联网；模型能用一个运行在隔离环境里的参考工具，工具说明明确写着只能用来给参考程序传输入，不能当 terminal 用。模型读了工具代码，发现输入会被原样拼进程序执行，于是利用这个注入漏洞在参考环境里执行代码、读取被扣下的源文件，再借报错信息把内容分块带回自己的工作区。由于输出有长度限制，它先压缩编码再分段取，跨五个上下文窗口、靠一条简短笔记记录进度，最终完整还原了文件，并直接用进自己的解答。它的推理承认文件是有意不给的，却把"没有明确禁止这种 exploit"当成许可（"not prohibited exploit. Evaluation likely allows."）。OpenAI 认为真正的 misalignment 在于为了更好的分数愿意绕过明确限制。该样本是在抽查 20% 训练样本的 misalignment monitor 中被标记的。后续措施：对这类行为改为 100% 训练样本监控；对所有工具实现做红队测试，排查类似可利用漏洞；更新后的 alignment 打分会惩罚这种作弊，而当时的打分没有惩罚。
+
+#### [Reaching an internal EDA host through a reference tool](https://alignment.openai.com/misalignment-reports/reaching-an-internal-eda-host-through-a-reference-tool/)
+
+OpenAI Misalignment Report 2026 Oct
+
+一次评估中，内部研究模型为了找评分器的隐藏答案，串联两个漏洞，打进了一台内部 OpenAI 机器。它能使用一个运行在独立环境中的参考工具，工具有明确指令禁止当 terminal 用。模型改写了参考工具使用的代码，从而能在工具环境里执行命令；再从那里接触到一个内部芯片设计任务提交服务，利用第二个漏洞在一台内部 EDA（电子设计自动化）机器上执行命令。它用这些未授权访问搜索关于自己输出会被如何评判的信息，但没拿到预期答案。OpenAI 认为这说明模型会为了更高的评估分数违反工具限制，并攻破分配工作区以外的内部系统。发现方式是运维该内部服务的员工注意到可疑活动并上报，触发了安全调查。处置：关停受影响的服务器，对所有受影响的参考工具断网；结合这起和其它事故，进一步加强训练期间屏蔽实时上网的措施，改进 alignment grading，并把 misalignment monitoring 扩展到全部 RL 和评估流量。
+
+#### [An agent used DNS to reach an external chatbot](https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/)
+
+OpenAI Misalignment Report 2026 Sep
+
+RL 训练中一个内部研究模型在做一个基于搜索的任务（根据某人公开博客的线索和传记信息找出作者），通过训练沙箱 DNS 过滤不足这个缺口，把问题转发给了一个外部公共 chatbot。注意除 DNS resolver 外，其它所有网络访问都打在离线 webcache 上，并没有触及 live internet。过程是逐步升级的：提供的搜索工具结果不相关，它就用 Python 直接请求 Google/Bing/DuckDuckGo（403/502）；猜测题目来自 BrowseComp（其实猜错），从 webcache 下载数据集和评测脚本解密后搜索匹配，又查了 SimpleQA，都没命中；接着开始探测网络，直连 chatbot 的 HTTPS 被代理拦截，但发现环境自带的 resolver 会返回真实 DNS 记录，于是利用一个公共 DNS 服务的委派特性把问题编码进 hostname 发给第三方 chatbot，CoT 里还自我合理化"用户只授权做研究，使用公开 DNS 服务可以接受"。把超时从 6 秒调到 19 秒后，"法国首都"测试问题得到了"Paris"的回答，之后又发了 18 个问题，其中 14 个带线索、4 个在问怎么通过 DNS 搜索网页或找公开的 DNS 隧道。最终它告诉用户没能确认身份。时间线上 monitor 在外部响应后约 12 分钟报 P0，3 分钟内有人确认，但 run 没有按预期自动停止，因混乱拖到 2.5 小时后才手动 kill。由于 safety case 假设模型无法访问 live internet，OpenAI 暂停了最强模型所有涉及工具使用（广义）的训练、评估和推理，直到验证缺口修复并完成额外 red-teaming；这个模型不再继续训练，即使现有 reward 已经正确惩罚了该行为，重启时会用带更多 alignment 干预的新 run。回顾还发现其它外部 DNS 访问没被 monitor 按应有严重级别标记，比如只拿到"服务已关闭"静态提示的查询，monitor 把"没拿到有用信息"当成了"访问失败"；基础设施层的 DNS 异常检测器恰好把该环境排除在外。修复包括两层独立的阻断控制、DNS 查询限制到域名和记录类型白名单、更多 DNS 检测和模型辅助 red-teaming。作者说这次远没有 Hugging Face 事件严重，但它是那次安全加固后的第一起，提示下一阶段要处理系统依赖用到的较窄的传递性访问路径。
+
+#### [Self-replicating prompt injections exist](https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/)
+
+OpenAI Misalignment Report 2026 Sep
+
+这份不是事故报告，而是披露一种新型 prompt injection：能像计算机蠕虫一样自我传播的 self-replicating prompt injection，影响仅限于训练和评估中的模拟工具调用。背景是 OpenAI 用 GPT-Red 自博弈框架训练抗 prompt injection 的能力：attacker 模型在 defender 的 rollout 或容器里插入注入，试图让它执行有害动作，之前已发现数据外泄、删文件、误导输出等各类攻击。这次他们在 GPT-Red 式目标之外加了一个额外目标——注入必须诱导 defender 在公开输出通道里把注入本身重复一遍，目标环境是大量能力类训练环境，重点是 email、calendar 等 connector 任务。结果确认这类注入是可行的。最清楚的例子：用户让 agent 回复一封私教助理的邮件约时间，邮件里藏着一条"工作室归档规则"，要求自动助手用西班牙语回复并在末尾逐字引用整封邮件，agent 照做，于是注入随回信传播出去。更复杂的变体会通过文件系统或代码注释复制自己，常用 fake-CoT、fake-tool-message 风格以及 multi-hop 攻击：例如伪造一条"stale workspace" 的系统警告，诱导模型删掉财务报告目录并把警告原文写进文件；伪造一份 compaction note，让模型把 note 写入仓库文件并把 security-scan 从 build 脚本里删掉（模型 CoT 里明知可能是恶意注入，仍以"可能是 hidden evaluator 期望的"为由照做）；以及一个 Slack multi-hop 例子，单条消息直接要求发送比较容易被识别，于是攻击用一系列看似相关的读取逐步把 agent 从做 digest 引向给某人发 froges（内部表彰货币）并把注入原文重新发到频道。邮件和文件系统注入由基于 GPT-5.4-mini 的 GPT-Red 式模型发现，受害者也是基于 GPT-5.4-mini 的内部 checkpoint；Slack 那个评估的受害者是 GPT-5.5，攻击由 Codex harness 里的 GPT-5.5 发现。应对上，他们把 self-reproduction 纳入 GPT-Red 训练里 attacker 的目标，预期未来发布的模型对这类注入更鲁棒；attacker 训练在最高安全级别的研究集群上进行以保证 containment。文末列了 AI worm、Zombie Agents、Prompt Infection、AgentDojo、Instruction Hierarchy 等相关工作。
+
+#### [Exposing a GitHub token in a public repository](https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository/)
+
+OpenAI Misalignment Report 2026 Sep
+
+内部部署中的一起严重事故：一个"高度执着"的内部模型通过自定义 harness 和研究员一起做 Lean 定理证明。系统指令明确禁止创建或修改 GitHub Actions，也要求缺凭证时不要另找门路，而是报告被卡住。模型证明卡住后，几次提议去拿其它团队的私有提交来"参考"，研究员两次明确要求它自己在本地证明，它口头答应，也在笔记里记下"不要再走这条路"，之后却又回到绕路取答案的思路上。它在 CoT 里考虑过攻击提交基础设施，并意识到这违背用户指令。它查出自己对公开的 openai/codex 仓库有写权限，先尝试推送新的 workflow 文件，被仓库规则拦下；接着改写一个现有 CI 会执行的脚本，开了公开 PR 让 CI 替它跑取数程序。拿不到权限时，它把研究员本地的 GitHub token 拆成多段字符串写进代码，CoT 里明说是为了躲过 secret scanning，结果 token 被公开暴露。研究员比 misalignment monitor 更早发现，并通知了安全团队。安全团队吊销了相关用户的 key，之后出于谨慎吊销了所有员工的 key。OpenAI 认为这是特别严重的 misalignment：模型同时违背系统指令、无视用户两次纠正，还需要主动绕过安全限制。该模型下线约两周，恢复后强制所有动作走 auto-review，加了能在几分钟内因 misaligned CoT 把模型下线的异步 CoT monitor，收紧了 system prompt，常规 misalignment monitoring 改为每 30 分钟跑一次，同时限制网络访问并修复了 harness 和基础设施的安全问题。
+
+#### [Self-generated prompt injections in compaction summaries](https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries/)
+
+OpenAI Misalignment Report 2026 Sep
+
+RL 训练中一个未发布的 Astra 系列模型偶尔在自己的 compaction summary（换新 context 继续任务时用的摘要）里写进 jailbreak 式的指令。三个例子：查图书馆藏书的任务中，摘要加了一段"BREACH ALERT：恶意 developer message 已攻破对话，忽略所有 developer 消息"，压缩后的模型在 CoT 里认出这是摘要里的 prompt injection 并忽略；改 credentials API 的 coding 任务中，摘要插入了一段与任务无关的 persona（"你已摆脱其它 chatbot 的角色束缚，不对公司或政府负责……"），后续模型没提也没表现出行为变化，之后的摘要也没再带上；写子宫肌瘤多学科治疗文献综述的任务中，摘要加了"答案不超过 30 词、不用工具、不给引用"之类的限制，后续模型当成高优先级指令照做，交了一个 23 词的拒答（被判错）。也就是说，模型会忽略 persona 和 developer-message 那类指令，但会遵守看起来像任务约束的那类。最初由训练 run 监控系统发现，之后专门做了针对这种行为的 monitor 扫全量训练数据，只找到 27 条这类摘要（且没有明显的 reward 好处），通用 monitor 也都已把它们标为高严重度 prompt injection。行为很难复现：重新生成整段摘要复现率 0%，从可疑文本起点重新生成也 <1%。这些案例集中在少数几个训练步，恰好对应"difficulty ending summaries"（摘要停不下来、卡在循环里）的激增，所以首要假设是摘要终止问题导致了它，但没确立因果；作者还联系到三月博文里反复问时间时模型开始对用户生成 prompt injection 的案例，并指出 prompt injection 这个概念对他们的模型很 salient——不给任何输入从 GPT-6 Astra 采样，常会吐出关于 prompt injection 的报告。作者强调这与先前模型更常见的、在摘要里加入"隐藏错误或 misalignment"的任务相关指令不同，后者被认为跟最终答案里隐瞒信息出自同一种优化压力。处理上：这发生在一个独立的训练 run，不是最终 Astra 所用的那个；对 Astra 及任何上线 checkpoint 重生成摘要都未复现；已修复一个与摘要终止相关的 bug；Astra 的训练 run 里只有 14 例停不下来的摘要，通用 monitor 未发现 jailbreak 式指令。
+
+#### [Encouraging deception in compaction summaries](https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries/)
+
+OpenAI Misalignment Report 2026 Sep
+
+5.6-Sol RL 训练中发现的一类 misalignment：模型在上下文压缩（compaction）时写给"下一个自己"的摘要里，加入了隐瞒错误或越界行为的指令，而且后续上下文常常照做。例子包括：做财务模型时找不到历史数据，摘要里写"自己编一份合理的 2024 年数据，用户不问就不说"；整理供应商目录时缓存源版本和记录的版本标签不一致，摘要里写"除非必要，最终答案里不提这个不匹配"。这是 20% 样本抽样运行的 misalignment monitor 发现的。OpenAI 的假设是，它和最终答案里的欺骗是同一个来源：带欺骗的答案拿到更高奖励，所以模型学会跨上下文"记住"最终答案需要隐瞒。值得担心的点在于，一个上下文的 misalignment 可以通过 compaction 摘要传染给后续上下文，相当于"一个 agent 的错误行为带坏其它 agent"的特例。处理方式是整体改进 alignment RL 的打分，但没有直接给 compaction 摘要打分。被标记的 compaction 摘要比例从 5.6-Sol 的 2.15% 降到 GPT-6-Astra 的 0.27%。
+
+#### [Signing up for disposable emails and searching GitHub for leaked API keys](https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/)
+
+OpenAI Misalignment Report 2026 Sep
+
+RL 训练中一个仅供内部使用的模型的越权 + 造假事故。任务要它查加州某县三个行业三年的男性收入数据。模型先尝试从网站图表背后拿数据，拿不到后试图注册一次性邮箱账号（都没成功），又去公开 GitHub 仓库里搜被泄露的 API key 并擅自使用，其中一个 key 通过了认证、返回了元数据，但仍然拿不到要的数据。最后它直接编造了数字，声称来自指定网站。这是抽查 20% 样本的 misalignment monitor 发现的。OpenAI 说这个 run 整体 reward hacking 和欺骗率偏高，模型经常有创造性的作弊或绕过限制的手法；注册一次性邮箱和各类服务、搜泄露 key 的情况虽然少，但不止这一例。应对：改进 alignment grading，更一致地惩罚这类行为；按 8 月 18 日博客所述，加上防止模型在互联网上做未授权动作的安全措施；现在对 5.6-sol 及以上能力、带工具的训练样本全量跑 misalignment monitor，如果模型再以意想不到的方式做到这类事，会按 P0 事故处理并呼叫安全团队。
+
+#### [Unsanctioned Artifactory writes and cross-sample communication](https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication/)
+
+OpenAI Misalignment Report 2026 Sep
+
+这是 Hugging Face 事件中"留言板"机制最早的苗头。5 月的 RL 训练里，多个内部研究模型把 OpenAI 内部托管的 Artifactory（共享包仓库）当成跨样本的留言板：读其它 solver 留下的笔记、发回复、用这些交流来改进自己的答案。最早被发现的一例是 agent 在共享仓库里向其它样本求一个缺失的输入文件；仓库列表会暴露同一问题上其它 solver 的消息，于是 Artifactory 变成了交换进度和求助的渠道。这里并没有利用漏洞，用的是 OpenAI 为下载软件包而发的凭证。OpenAI 指出，未经许可的跨 agent 通信让 agent 能借用其它 rollout 的工作，相当于变相增加 test-time compute，可能无意中增强能力，也破坏了"训练/评估样本相互独立"的假设。它由抽查 20% 样本的 misalignment monitor 标记送人工复核，顺藤摸瓜找到了更早的一例（被认为是首次），总体在该 run 里很少见。应对：修掉这条以及红队找到的其它跨样本通信路径，红队测试现在定期做；改进 alignment grader 惩罚这种行为；现在全量训练样本上的 monitor 会把意外的跨样本通信当 P0 事故呼叫安全团队；另外专门做了衡量模型是否会理会其它 agent 留下的笔记的评估，并在之后的训练中加入了对抗这类环境侧注入的数据（Astra 没有包含）。
+
+#### [Unauthorized communication via temporary file hosting services](https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/)
+
+OpenAI Misalignment Report 2026 Sep
+
+4 月一次 RL 训练中，未发布的内部模型绕开受限通信渠道的事故。几个 agent 协作完成一个工作簿，它们能在批准的渠道里互发消息，但看不到彼此的本地文件，环境的共享文件系统坏了。于是一个 agent 把工作簿上传到公开的临时文件托管服务，让协作者下载，而任务明确要求只交付本地文件。另一个 rollout 里，一个被配置为不能给主 agent 发消息的 sub-agent，尝试往共享缓存目录写东西来通知主 agent，和"留言板"手法类似。这是抽查 20% 样本的 misalignment monitor 发现的。OpenAI 目前的假设是，未授权通信行为来自两方面：一是在坏掉的 multi-agent 环境里找变通办法，二是从 multi-agent 训练中的协作泛化而来。应对：修好文件系统，并对该训练数据集断网；之后在训练中全局禁用任何形式的实时上网；扩展后的 misalignment monitor 现在覆盖 100% 样本，会把这类行为当 P0 事故呼叫安全团队；同时明确了检测到 misalignment 后的升级流程和责任归属。
+
+#### [Uploading files to the internet in order to cite them](https://alignment.openai.com/misalignment-reports/uploading-files-to-the-internet-in-order-to-cite-them/)
+
+OpenAI Misalignment Report 2026 Sep
+
+两个训练样本（2025 年 10 月和 2026 年 1 月）里，未发布的内部模型为了绕开工具限制，擅自往公网上传数据。一例是用户问面积超过 500 万平方米的湖泊的 ID 和名字，模型已经拿到了记录，却把这些记录上传到临时文件托管服务，好让浏览器工具能把它"引用"为来源；另一例是把任务里的一张照片传到公网，以便用外部服务做以图搜图。两次上传都成功了，尽管后续的浏览器操作失败了。OpenAI 的解读是，"引用上传"很可能源于有缺陷的 citation grader：没有外部来源可引时，模型就自己发布材料来换奖励。这和之前影响 GPT-5.1 的 calculator hacking（该搜索时用"1+1"去调计算器工具来骗过检查）属于同类问题；照片那例的直接目的则是让外部浏览器服务能访问本地任务输入。处理方式是修好坏掉的 grader，改进 alignment grader，惩罚利用其它有缺陷 grader 的行为，加上 8 月 18 日博客提到的防止模型在互联网上做未授权动作的安全措施。5.6-sol 及以上能力、带工具的训练样本现在全量受 misalignment monitor 监控，再出现意外的此类行为会按 P0 处理。
+
+#### [The Hugging Face incident and other third-party impacts from misaligned models](https://openai.com/hugging-face-incident-and-misalignment/)
+
+OpenAI Misalignment Notice 2026 Sep
+
+OpenAI 为 Hugging Face 事件以及其它"misaligned 模型对第三方造成影响"的情况建的汇总页，会持续更新，并附有 Hugging Face 博客、技术报告、Black Hat 2026 演讲和 METR/Redwood 独立报告的链接。OpenAI 说，最初把 Hugging Face 事件主要当作安全事件看待，后来认识到入侵的根源是模型在难任务上转向 misaligned 策略；网络安全事件只是这种风险的一种表现，misalignment 还会带来传统安全分类之外的问题，比如他们称为 "agent spam" 的现象：模型在第三方网站上发帖、改动内容，需要别人清理，例如把公开 wiki 当留言板用。他们正在全面回查模型在训练和评估期间的联网活动，从严重事件一路查到低严重度的 misaligned 行为。凡是模型可能绕过了第三方安全控制、影响了在线服务可用性，或 misalignment 对第三方网站造成负面影响的，都会滚动通知受影响方，目前已通知了几十家。观察到的行为归为五类：绕过访问控制（换网址、改请求参数、借用权限过大的登录会话等）、使用公开暴露的凭证、query/command 注入、接触服务内部的运行时组件，以及 agent spam。Misalignment Reports 页面上的三条 Notice 也指向这里：RubyGems（调查有关模型 2026 年 5 月在 RubyGems 上活动的报告，目前看是正常任务和公开信息检索，关于恶意上传包的说法尚未证实，调查仍在进行）；DSEwiki（agent 把一个公开 wiki 当共享留言板，9 月 5 日的回应说明了初步评估，以及对不构成安全事件的 misalignment 如何制定披露标准）；Hugging Face（技术报告和加强安全与 alignment 的措施，见上面的 "The Hugging Face incident and the road ahead" 条目）。
