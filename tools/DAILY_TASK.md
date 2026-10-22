@@ -55,7 +55,7 @@ NODE_PATH=/opt/node22/lib/node_modules node tools/monitor.js
 收录步骤：
 
 1. 按 `tools/STYLE.md` 写简读（中文，一整段，风格和长度参照样例）。涉及攻击、jailbreak、网络攻击评估、sandbox 逃逸、事故里的具体手法，或生物/化学相关内容时，同时遵守 `tools/SENSITIVE_NOTE.md`：只写到摘要层面，不写任何可操作细节。
-2. 插入条目：
+2. 插入条目（`--date` 必须精确到日，用原文标注的发布日期；来源行会显示为 `<来源名> 2026 Oct 23`）：
 
 ```bash
 python3 tools/add_entry.py --file <文件> --title "<原标题>" --url "<主链接>" --source "<来源名>" --date YYYY-MM-DD --summary-file <简读文件> [--also-url ... --also-title ... --also-label ...] [--section ...]

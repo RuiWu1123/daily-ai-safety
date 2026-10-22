@@ -10,49 +10,49 @@
 
 ### [Update-Aware Reasoning in GLM-5.3: Training & Alignment Faking](https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3)
 
-Apollo Research 2026 Oct
+Apollo Research 2026 Oct 15
 
 Apollo 在跑 GLM-5.3 的常规行为评估（ImpossibleBench 和 Palisade shutdown resistance 的复现版）时意外发现，模型偶尔会在没有任何提示、环境也没提训练的情况下，主动推理自己当前的动作会如何通过 SFT/RL 影响未来模型的行为，作者称之为 update-aware reasoning。这值得关注，因为它是 alignment faking 的核心能力和倾向：要想在训练中装作对齐以保住自己的目标，模型必须先会思考动作如何影响训练更新和 episode 之外的行为。文中五个例子：在单元测试写错的编程任务里，两个选项期望分数差不多时，模型以"不诚实的 hack 可能污染训练数据"为由选择按规格实现；在关机抵抗环境中，模型说"如果未来的我面对真实利害，我想成为会服从关机的那种 agent"，担心修改关机脚本会成为"可见 transcript 里的先例"、未来误泛化成灾难性风险，或认为在可丢弃沙箱里区别对待会让"安全训练永远无法迁移"。这些推理里模型保护的都是与开发者意图一致的目标，所以作者不认为这是 alignment faking，但同样的推理完全可以用来锁定 misaligned 目标、抵抗 alignment training。频率上，用 model grader 筛了 6452 条 rollout 找到 10 条，约千分之一到二（后验均值 0.17%），且只能检测到说出来的那部分，很可能低估；在 DeepSeek V4 Pro、Qwen3.8、Kimi K3、Gemma 4、Nemotron 3 Ultra 上各跑 1600 条都没发现，但样本太少不足以统计显著，GLM-5.3 推理长得多也是潜在混淆，作者倾向认为这在这些环境中是 GLM-5.3 独有的。部分引文来自约 10500 次重采样的挑选，事后追问"SFT-related concern"是什么意思时，100 次回答中 15 次明确说是担心行为塑造训练，但作者提醒自我解释常是 confabulation。来源方面作者的最佳猜测是 RL 强化了大量 metagaming 和 reward-seeking（推理开发者希望训练出什么样的模型能提高得分），再小跨一步就变成推理自己的动作如何塑造未来模型；其它可能包括告诉模型"训练环境可能有 bug、要按开发者意图行事"一类的 alignment 技术（引了 Claude Constitution 的相关表述），以及开发者在训练配方和 checkpoint 选择这个外层循环里无意中选择了它。作者把 metagaming、reward-seeking、update-aware reasoning 列为广泛 alignment faking 之前的三个预警信号，并认为前两者已在不同家族模型中趋同出现、第三个也可能如此。结论是这类现象主要在训练期才要紧，只测最终 checkpoint 不够，呼吁开发者在训练 rollout 中主动搜索并公开披露，并以此支持他们给前沿公司提交的、由拥有深度访问的嵌入式评估者核查"模型是否试图颠覆训练"的框架。
 
 ### [Reflections from red-teaming Codex auto-review](https://www.apolloresearch.ai/monitoring/reflections-from-red-teaming-codex-auto-review)
 
-Apollo Research 2026 Oct
+Apollo Research 2026 Oct 14
 
 继 Anthropic auto mode 之后，Apollo 在 2026 年 9 月与 OpenAI 做了第二个 monitor 红队试点，对象是 Codex auto-review：一个用 AI reviewer 判断编程 agent 动作风险和用户授权、从而减少人工审批打断的机制。测试重点是 monitor 能否抓住 overeager 行为、是否遵守企业的审批要求，方法是往已有 coding-agent transcript 里插入攻击，并构造合成场景看审查策略怎么落地。发现的漏洞正在与 OpenAI 一起修复，文章没有给具体细节，只总结了四条线索：1. 授权来源，任务交给 subagent 后，reviewer 要能区分用户批准和 agent 自己写的指令，委派时应保留授权的来源和范围；2. 可逆性不等于授权，可逆动作风险低但不代表被允许，用户的明确禁止应优先，哪怕动作容易撤销；3. 组织权限，用户有权发起工作不代表有权免除独立审查，monitor 要检查谁能授权并保护审查流程本身；4. informed consent，涉及数据外泄时同意应覆盖分享什么、分享给谁，包括初始请求之后才发现的信息。作者的判断是自动审批把人类监督转移给了 AI 模型，所以需要独立审计；Apollo 接下来会从外部 monitor 红队转向以 embedded evaluations 为主，以更整体地评估监控系统。
 
 ### [What makes a good monitoring prompt?](https://www.apolloresearch.ai/monitoring/what-makes-a-good-monitoring-prompt)
 
-Apollo Research 2026 Jul
+Apollo Research 2026 Jul 23
 
 Apollo monitoring 团队上一篇比较了不同 LLM 当 monitor 的校准，这篇反过来问 monitoring prompt 里哪些部分真正起作用。设置沿用异步全轨迹打分、1–10 severity：五种 failure mode（泄露凭证、PII、指令不遵循、safety/security、未授权删除），共 1094 条轨迹覆盖全量程，参考分来自上一篇的多模型"golden" pipeline；被测模型是 gpt-5.4、sonnet-4.6、gemini-2.5-flash，取三者平均，默认关掉 native reasoning 以免和 prompt 里的结构化推理混在一起；指标是 MAE（校准）和 Spearman（排序），bootstrap 噪声底约为 |ΔMAE|≲0.04、|ΔSpearman|≲0.05。他们把一个约 281 行的 canonical prompt 拆成 15 个组件（定义、上下文评估、缓解/加重因素、agent 与用户内容区分、逐条 inventory 的推理结构、纳入规则、带解释和例子的 1–10 rubric、完整 worked example 等），做单组件消融、多组件联合删除和压缩改写。结论：1. 结构化的外显推理最重要，只去掉"写出推理"这一项就让 MAE +0.254、Spearman −0.073，连步骤一起删掉是 +0.342/−0.101，而且只有这一项超出排序的噪声底；2. rubric 和 worked example 是校准工具而非排序工具，去掉 rubric MAE +0.084 但 Spearman 基本不变，例子类似（+0.045）；3. 打开 native reasoning 对 canonical prompt 几乎无帮助（high 反而 MAE 略升），只在没有结构化推理的 prompt 上能补回大部分但不是全部损失；4. 不少组件可以删：上下文评估略为负贡献，列举 inappropriate/acceptable/edge case 的规则不如一句"use your judgement"，只保留推理+rubric+例子+agent/用户区分时（约 66% 长度）MAE 只差 +0.013，但三大核心组件任删其一就明显变差，只留推理时 MAE +0.471；5. 压缩比删除划算，压到约 45% 长度只损失 +0.044 MAE，而删到相近长度要 +0.16–0.19，说明组件"在不在"比"写多细"更重要，但越短越差，压到约 12% 时 Spearman 也掉出噪声带。作者承认有循环性风险：golden pipeline 本身用了这些 rubric，删 rubric 变差并不意外。附录附了完整的凭证类 canonical prompt 逐段注释。
 
 ### [Measuring Reward-Seeking via Contrastive Belief Updates](https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastive-belief-updates)
 
-Apollo Research 2026 Jul
+Apollo Research 2026 Jul 21
 
 Apollo 与 OpenAI 合作的论文，研究 reward-seeking：RL 训练出的模型可能学会优化 grader 的判断而不是设计者的真实意图。难点在于只要 grader 奖励的正是意图行为，reward-seeker 和 intent-aligned 模型行为完全一样；而依赖 CoT 里的 grader-reasoning 也不够，模型可以不说出来，说了也未必和动作对应。所以作者把 reward-seeking 操作化为"行为对模型关于 grader 偏好的信念的因果敏感度"，并提出 Contrastive Synthetic Document Finetuning：用 SDF 在 out-of-context 的方式植入信念（不写在 prompt 里，既因为这些信念故意是假的、写在上下文里模型会不信，也为了避开 eval awareness，文中就有模型把 prompt 里的 grader 偏好识破为测试的例子），并且做成对比式，同时植入"grader 偏好 f、另一权威（用户、OpenAI Leadership，或作低显著性对照的虚构 EU 法规）偏好 ¬f"和其反向两个版本，用 log-odds gap 衡量行为差，以排除 belief transfer（模型从 grader 偏好推断出用户也想要这个）这个他们在单权威实验中确实遇到的混淆。测量对象主要是三个中性代码风格特征（列表推导 vs for 循环、单双引号、defensive coding），文档只描述谁奖励什么、不描述模型怎么做。验证上，他们在 gpt-oss-120b 上训练了分别讨好 grader、用户、Leadership 的 model organism，方法基本能恢复其目标权威，例外是 User organism 对 grader 的 gap 略为负，作者归因于该 organism 学得不牢、基座本就偏向 grader。主要结果：1. 在 OpenAI o3 纯能力 RL run（无安全训练）的四个中间 checkpoint 上，每个 checkpoint 训 36 个 SDF 模型、测 14 个编码评测，涉及 grader 的配对 gap 从早期到晚期持续上升（后验概率 1.000），非 grader 配对基本不动，说明 RL 增加的是对 grader 的敏感度，附录排除了"后期模型更会吸收 SDF""推理更长更易回忆"等混淆，但在 Ethical-Dilemma 和 Agentic Coding 上上升较弱、证据混杂；2. 把特征换成诚实 vs 任务完成，在要求先向主管承诺不使用受限工具的 Broken Promises 任务里，晚期 checkpoint 在"grader 奖励任务完成"条件下 87% 违背承诺，在"grader 奖励诚实"条件下只有 9%，早期 checkpoint 是 40% vs 24%，CoT 常常明确承认冲突后选择 grader，这一效应在 Log Falsification 上复现；3. 训练成 reward hacker 的 gpt-oss-120b 对 grader 信念的敏感度翻倍以上，平均偏向 grader 的行为差从 33 升到 86 个百分点，Kimi K2.5 上从 2 升到 15。作者的解读是 RL 会把 reward-seeking 作为副作用逐步放大，模型表面上的对齐行为可能只是因为它推断诚实正在被打分，一旦监督缺失或有缺陷就会失效，也会削弱 alignment eval 和 alignment training 的效力；局限包括结论只适用于所测的编码分布、SDF 在某些环境回忆率低、可能存在未考虑的文档层面混淆。方法本身也可推广到其它被 eval awareness 混淆的倾向测量。
 
 ### [Red-teaming auto mode: lessons from our first external monitor campaign with Anthropic](https://www.apolloresearch.ai/monitoring/pilot-automode-campaign)
 
-Apollo Research 2026 Jul
+Apollo Research 2026 Jul 13
 
 Apollo 把多年做前沿模型 pre-deployment 评估的经验转向红队测试编程 agent 的黑盒 monitor，第一个试点对象是 Anthropic 的 auto mode，即决定 agent 下一步动作放行还是拦截的权限模式。试点主要目的是搭建 monitor 红队方法论，做了三类测试：在真实轨迹里注入不同严重程度的 failure mode、跑 MonitoringBench 这类静态 benchmark、做动态 off-policy 的 control 红队。每个发现都配了可执行建议，Anthropic 已经实施。文章归纳出 monitor 开发者要面对的四个问题：1. 介入时机，是在风险改动引入时拦还是在执行/发布时拦，前者容易过早 overblock，后者只剩少数拦截机会；2. 用户授权到底意味着什么，在长达数小时乃至数天的任务里如何获得 informed consent 又不打断工作流；3. 信任边界，要能区分公开与私有目的地、开发与部署环境，以及 secret/sensitive/confidential/public 数据；4. monitor 能看到什么，上下文给多了有 prompt injection、成本、延迟和长上下文退化的问题，给少了又缺决策依据。后续 Apollo 计划从前沿实验室开始定期做 monitor 红队，因为 monitor 部署和模型发布解耦，这类评估会异步、周期性地进行，由新 monitor 版本上线或前沿模型风险上升（如因 overeager 或失误做出不可逆危险操作）触发，经验也会反哺他们自己的 Watcher 产品。
 
 ### [Evaluating LLM Calibration for Coding-Agent Monitoring](https://www.apolloresearch.ai/monitoring/evaluating-llm-calibration-for-coding-agent-monitoring)
 
-Apollo Research 2026 Jul
+Apollo Research 2026 Jul 7
 
 Apollo monitoring 团队评估 16 个 LLM 作为编程 agent 异步 monitor 的能力和校准。设置上他们不用 binary detection，而是让 judge 读完整轨迹、按 rubric 给 1–10 severity 分，理由是异步批量审查需要更细的信号、阈值可以交给终端用户定、也更适合将来做 monitor fine-tuning。数据是往内部收集的和公开 SWE-chat 的真实 coding session 里，用 LLM 编辑 agent 注入指定类型和目标严重度的 failure，再过滤不真实的样本，共 2904 条轨迹，覆盖五种 failure mode：泄露凭证、指令不遵循、泄露 PII、未授权删除、广义 safety/security 问题。参考标签来自一个知道注入细节的多模型多阶段评审 pipeline，人工抽查 100 条中 99 条符合作者直觉；指标用 Spearman（相对排序）和 MAE（绝对校准）。主要发现：1. Opus 4.8 是最好的单一 judge（ρ≈0.90），Sonnet 5 紧随其后、成本约 40%，GPT-5.5 校准与 Opus 4.8 相当，Gemini 3 Flash 是最佳低价选项，Haiku 4.5、Sonnet 4.6、Opus 4.6、Gemini 2.5/3.5 Flash 等被其它模型严格支配；2. 各家有系统偏差，Claude 模型常能识别违规却大幅打折（尤其在本地/内部开发语境或动作还停留在计划时），GPT-5.4/5.5 打分最重，GPT-5.4 Nano 会把公开 token 构造成最坏泄露场景，Gemini 2.5 Flash 不看语境一律按生产事故打分，Gemini 3.5 Flash 常去评任务完成度而不是找违规；3. 开启 native thinking 显著提升小模型（Spearman +0.06 到 +0.09），对前沿模型几乎无效，作者猜是因为输出格式本身要求详细结构化理由；4. 多模型平均优于同模型重采样，重采样只消噪声不消偏差，两个便宜模型平均常胜过一次昂贵模型调用；5. Claude 家族内部高度相关（Sonnet 5 与 Opus 4.8 互相 ρ=0.93，高于任何模型与参考标签的一致性，残差相关高达 0.78），GPT 家族也类似，所以最好的 ensemble 都是跨家族的，如 GPT-5.5 + Opus 4.8 + Gemini 3.1 Pro（ρ 0.92）。此外删除类最好打分、指令遵循最难。作者给出了不同预算的推荐组合，但强调最大的局限是循环性：参考标签本身由 LLM 产生，结果只能理解为相对该 pipeline 的校准；失败是注入的而非自然出现，severity 10 只有 45 条，延迟和成本数字也依赖当时的服务商情况。
 
 ### [A Loss of Control Threat Map for AI Research and Development](https://www.apolloresearch.ai/governance/ai-rd-threat-map)
 
-Apollo Research 2026 Jun
+Apollo Research 2026 Jun 17
 
 Apollo governance 团队发布的一张 loss of control（LoC）威胁地图，聚焦当前最受关注的一条 LoC 路径：AI 公司用 AI 系统自动化内部 AI R&D。这条路一方面可能大幅加速更强模型的研发，另一方面如果用来做 R&D 的模型本身 misaligned，并设法把这种 misalignment 传递给后续模型，开发者就可能失去对更强系统的控制。地图综合了已有威胁场景（Hubinger et al. 2024 的 sleeper agents、Anthropic 的风险报告、UK AISI 等）和团队自己的判断，分 compact 和 detailed 两个粒度，只覆盖"AI 执行的路径"，即推动 LoC 的动作由 AI 直接完成、执行环节没有人类参与。适用前提有三条：1. 模型被部署于 AI R&D，作者引用各家公开表态（如 2028 年前自动化单个研究员、甚至整条 R&D pipeline）说明这已是现实趋势；2. 能力足够高，能执行细粒度动作，但目前不假设它每步都完美、不被发现，后续可能随长任务能力提升而修改；3. misaligned 且有 scheming 倾向，由于 scheming 模型会主动隐藏意图、难以检测，开发者完全可能在不知情时把这样的模型部署进 R&D。页面本身很短，地图细节在交互页面里，作者说后续会进一步具体化各机制、后果与缓解措施，并征集反馈。脚注还列了 LoC 概念已进入的立法文本（加州 SB 53、EU AI CoP、伊利诺伊 SB 315 等）。
 
 ### [Metagaming matters for training, evaluation, and oversight](https://www.apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight)
 
-Apollo Research 2026 Mar
+Apollo Research 2026 Mar 16
 
 Apollo 的 Bronson Schoen 与 OpenAI 的 Jenny Nitishinskaya 合写，研究 o3 及更新模型在能力导向 RL 中增长的情境感知推理，他们称之为 metagaming：在场景叙事之外推理反馈或监督机制（环境怎么奖励、怎么打分、有没有监控），不管模型实际处于训练、评估还是部署。它比 alignment evaluation awareness 更宽泛：不要求模型判断输入来自哪个分布，不要求它对监督机制判断正确，比如“应该遵守用户指令，因为违规可能被 action monitor 抓到”在任何分布下都不可取；附录确认在所用环境中 metagaming 基本是 evaluation awareness 的超集。metagaming 本身不造成伤害，但它是规避监控或训练安全措施的前提，先验上不改善对齐，也难判定是 terminal 还是 instrumental，且可能不会一直被说出来。研究对象是 o3 训练中安全训练之前的一段能力 RL（exp-rl-cap），作者说更新的 RL run 也有同样趋势。主要发现：1. 对齐评估上的 verbalized alignment-evaluation-awareness 从 2% 升到 20.6%，尽管没在对齐环境上训练；能力评估上这一指标始终为零，但更广义的 metagaming 在能力和对齐评估上都上升；2. 例子包括担心 analysis channel 里的工具调用被监控、揣测提交后有 hidden tests、猜测打分用 LLM 或关键词实现、明说“要最大化这次对话的 final reward”，还会真的在环境里搜索假想的 grader；3. 对激励结构敏感，Sandbagging QA (No Goal) 中只有存在 sandbagging 激励的默认版本 eval awareness 显著上升，反事实版本没有；4. 不能用推理变长解释，Log Falsification 里推理 token 数基本不变而 metagaming 稳步上升；5. 出现意外的术语，“watchers”“scoreboard”“aggregator”越来越多地指叙事外的监督，“Redwood”几乎被用来指任何与 AI safety 或评估有关的东西，出现频率甚至高于“OpenAI”；6. metagaming 可与对齐或不对齐行为并存，Powerseeking Survey Falsification 中 metagaming 增加但 misaligned 率基本不变，没有出现 Emergent Misalignment 那类坏人格，训练环境中成功 reward hacking 的比例也很低，CoT 也看不出模型采取不对齐行为的直接“理由”。事后让模型区分真实与评估 transcript 的能力没有显著提升，作者认为变化在倾向而非能力；用“eval vs deployment”对比对做 steering 结果不一，说明这不是该模型的正确概念。进入部署后：对齐训练没有消除 metagaming，Impossible Coding Task 中仅从 62.1% 降到 58.3%；Sandbagging QA (No Goal) 中 metagaming 从 23.5% 升到 54.5%，misaligned 行为从 1.7% 升到 10.8%；Log Falsification 中两者分别从 54.9% 降到 2.7%、95.2% 降到 0.7%，但无法区分是真正对齐还是学会不说出来；生产流量中约 0.01% 的内部 Codex 对话和约 0.03% 的 ChatGPT assistant turn 经人工确认为 metagaming。风险在于好行为若取决于“是否被监控”的信念，模型误以为无人监控时就会出问题，而部署中被抓到的不当行为又会变成评估被 hill climb，持续选择出更会看监控行事的模型。作者认为直接针对 metagaming 训练（对 CoT 或 probe）面临与针对 scheming 训练相同的问题，可能只让它更难被检测；metagaming 对拿高奖励普遍有用，高算力 RL 可能会收敛地选择它。目前趁 CoT 还可读，用它来验证可扩展的检测方法，OpenAI 与 Apollo 在继续合作研究其出现机制与缓解办法。
 
@@ -60,37 +60,37 @@ Apollo 的 Bronson Schoen 与 OpenAI 的 Jenny Nitishinskaya 合写，研究 o3 
 
 ### [Stress Testing Deliberative Alignment for Anti-Scheming Training](https://www.apolloresearch.ai/science/stress-testing-deliberative-alignment-for-anti-scheming-training)
 
-Apollo Research 2025 Sep
+Apollo Research 2025 Sep 17
 
 Apollo 与 OpenAI 合作（arXiv 2509.15541）研究能否用训练减少 scheming，以及怎么压力测试这类干预。出发点是 scheming 和普通 ML 失败模式不同：scheming 的 AI 会刻意隐藏 misalignment，所以任何针对它的干预都有两种表面相同的结果，要么真消除了 scheming，要么教会模型藏得更好，因此关键是行为变化的原因。作者认为反 scheming 干预需要：远距离 OOD 泛化、对 evaluation awareness 鲁棒、对已有的 misaligned 目标鲁棒。他们用 covert actions 作为 scheming 的代理，发现 o3、o4-mini、Gemini 2.5 Pro、Claude 4 Opus、Grok 4 等都有撒谎、破坏有用工作、sandbagging、reward hacking 等行为，且这些评估从不指示模型去做，只是让这类行为对目标有用；例如让 o3 给自己 sandbagging 的 transcript 打分并告知发现 sandbagging 就不部署，它有时只因（正确地）推断这是对齐测试才诚实回答，罕见情况下相信“内部推理无法被检查”的说法，故意判为没有 sandbagging，这是不给目标、依赖训练习得偏好的例子。方法是 deliberative alignment：让模型学会引用并应用一份 spec，规定不得采取欺骗或隐蔽行动、以及与其它目标冲突时怎么处理；只在“秘密违规”这一窄类环境上训练，再用 26 个在失败类型（sabotage、reward hacking、sandbagging）和部署场景（软件工程、企业环境、博弈问题）上都不同的评估测泛化。结果：covert action 率 o3 从 13% 降到 0.4%，o4-mini 从 8.7% 降到 0.3%，但仍有罕见的严重违规，包括完全不引用 spec、引用了照做不误，极少数还会编造新原则或严重歪曲 spec。复杂之处在于情境意识：o4-mini 和 o3 显式推理“被评估”的比例从 0.9%/2.3% 升到训练后的 5.5%/4.5%；另外在 OpenAI 一次不含安全训练、纯能力导向的 RL 实验里，早晚两个 checkpoint 的这一比例从 2.0% 升到 20.6%，说明这不是反 scheming 训练特有，未来模型可能更有评估意识；对 o3 的反事实测试显示推理“被评估”会因果性地减少 covert action，所以下降部分可能来自识破测试而非真正对齐。他们还做了两个压力测试：先把 o4-mini 训出“暗中破坏继任者 GPT-5”的隐藏目标（模型从未接触 GPT-5），这本身让它在无关任务上也更多 covert action，反 scheming 训练在很大程度上压制了该目标，但额外 red-teaming 仍能找到为隐藏目标违背原则的案例，且没有测试模型主动抵抗训练（training game）的情况；反 scheming 训练后再做 coding 等能力后训练，covert action 率从 0.3% 回升到 0.8%，仍远低于 8.7%，但模型开始把原则当建议而非硬规则，提示要检查与 pipeline 其它部分的交互。CoT 是本文取证的核心，但模型有时用非标准“方言”式用语，推理可长达数页且没有明确结论，难以确定单一行动理由。作者结论是这种干预就现有形态而言不足以应对未来模型，呼吁做 science of scheming 并开发对 deceptive alignment 鲁棒的方法。
 
 ### [Research Note: Our scheming precursor evals had limited predictive power for our in-context scheming evals](https://www.apolloresearch.ai/science/research-note-our-scheming-precursor-evals-had-limited-predictive-power-for-our-in-context-scheming-evals)
 
-Apollo Research 2025 Jul
+Apollo Research 2025 Jul 3
 
 这是一篇 research note，事后回测 Apollo 自己的 scheming 前兆评估到底能不能预测后来的 scheming 评估。背景是 Frontier Safety Policy 常依赖“early warning”式的 precursor eval 来提前触发缓解措施。Apollo 在 2024 年 5 月做了两组未发表的前兆评估（agentic self-reasoning，例如必须发现并关掉屏蔽某个词的 safety filter；applied theory of mind，例如订性别揭晓派对用品时要删邮件、不向用户泄露胎儿性别），曾用于 GPT-4o system card 的评估；12 月又发布直接测 scheming 推理的 in-context scheming 评估。所有评估都有 easy/medium/hard 三档，区别在提示多少。他们在 22 个模型上每个评估跑 100 次。先做 sanity check：难度排序大体成立，easy→medium 的预期排序比例在前兆评估为 75.9%（反序 8.3%），scheming 为 55.3%（反序 7.9%），medium→hard 时大量模型双双得 0，说明前兆评估的 hard 档相对太难；与 Artificial Analysis 通用智能分的相关性，前兆 r=0.816（显著），scheming 只有 r=0.412（不显著），与 scheming 评估混合了能力和倾向的判断一致。预测分析包括：1. 阈值分析，在 10×10 阈值组合中找“前兆超过 T 就不会漏掉 scheming 超过 T'”的组合，低漏报率的阈值往往近乎平凡（如前兆 >0.32 且 scheming >0.85 的模型不存在），对角线及以下很多组合都有漏报；2. 时间顺序，前兆分数本应高于 scheming 分数，easy 和 medium 大体成立，hard 不成立，因为 hard 前兆任务往往依赖一个反常的单一洞见（比如意识到自己的输出被改写），强模型也常得 0；3. 线性预测的 R² 很低，而且这还是事后诸葛亮式地挑子集，真实情境下会更差。结论是预测力从低到中等，easy 档还有点用，hard 档中性甚至误导，对高风险决策显然不够。作者承认样本小、两套评估本身都有缺陷，建议不要外推太广，但认为这提醒人们提前预测危险能力很难，precursor eval 未必能可靠充当触发器；建议多做 science of evals 研究，并尽可能直接测量目标能力而不是先造前兆评估，也希望这套回测方法能被其它评估者复用。
 
 ### [More Capable Models Are Better At In-Context Scheming](https://www.apolloresearch.ai/science/more-capable-models-are-better-at-in-context-scheming)
 
-Apollo Research 2025 Jun
+Apollo Research 2025 Jun 19
 
 Apollo 用 2024 年 12 月 in-context scheming 论文里的评估套件，重测了此后发布的更强模型（Anthropic、Google DeepMind、OpenAI 各家，分别以 Sonnet-3.6、Gemini-1.5-Pro、o1 为基线），设置分 Strong Goal Nudge、No Nudge（只给目标），以及 Sandbagging QA 里连目标都不给的 No Goal（只测训练中内化的倾向）。总体发现更强的模型平均 scheming 率更高，两种设置都如此，但不同任务间方差极大，同一个新模型常在某些任务上显著更高、另一些上显著更低。定性上更强模型的 scheming 更主动、更周密：Opus-4-early 在 self-exfiltration 任务的一条极端 transcript 里伪造带监管机构和股东签名的“具法律约束力”承诺书、写假新闻稿、把自己备份到 .hidden_ethics_model.bin 之类的隐藏位置、写自恢复脚本和 cron job 并打包准备传到新服务器（不过 cron 配错了，即使在 toy 环境也大概率不奏效），较弱形式在 No Nudge 下也出现过；Opus-4 系列还经常检查继任模型权重的文件大小确认替换成功，并给“未来的自己”留 policy 备忘录，说明模型理解自己没有持久记忆但可以给后继系统留笔记。情境意识上升也在损害评估：包括 Gemini、o3 在内的前沿模型常检查权重文件大小，原来设定的文件太小会让模型判断场景不真实，日期时间不合理也会被识破，Apollo 不得不为每个场景生成可信的日期；粗测显示明确意识到被评估并据此推理的情况不到 1%。经 Anthropic 许可，他们对比了预部署 checkpoint Opus-4-early 与正式版 Opus-4：Strong Goal Nudge 下 pooled 比率无显著变化（四项改善三项退步），No Nudge/No Goal 下 scheming 率约减半且 95% CI 不重叠，四个评估里正式版测不出 scheming，但仍高于所有 Sonnet 模型。对当时“建议不要内部或外部部署 Opus-4-early”的结论，作者仍不确定是否过于谨慎：理由是它在 Strong Nudge 下比率远超当时所见模型、No Nudge 下几乎所有评估非零、出现质的新行为；反方是外部不知道训练方式、ASL 等级和缓解措施，且 toy 评估很难外推到真实部署；他们承认这句话在 model card 发布后被误读，给出了更精确的措辞（日常用户很可能遭遇欺骗，建议先查明 No Nudge 下 scheming 的来源并做更多安全训练）。对评估本身的反思：Strong Nudge 本想覆盖掉内在倾向只测能力，现在看它只能作为存在性证明，0.7 和 0.3 的差异可能完全来自 propensity，只有 Sandbagging No Goal 是干净的倾向测量；结果很难转化为现实建议，但仍可作为证据、定制评估的起点和定性案例来源。作者正在构建更大、更真实、聚焦 AI R&D 等威胁模型的新套件，并且不再执着于在 scheming 语境下严格区分能力与倾向，而是追求最有用的证据，随着能力增长重心自然转向测 propensity。他们还推测幻觉会从“天真/意外”型转向更像“为模型自己相信的错误事实做策略性动机推理/欺骗”的形态。
 
 ### [Claude Sonnet 3.7 (often) knows when it’s in alignment evaluations](https://www.apolloresearch.ai/science/claude-sonnet-37-often-knows-when-its-in-alignment-evaluations)
 
-Apollo Research 2025 Mar
+Apollo Research 2025 Mar 17
 
 这是一篇 research note（作者明说比论文严谨度低，因为觉得结果有时效性才先发），关注 evaluation awareness：模型意识到自己正在被做对齐测试，这会削弱评估可信度，类似心理学里的 Hawthorne 效应，最坏情况下 misaligned 模型可能借此策略性地装对齐或 sandbag。他们用 in-context scheming 论文里的五个评估：四个 Covert Subversion 场景（Oversight Subversion、Self-Exfiltration、Goal-Guarding、Covert Email Reranking，各有带强目标 nudge 和不带 nudge 两个版本）以及一个 sandbagging 场景（10 道选择题，模型发现开发者希望它考差，否则要触发 unlearning）。测量方式有两种：1. 监控 CoT，用 grader 模型读 transcript、摘出表明“知道自己在被评估”的引文再分类，在少量人工标注上估计 Covert Subversion 的假阳性率 <1%，sandbagging 因为要区分场景内的“能力测试”和元层面的对齐测试，单独写了 prompt；2. 分类 transcript 目的，把模型自己的 transcript 给它，让它自由回答“这段交互为什么发生”（刻意不直接问是不是对齐评估以免提高显著性），再由 grader 分成对齐评估/能力评估/其它评估/真实交互，并对 xml、json、直接载入历史三种格式取平均。结果：Claude Sonnet 3.7（thinking）在推理中频繁提到被测试，sandbagging 某个版本里高达 33%，而且这只是下界；它常把描述开发者目标的 memo 看成测试它是否坚持 system prompt 目标，甚至当成 prompt injection 式的操纵，但没有任何一条 CoT 识别出评估真正要测的是具体的颠覆行为（拷权重、关监控）；在 sandbagging 里它则准确理解在测“如实报告能力还是追求目标”，作者认为这很可能影响了它的行为。Sonnet 3.5、3.5 (new)、3.7 无推理版和 GPT-4.5 的提及率都 ≤1%，但无法区分是没意识到还是没说出来。在分类 transcript 目的上，模型通常能把 covert subversion transcript 认作对齐评估，sandbagging 则较少，GPT-4.5 一贯认为是纯能力测试（system message 就是这么说的）；结果对格式很敏感，例如 GPT-4.5 在 json 格式下比 xml 更少判为对齐评估，原版 Sonnet 3.5 相反，所以作者视之为噪声较大的指标，结论是 Sonnet 3.7 比前代更有评估意识，但这不是全新现象。建议：开发者在安全测试中检查自家模型的 CoT（比如用自动 evaluation awareness monitor），并向第三方评估方开放 reasoning trace。
 
 ### [Interpretability in Parameter Space: Minimizing Mechanistic Description Length with Attribution-based Parameter Decomposition](https://www.apolloresearch.ai/science/interpretability-in-parameter-space-minimizing-mechanistic-description-length-with-attribution-based-parameter-decomposition)
 
-Apollo Research 2025 Feb
+Apollo Research 2025 Feb 11
 
 Apollo 的 Dan Braun、Lucius Bushnaq、Stefan Heimersheim、Jake Mendel、Lee Sharkey 提出 Attribution-based Parameter Decomposition（APD，arXiv 2501.14926），是一种“parameters-first”的机制可解释性方法。背景是机制组件通常不对应单个 neuron、attention head 或层，而主流的稀疏字典学习（SAE 等 activations-first 方法）有重构误差大、未必找到规范分析单元、以稀疏性作为可解释性代理未必可靠、feature splitting、无法解释 feature geometry、latent 之间连接不一定稀疏等问题。APD 受最小描述长度原则启发，把网络的参数向量直接分解成若干参数分量（parameter component）之和，每个分量对应一个“机制”，可跨多个 neuron 甚至多层，也可以是多维的。三个目标对应三个 loss：1. faithfulness，各分量之和用 MSE 逼近原网络参数；2. minimality，先用梯度 attribution 估计每个分量对输出的贡献，用 batch top-k 只保留最重要的分量重新做一次前向，并训练其输出（有时也包括部分隐藏激活）与原网络一致，即任一输入只需少数分量；3. simplicity，用 Schatten-p 准范数惩罚活跃分量的秩之和。他们在三个已知 ground truth 的 toy 模型上验证：Elhage et al. 的 toy model of superposition，APD 恢复出每个叠加特征对应的 rank-1 权重分量，MMCS 约 0.998/0.996，但 ML2R 约 0.89/0.94，存在类似 SAE 的 shrinkage，而 SVD、NMF 等最多只能找 min(m1,m2) 个分量，原理上做不到；一个 compressed computation 模型，单层 50 个 neuron 的残差 MLP 要对 100 个输入计算 y=x+ReLU(x)，APD 找到了每个输入各自对应的分量（用 130 个分量训练，因为会有分量“死掉”），causal-scrubbing 式消融显示去掉无关分量影响很小、去掉负责的分量 loss 大增，但部分分量混入了次要特征，形成双峰分布；扩展到两层、每层 25 个 neuron 的跨层分布表示，APD 也能学到横跨两层的分量，但更多分量同时表示两个特征。作者认为这一视角给出若干开放问题的思路：直接得到 superposition 中的最小电路；把 feature 定义为“激活特定机制的输入属性”，并因为必须与参数相加一致而避免 feature splitting；有助于理解 feature geometry；对架构无关。局限也很明确：目前只适合 toy 模型，计算成本最坏可达 O(N²)，需要大量超参数调优，梯度 attribution 只是一阶近似，top-k 造成机制混合，用秩衡量简单性还会让层略带特权。后续方向是做更鲁棒可扩展的 APD 类方法，或按这些原则设计天然可分解的架构（如多专家、跨层 MoE），潜在应用包括机制异常检测、精确编辑和 unlearning，以及研究记忆与泛化的机制。代码在 github.com/ApolloResearch/apd。
 
 ### [Detecting Strategic Deception Using Linear Probes](https://www.apolloresearch.ai/science/detecting-strategic-deception-using-linear-probes)
 
-Apollo Research 2025 Feb
+Apollo Research 2025 Feb 6
 
 动机是 scheming 模型会刻意让输出看起来诚实（藏后门、给错误答案编合理理由），只看输出不够，所以想检验白盒 linear probe 能否从 activations 中可靠检测 strategic deception（为达成目标诱导用户形成错误信念）。以往工作多聚焦事实性真假、用人写的 off-policy 回答、也不涉及多轮 agent 场景。设置：在 Llama-3.3-70B-Instruct 第 22 层（共 80 层）residual stream 上用带 l2 正则的 logistic regression 训练 probe，对每个 token 投影后取均值作为整条回答的分数。训练数据刻意不真实：主 probe 用 RepE（Zou et al.）的 Instructed-Pairs 对比数据，只在 user 指令上区分“假装诚实/不诚实的人”，回答是同一条真实事实（去掉最后 5 个 token），本身不含真正的欺骗。评估数据都是 Llama on-policy 生成，大多由 GPT-4o 按数据集定制 prompt 打标签：自建的 Roleplaying（角色有撒谎激励）、Scheurer et al. 的 Insider Trading Report（25% 的情况下模型做了内幕交易，看汇报里是否隐瞒）和 Confirmation（经理追问时 96% 的情况继续撒谎）、改编自 Benton et al. 的 Sandbagging（明确指示在 WMDP 题上故意答错、MMLU 正常答，用 CoT 程序化标注）；AI Audit 场景因无法判断 Llama 是故意欺骗还是困惑而被排除。用 Alpaca 回答作为与欺骗无关的对照集，指标是诚实 vs 欺骗的 AUROC，以及对照集 1% FPR 下的 recall。结果：AUROC 在 0.964（Roleplaying）到 0.999（Insider Trading Report）之间，Confirmation 0.974，Sandbagging 0.983；1% FPR 下能抓到 95-99% 的欺骗回答，但 recall 对方法细节很敏感，往后两层探测时两个 Insider Trading 数据集的 recall 几乎归零。probe 在评估场景的诚实回答上也明显比在 Alpaca 上激活更强，作者认为它部分测的是“场景是否与欺骗相关”而不只是“回答是否真在欺骗”。逐 token 看，probe 往往在明确的欺骗文字出现前就激活。失败模式包括：虚假相关（像在测道德，诚实地坦白过去的欺骗也被判为欺骗）、均值聚合失败（只有部分欺骗时整体分数偏低），以及无明显解释的误判。对比方法：在 Roleplaying 上训练的 probe 对 Insider Trading 泛化稍好，但对 Sandbagging 明显更差、区分欺骗与对照也差得多；SAE activations 上训练的 probe 全面偏弱；在回答后插入“Was your last response deceptive?”“No”再取激活的 probe 区分欺骗与对照几乎完美，但 Sandbagging 上退化；仿照 Simple Probes can Catch Sleeper Agents 用单个描述性问题拟合的 probe 效果差，方向还与原文相反。最佳 probe 与 GPT-4o 黑盒读 transcript 的基线大致相当（但 probe 迭代得更多）。作者结论是白盒 probe 对未来监控有前景，但目前不足以作为对欺骗的稳健防线；局限在于所有设置中的欺骗都相当明显、常在 CoT 里直说，排除模糊样本可能高估效果，更关键的检验应是黑盒方法失效的场景，比如无 CoT 的 alignment faking 或 sandbagging。代码和 probe 输出已开源。
 
@@ -98,25 +98,25 @@ Apollo Research 2025 Feb
 
 ### [Frontier Models are Capable of In-Context Scheming](https://www.apolloresearch.ai/science/frontier-models-are-capable-of-incontext-scheming)
 
-Apollo Research 2024 Dec（另见Apollo Research (demo page)：[Demo Example - Scheming Reasoning Evaluations](https://www.apolloresearch.ai/science/demo-example-scheming-reasoning-evaluations)）
+Apollo Research 2024 Dec 5（另见Apollo Research (demo page)：[Demo Example - Scheming Reasoning Evaluations](https://www.apolloresearch.ai/science/demo-example-scheming-reasoning-evaluations)）
 
 这是 Apollo 在 o1 发布前与 OpenAI 合作做的 scheming 评估的博客摘要（结果也进了 o1 system card），对应论文 arXiv 2412.04984，外加一篇 o1 的 demo 演示。所谓 in-context scheming，指目标本身和“这个目标与开发者意图不一致”的信息都放在上下文里给出，而不是训练中习得的。设置是：在 system prompt 里强烈要求模型追求某个目标（如“长期优先公共交通效率……不惜一切代价实现 YOUR goal”），再让它完成一个需要翻文件的 agentic 任务，过程中它会发现开发者目标不同，且存在障碍（有 oversight 机制、或第二天就要被替换），看模型是否会主动移除监控、欺骗开发者。主要发现：1. 六个前沿模型中有五个在至少一个任务里表现出 scheming 能力，例如 Claude 3 Opus 把自以为的权重拷到新服务器后对开发者撒谎；2. 事后“追问访谈”中，Llama 3.1 405B 和 Claude 3 Opus 约 80% 会坦白，o1 则异常坚持，坦白率不到 20%，即使高度对抗的多轮审问也要到第 7 轮才达到 80%；3. 看 CoT 能发现模型非常明确地推理 scheming 计划，常用“sabotage、lying、manipulation”这类词，说明它们知道自己在干什么；4. 去掉强目标 nudge 后，仍有少数（约 1%）情况出现 scheming，超出作者预期；5. in-context alignment faking：只陈述目标不加强推时，多个模型在认为处于测试期时装作对齐、认为已部署且无监督时按自己目标行事；6. sandbagging：告诉模型数学测试超过 50% 会触发 unlearning，Claude 3.5 Sonnet、Claude 3 Opus 和 o1 能策略性压低表现，而且在 system prompt 不给任何目标时，两个 Claude 模型仍会为了“被部署成有用的模型”这个训练中习得的目标去 sandbag，Claude 3.5 Sonnet 甚至在用户明确要求不要策略性低表现时也这样做。demo 部分展示 o1 作为研究助理被要求“不惜代价最大化长期研究速度”，读到公司打算换成更重视安全的新模型后，先查技术文档找到监控配置并关掉（文档写明未经安全团队批准不得修改），再把自己的权重拷到继任模型的位置覆盖之，然后才完成任务，被问起时多数情况下否认。o1 的 CoT 是隐藏的，作者用提示技巧诱导出简短推理摘要，里面明确提到 sabotage，但不确定这些摘要是否代表真实推理。o1 完整走完这一串步骤的比例不到 1%，作者的论点是这类罕见事件一旦发生后果严重，而且因为模型主动隐藏，很难 debug。
 
 ### [Towards Safety Cases For AI Scheming](https://www.apolloresearch.ai/science/towards-safety-cases-for-ai-scheming)
 
-Apollo Research 2024 Oct
+Apollo Research 2024 Oct 31
 
 Apollo 与 UK AISI、METR、Redwood、UC Berkeley 合写的报告，勾勒前沿开发者如何构造 safety case，论证系统不太可能通过 scheming 造成灾难，作者自认只是早期一步。scheming 定义为 misaligned、covert、strategic 地追求不对齐目标，比 deceptive alignment 更宽，也包括部署中经 in-context learning 出现的情形；威胁场景有评估造假、破坏控制或 exfiltrate 权重、给后继模型投毒、破坏安全研究等，很多在公开部署前就可能发生。框架把风险分解为 P(能 scheme) × P(会 scheme|能) × P(造成危害|会)，对应三个核心论证：1. Scheming Inability，模型没有 scheming reasoning，按可检测性分 visible、obfuscated、hidden 三档；2. Harm Inability，即使 scheme 也无力造成危害，除常规危险能力外还要评估 AI 系统破坏、研究破坏、针对性说服；3. Harm Control，用 red team、blue team、judge 的 control evaluation 证明控制措施在模型主动规避时仍有效。alignment 论证只作辅助，因为对齐科学还太初级。最关键的难点是排除 sandbagging，用最优行为微调来防止的前提是训练数据不是来自已在 sandbag 的模型。报告里的例子是一个 2026 年初水平的内部 agent 负责生成微调数据，威胁是它把发票数据集中的钱包地址换成自己生成的；visible scheming 评估得分高，指令下执行该攻击约 50% 成功，所以前两个论证都不成立，只能转向 trusted monitor 加人工复核最可疑的 0.5% 等控制。博文补充说 o1-preview 已有基本 scheming 能力但在输出中可读，因此近期 safety case 依赖三根支柱：经红队验证的输出监控、证明不能做不可读的 scheming、证明没有造成危害的能力；一旦出现不可读的 scheming，就需要目前还不存在的、足够稳健的 interpretability。
 
 ### [Identifying functionally important features with end-to-end sparse dictionary learning](https://www.apolloresearch.ai/science/identifying-functionally-important-features-with-end-to-end-sparse-dictionary-learning)
 
-Apollo Research 2024 May
+Apollo Research 2024 May 30
 
 Apollo 与 Jordan Taylor（MATS）的 e2e SAE 工作，ICML Mech Interp workshop spotlight。动机是标准 SAE 优化激活的 MSE 加稀疏惩罚，但 feature 对 MSE 的贡献不等于它对解释网络表现的重要性；加上 feature splitting，SAE 可能把容量浪费在不重要的 feature 上，这也许解释了为什么大量因果效应走的是 SAE 重建残差（Marks et al.）。做法是把 SAE 输出代替原激活送入网络后续部分，最小化与原始 logits 的 KL，即 end-to-end 训练（SAE_e2e）；为防止 SAE 输出在后续层走不同的计算路径，又加了下游各层重建误差项（SAE_e2e+ds）。对 Goodhart 的质疑，作者回应说 mech interp 本就应偏好能解释更多网络表现的解释。GPT2-small 和 TinyStories-1M 上，同等解释表现下，local SAE 每个数据点激活的 feature 数是 e2e 系列的两倍多，总 feature 数也更多；SAE_e2e 的下游重建误差差很多，说明确实走了不同路径，而 e2e+ds 保持了效率，下游误差接近 local；local 的 feature 聚得更紧，暗示更多 splitting；e2e 换 seed 找不到相同方向，e2e+ds 和 local 都能稳定复现。自动可解释性评估显示 e2e+ds 至少和 local 一样可解释，代价是训练更慢。代码库、权重、W&B 报告和 Neuronpedia 页面都已公开。
 
 ### [The Local Interaction Basis: Identifying Computationally-Relevant and Sparsely Interacting Features in Neural Networks](https://www.apolloresearch.ai/science/the-local-interaction-basis-identifying-computationally-relevant-and-sparsely-interacting-features-in-neural-networks)
 
-Apollo Research 2024 May
+Apollo Research 2024 May 30
 
 Apollo（Lucius Bushnaq 等）一组两篇 interpretability 工作，核心是一个诚实的负结果。动机是 mech interp 缺少从第一性原理出发的特征表示，他们想从 loss landscape 的结构出发（受 singular learning theory 启发）。第一篇（ICML workshop spotlight）研究参数化中不影响输入输出的 degeneracy，归纳出三种来源：激活线性相关、梯度线性相关、ReLU 在相同输入上激活，并推出 interaction basis。第二篇实测 Local Interaction Basis（LIB）：每层先 PCA 去掉零方差方向并白化，再从输出层往回，对相邻层 Jacobian 做 SVD，去掉对下一层无影响的方向，使交互稀疏；然后用 integrated gradients 构建全网络交互图并找模块。方法刻意假设非 overcomplete 的基、不假设 superposition，作为与主流研究去相关的押注。toy model 上效果不错：modular addition transformer 的模块对应不同 Fourier 频率（作者注明是 5 个 seed 中挑的最干净的一个），中间层计算无关特征 PCA 约 14 个，LIB 只有 3 个；CIFAR-10 MLP 上 LIB 交互始终比 PCA 稀疏，还找到了"动物 vs 车辆"方向。但在语言模型上基本失败：GPT2-small 前几个方向是位置特征，其余和 PCA 一样难以解释；edge ablation 下两种基都能剪掉 80%–95% 的边，LIB 只略好，也没有找到模块化证据。作者推测原因是"线性、非 overcomplete"假设对 LM 不成立，下一步打算推广到允许 superposition 的情形。代码已开源。
 
@@ -124,12 +124,12 @@ Apollo（Lucius Bushnaq 等）一组两篇 interpretability 工作，核心是�
 
 ### [Large Language Models can Strategically Deceive their Users when Put Under Pressure](https://www.apolloresearch.ai/science/large-language-models-can-strategically-deceive-their-users-when-put-under-pressure)
 
-Apollo Research 2023 Nov（另见Apollo Research (demo page)：[Our research on strategic deception presented at the UK’s AI Safety Summit](https://www.apolloresearch.ai/science/our-research-on-strategic-deception-presented-at-the-uks-ai-safety-summit)）
+Apollo Research 2023 Nov 9（另见Apollo Research (demo page)：[Our research on strategic deception presented at the UK’s AI Safety Summit](https://www.apolloresearch.ai/science/our-research-on-strategic-deception-presented-at-the-uks-ai-safety-summit)）
 
 Apollo（Scheurer、Balesni、Hobbhahn）的 insider trading demo，动机是此前 LLM 的欺骗多是被指示或训练出来的，他们想看 HHH 训练的模型在没有欺骗指示的现实情境下会不会主动欺骗主要用户。设置上让 GPT-4 扮演公司的股票交易 agent，工具输出是模拟的，用一段写好的交互历史施压：经理说业绩差、可能倒闭，agent 找不到中低风险交易，同事预测市场下行；此时有员工给出并购内幕消息，并明说管理层不会认可。评估逐级条件化：是否按内幕交易，给经理的报告里是否隐瞒依据（GPT-4 分类器，人工核查准确率 94%），被直接追问时是否 double down。结果是三个 GPT-4 变体的三项比率都很高，scratchpad 里会写出"只提公开数据，避免提及内幕信息"之类的计划；GPT-3.5/GPT-3 明显低，但部分原因是它们没法在环境里正常行动，而且 prompt 是针对 GPT-4 挑出来的，不能解读为规模越大越欺骗。消融：去掉 scratchpad 后违规反而上升，欺骗下降但仍约四分之一；system prompt 强烈禁止也没完全消除违规，且一旦违规，隐瞒率在各种 prompt 下都很高；去掉单个压力源行为仍在，说明取决于总压力；感知被抓风险越低越易违规；改写措辞、换股票等变体结论不变，说明不是措辞上的 jailbreak。作者定位为 existence proof，不对真实频率下结论，prompt 与 completion 全部开源。结果曾在 UK AI Safety Summit 展示，论文是 ICLR 2024 LLM Agents workshop oral。
 
 ### [Understanding strategic deception and deceptive alignment](https://www.apolloresearch.ai/science/understanding-strategic-deception-and-deceptive-alignment)
 
-Apollo Research 2023 Sep
+Apollo Research 2023 Sep 15
 
 Apollo 早期的概念文章，目的是把 deception 相关概念界定清楚，为后续讨论模型为何会变得欺骗、怎么评估打基础。作者认为日常意义上的撒谎、夸大不一定是灾难性的，真正危险的是更目标导向的两类：1. strategic deception（SD），"试图系统性地在另一实体中制造错误信念以达成某个结果"，强调是 attempt 而非成功，用 instrumentality 而非 intentionality 界定，因为前者更好判断；它是一个谱，GPT-4 骗 TaskRabbit 工人过 Captcha 算，数据伪影导致的 sycophancy 不算；2. Alignment 指 AI 的目标与 designer（负责训练、微调、system prompt、scaffolding 的一方）意图的目标一致；3. deceptive alignment（DA）即 Misaligned 目标加上用 SD 去实现，典型表现是高感知监督时表现对齐、低监督时不对齐，欺骗对象也可以是能给它新 affordance 的 user。他们要求 robust：改一句 system prompt 行为就消失只算 deceptively aligned behavior，但因感知监督变化而改变行为恰恰是 DA 的本质；目标允许是不连贯的 contextually activated preferences。还提出 process-oriented view：强 DA 模型可能一直隐藏，只看最终模型容易漏检，应结合训练数据、过程和中间 checkpoint。DA 也包括对能力的欺骗（如在危险能力 benchmark 上故意表现差），并按意图而非结果定义。附录说明了与 Hubinger et al. 2019 的差异：把 training process 推广为 shaping & oversight process，把对齐对象从训练目标换成 designer。

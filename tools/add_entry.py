@@ -34,9 +34,9 @@ def main():
     s = open(path, encoding='utf8').read()
     if f']({a.url})' in s:
         print('already present, skipped'); return
-    y, m = int(a.date[:4]), int(a.date[5:7])
+    y, m, d = int(a.date[:4]), int(a.date[5:7]), int(a.date[8:10])
     summary = open(a.summary_file, encoding='utf8').read().strip()
-    meta = f'{a.source} {y} {MON[m - 1]}'
+    meta = f'{a.source} {y} {MON[m - 1]} {d}'
     if a.also_url:
         meta += f'（另见{a.also_label}：[{a.also_title or a.also_url}]({a.also_url})）'
     level = '###' if a.section else '##'
