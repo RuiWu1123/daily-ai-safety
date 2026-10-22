@@ -9,4 +9,4 @@
 5. 诚实与自我报告：honesty、calibration / self-knowledge、confessions、self-report、欺骗探针。
 6. 真实世界的错位事故：实际发生的 misalignment 事故及其调查。
 
-用户基本不关注：机制可解释性本身（除非与上述方向直接相关）、越狱与鲁棒性、危险能力评估、网络安全评估、AI control 协议设计、政策与治理。
+用户基本不关注：机制可解释性与表征类研究（SAE、probe、circuits、steering、latent/feature 分析、参数分解等），**即使主题属于上述方向也不标 ⭐**，除非它的主要贡献是行为层面的发现、而可解释性只是辅助手段；越狱与鲁棒性、危险能力评估、网络安全评估、AI control 协议设计、政策与治理也不标。
