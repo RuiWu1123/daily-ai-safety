@@ -1,11 +1,11 @@
 ---
-title: "Do LLMs know what they're capable of? Why this matters for AI safety, and initial findings"
+title: Do LLMs know what they're capable of? Why this matters for AI safety, and initial findings
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-07-13
-source: "Alignment Forum（UK AISI；Casey Barkan, Sid Black, Oliver Sourbut）"
+source: Alignment Forum（UK AISI；Casey Barkan, Sid Black, Oliver Sourbut）
 url: https://www.alignmentforum.org/posts/9tHEibBBhQCHEyFsa
-star: false
+star: true
 tags:
   - 故意藏拙
   - 监控与控制

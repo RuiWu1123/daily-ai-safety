@@ -1,11 +1,11 @@
 ---
 title: "Misalignment classifiers: Why they’re hard to evaluate adversarially, and why we're studying them anyway"
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-08-15
-source: "Alignment Forum（UK AISI；Charlie Griffin, ollie, oliverfm, Rogan Inglis, Alan Cooney）"
+source: Alignment Forum（UK AISI；Charlie Griffin, ollie, oliverfm, Rogan Inglis, Alan Cooney）
 url: https://www.alignmentforum.org/posts/jzHhJJq2cFmisRKB2
-star: false
+star: true
 tags:
   - 监控与控制
   - 策划与欺骗

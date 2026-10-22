@@ -1,11 +1,11 @@
 ---
-title: "The Hugging Face incident and the road ahead"
+title: The Hugging Face incident and the road ahead
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-08-26
-source: "OpenAI Blog"
+source: OpenAI Blog
 url: https://openai.com/index/hugging-face-incident-and-the-road-ahead/
-star: false
+star: true
 tags:
   - 事故报告
   - 网络安全

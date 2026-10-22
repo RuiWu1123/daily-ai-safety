@@ -1,11 +1,11 @@
 ---
-title: "Why \"training against scheming\" is hard"
+title: Why "training against scheming" is hard
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-06-24
-source: "Alignment Forum（Apollo Research；Marius Hobbhahn）"
+source: Alignment Forum（Apollo Research；Marius Hobbhahn）
 url: https://www.alignmentforum.org/posts/HwuMFFnb6CaTwzhye
-star: false
+star: true
 tags:
   - 策划与欺骗
   - 对齐训练方法
