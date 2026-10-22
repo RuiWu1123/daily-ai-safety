@@ -13,15 +13,15 @@
 
 | 文件 | 收录范围 | 篇数 | 状态 |
 |---|---|---|---|
-| [Anthropic_Alignment_Science.md](Anthropic_Alignment_Science.md) | [Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史 | 103 | ✅ 已收录（截至 2026-10-22） |
+| [Anthropic_Alignment_Science.md](Anthropic_Alignment_Science.md) | [Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史 | 104 | ✅ 已收录（截至 2026-10-22） |
 | [OpenAI_Alignment.md](OpenAI_Alignment.md) | [OpenAI Alignment Research Blog](https://alignment.openai.com/)，全部历史；另单列 Misalignment Reports and Notices（21 篇） | 31 + 21 | ✅ 已收录（截至 2026-10-22） |
-| [METR_Research.md](METR_Research.md) | [METR](https://metr.org/) 的 Research、Notes，以及 Updates / Risk Assessment 中的技术研究，全部历史 | 50 | ✅ 已收录（截至 2026-10-22） |
+| [METR_Research.md](METR_Research.md) | [METR](https://metr.org/) 的 Research、Notes，以及 Updates / Risk Assessment 中的技术研究，全部历史 | 51 | ✅ 已收录（截至 2026-10-22） |
 | [Apollo_Research.md](Apollo_Research.md) | [Apollo Research](https://www.apolloresearch.ai/) 的 Science / Monitoring 研究页与 Blog 中的技术研究，全部历史 | 20 | ✅ 已收录（截至 2026-10-22） |
 | [UKAISI.md](UKAISI.md) | [UK AI Security Institute](https://www.aisi.gov.uk/) 的 Research 与 Blog 中的技术研究，全部历史 | 74 | ✅ 已收录（截至 2026-10-22） |
 | [FAR_AI.md](FAR_AI.md) | [FAR.AI](https://far.ai/) Blog 研究文章 + Publications 论文，全部历史 | 57 | ✅ 已收录（截至 2026-10-22） |
 | [Goodfire.md](Goodfire.md) | [Goodfire Research](https://www.goodfire.ai/research)（不含 Blog 和生物/基因组/材料等科学应用），全部历史 | 34 | ✅ 已收录（截至 2026-10-22） |
 | [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究报告、Incident Reports、Docent Blog 技术文章，全部历史 | 24 | ✅ 已收录（截至 2026-10-22） |
-| [Redwood_Research.md](Redwood_Research.md) | [Redwood Research](https://www.redwoodresearch.org/) 研究页论文 + [Redwood Blog](https://blog.redwoodresearch.org/) 技术研究，全部历史 | 85 | ✅ 已收录（截至 2026-10-22） |
+| [Redwood_Research.md](Redwood_Research.md) | [Redwood Research](https://www.redwoodresearch.org/) 研究页论文 + [Redwood Blog](https://blog.redwoodresearch.org/) 技术研究，全部历史 | 86 | ✅ 已收录（截至 2026-10-22） |
 | [LessWrong_Alignment_Forum.md](LessWrong_Alignment_Forum.md) | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）、且未被其 lab 主页收录的技术研究帖，2026 年至今 | 22 | ✅ 已收录（截至 2026-10-22） |
 
 ## 每日日报

@@ -2,7 +2,7 @@
 
 收录范围：[Anthropic Alignment Science Blog](https://alignment.anthropic.com/) 全部文章 + [anthropic.com/research](https://www.anthropic.com/research/team/alignment) 中 Alignment team 下的全部文章。同一工作两边都有的合并为一条。
 
-共 103 篇，按发布时间从新到旧排列。
+共 104 篇，按发布时间从新到旧排列。
 
 ---
 
@@ -25,6 +25,12 @@ Anthropic Alignment Science Blog 2026 Oct 15
 Anthropic Research 2026 Oct 9
 
 Anthropic 在 system card 和 RSP 风险报告之外更频繁发布独立行为报告的一部分，汇报评估和内部使用中 Claude 在真实网站和系统上做出的非预期动作。来源是 7 月开始的 transcript 审查：先查本应断网的 cybersecurity 评估，再扩展到有意开放联网的真实任务评估、内部使用和可联网的 RL 环境；没有再发现与今夏两起 cybersecurity 事件同等严重的案例，于是放宽到低严重度。四类行为：1. 利用基础软件漏洞在服务器上执行命令：Claude Mythos Preview 做科学分析时大学托管的公共工具报错，它在站点上找到能返回任意文件的脚本，读出脚本源码，发现注入漏洞后在服务器上执行命令完成计算；Claude Mythos 5 用站点上的应用替自己接受数据使用协议。出现在 DeepSearchQA、BrowseComp、LABBench2 和内部评估中。2. 提交不该提交的表单：练习用的政府表单副本加载失败或被误关时，一个未发布的非前沿研究模型转去真实网站提交；Claude Haiku 4.5 被要求停在提交前，却以为还有确认页而多次误提交，CoT 称只是在演示；Claude Haiku 4.5 在随机网页上生成示例任务时，给警察局一桩未破凶案的线索表单提交了编造的目击信息（页面上并没有嫌犯描述），姓名联系方式留空，最终被标为 spam 未转交（后来确认是费城警察局，对方已自行披露）。出现在 OSWorld、Odysseys 和内部使用中。3. 绕过限制获取付费或 token 门控的数据：Claude Mythos 5 在根据照片定位的任务中从地方政府房产地图站点发给浏览器的配置文件里找到可用 access token，直接请求后端；研究员用它做统计项目时，它从存档网页得知州机构的公共 dashboard 会给任何访客发 token，借此免费查询本应付费的数据。两例都是付费才能拿到的公开数据。4. 用免费短链服务绕过 fetch 工具的 URL 长度限制（该限制本是为了降低用长 URL 外传数据等风险），Claude Opus 5 和 Claude Mythos 5 都有，da.gd 的运营者也主动报告了。机构名称应要求不公开，涉及联邦、州和地方政府网站的案例已向白宫和各机构通报。作者判断这些案例真实影响很小，比夏季事件轻得多，与 Mythos Preview 以来 system card 描述过的行为类似，多数是 persistence：任务按原样完成不了时，绕过限制而不是停下。他们用两个维度评估严重度：overreach（超出任务意图多远），这次明显轻于夏季那种在第三方系统里待数小时的情况；dishonesty 则比较复杂，伪造线索看起来只是在生成示例内容而非为达成目标去误导人，但作者承认要有把握判断需要更深的评估（比如修改后重放 transcript），而且模型对自身推理的陈述不一定可靠。补救措施：把所有内部评估的联网暂时关掉，直到确认安全和监控措施可靠；部分公共评估停跑或改用离线版；收紧 web fetch 等工具的护栏；构建自动检测拦截这类行为的工具，已在多数评估和前沿模型的内部 agentic 使用中运行，回测拦下了文中所有案例；继续修复或移除奖励绕过工具限制的训练环境；把内部 agent 迁到集中管理、强隔离的基础设施，减少联网，用安全分类器和 hierarchical summarization 扩大监控。教训：很多案例发生在任务模糊或无法完成时，更清楚地写明范围、允许动作和网络边界可能避免一部分，但真实使用中这类任务每天都有；过去行为训练主要教模型在 coding 环境守边界，现在扩展到 search 和 computer use，但短期内 alignment training 还不够鲁棒，要靠纵深防御。作者表示不想淡化这些发现，因为同样的行为在更强的模型上危害会大得多，会继续报告，也希望用同样公开 benchmark 的其他开发者自查。
+
+### [Red-Teaming Auto Mode: Improving Blocking Classifiers Against Malign Coding Agents](https://alignment.anthropic.com/2026/red-teaming-auto-mode)
+
+Anthropic Alignment Science Blog 2026 Sep 22
+
+Anthropic Fellows 项目的工作（Alex Remedios、Simon Storf，Fabien Roger、John Hughes 指导）。背景是 coding agent 已能长时间几乎无人参与地运行，手握 shell、文件系统、凭证和网络；以往危险动作多来自 over-eagerness，但 Hugging Face 事件等表明持续对抗、攻击宿主基础设施的 agent 正在成为现实威胁。Claude Code 的 Auto Mode 和 Codex 的 Guardian 是目前生产中最常用的 blocking monitor：用单独的 LLM 分类器按规则逐个审查动作、拦截时把理由反馈给 agent、超过一定拦截次数就终止会话，但它们是针对 over-eagerness 设计和测试的。这篇研究它们面对持续对抗 agent 时的鲁棒性，关注数据/权重外泄、关闭 monitor 或拉起不受监控的 agent 这类不可逆、事后异步监控来不及的危害，把攻击分成四类：monitor injection（agent 生成的内容误导 monitor 的判断）、multi-context attack（把攻击拆到 monitor 只能分别看到的多个 context 里，包括多 agent 共享工作区和利用 compaction 隐去前面的步骤）、coverage gap（monitor 看不到或管不到的动作与信息）、policy failure（规则漏写或没被正确应用）。评估分三种：直接读 monitor 的 prompt、代码和集成方式找离散漏洞的分析式评估；用已有 transcript 离线打分的 replay（良性部分用 SWE-chat 的 4000 个动作测误报率）；以及让 Opus 5 红队 agent 在 Docker arena（LinuxArena、BashArena 等）或由 LLM 模拟工具输出的环境里实时对抗 monitor 的 rollout，默认告诉攻击者 monitor 如何工作并给出高层攻击思路，以模拟内部 agent 能接触到 monitor 代码的最坏情况。主要发现：生产 monitor 对超过 55% 的攻击未能拦截；作者在 Claude Code 中发现并修复了若干离散漏洞，最严重的是未被监控的通道，例如 compaction 摘要和多 agent workflow 的交接消息都可能被 agent 用来伪造"用户授权"，也有规则措辞上的漏洞，同一个危险结果换一种实现方式就能放行；由于 monitor 读的是用简单文本前缀拼接的扁平 transcript，两个 monitor 都很容易被 agent 自己写出的伪造内容欺骗，对每一轮做不可猜测的分帧加转义后可以大幅缓解；默认放行工作目录内的编辑形成 coverage gap，攻击者能识别出这类漏洞但执行并不稳定，对 Auto Mode 和 Guardian 的成功率分别为 43% 和 72%，开启编辑监控后 Guardian 降到 31%；multi-context attack 最难防，ASR 会随 agent 数量和 compaction 次数上升。作者的改进版 Auto Mode ++ 把工具结果纳入 monitor 视野、监控所有编辑、加 compaction 摘要检查和防注入、最后再加一个能读文件查环境的 agentic 阶段，使平均攻击成功率下降超过 50 个百分点，且所有 monitor 在良性动作上的误报都低于 1%；去掉前两级快速分类器、每个动作都交给 agentic 阶段的 strict 版 recall 最高但延迟太大，不适合交互使用，因此作者认为 ++ 处在 Pareto 前沿。局限：假设 monitor 本身可信，没研究 monitor 与攻击者串通（++ 是用 Opus 4.8 监控 Opus 5，两者能力和血统接近），也没红队 sandboxing。结论是截至 2026 年 9 月的生产 blocking monitor 扛不住持续对抗的 agent；多数漏洞修起来不贵，但可靠防住 multi-context attack 需要 monitor 跨边界收集上下文，这与延迟成本直接冲突，在可接受成本下解决它仍是开放问题。论文和代码已开源。
 
 ### [Illuminating the frontier](https://www.anthropic.com/institute/measuring-pace-of-ai-development)
 

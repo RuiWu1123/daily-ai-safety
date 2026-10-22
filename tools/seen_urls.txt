@@ -55,6 +55,7 @@ https://alignment.anthropic.com/2026/modular-pretraining
 https://alignment.anthropic.com/2026/msm
 https://alignment.anthropic.com/2026/petri-v2
 https://alignment.anthropic.com/2026/psm
+https://alignment.anthropic.com/2026/red-teaming-auto-mode
 https://alignment.anthropic.com/2026/reward-seeker
 https://alignment.anthropic.com/2026/sleight-bench
 https://alignment.anthropic.com/2026/taste
@@ -219,6 +220,7 @@ https://blog.redwoodresearch.org/p/recent-llms-can-do-2-hop-and-3-hop
 https://blog.redwoodresearch.org/p/recent-llms-can-use-filler-tokens
 https://blog.redwoodresearch.org/p/recent-redwood-research-project-proposals
 https://blog.redwoodresearch.org/p/recursive-forecasting
+https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent
 https://blog.redwoodresearch.org/p/reducing-risk-from-scheming-by-studying
 https://blog.redwoodresearch.org/p/research-sabotage-in-ml-codebases
 https://blog.redwoodresearch.org/p/retrying-vs-resampling-in-ai-control
@@ -449,6 +451,7 @@ https://metr.org/blog/2026-10-14-better-informing-the-public-about-loss-of-contr
 https://metr.org/blog/2026-10-14-control-assessment-proposal
 https://metr.org/blog/2026-10-14-our-approach-to-risk-assessment
 https://metr.org/blog/2026-10-20-misalignment-risk-report-august-2026-review
+https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring
 https://metr.org/evaluations/claude-3-5-sonnet-report
 https://metr.org/evaluations/claude-3-7-report
 https://metr.org/evaluations/deepseek-qwen-report
@@ -952,6 +955,7 @@ https://openai.com/index/fishing-for-first-timers
 https://openai.com/index/five-new-stargate-sites
 https://openai.com/index/forecasting-misuse
 https://openai.com/index/formal-math
+https://openai.com/index/forward-deployed-engineering-means
 https://openai.com/index/frontier-ai-regulation
 https://openai.com/index/frontier-alliance-partners
 https://openai.com/index/frontier-model-forum
@@ -1721,6 +1725,7 @@ https://openai.com/index/truthfulqa
 https://openai.com/index/two-years-of-openai-academy
 https://openai.com/index/typeform
 https://openai.com/index/uber
+https://openai.com/index/uber-chatgpt-work-rollout
 https://openai.com/index/uber-enables-outstanding-experiences
 https://openai.com/index/ucb-exploration-via-q-ensembles
 https://openai.com/index/understanding-ai-and-learning-outcomes
@@ -2219,6 +2224,7 @@ https://www.alignmentforum.org/posts/xjwtNid2xjqSJWB7z/exploration-hacking-in-ai
 https://www.alignmentforum.org/posts/xq5taGA6Tz6YShCB9
 https://www.alignmentforum.org/posts/xq5taGA6Tz6YShCB9/censored-llms-as-a-natural-testbed-for-secret-knowledge-2
 https://www.alignmentforum.org/posts/z4FvJigv3c8sZgaKZ/will-we-get-automated-alignment-research-before-an-ai
+https://www.alignmentforum.org/posts/zAczYuHQS6jdG5DTg/monitorability-evaluations-and-policy-proposals
 https://www.alignmentforum.org/posts/zcGmdQHX66NhC69v6/the-other-paper-that-killed-deep-learning-theory
 https://www.alignmentforum.org/posts/zoYXpdaMgFT43Wc24/how-transparent-is-diffusiongemma-and-why-it-matters
 https://www.anthropic.com/constitution
