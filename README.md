@@ -34,5 +34,5 @@
   - Anthropic：[Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史
   - OpenAI：[Alignment Research Blog](https://alignment.openai.com/)，含 Misalignment Reports and Notices，全部历史
   - METR、Apollo Research、UK AISI、FAR.AI、Goodfire（只看 research 页，不含生物/基因组/材料等科学应用）、Transluce、Redwood Research：全部历史
-  - Alignment Forum：2026 年至今，上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）的帖子
+  - Alignment Forum：2025 年至今，上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）的帖子
 - 简读格式：背景/动机 → 做了什么 → 主要发现 → 作者的解读、局限与结论。少数涉及攻击手法或生物/化学内容的条目只写到摘要层面。
