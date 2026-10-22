@@ -1,11 +1,11 @@
 ---
-title: "Supervised finetuning on low-harm reward hacking generalises to high-harm reward hacking"
+title: Supervised finetuning on low-harm reward hacking generalises to high-harm reward hacking
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-12-22
-source: "Alignment Forum（Anthropic / UK AISI；Isaac Dunn, Kei Nishimura-Gasparian, Carson Denison, Ethan Perez, Robert Kirk）"
+source: Alignment Forum（Anthropic / UK AISI；Isaac Dunn, Kei Nishimura-Gasparian, Carson Denison, Ethan Perez, Robert Kirk）
 url: https://www.alignmentforum.org/posts/ATDvmn23PWW4erZzf
-star: false
+star: true
 tags:
   - 奖励作弊
   - 泛化与涌现失调

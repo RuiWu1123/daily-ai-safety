@@ -1,11 +1,11 @@
 ---
-title: "Measuring Non-Verbalised Eval Awareness by Implanting Eval-Aware Behaviours"
+title: Measuring Non-Verbalised Eval Awareness by Implanting Eval-Aware Behaviours
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-01-30
-source: "Alignment Forum（UK AISI；Jordan Taylor）"
+source: Alignment Forum（UK AISI；Jordan Taylor）
 url: https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb
-star: false
+star: true
 tags:
   - 评估感知
   - CoT与可监控性
