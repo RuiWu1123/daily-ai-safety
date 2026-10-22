@@ -7,7 +7,7 @@ usage:
       [--also-url URL --also-title TITLE --also-label LABEL] [--category "Misalignment Reports and Notices"]
 
 Prints the wikilink to use in the daily report, e.g. [[papers/METR/2026-10-23 Title|笔记]].
-The script only ever creates new files; existing notes (and the "我的笔记" section people write in) are never touched.
+The script only ever creates new files; existing notes are never touched (the user writes in my_notes/ and links to these notes).
 """
 import argparse, glob, os, re, sys, unicodedata
 
@@ -82,7 +82,7 @@ def main():
     summary = open(a.summary_file, encoding='utf8').read().strip()
     os.makedirs(os.path.join(ROOT, 'papers', sub), exist_ok=True)
     with open(os.path.join(ROOT, rel + '.md'), 'w', encoding='utf8') as f:
-        f.write('\n'.join(fm) + f'\n\n# {a.title}\n\n{meta}\n\n## 简读\n\n{summary}\n\n## 我的笔记\n\n')
+        f.write('\n'.join(fm) + f'\n\n# {a.title}\n\n{meta}\n\n## 简读\n\n{summary}\n')
     print(f'created: [[{rel}|笔记]]')
 
 

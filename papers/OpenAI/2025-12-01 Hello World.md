@@ -20,5 +20,3 @@ OpenAI Alignment Research Blog 的开篇公告。OpenAI 说明他们研究如何
 
 ---
 
-## 我的笔记
-
