@@ -22,4 +22,4 @@
 | [Goodfire.md](Goodfire.md) | [Goodfire Research](https://www.goodfire.ai/research)（不含 Blog 和生物/基因组/材料等科学应用），全部历史 | 34 | ✅ 已收录（截至 2026-10-22） |
 | [Transluce.md](Transluce.md) | [Transluce](https://transluce.org/) 的研究报告、Incident Reports、Docent Blog 技术文章，全部历史 | 24 | ✅ 已收录（截至 2026-10-22） |
 | [Redwood_Research.md](Redwood_Research.md) | [Redwood Research](https://www.redwoodresearch.org/) 研究页论文 + [Redwood Blog](https://blog.redwoodresearch.org/) 技术研究，全部历史 | 85 | ✅ 已收录（截至 2026-10-22） |
-| LessWrong_Alignment_Forum.md | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布、且未被其 lab 主页收录的帖子，2026 年至今 | – | ⏳ 收录中 |
+| [LessWrong_Alignment_Forum.md](LessWrong_Alignment_Forum.md) | [Alignment Forum](https://www.alignmentforum.org/) 上上述 lab 研究员发布（含 lab 研究员合著的 MATS / Fellows 项目）、且未被其 lab 主页收录的技术研究帖，2026 年至今 | 22 | ✅ 已收录（截至 2026-10-22） |
