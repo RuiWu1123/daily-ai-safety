@@ -1,11 +1,11 @@
 ---
-title: "Language models (mostly) know what they know"
+title: Language models (mostly) know what they know
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2022-07-11
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/language-models-mostly-know-what-they-know
-star: false
+star: true
 tags:
   - 诚实与谎言检测
 ---

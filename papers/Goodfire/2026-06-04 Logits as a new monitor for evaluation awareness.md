@@ -1,13 +1,13 @@
 ---
-title: "Logits as a new monitor for evaluation awareness"
+title: Logits as a new monitor for evaluation awareness
 lab:
-  - "Goodfire"
+  - Goodfire
 date: 2026-06-04
-source: "Goodfire Research"
+source: Goodfire Research
 url: https://www.goodfire.com/research/logits-as-a-new-monitor-for-evaluation-awareness
 other_versions:
-  - "https://www.lesswrong.com/posts/PK7ZvFZxrgpYtrpF4/logits-as-a-new-monitor-for-evaluation-awareness-1"
-star: false
+  - https://www.lesswrong.com/posts/PK7ZvFZxrgpYtrpF4/logits-as-a-new-monitor-for-evaluation-awareness-1
+star: true
 tags:
   - 评估感知
   - CoT与可监控性

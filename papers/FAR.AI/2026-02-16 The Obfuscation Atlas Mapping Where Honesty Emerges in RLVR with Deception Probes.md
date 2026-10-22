@@ -1,11 +1,11 @@
 ---
 title: "The Obfuscation Atlas: Mapping Where Honesty Emerges in RLVR with Deception Probes"
 lab:
-  - "FAR.AI"
+  - FAR.AI
 date: 2026-02-16
-source: "FAR.AI Publications"
+source: FAR.AI Publications
 url: https://www.far.ai/research/the-obfuscation-atlas-mapping-where-honesty-emerges-in-rlvr-with-deception-probes
-star: false
+star: true
 tags:
   - 诚实与谎言检测
   - 奖励作弊

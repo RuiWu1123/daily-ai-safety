@@ -1,11 +1,11 @@
 ---
-title: "Training on Documents about Reward Hacking Induces Reward Hacking"
+title: Training on Documents about Reward Hacking Induces Reward Hacking
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-01
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2025/reward-hacking-ooc/index.html
-star: false
+star: true
 tags:
   - 奖励作弊
   - 泛化与涌现失调

@@ -1,11 +1,11 @@
 ---
-title: "Stress Testing Deliberative Alignment for Anti-Scheming Training"
+title: Stress Testing Deliberative Alignment for Anti-Scheming Training
 lab:
-  - "Apollo Research"
+  - Apollo Research
 date: 2025-09-17
-source: "Apollo Research"
+source: Apollo Research
 url: https://www.apolloresearch.ai/science/stress-testing-deliberative-alignment-for-anti-scheming-training
-star: false
+star: true
 tags:
   - 策划与欺骗
   - 对齐训练方法

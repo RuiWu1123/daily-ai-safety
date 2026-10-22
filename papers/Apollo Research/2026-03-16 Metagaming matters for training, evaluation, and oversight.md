@@ -1,14 +1,14 @@
 ---
-title: "Metagaming matters for training, evaluation, and oversight"
+title: Metagaming matters for training, evaluation, and oversight
 lab:
-  - "Apollo Research"
-  - "OpenAI"
+  - Apollo Research
+  - OpenAI
 date: 2026-03-16
-source: "Apollo Research"
+source: Apollo Research
 url: https://www.apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight
 other_versions:
-  - "https://alignment.openai.com/metagaming/"
-star: false
+  - https://alignment.openai.com/metagaming/
+star: true
 tags:
   - 评估感知
   - CoT与可监控性

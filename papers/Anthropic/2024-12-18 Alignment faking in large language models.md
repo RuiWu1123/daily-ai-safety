@@ -1,11 +1,11 @@
 ---
-title: "Alignment faking in large language models"
+title: Alignment faking in large language models
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2024-12-18
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/alignment-faking
-star: false
+star: true
 tags:
   - 伪装对齐
   - 策划与欺骗

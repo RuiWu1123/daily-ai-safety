@@ -1,11 +1,11 @@
 ---
-title: "Auditing Games for Sandbagging"
+title: Auditing Games for Sandbagging
 lab:
-  - "FAR.AI"
+  - FAR.AI
 date: 2025-12-07
-source: "FAR.AI Publications"
+source: FAR.AI Publications
 url: https://www.far.ai/research/auditing-games-for-sandbagging
-star: false
+star: true
 tags:
   - 故意藏拙
   - 对齐审计

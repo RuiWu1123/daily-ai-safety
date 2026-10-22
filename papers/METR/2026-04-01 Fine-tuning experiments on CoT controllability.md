@@ -1,11 +1,11 @@
 ---
-title: "Fine-tuning experiments on CoT controllability"
+title: Fine-tuning experiments on CoT controllability
 lab:
-  - "METR"
+  - METR
 date: 2026-04-01
-source: "METR Notes"
+source: METR Notes
 url: https://metr.org/blog/2026-04-01-fine-tuning-cot-controllability/
-star: false
+star: true
 tags:
   - CoT与可监控性
 ---

@@ -1,11 +1,11 @@
 ---
-title: "Measuring Reward-Seeking via Contrastive Belief Updates"
+title: Measuring Reward-Seeking via Contrastive Belief Updates
 lab:
-  - "Apollo Research"
+  - Apollo Research
 date: 2026-07-21
-source: "Apollo Research"
+source: Apollo Research
 url: https://www.apolloresearch.ai/science/measuring-reward-seeking-via-contrastive-belief-updates
-star: false
+star: true
 tags:
   - 奖励作弊
   - 威胁建模

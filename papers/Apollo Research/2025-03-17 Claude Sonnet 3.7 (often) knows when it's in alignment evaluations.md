@@ -1,11 +1,11 @@
 ---
-title: "Claude Sonnet 3.7 (often) knows when it’s in alignment evaluations"
+title: Claude Sonnet 3.7 (often) knows when it’s in alignment evaluations
 lab:
-  - "Apollo Research"
+  - Apollo Research
 date: 2025-03-17
-source: "Apollo Research"
+source: Apollo Research
 url: https://www.apolloresearch.ai/science/claude-sonnet-37-often-knows-when-its-in-alignment-evaluations
-star: false
+star: true
 tags:
   - 评估感知
   - 策划与欺骗

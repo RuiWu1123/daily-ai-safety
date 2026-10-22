@@ -1,11 +1,11 @@
 ---
-title: "Verbalized Eval Awareness Inflates Measured Safety"
+title: Verbalized Eval Awareness Inflates Measured Safety
 lab:
-  - "Goodfire"
+  - Goodfire
 date: 2026-05-04
-source: "Goodfire Research"
+source: Goodfire Research
 url: https://www.goodfire.com/research/verbalized-eval-awareness-inflates-measured-safety
-star: false
+star: true
 tags:
   - 评估感知
   - 评估方法

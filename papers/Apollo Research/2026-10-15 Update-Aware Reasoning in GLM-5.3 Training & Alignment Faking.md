@@ -1,11 +1,11 @@
 ---
 title: "Update-Aware Reasoning in GLM-5.3: Training & Alignment Faking"
 lab:
-  - "Apollo Research"
+  - Apollo Research
 date: 2026-10-15
-source: "Apollo Research"
+source: Apollo Research
 url: https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3
-star: false
+star: true
 tags:
   - 伪装对齐
   - 评估感知

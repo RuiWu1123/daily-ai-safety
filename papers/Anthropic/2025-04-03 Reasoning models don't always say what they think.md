@@ -1,13 +1,13 @@
 ---
-title: "Reasoning models don't always say what they think"
+title: Reasoning models don't always say what they think
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-04-03
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/reasoning-models-dont-say-think
 other_versions:
-  - "https://drive.google.com/drive/folders/1l0pkcZxvFwMtczst_hhiCC44v-IiODlY?usp=sharing"
-star: false
+  - https://drive.google.com/drive/folders/1l0pkcZxvFwMtczst_hhiCC44v-IiODlY?usp=sharing
+star: true
 tags:
   - CoT与可监控性
 ---
