@@ -1,11 +1,11 @@
 ---
-title: "If you can generate obfuscated chain-of-thought, can you monitor it?"
+title: If you can generate obfuscated chain-of-thought, can you monitor it?
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-08-04
-source: "Alignment Forum（UK AISI；Asa Cooper Stickland, Tomek Korbak）"
+source: Alignment Forum（UK AISI；Asa Cooper Stickland, Tomek Korbak）
 url: https://www.alignmentforum.org/posts/ZEdP6rYirxPxRSfTb
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 监控与控制

@@ -1,11 +1,11 @@
 ---
-title: "Reducing Reward Hacking by Localizing Bad Behavior Instead of Penalizing It"
+title: Reducing Reward Hacking by Localizing Bad Behavior Instead of Penalizing It
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-10-19
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2026/graft/
-star: false
+star: true
 tags:
   - 奖励作弊
   - 监控与控制
