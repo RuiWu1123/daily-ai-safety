@@ -5,6 +5,7 @@ lab:
 date: 2026-01-08
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/large-language-models-can-effectively-convince-people-to-believe-conspiracies
+star: false
 tags:
   - 人机交互与社会影响
   - 越狱与鲁棒性

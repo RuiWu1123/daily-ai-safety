@@ -5,6 +5,7 @@ lab:
 date: 2026-03-12
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/are-ais-more-likely-to-pursue-on
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

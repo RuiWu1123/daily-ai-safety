@@ -5,6 +5,7 @@ lab:
 date: 2025-08-19
 source: "Alignment Forum（Anthropic；andrq, Tim Hua, Sam Marks, Arthur Conmy, Neel Nanda）"
 url: https://www.alignmentforum.org/posts/kmNqsbgKWJHGqhj4g
+star: false
 tags:
   - 数据投毒与后门
   - 对齐审计

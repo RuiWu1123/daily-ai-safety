@@ -5,6 +5,7 @@ lab:
 date: 2025-10-26
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/breaking-agent-backbones-evaluating-the-security-of-backbone-llms-in-ai-agents
+star: false
 tags:
   - 提示注入
   - 越狱与鲁棒性

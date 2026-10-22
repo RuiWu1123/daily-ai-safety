@@ -5,6 +5,7 @@ lab:
 date: 2025-12-18
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/prod-evals/
+star: false
 tags:
   - 评估感知
   - 评估方法

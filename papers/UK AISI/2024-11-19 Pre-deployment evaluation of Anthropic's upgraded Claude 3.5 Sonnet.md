@@ -5,6 +5,7 @@ lab:
 date: 2024-11-19
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-anthropics-upgraded-claude-3-5-sonnet
+star: false
 tags:
   - 危险能力评估
   - 网络安全

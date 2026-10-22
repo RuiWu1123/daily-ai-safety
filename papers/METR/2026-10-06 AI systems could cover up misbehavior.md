@@ -5,6 +5,7 @@ lab:
 date: 2026-10-06
 source: "METR Blog"
 url: https://metr.org/blog/2026-10-06-ai-systems-could-cover-up-misbehavior/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

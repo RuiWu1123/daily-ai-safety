@@ -5,6 +5,7 @@ lab:
 date: 2024-11-26
 source: "Redwood Research"
 url: https://arxiv.org/abs/2411.17693
+star: false
 tags:
   - 监控与控制
 ---

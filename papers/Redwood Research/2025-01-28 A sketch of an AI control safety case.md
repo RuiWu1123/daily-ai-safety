@@ -9,6 +9,7 @@ url: https://arxiv.org/abs/2501.17315
 other_versions:
   - "https://blog.redwoodresearch.org/p/takeaways-from-sketching-a-control"
   - "https://www.aisi.gov.uk/research/a-sketch-of-an-ai-control-safety-case"
+star: false
 tags:
   - 监控与控制
   - 威胁建模

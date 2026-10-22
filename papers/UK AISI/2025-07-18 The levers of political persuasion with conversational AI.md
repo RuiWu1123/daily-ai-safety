@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/the-levers-of-political-persuasion-with-conversational-ai
 other_versions:
   - "https://www.aisi.gov.uk/blog/how-do-ai-models-persuade-exploring-the-levers-of-ai-enabled-persuasion-through-large-scale-experiments"
+star: false
 tags:
   - 人机交互与社会影响
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2024-03-15
 source: "METR Research"
 url: https://metr.org/blog/2024-03-15-measuring-post-impact-enhancements/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

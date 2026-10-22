@@ -5,6 +5,7 @@ lab:
 date: 2022-11-04
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/measuring-progress-on-scalable-oversight-for-large-language-models
+star: false
 tags:
   - 可扩展监督
 ---

@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/quantifying-frontier-llm-capabilities-for-container-sandbox-escape
 other_versions:
   - "https://www.aisi.gov.uk/blog/can-ai-agents-escape-their-sandboxes-a-benchmark-for-safely-measuring-container-breakout-capabilities"
+star: false
 tags:
   - 网络安全
   - 危险能力评估

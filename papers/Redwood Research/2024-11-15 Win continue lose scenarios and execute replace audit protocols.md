@@ -5,6 +5,7 @@ lab:
 date: 2024-11-15
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/wincontinuelose-scenarios-and-executereplaceaudi
+star: false
 tags:
   - 监控与控制
 ---

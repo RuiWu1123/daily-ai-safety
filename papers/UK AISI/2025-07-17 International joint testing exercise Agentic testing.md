@@ -5,6 +5,7 @@ lab:
 date: 2025-07-17
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/international-joint-testing-exercise-agentic-testing
+star: false
 tags:
   - 评估方法
   - 多智能体

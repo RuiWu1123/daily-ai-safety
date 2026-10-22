@@ -5,6 +5,7 @@ lab:
 date: 2025-07-18
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/stack-adversarial-attacks-on-llm-safeguard-pipelines
+star: false
 tags:
   - 越狱与鲁棒性
 ---

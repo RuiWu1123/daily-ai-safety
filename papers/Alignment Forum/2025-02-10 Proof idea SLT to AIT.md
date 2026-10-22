@@ -5,6 +5,7 @@ lab:
 date: 2025-02-10
 source: "Alignment Forum（Apollo Research；Lucius Bushnaq）"
 url: https://www.alignmentforum.org/posts/3ZBmKDpAJJahRM248
+star: false
 tags:
   - 可解释性
 ---

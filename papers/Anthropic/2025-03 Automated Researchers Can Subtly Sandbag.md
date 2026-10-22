@@ -5,6 +5,7 @@ lab:
 date: 2025-03
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/automated-researchers-sandbag/
+star: false
 tags:
   - 故意藏拙
   - 监控与控制

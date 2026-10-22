@@ -5,6 +5,7 @@ lab:
 date: 2024-09-26
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/a-basic-systems-architecture-for
+star: false
 tags:
   - 威胁建模
   - 安全基础设施

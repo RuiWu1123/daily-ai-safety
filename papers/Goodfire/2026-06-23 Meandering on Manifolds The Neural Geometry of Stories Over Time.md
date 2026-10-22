@@ -5,6 +5,7 @@ lab:
 date: 2026-06-23
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/stories-in-space
+star: false
 tags:
   - 可解释性
 ---

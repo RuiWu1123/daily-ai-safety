@@ -5,6 +5,7 @@ lab:
 date: 2025-01-31
 source: "METR Research"
 url: https://metr.org/blog/2025-01-31-update-sonnet-o1-evals/
+star: false
 tags:
   - 危险能力评估
   - 威胁建模

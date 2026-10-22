@@ -5,6 +5,7 @@ lab:
 date: 2024-09-25
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/understanding-and-steering-llama-3
+star: false
 tags:
   - 可解释性
 ---

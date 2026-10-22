@@ -5,6 +5,7 @@ lab:
 date: 2025-07-13
 source: "Alignment Forum（UK AISI；Casey Barkan, Sid Black, Oliver Sourbut）"
 url: https://www.alignmentforum.org/posts/9tHEibBBhQCHEyFsa
+star: false
 tags:
   - 故意藏拙
   - 监控与控制

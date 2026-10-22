@@ -5,6 +5,7 @@ lab:
 date: 2026-05-07
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/manifold-steering
+star: false
 tags:
   - 可解释性
 ---

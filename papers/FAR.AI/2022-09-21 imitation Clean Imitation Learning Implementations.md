@@ -5,6 +5,7 @@ lab:
 date: 2022-09-21
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/imitation-clean-imitation-learning-implementations
+star: false
 tags:
   - 对齐训练方法
 ---

@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/logits-as-a-new-monitor-for-evaluation-awareness
 other_versions:
   - "https://www.lesswrong.com/posts/PK7ZvFZxrgpYtrpF4/logits-as-a-new-monitor-for-evaluation-awareness-1"
+star: false
 tags:
   - 评估感知
   - CoT与可监控性

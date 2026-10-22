@@ -6,6 +6,7 @@ date: 2026-09-16
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-api-keys/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 奖励作弊

@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2211.00593
 other_versions:
   - "https://www.alignmentforum.org/posts/3ecs6duLmTfyra3Gp/some-lessons-learned-from-studying-indirect-object"
+star: false
 tags:
   - 可解释性
 ---

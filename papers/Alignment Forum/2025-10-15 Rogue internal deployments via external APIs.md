@@ -5,6 +5,7 @@ lab:
 date: 2025-10-15
 source: "Alignment Forum（Anthropic / Redwood Research；Fabien Roger, Buck）"
 url: https://www.alignmentforum.org/posts/fqRmcuspZuYBNiQuQ
+star: false
 tags:
   - 威胁建模
   - 监控与控制

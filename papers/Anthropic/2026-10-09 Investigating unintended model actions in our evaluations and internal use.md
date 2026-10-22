@@ -5,6 +5,7 @@ lab:
 date: 2026-10-09
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/investigating-unintended-model-actions
+star: false
 tags:
   - 事故报告
   - 网络安全

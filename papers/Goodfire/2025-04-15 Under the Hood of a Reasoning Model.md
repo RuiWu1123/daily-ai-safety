@@ -5,6 +5,7 @@ lab:
 date: 2025-04-15
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/under-the-hood-of-a-reasoning-model
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-05
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/evidence-for-inference-scaling-in-ai-cyber-tasks-increased-evaluation-budgets-reveal-higher-success-rates
+star: false
 tags:
   - 网络安全
   - 评估方法

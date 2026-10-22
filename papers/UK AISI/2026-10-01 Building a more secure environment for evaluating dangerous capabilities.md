@@ -5,6 +5,7 @@ lab:
 date: 2026-10-01
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities
+star: false
 tags:
   - 安全基础设施
   - 网络安全

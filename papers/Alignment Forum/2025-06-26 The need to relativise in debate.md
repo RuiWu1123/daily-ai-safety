@@ -5,6 +5,7 @@ lab:
 date: 2025-06-26
 source: "Alignment Forum（UK AISI；Geoffrey Irving, Simon Marshall）"
 url: https://www.alignmentforum.org/posts/XycoFucvxAPhcgJQa
+star: false
 tags:
   - 可扩展监督
 ---

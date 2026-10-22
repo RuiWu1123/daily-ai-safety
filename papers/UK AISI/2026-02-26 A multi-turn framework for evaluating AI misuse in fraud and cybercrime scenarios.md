@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/a-multi-turn-framework-for-evaluating-ai-misuse-in-fraud-and-cybercrime-scenarios
 other_versions:
   - "https://www.aisi.gov.uk/blog/an-evaluation-framework-for-ai-misuse-in-fraud-and-cybercrime"
+star: false
 tags:
   - 越狱与鲁棒性
   - 网络安全

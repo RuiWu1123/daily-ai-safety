@@ -6,6 +6,7 @@ date: 2026-10-02
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/preparing-for-a-restart-after-reading-slack/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 评估感知

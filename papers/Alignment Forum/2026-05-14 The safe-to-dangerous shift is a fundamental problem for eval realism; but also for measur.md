@@ -5,6 +5,7 @@ lab:
 date: 2026-05-14
 source: "Alignment Forum（UK AISI；Charlie Griffin, Patrick Leask）"
 url: https://www.alignmentforum.org/posts/tK8vqHDxaRGcysNJQ
+star: false
 tags:
   - 评估感知
   - 伪装对齐

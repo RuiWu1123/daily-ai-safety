@@ -6,6 +6,7 @@ date: 2026-10-15
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/accessing-and-changing-internal-systems-during-dashboard-research/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 网络安全

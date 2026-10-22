@@ -5,6 +5,7 @@ lab:
 date: 2023-10-24
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/specific-versus-general-principles-for-constitutional-ai
+star: false
 tags:
   - 对齐训练方法
 ---

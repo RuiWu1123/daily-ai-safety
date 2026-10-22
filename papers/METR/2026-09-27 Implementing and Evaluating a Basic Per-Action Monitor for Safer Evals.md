@@ -5,6 +5,7 @@ lab:
 date: 2026-09-27
 source: "METR Notes"
 url: https://metr.org/notes/2026-09-27-implementing-a-basic-blocking-action-monitor/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

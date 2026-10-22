@@ -5,6 +5,7 @@ lab:
 date: 2025-10-14
 source: "METR Research"
 url: https://metr.org/blog/2025-10-14-malt-dataset-of-natural-and-prompted-behaviors/
+star: false
 tags:
   - 评估方法
   - 奖励作弊

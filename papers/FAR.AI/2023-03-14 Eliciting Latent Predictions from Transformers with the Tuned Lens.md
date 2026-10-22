@@ -5,6 +5,7 @@ lab:
 date: 2023-03-14
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/eliciting-latent-predictions-from-transformers-with-the-tuned-lens
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-13
 source: "Alignment Forum（Redwood Research；Vivek Hebbar）"
 url: https://www.alignmentforum.org/posts/RyDkpWGLQsCnABE78
+star: false
 tags:
   - 威胁建模
 ---

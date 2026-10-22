@@ -5,6 +5,7 @@ lab:
 date: 2025-07-24
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/automated-auditing/
+star: false
 tags:
   - 对齐审计
   - 可解释性

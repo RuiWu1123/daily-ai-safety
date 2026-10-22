@@ -5,6 +5,7 @@ lab:
 date: 2026-05-14
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/a-geometric-calculator
+star: false
 tags:
   - 可解释性
 ---

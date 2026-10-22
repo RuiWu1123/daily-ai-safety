@@ -5,6 +5,7 @@ lab:
 date: 2025-08-09
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/four-places-where-you-can-put-llm
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

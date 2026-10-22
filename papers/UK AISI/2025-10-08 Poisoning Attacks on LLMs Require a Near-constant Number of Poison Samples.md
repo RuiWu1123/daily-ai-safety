@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/poisoning-attacks-on-llms-require-a-near-constant-number-of-poison-samples
 other_versions:
   - "https://www.aisi.gov.uk/blog/examining-backdoor-data-poisoning-at-scale"
+star: false
 tags:
   - 数据投毒与后门
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-12
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/reasoning-theater
+star: false
 tags:
   - CoT与可监控性
   - 可解释性

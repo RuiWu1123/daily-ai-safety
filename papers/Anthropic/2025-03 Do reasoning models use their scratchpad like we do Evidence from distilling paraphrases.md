@@ -5,6 +5,7 @@ lab:
 date: 2025-03
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/distill-paraphrases/
+star: false
 tags:
   - CoT与可监控性
 ---

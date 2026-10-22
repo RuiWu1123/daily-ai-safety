@@ -5,6 +5,7 @@ lab:
 date: 2024-07-10
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/transformer-circuit-faithfulness-metrics-are-not-robust
+star: false
 tags:
   - 可解释性
   - 评估方法

@@ -75,7 +75,7 @@ def main():
         fm += ['other_versions:'] + [f"  - {yq(o['url'])}" for o in others]
     if a.category:
         fm.append(f'category: {yq(a.category)}')
-    fm += ['tags:'] + [f'  - {t}' for t in tags] + ['---']
+    fm += ['star: false', 'tags:'] + [f'  - {t}' for t in tags] + ['---']
     meta = f'**来源**：{a.source} · {a.date} · [原文]({a.url})'
     if others:
         meta += '　另见：' + '；'.join(f"[{o['label'] or o['title']}]({o['url']})" for o in others)

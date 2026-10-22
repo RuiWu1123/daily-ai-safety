@@ -5,6 +5,7 @@ lab:
 date: 2026-04-28
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/introspection-adapters/
+star: false
 tags:
   - 诚实与谎言检测
   - 对齐审计

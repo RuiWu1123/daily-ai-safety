@@ -5,6 +5,7 @@ lab:
 date: 2025-01-31
 source: "Alignment Forum（Redwood Research / Anthropic；ryan_greenblatt, Kyle Fish）"
 url: https://www.alignmentforum.org/posts/7C4KJot4aN8ieEDoz
+star: false
 tags:
   - 伪装对齐
   - 模型福利

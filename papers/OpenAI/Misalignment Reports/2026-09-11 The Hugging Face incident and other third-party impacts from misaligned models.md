@@ -6,6 +6,7 @@ date: 2026-09-11
 source: "OpenAI Misalignment Notice"
 url: https://openai.com/hugging-face-incident-and-misalignment/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 网络安全

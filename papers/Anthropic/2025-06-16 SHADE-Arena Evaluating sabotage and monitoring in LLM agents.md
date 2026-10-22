@@ -5,6 +5,7 @@ lab:
 date: 2025-06-16
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/shade-arena-sabotage-monitoring
+star: false
 tags:
   - 策划与欺骗
   - 监控与控制

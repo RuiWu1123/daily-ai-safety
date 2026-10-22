@@ -5,6 +5,7 @@ lab:
 date: 2026-02-11
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/rlfr
+star: false
 tags:
   - 可解释性
   - 诚实与谎言检测

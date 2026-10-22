@@ -5,6 +5,7 @@ lab:
 date: 2026-07-02
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/more-compute-more-capability-why-ai-agent-evals-need-to-account-for-test-time-compute
+star: false
 tags:
   - 评估方法
   - 危险能力评估

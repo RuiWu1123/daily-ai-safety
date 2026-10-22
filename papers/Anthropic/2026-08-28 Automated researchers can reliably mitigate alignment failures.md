@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures
 other_versions:
   - "https://alignment.anthropic.com/2026/automated-alignment-researchers/"
+star: false
 tags:
   - 可扩展监督
   - 对齐训练方法

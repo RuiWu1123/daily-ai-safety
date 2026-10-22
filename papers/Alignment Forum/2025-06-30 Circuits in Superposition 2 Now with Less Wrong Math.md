@@ -5,6 +5,7 @@ lab:
 date: 2025-06-30
 source: "Alignment Forum（Goodfire；Linda Linsefors, Lucius Bushnaq）"
 url: https://www.alignmentforum.org/posts/FWkZYQceEzL84tNej
+star: false
 tags:
   - 可解释性
 ---

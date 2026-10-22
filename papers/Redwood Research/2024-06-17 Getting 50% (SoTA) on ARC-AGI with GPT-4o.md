@@ -5,6 +5,7 @@ lab:
 date: 2024-06-17
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/getting-50-sota-on-arc-agi-with-gpt
+star: false
 tags:
   - 评估方法
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-04-24
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/how-training-gamers-might-function
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

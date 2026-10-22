@@ -5,6 +5,7 @@ lab:
 date: 2025-11-19
 source: "Transluce Docent Blog"
 url: https://transluce.org/docent/blog/swe-bench
+star: false
 tags:
   - 评估方法
   - 奖励作弊

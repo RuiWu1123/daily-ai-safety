@@ -5,6 +5,7 @@ lab:
 date: 2025-05-31
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/existing-large-language-model-unlearning-evaluations-are-inconclusive
+star: false
 tags:
   - 知识移除
   - 评估方法

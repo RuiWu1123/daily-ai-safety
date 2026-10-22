@@ -5,6 +5,7 @@ lab:
 date: 2026-02-24
 source: "METR Research"
 url: https://metr.org/blog/2026-02-24-uplift-update/
+star: false
 tags:
   - 评估方法
   - 人机交互与社会影响

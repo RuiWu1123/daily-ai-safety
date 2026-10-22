@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/white-box-control-at-uk-aisi---update-on-sandbagging-investigations
 other_versions:
   - "https://www.aisi.gov.uk/blog/why-were-working-on-white-box-control"
+star: false
 tags:
   - 故意藏拙
   - 可解释性

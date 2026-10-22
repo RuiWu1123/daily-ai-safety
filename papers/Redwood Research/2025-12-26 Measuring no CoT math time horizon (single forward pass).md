@@ -5,6 +5,7 @@ lab:
 date: 2025-12-26
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/measuring-no-cot-math-time-horizon
+star: false
 tags:
   - CoT与可监控性
   - 评估方法

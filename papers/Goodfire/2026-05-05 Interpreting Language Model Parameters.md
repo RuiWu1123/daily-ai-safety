@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/interpreting-lm-parameters
 other_versions:
   - "https://www.goodfire.com/research/vpd-explainer"
+star: false
 tags:
   - 可解释性
 ---

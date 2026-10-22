@@ -5,6 +5,7 @@ lab:
 date: 2026-06-18
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/the-distillation-double-bind-distilling
+star: false
 tags:
   - 监控与控制
   - 对齐审计

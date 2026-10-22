@@ -5,6 +5,7 @@ lab:
 date: 2025-04-16
 source: "Transluce"
 url: https://transluce.org/investigating-o3-truthfulness
+star: false
 tags:
   - 诚实与谎言检测
   - 对齐审计

@@ -5,6 +5,7 @@ lab:
 date: 2024-05-07
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/untrusted-smart-models-and-trusted
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

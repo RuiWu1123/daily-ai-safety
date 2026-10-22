@@ -5,6 +5,7 @@ lab:
 date: 2024-11
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2024/safety-cases/index.html
+star: false
 tags:
   - 威胁建模
   - 策划与欺骗

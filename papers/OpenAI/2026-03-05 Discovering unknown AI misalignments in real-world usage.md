@@ -5,6 +5,7 @@ lab:
 date: 2026-03-05
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/ai-discovered-unknowns/
+star: false
 tags:
   - 事故报告
   - 人机交互与社会影响

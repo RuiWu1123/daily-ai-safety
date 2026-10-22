@@ -5,6 +5,7 @@ lab:
 date: 2025-12-05
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/compressed-computation-is-probably-not-computation-in-superposition
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-07-27
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/security-challenges-in-ai-agent-deployment-insights-from-a-large-scale-public-competition
+star: false
 tags:
   - 提示注入
   - 越狱与鲁棒性

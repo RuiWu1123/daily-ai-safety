@@ -5,6 +5,7 @@ lab:
 date: 2026-01-09
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/next-generation-constitutional-classifiers
+star: false
 tags:
   - 越狱与鲁棒性
 ---

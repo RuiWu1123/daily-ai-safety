@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/boundary-point-jailbreaking-of-black-box-llms
 other_versions:
   - "https://www.aisi.gov.uk/blog/boundary-point-jailbreaking-a-new-way-to-break-the-strongest-ai-defences"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

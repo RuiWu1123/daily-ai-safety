@@ -5,6 +5,7 @@ lab:
 date: 2026-07-23
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/are-we-existentially-threatened-by
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

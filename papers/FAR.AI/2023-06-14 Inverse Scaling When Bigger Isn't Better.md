@@ -5,6 +5,7 @@ lab:
 date: 2023-06-14
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/inverse-scaling-when-bigger-isnt-better
+star: false
 tags:
   - 评估方法
 ---

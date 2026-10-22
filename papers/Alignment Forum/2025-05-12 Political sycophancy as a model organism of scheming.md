@@ -5,6 +5,7 @@ lab:
 date: 2025-05-12
 source: "Alignment Forum（Redwood Research；Alex Mallen, Vivek Hebbar）"
 url: https://www.alignmentforum.org/posts/bhxgkb7YtRNwBxLMd
+star: false
 tags:
   - 策划与欺骗
   - 数据投毒与后门

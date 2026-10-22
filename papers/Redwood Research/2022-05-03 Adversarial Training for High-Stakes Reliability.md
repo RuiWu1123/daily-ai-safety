@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2205.01663
 other_versions:
   - "https://www.lesswrong.com/posts/A9tJFJY7DsGTFKKkh/high-stakes-alignment-via-adversarial-training-redwood"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

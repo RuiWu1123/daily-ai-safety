@@ -5,6 +5,7 @@ lab:
 date: 2024-11-19
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/statistical-approach-to-model-evals
+star: false
 tags:
   - 评估方法
 ---

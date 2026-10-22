@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google
 other_versions:
   - "https://www.far.ai/research/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

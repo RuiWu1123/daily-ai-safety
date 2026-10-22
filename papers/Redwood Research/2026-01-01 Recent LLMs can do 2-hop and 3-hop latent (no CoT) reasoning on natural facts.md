@@ -5,6 +5,7 @@ lab:
 date: 2026-01-01
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/recent-llms-can-do-2-hop-and-3-hop
+star: false
 tags:
   - CoT与可监控性
 ---

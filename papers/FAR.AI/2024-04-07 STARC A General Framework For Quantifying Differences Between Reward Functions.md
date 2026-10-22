@@ -5,6 +5,7 @@ lab:
 date: 2024-04-07
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/starc-a-general-framework-for-quantifying-differences-between-reward-functions
+star: false
 tags:
   - 对齐训练方法
 ---

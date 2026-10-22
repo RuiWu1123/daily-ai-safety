@@ -5,6 +5,7 @@ lab:
 date: 2025-06-19
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/more-capable-models-are-better-at-in-context-scheming
+star: false
 tags:
   - 策划与欺骗
   - 故意藏拙

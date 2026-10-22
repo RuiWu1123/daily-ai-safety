@@ -5,6 +5,7 @@ lab:
 date: 2026-03-03
 source: "METR Notes"
 url: https://metr.org/notes/2026-03-03-balatro-sts-cli/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

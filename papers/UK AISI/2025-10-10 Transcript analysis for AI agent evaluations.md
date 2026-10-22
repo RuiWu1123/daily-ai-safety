@@ -5,6 +5,7 @@ lab:
 date: 2025-10-10
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/transcript-analysis-for-ai-agent-evaluations
+star: false
 tags:
   - 评估方法
   - 网络安全

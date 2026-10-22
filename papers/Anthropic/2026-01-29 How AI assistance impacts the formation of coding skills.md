@@ -5,6 +5,7 @@ lab:
 date: 2026-01-29
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/AI-assistance-coding-skills
+star: false
 tags:
   - 人机交互与社会影响
 ---

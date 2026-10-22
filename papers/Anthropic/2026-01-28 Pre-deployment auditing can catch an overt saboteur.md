@@ -5,6 +5,7 @@ lab:
 date: 2026-01-28
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/auditing-overt-saboteur/
+star: false
 tags:
   - 对齐审计
   - 策划与欺骗

@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/revisiting-attempts-to-persuade
 other_versions:
   - "https://www.far.ai/research/revisiting-attempts-to-persuade"
+star: false
 tags:
   - 人机交互与社会影响
   - 越狱与鲁棒性

@@ -5,6 +5,7 @@ lab:
 date: 2026-01-30
 source: "Alignment Forum（UK AISI；Jordan Taylor）"
 url: https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb
+star: false
 tags:
   - 评估感知
   - CoT与可监控性

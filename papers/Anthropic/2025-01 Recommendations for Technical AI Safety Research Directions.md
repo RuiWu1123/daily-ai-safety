@@ -5,6 +5,7 @@ lab:
 date: 2025-01
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/recommended-directions/index.html
+star: false
 tags:
   - 评估方法
   - 可解释性

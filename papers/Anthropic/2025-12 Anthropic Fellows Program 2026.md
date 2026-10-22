@@ -5,6 +5,7 @@ lab:
 date: 2025-12
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/anthropic-fellows-program-2026/
+star: false
 tags:
   - 可扩展监督
   - 监控与控制

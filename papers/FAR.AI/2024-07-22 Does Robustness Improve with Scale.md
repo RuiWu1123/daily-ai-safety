@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/does-robustness-improve-with-scale
 other_versions:
   - "https://www.far.ai/research/exploring-scaling-trends-in-llm-robustness"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

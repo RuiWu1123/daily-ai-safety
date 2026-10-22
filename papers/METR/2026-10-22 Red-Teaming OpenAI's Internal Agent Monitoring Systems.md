@@ -8,6 +8,7 @@ source: "METR Blog"
 url: https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring
 other_versions:
   - "https://blog.redwoodresearch.org/p/red-teaming-openais-internal-agent"
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

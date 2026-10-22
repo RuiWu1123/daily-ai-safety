@@ -5,6 +5,7 @@ lab:
 date: 2025-02-12
 source: "METR Research"
 url: https://metr.org/evaluations/deepseek-v3-report/
+star: false
 tags:
   - 危险能力评估
 ---

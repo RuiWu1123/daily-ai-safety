@@ -5,6 +5,7 @@ lab:
 date: 2026-10-16
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/screwtape-adversarial-transcript
+star: false
 tags:
   - 监控与控制
 ---

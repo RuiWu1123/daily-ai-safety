@@ -5,6 +5,7 @@ lab:
 date: 2025-02-26
 source: "Alignment Forum（Anthropic；Fabien Roger）"
 url: https://www.alignmentforum.org/posts/GE6pcmmLc3kdpNJja
+star: false
 tags:
   - 故意藏拙
   - 可解释性

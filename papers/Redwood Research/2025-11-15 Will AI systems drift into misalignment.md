@@ -5,6 +5,7 @@ lab:
 date: 2025-11-15
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/will-ai-systems-drift-into-misalignment
+star: false
 tags:
   - 威胁建模
   - 泛化与涌现失调

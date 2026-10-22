@@ -5,6 +5,7 @@ lab:
 date: 2026-07-07
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/monitoring/evaluating-llm-calibration-for-coding-agent-monitoring
+star: false
 tags:
   - 监控与控制
   - 评估方法

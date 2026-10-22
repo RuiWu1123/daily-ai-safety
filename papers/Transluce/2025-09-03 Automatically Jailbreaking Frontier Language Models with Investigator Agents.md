@@ -5,6 +5,7 @@ lab:
 date: 2025-09-03
 source: "Transluce"
 url: https://transluce.org/jailbreaking-frontier-models
+star: false
 tags:
   - 越狱与鲁棒性
   - 对齐审计

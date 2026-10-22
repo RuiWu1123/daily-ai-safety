@@ -5,6 +5,7 @@ lab:
 date: 2025-08-27
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/openai-findings/
+star: false
 tags:
   - 对齐审计
   - 策划与欺骗

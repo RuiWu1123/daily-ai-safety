@@ -5,6 +5,7 @@ lab:
 date: 2025-03-24
 source: "Alignment Forum（Redwood Research；Alex Mallen, Charlie Griffin, Buck）"
 url: https://www.alignmentforum.org/posts/RxRKGwBkCX3YsthfK
+star: false
 tags:
   - 监控与控制
   - 危险能力评估

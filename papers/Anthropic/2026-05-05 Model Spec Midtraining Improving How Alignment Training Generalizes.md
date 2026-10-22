@@ -5,6 +5,7 @@ lab:
 date: 2026-05-05
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/msm/
+star: false
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

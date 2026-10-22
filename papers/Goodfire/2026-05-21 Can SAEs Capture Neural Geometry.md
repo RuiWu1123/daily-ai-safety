@@ -5,6 +5,7 @@ lab:
 date: 2026-05-21
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/can-saes-capture-neural-geometry
+star: false
 tags:
   - 可解释性
 ---

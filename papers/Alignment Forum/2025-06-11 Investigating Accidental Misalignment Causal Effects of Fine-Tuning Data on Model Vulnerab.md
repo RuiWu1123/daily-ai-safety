@@ -5,6 +5,7 @@ lab:
 date: 2025-06-11
 source: "Alignment Forum（FAR.AI；Zhijing Jin, Punya Syon Pandey, samuelsimko, Kellin Pelrine）"
 url: https://www.alignmentforum.org/posts/zmSafQK7JjmfydAtT
+star: false
 tags:
   - 越狱与鲁棒性
   - 泛化与涌现失调

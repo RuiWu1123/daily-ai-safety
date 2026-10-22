@@ -5,6 +5,7 @@ lab:
 date: 2026-06-10
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/estimating-no-cot-task-completion
+star: false
 tags:
   - CoT与可监控性
   - 评估方法

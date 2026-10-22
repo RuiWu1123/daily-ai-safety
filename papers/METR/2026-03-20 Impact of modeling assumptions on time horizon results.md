@@ -5,6 +5,7 @@ lab:
 date: 2026-03-20
 source: "METR Notes"
 url: https://metr.org/notes/2026-03-20-impact-of-modelling-assumptions-on-time-horizon-results/
+star: false
 tags:
   - 评估方法
 ---

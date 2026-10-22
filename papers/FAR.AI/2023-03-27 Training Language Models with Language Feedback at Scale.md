@@ -5,6 +5,7 @@ lab:
 date: 2023-03-27
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/training-language-models-with-language-feedback-at-scale
+star: false
 tags:
   - 对齐训练方法
   - 可扩展监督

@@ -5,6 +5,7 @@ lab:
 date: 2024-12
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2024/anthropic-fellows-program/index.html
+star: false
 tags:
   - 安全基础设施
 ---

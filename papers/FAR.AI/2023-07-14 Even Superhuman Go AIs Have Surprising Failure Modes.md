@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/even-superhuman-go-ais-have-surprising-failure-modes
 other_versions:
   - "https://www.far.ai/research/adversarial-policies-beat-superhuman-go-ais"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

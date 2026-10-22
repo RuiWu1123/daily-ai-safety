@@ -5,6 +5,7 @@ lab:
 date: 2025-11-11
 source: "Transluce"
 url: https://transluce.org/self-explanations
+star: false
 tags:
   - 可解释性
   - 诚实与谎言检测

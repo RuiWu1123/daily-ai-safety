@@ -5,6 +5,7 @@ lab:
 date: 2026-01-23
 source: "Alignment Forum（Anthropic；Callum Canavan, Aditya Shrivastava, Allison Qi, Tianyi (Alex) Qiu, Jonathan Michala, Fabien Roger）"
 url: https://www.alignmentforum.org/posts/rFxfMbwJ3v4PNesWP
+star: false
 tags:
   - 可扩展监督
 ---

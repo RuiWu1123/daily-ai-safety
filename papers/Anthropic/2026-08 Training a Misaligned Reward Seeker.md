@@ -5,6 +5,7 @@ lab:
 date: 2026-08
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/reward-seeker/
+star: false
 tags:
   - 奖励作弊
   - 泛化与涌现失调

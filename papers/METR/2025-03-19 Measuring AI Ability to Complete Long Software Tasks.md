@@ -5,6 +5,7 @@ lab:
 date: 2025-03-19
 source: "METR Research"
 url: https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/
+star: false
 tags:
   - 评估方法
   - 危险能力评估

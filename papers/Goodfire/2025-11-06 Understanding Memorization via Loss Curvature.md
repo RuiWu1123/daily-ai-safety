@@ -5,6 +5,7 @@ lab:
 date: 2025-11-06
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/understanding-memorization-via-loss-curvature
+star: false
 tags:
   - 知识移除
   - 可解释性

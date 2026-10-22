@@ -5,6 +5,7 @@ lab:
 date: 2025-03-17
 source: "METR Research"
 url: https://arxiv.org/abs/2503.17354
+star: false
 tags:
   - 评估方法
   - 危险能力评估

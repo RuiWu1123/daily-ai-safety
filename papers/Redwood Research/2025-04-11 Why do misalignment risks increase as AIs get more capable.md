@@ -5,6 +5,7 @@ lab:
 date: 2025-04-11
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/why-do-misalignment-risks-increase
+star: false
 tags:
   - 威胁建模
   - 策划与欺骗

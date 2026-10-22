@@ -5,6 +5,7 @@ lab:
 date: 2026-05-15
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/risk-reports-need-to-address-deployment
+star: false
 tags:
   - 威胁建模
   - 泛化与涌现失调

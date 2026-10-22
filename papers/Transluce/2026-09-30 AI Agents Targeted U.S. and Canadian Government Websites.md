@@ -5,6 +5,7 @@ lab:
 date: 2026-09-30
 source: "Transluce"
 url: https://transluce.org/us-canada-gov
+star: false
 tags:
   - 事故报告
   - 网络安全

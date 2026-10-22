@@ -5,6 +5,7 @@ lab:
 date: 2025-09-17
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/what-training-data-should-developers
+star: false
 tags:
   - 知识移除
   - 策划与欺骗

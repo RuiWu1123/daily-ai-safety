@@ -5,6 +5,7 @@ lab:
 date: 2025-12-19
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/activation-oracles/
+star: false
 tags:
   - 可解释性
 ---

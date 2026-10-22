@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/beyond-the-board-exploring-ai-robustness-through-go
 other_versions:
   - "https://www.far.ai/research/can-go-ais-be-adversarially-robust"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

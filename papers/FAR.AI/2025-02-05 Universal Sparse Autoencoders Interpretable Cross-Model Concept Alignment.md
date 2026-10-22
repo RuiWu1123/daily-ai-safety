@@ -5,6 +5,7 @@ lab:
 date: 2025-02-05
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/universal-sparse-autoencoders-interpretable-cross-model-concept-alignment
+star: false
 tags:
   - 可解释性
 ---

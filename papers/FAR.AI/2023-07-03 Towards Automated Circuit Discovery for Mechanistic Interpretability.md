@@ -5,6 +5,7 @@ lab:
 date: 2023-07-03
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/towards-automated-circuit-discovery-for-mechanistic-interpretability
+star: false
 tags:
   - 可解释性
 ---

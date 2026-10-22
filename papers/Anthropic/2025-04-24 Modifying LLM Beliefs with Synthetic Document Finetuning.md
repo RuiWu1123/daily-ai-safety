@@ -5,6 +5,7 @@ lab:
 date: 2025-04-24
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/modifying-beliefs-via-sdf/
+star: false
 tags:
   - 知识移除
   - 对齐训练方法

@@ -5,6 +5,7 @@ lab:
 date: 2024-07-20
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/adversarial-circuit-evaluation
+star: false
 tags:
   - 可解释性
 ---

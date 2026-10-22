@@ -5,6 +5,7 @@ lab:
 date: 2026-02-16
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/will-reward-seekers-respond-to-distant
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

@@ -5,6 +5,7 @@ lab:
 date: 2024-09-12
 source: "METR Research"
 url: https://metr.org/evaluations/openai-o1-preview-report/
+star: false
 tags:
   - 危险能力评估
 ---

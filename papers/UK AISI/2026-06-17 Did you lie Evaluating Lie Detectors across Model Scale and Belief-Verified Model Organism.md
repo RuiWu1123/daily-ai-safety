@@ -5,6 +5,7 @@ lab:
 date: 2026-06-17
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/did-you-lie-evaluating-lie-detectors-across-model-scale-and-belief-verified-model-organisms
+star: false
 tags:
   - 诚实与谎言检测
   - 可解释性

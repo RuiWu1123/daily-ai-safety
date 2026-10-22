@@ -5,6 +5,7 @@ lab:
 date: 2026-03-28
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/reward-seekers-will-probably-behave
+star: false
 tags:
   - 威胁建模
 ---

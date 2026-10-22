@@ -5,6 +5,7 @@ lab:
 date: 2023-07-18
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/measuring-faithfulness-in-chain-of-thought-reasoning
+star: false
 tags:
   - CoT与可监控性
 ---

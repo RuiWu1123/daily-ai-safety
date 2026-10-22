@@ -5,6 +5,7 @@ lab:
 date: 2025-07-27
 source: "Alignment Forum（Redwood Research；Tim Hua, James Baskerville, HenriLemoine, Mia Hopman, Aryan Bhatt, Tyler Tracy）"
 url: https://www.alignmentforum.org/posts/FhixwyymPxF8TZX39
+star: false
 tags:
   - 监控与控制
 ---

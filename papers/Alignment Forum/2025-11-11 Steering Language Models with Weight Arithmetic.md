@@ -5,6 +5,7 @@ lab:
 date: 2025-11-11
 source: "Alignment Forum（Anthropic；Fabien Roger, constanzafierro）"
 url: https://www.alignmentforum.org/posts/HYTbakdHpxfaCowYp
+star: false
 tags:
   - 可解释性
   - 泛化与涌现失调

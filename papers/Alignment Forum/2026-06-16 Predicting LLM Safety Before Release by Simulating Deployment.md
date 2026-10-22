@@ -5,6 +5,7 @@ lab:
 date: 2026-06-16
 source: "Alignment Forum（OpenAI；Tomek Korbak, Marcus Williams, micahcarroll, Cameron Raymond, Hannah Sheahan）"
 url: https://www.alignmentforum.org/posts/xPXJfgqFTvuJxGZbE
+star: false
 tags:
   - 评估方法
   - 评估感知

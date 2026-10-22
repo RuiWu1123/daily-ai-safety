@@ -5,6 +5,7 @@ lab:
 date: 2026-09-25
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/continual-learning-might-make-your
+star: false
 tags:
   - 监控与控制
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-10-14
 source: "Alignment Forum（Anthropic；Fabien Roger, Shiyuan Guo）"
 url: https://www.alignmentforum.org/posts/Lz8cvGskgXmLRgmN4
+star: false
 tags:
   - CoT与可监控性
   - 越狱与鲁棒性

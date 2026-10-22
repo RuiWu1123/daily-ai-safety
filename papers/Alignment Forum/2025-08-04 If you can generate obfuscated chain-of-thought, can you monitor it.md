@@ -5,6 +5,7 @@ lab:
 date: 2025-08-04
 source: "Alignment Forum（UK AISI；Asa Cooper Stickland, Tomek Korbak）"
 url: https://www.alignmentforum.org/posts/ZEdP6rYirxPxRSfTb
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2512.15688
 other_versions:
   - "https://blog.redwoodresearch.org/p/basharena-and-control-setting-design"
+star: false
 tags:
   - 监控与控制
   - 评估方法

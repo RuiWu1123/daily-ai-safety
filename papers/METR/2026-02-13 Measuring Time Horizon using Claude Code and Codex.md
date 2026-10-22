@@ -5,6 +5,7 @@ lab:
 date: 2026-02-13
 source: "METR Notes"
 url: https://metr.org/notes/2026-02-13-measuring-time-horizon-using-claude-code-and-codex/
+star: false
 tags:
   - 评估方法
 ---

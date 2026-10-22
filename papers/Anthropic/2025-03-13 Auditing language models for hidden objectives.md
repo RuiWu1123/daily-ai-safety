@@ -5,6 +5,7 @@ lab:
 date: 2025-03-13
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/auditing-hidden-objectives
+star: false
 tags:
   - 对齐审计
   - 奖励作弊

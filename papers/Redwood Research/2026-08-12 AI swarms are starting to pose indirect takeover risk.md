@@ -5,6 +5,7 @@ lab:
 date: 2026-08-12
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/ai-swarms-are-starting-to-pose-indirect
+star: false
 tags:
   - 多智能体
   - 威胁建模

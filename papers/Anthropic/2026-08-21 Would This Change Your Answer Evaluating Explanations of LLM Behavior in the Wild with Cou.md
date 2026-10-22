@@ -5,6 +5,7 @@ lab:
 date: 2026-08-21
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/chive/
+star: false
 tags:
   - 可解释性
   - CoT与可监控性

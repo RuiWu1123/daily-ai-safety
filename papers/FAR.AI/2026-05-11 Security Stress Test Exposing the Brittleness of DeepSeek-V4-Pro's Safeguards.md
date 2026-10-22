@@ -5,6 +5,7 @@ lab:
 date: 2026-05-11
 source: "FAR.AI Blog"
 url: https://www.far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards
+star: false
 tags:
   - 越狱与鲁棒性
 ---

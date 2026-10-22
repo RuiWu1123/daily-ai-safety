@@ -5,6 +5,7 @@ lab:
 date: 2026-10-15
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3
+star: false
 tags:
   - 伪装对齐
   - 评估感知

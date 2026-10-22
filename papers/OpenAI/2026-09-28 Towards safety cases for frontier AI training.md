@@ -5,6 +5,7 @@ lab:
 date: 2026-09-28
 source: "OpenAI Blog"
 url: https://openai.com/index/towards-safety-cases-for-frontier-ai-training/
+star: false
 tags:
   - 威胁建模
   - 安全基础设施

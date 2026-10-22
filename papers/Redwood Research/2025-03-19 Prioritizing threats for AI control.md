@@ -5,6 +5,7 @@ lab:
 date: 2025-03-19
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/prioritizing-threats-for-ai-control
+star: false
 tags:
   - 监控与控制
   - 威胁建模

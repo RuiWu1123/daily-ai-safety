@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/teaching-claude-why
 other_versions:
   - "https://alignment.anthropic.com/2026/teaching-claude-why/"
+star: false
 tags:
   - 对齐训练方法
   - 策划与欺骗

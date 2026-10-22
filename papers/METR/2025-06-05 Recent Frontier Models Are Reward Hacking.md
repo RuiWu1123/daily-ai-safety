@@ -5,6 +5,7 @@ lab:
 date: 2025-06-05
 source: "METR Research"
 url: https://metr.org/blog/2025-06-05-recent-reward-hacking/
+star: false
 tags:
   - 奖励作弊
 ---

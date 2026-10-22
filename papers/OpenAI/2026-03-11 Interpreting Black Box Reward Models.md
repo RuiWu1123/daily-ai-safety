@@ -5,6 +5,7 @@ lab:
 date: 2026-03-11
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/argo/
+star: false
 tags:
   - 对齐训练方法
   - 可解释性

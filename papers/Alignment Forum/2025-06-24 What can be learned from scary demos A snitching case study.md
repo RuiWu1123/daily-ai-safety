@@ -5,6 +5,7 @@ lab:
 date: 2025-06-24
 source: "Alignment Forum（Anthropic；Fabien Roger）"
 url: https://www.alignmentforum.org/posts/5JyepxdN6Hq62TPCK
+star: false
 tags:
   - 评估方法
   - 泛化与涌现失调

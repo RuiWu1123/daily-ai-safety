@@ -5,6 +5,7 @@ lab:
 date: 2025-06-22
 source: "Anthropic Alignment Science Blog"
 url: https://arxiv.org/abs/2506.18032
+star: false
 tags:
   - 伪装对齐
 ---

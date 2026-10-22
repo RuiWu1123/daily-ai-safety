@@ -5,6 +5,7 @@ lab:
 date: 2025-03-02
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/model-tampering-attacks-enable-more-rigorous-evaluations-of-llm-capabilities-2
+star: false
 tags:
   - 评估方法
   - 知识移除

@@ -5,6 +5,7 @@ lab:
 date: 2024-04-23
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/probes-catch-sleeper-agents
+star: false
 tags:
   - 数据投毒与后门
   - 可解释性

@@ -5,6 +5,7 @@ lab:
 date: 2026-04
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/ai-organizations/
+star: false
 tags:
   - 多智能体
   - 泛化与涌现失调

@@ -5,6 +5,7 @@ lab:
 date: 2026-07-21
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/cheating-behaviour-in-frontier-model-evaluations
+star: false
 tags:
   - 奖励作弊
   - 网络安全

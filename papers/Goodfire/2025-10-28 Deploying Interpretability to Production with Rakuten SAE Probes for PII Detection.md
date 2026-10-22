@@ -5,6 +5,7 @@ lab:
 date: 2025-10-28
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/rakuten-sae-probes-for-pii-detection
+star: false
 tags:
   - 可解释性
 ---

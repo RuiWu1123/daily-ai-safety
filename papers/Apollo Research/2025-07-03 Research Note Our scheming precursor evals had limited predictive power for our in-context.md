@@ -5,6 +5,7 @@ lab:
 date: 2025-07-03
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/research-note-our-scheming-precursor-evals-had-limited-predictive-power-for-our-in-context-scheming-evals
+star: false
 tags:
   - 策划与欺骗
   - 评估方法

@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/knowing-when-to-stop-bayesian-optimal-stopping-for-llm-evaluations
 other_versions:
   - "https://www.aisi.gov.uk/blog/optimal-stopping-spending-evaluation-compute-where-it-counts"
+star: false
 tags:
   - 评估方法
 ---

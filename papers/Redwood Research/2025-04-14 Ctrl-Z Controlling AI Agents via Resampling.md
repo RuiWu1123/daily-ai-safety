@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2504.10374
 other_versions:
   - "https://blog.redwoodresearch.org/p/ctrl-z-controlling-ai-agents-via"
+star: false
 tags:
   - 监控与控制
 ---

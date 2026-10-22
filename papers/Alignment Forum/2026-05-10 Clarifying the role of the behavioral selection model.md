@@ -5,6 +5,7 @@ lab:
 date: 2026-05-10
 source: "Alignment Forum（Redwood Research；Alex Mallen）"
 url: https://www.alignmentforum.org/posts/nBjo6yniFjmy2uaYa
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

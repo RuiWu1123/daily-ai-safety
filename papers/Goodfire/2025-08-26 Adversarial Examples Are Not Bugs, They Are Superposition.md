@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/adversarial-examples-are-not-bugs-they-are-superposition
 other_versions:
   - "https://arxiv.org/abs/2508.17456"
+star: false
 tags:
   - 可解释性
   - 越狱与鲁棒性

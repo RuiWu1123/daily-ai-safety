@@ -5,6 +5,7 @@ lab:
 date: 2026-10-09
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/paper-distillation-for-incrimination
+star: false
 tags:
   - 对齐审计
   - 监控与控制

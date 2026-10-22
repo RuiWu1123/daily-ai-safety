@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/priors-in-time
 other_versions:
   - "https://arxiv.org/abs/2511.01836"
+star: false
 tags:
   - 可解释性
 ---

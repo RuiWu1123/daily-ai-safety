@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/how-to-evaluate-control-measures-for-llm-agents-a-trajectory-from-today-to-superintelligence
 other_versions:
   - "https://www.aisi.gov.uk/blog/how-to-evaluate-control-measures-for-ai-agents"
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

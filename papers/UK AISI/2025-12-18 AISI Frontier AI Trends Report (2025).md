@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/aisi-frontier-ai-trends-report-2025
 other_versions:
   - "https://www.aisi.gov.uk/blog/5-key-findings-from-our-first-frontier-ai-trends-report"
+star: false
 tags:
   - 危险能力评估
   - 网络安全

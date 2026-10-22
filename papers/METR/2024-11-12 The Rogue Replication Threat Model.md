@@ -5,6 +5,7 @@ lab:
 date: 2024-11-12
 source: "METR Research"
 url: https://metr.org/blog/2024-11-12-rogue-replication-threat-model/
+star: false
 tags:
   - 威胁建模
   - 危险能力评估

@@ -5,6 +5,7 @@ lab:
 date: 2024-11-12
 source: "Anthropic Alignment Science Blog"
 url: https://arxiv.org/abs/2411.07494
+star: false
 tags:
   - 越狱与鲁棒性
 ---

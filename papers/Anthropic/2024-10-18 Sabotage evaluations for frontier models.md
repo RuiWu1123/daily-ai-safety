@@ -5,6 +5,7 @@ lab:
 date: 2024-10-18
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/sabotage-evaluations
+star: false
 tags:
   - 策划与欺骗
   - 危险能力评估

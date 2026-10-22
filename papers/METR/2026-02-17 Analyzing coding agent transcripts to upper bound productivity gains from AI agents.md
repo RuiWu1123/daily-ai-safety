@@ -5,6 +5,7 @@ lab:
 date: 2026-02-17
 source: "METR Notes"
 url: https://metr.org/notes/2026-02-17-exploratory-transcript-analysis-for-estimating-time-savings-from-coding-agents/
+star: false
 tags:
   - 评估方法
   - 人机交互与社会影响

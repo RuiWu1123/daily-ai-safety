@@ -5,6 +5,7 @@ lab:
 date: 2024-11-22
 source: "METR Research"
 url: https://metr.org/blog/2024-11-22-evaluating-r-d-capabilities-of-llms/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

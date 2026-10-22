@@ -5,6 +5,7 @@ lab:
 date: 2026-09-06
 source: "OpenAI Blog"
 url: https://openai.com/index/an-alien-mind/
+star: false
 tags:
   - 威胁建模
   - 可扩展监督

@@ -5,6 +5,7 @@ lab:
 date: 2026-07-08
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/multi-agent-ai-control-distributed-attacks-hamper-per-instance-monitors
+star: false
 tags:
   - 监控与控制
   - 多智能体

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-09
 source: "Alignment Forum（UK AISI；David Africa, alexsouly, Jordan Taylor, RobertKirk）"
 url: https://www.alignmentforum.org/posts/jsFGuXDMxy5NZg9T2
+star: false
 tags:
   - 评估感知
   - 评估方法

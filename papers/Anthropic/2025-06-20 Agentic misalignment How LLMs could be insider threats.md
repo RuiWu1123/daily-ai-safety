@@ -5,6 +5,7 @@ lab:
 date: 2025-06-20
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/agentic-misalignment
+star: false
 tags:
   - 策划与欺骗
   - 威胁建模

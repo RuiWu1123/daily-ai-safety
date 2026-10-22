@@ -5,6 +5,7 @@ lab:
 date: 2025-07-10
 source: "METR Research"
 url: https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/
+star: false
 tags:
   - 人机交互与社会影响
   - 评估方法

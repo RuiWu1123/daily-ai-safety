@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/vlm-rm-specifying-rewards-with-natural-language
 other_versions:
   - "https://www.far.ai/research/vision-language-models-are-zero-shot-reward-models-for-reinforcement-learning"
+star: false
 tags:
   - 对齐训练方法
 ---

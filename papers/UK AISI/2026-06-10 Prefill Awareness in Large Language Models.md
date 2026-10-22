@@ -5,6 +5,7 @@ lab:
 date: 2026-06-10
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/prefill-awareness-in-large-language-models
+star: false
 tags:
   - 评估感知
   - 越狱与鲁棒性

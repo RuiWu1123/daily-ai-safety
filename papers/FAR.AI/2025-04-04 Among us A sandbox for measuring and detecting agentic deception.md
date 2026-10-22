@@ -5,6 +5,7 @@ lab:
 date: 2025-04-04
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/among-us-a-sandbox-for-measuring-and-detecting-agentic-deception
+star: false
 tags:
   - 策划与欺骗
   - 多智能体

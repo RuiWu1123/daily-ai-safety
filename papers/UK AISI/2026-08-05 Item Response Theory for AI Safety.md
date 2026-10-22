@@ -5,6 +5,7 @@ lab:
 date: 2026-08-05
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/item-response-theory-for-ai-safety
+star: false
 tags:
   - 评估方法
 ---

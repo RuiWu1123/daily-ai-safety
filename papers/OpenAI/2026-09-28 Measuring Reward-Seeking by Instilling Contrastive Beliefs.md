@@ -5,6 +5,7 @@ lab:
 date: 2026-09-28
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/measuring-reward-seeking/
+star: false
 tags:
   - 奖励作弊
   - 评估感知

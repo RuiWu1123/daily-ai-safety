@@ -5,6 +5,7 @@ lab:
 date: 2026-02-19
 source: "OpenAI Blog"
 url: https://openai.com/index/advancing-independent-research-ai-alignment/
+star: false
 tags:
   - 可扩展监督
 ---

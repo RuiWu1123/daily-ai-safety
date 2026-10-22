@@ -5,6 +5,7 @@ lab:
 date: 2026-10-20
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/beyond-gmean-squared/
+star: false
 tags:
   - CoT与可监控性
   - 评估方法

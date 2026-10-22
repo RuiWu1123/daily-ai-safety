@@ -5,6 +5,7 @@ lab:
 date: 2022-08-07
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/rl-with-kl-penalties-is-better-viewed-as-bayesian-inference
+star: false
 tags:
   - 对齐训练方法
 ---

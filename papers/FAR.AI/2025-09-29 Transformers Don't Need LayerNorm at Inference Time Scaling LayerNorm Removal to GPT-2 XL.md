@@ -5,6 +5,7 @@ lab:
 date: 2025-09-29
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/transformers-dont-need-layernorm-at-inference-time
+star: false
 tags:
   - 可解释性
 ---

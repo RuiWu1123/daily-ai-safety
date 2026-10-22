@@ -5,6 +5,7 @@ lab:
 date: 2024-05-08
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/preventing-model-exfiltration-with
+star: false
 tags:
   - 安全基础设施
   - 威胁建模

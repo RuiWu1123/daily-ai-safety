@@ -5,6 +5,7 @@ lab:
 date: 2025-12-01
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/scaling-code-verification/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

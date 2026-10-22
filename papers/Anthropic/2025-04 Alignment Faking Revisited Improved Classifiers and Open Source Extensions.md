@@ -5,6 +5,7 @@ lab:
 date: 2025-04
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/alignment-faking-revisited/
+star: false
 tags:
   - 伪装对齐
 ---

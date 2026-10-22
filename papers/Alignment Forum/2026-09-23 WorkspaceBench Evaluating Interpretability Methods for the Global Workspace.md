@@ -5,6 +5,7 @@ lab:
 date: 2026-09-23
 source: "Alignment Forum（Anthropic；camilablank, agam_bhatia, Euan Ong, Neel Nanda）"
 url: https://www.alignmentforum.org/posts/Zeg2JztbdhguL48uH
+star: false
 tags:
   - 可解释性
   - CoT与可监控性

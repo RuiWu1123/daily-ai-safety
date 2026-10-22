@@ -5,6 +5,7 @@ lab:
 date: 2025-11-25
 source: "Transluce"
 url: https://transluce.org/user-modeling
+star: false
 tags:
   - 可解释性
   - 人机交互与社会影响

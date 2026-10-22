@@ -5,6 +5,7 @@ lab:
 date: 2026-02-05
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/tamperbench-systematically-stress-testing-llm-safety-under-fine-tuning-and-tampering
+star: false
 tags:
   - 越狱与鲁棒性
   - 评估方法

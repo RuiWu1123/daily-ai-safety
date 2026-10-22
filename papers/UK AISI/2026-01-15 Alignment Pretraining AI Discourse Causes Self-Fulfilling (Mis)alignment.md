@@ -5,6 +5,7 @@ lab:
 date: 2026-01-15
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/alignment-pretraining-ai-discourse-causes-self-fulfilling-mis-alignment
+star: false
 tags:
   - 泛化与涌现失调
   - 对齐训练方法

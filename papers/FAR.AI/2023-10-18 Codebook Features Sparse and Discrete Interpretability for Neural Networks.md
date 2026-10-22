@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/codebook-features-sparse-and-discrete-interpretability-for-neural-networks
 other_versions:
   - "https://www.far.ai/research/codebook-features-sparse-and-discrete-interpretability-for-neural-networks"
+star: false
 tags:
   - 可解释性
 ---

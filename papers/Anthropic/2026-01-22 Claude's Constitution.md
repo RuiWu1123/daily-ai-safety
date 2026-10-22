@@ -5,6 +5,7 @@ lab:
 date: 2026-01-22
 source: "Anthropic Research"
 url: https://www.anthropic.com/constitution
+star: false
 tags:
   - 对齐训练方法
   - 模型福利

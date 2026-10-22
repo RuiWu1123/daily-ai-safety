@@ -5,6 +5,7 @@ lab:
 date: 2025-03-17
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/claude-sonnet-37-often-knows-when-its-in-alignment-evaluations
+star: false
 tags:
   - 评估感知
   - 策划与欺骗

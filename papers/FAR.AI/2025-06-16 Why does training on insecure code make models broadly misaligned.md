@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/why-does-training-on-insecure-code-make-models-broadly-misaligned
 other_versions:
   - "https://www.far.ai/research/why-does-training-on-insecure-code-make-models-broadly-misaligned"
+star: false
 tags:
   - 泛化与涌现失调
   - 可解释性

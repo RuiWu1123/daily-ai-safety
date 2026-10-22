@@ -5,6 +5,7 @@ lab:
 date: 2025-12-18
 source: "Transluce"
 url: https://transluce.org/pcd
+star: false
 tags:
   - 可解释性
 ---

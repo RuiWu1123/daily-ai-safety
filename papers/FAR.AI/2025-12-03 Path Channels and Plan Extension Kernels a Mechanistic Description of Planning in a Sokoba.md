@@ -5,6 +5,7 @@ lab:
 date: 2025-12-03
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/path-channels-and-plan-extension-kernels-a-mechanistic-description-of-planning-in-a-sokoban-rnn
+star: false
 tags:
   - 可解释性
 ---

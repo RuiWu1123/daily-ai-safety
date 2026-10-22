@@ -5,6 +5,7 @@ lab:
 date: 2025-05-08
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/misalignment-and-strategic-underperformance
+star: false
 tags:
   - 故意藏拙
   - 威胁建模

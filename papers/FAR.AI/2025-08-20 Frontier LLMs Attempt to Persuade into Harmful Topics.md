@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/attempt-to-persuade-eval
 other_versions:
   - "https://www.far.ai/research/its-the-thought-that-counts-evaluating-the-attempts-of-frontier-llms-to-persuade-on-harmful-topics"
+star: false
 tags:
   - 人机交互与社会影响
   - 越狱与鲁棒性

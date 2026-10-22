@@ -5,6 +5,7 @@ lab:
 date: 2026-09-22
 source: "METR Blog"
 url: https://metr.org/blog/2026-09-22-claude-opus-5-5/
+star: false
 tags:
   - 危险能力评估
 ---

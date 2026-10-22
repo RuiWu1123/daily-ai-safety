@@ -5,6 +5,7 @@ lab:
 date: 2026-04-10
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/infusion-shaping-model-behaviour-by-editing-training-data-via-influence-functions
+star: false
 tags:
   - 数据投毒与后门
 ---

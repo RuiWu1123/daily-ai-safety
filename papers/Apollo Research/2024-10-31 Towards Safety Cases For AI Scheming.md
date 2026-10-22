@@ -5,6 +5,7 @@ lab:
 date: 2024-10-31
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/towards-safety-cases-for-ai-scheming
+star: false
 tags:
   - 威胁建模
   - 策划与欺骗

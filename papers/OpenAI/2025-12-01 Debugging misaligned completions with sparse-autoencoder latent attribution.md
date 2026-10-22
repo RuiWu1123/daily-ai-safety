@@ -5,6 +5,7 @@ lab:
 date: 2025-12-01
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/sae-latent-attribution/
+star: false
 tags:
   - 可解释性
   - 泛化与涌现失调

@@ -5,6 +5,7 @@ lab:
 date: 2026-04-28
 source: "Alignment Forum（Redwood Research；sebastian_prasanna, Alek Westover, Dylan Xu, Vivek Hebbar, Julian Stastny）"
 url: https://www.alignmentforum.org/posts/mu7eJdesBkKuBycnY
+star: false
 tags:
   - 数据投毒与后门
 ---

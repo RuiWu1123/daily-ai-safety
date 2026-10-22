@@ -5,6 +5,7 @@ lab:
 date: 2026-08-26
 source: "OpenAI Blog"
 url: https://openai.com/index/hugging-face-incident-and-the-road-ahead/
+star: false
 tags:
   - 事故报告
   - 网络安全

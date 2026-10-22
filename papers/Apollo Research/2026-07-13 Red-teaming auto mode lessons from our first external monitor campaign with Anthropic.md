@@ -5,6 +5,7 @@ lab:
 date: 2026-07-13
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/monitoring/pilot-automode-campaign
+star: false
 tags:
   - 监控与控制
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-05-02
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/evaluating-explanations-an-explanatory-virtues-framework-for-mechanistic-interpretability
+star: false
 tags:
   - 可解释性
 ---

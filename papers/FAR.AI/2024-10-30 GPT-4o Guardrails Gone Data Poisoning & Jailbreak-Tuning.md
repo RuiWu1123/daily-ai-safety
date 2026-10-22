@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/gpt-4o-guardrails-gone-data-poisoning-jailbreak-tuning
 other_versions:
   - "https://www.far.ai/research/scaling-laws-for-data-poisoning-in-llms"
+star: false
 tags:
   - 数据投毒与后门
   - 越狱与鲁棒性

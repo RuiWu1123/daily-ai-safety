@@ -1,0 +1,166 @@
+filters:
+  and:
+    - file.inFolder("papers")
+properties:
+  note.star:
+    displayName: 星标
+  file.name:
+    displayName: 论文
+  note.source:
+    displayName: 来源
+  note.tags:
+    displayName: 主题
+views:
+  - type: table
+    name: 全部论文
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: 已星标
+    filters:
+      and:
+        - note.star == true
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Anthropic
+    filters:
+      and:
+        - note.lab.contains("Anthropic")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: OpenAI
+    filters:
+      and:
+        - note.lab.contains("OpenAI")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: METR
+    filters:
+      and:
+        - note.lab.contains("METR")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Apollo Research
+    filters:
+      and:
+        - note.lab.contains("Apollo Research")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: UK AISI
+    filters:
+      and:
+        - note.lab.contains("UK AISI")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: FAR.AI
+    filters:
+      and:
+        - note.lab.contains("FAR.AI")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Goodfire
+    filters:
+      and:
+        - note.lab.contains("Goodfire")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Transluce
+    filters:
+      and:
+        - note.lab.contains("Transluce")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Redwood Research
+    filters:
+      and:
+        - note.lab.contains("Redwood Research")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC
+  - type: table
+    name: Alignment Forum
+    filters:
+      and:
+        - note.lab.contains("Alignment Forum")
+    order:
+      - note.star
+      - file.name
+      - note.source
+      - note.tags
+    sort:
+      - property: note.date
+        direction: DESC

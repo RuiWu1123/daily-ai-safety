@@ -6,6 +6,7 @@ date: 2026-10-09
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 网络安全

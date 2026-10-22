@@ -5,6 +5,7 @@ lab:
 date: 2026-01-29
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/fitness-seekers-generalizing-the
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

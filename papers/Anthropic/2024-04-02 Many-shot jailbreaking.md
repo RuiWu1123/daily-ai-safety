@@ -5,6 +5,7 @@ lab:
 date: 2024-04-02
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/many-shot-jailbreaking
+star: false
 tags:
   - 越狱与鲁棒性
 ---

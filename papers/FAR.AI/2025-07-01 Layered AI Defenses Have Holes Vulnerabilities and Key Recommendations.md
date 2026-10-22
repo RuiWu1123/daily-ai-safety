@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/defense-in-depth
 other_versions:
   - "https://www.far.ai/research/stack-adversarial-attacks-on-llm-safeguard-pipelines"
+star: false
 tags:
   - 越狱与鲁棒性
 ---

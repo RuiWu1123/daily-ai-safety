@@ -5,6 +5,7 @@ lab:
 date: 2024-12-23
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/mapping-latent-spaces-llama
+star: false
 tags:
   - 可解释性
 ---

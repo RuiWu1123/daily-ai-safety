@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/why-larger-models-learn-more
 other_versions:
   - "https://arxiv.org/abs/2605.29548"
+star: false
 tags:
   - 可解释性
 ---

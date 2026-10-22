@@ -5,6 +5,7 @@ lab:
 date: 2025-10-21
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/believe-it-or-not/
+star: false
 tags:
   - 可解释性
   - 评估方法

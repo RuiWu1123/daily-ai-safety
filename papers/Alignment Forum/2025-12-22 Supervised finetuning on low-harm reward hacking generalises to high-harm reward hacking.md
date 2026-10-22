@@ -5,6 +5,7 @@ lab:
 date: 2025-12-22
 source: "Alignment Forum（Anthropic / UK AISI；Isaac Dunn, Kei Nishimura-Gasparian, Carson Denison, Ethan Perez, Robert Kirk）"
 url: https://www.alignmentforum.org/posts/ATDvmn23PWW4erZzf
+star: false
 tags:
   - 奖励作弊
   - 泛化与涌现失调

@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/forking-fast
 other_versions:
   - "https://arxiv.org/abs/2608.19611"
+star: false
 tags:
   - 可解释性
   - 评估方法

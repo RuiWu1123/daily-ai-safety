@@ -5,6 +5,7 @@ lab:
 date: 2025-07-14
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/jailbreak-tuning-models-efficiently-learn-jailbreak-susceptibility
+star: false
 tags:
   - 越狱与鲁棒性
   - 数据投毒与后门

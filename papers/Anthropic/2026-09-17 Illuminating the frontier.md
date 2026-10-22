@@ -5,6 +5,7 @@ lab:
 date: 2026-09-17
 source: "Anthropic Research"
 url: https://www.anthropic.com/institute/measuring-pace-of-ai-development
+star: false
 tags:
   - 危险能力评估
   - 评估方法

@@ -7,6 +7,7 @@ source: "Transluce"
 url: https://behaviors.transluce.org/mental-health
 other_versions:
   - "https://transluce.org/announcing-mental-health-evaluation"
+star: false
 tags:
   - 人机交互与社会影响
 ---

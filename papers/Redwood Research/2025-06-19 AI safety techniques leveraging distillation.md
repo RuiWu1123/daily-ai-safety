@@ -5,6 +5,7 @@ lab:
 date: 2025-06-19
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/ai-safety-techniques-leveraging-distillation
+star: false
 tags:
   - 对齐训练方法
   - 策划与欺骗

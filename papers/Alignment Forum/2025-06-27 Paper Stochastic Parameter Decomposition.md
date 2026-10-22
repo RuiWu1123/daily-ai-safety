@@ -5,6 +5,7 @@ lab:
 date: 2025-06-27
 source: "Alignment Forum（Goodfire；Lee Sharkey, Lucius Bushnaq, Dan Braun）"
 url: https://www.alignmentforum.org/posts/yjrpmCmqurDmbMztW
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-06-27
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/jankily-controlling-superintelligence
+star: false
 tags:
   - 监控与控制
   - 威胁建模

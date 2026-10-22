@@ -5,6 +5,7 @@ lab:
 date: 2025-05-06
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/training-time-schemers-vs-behavioral
+star: false
 tags:
   - 策划与欺骗
   - 伪装对齐

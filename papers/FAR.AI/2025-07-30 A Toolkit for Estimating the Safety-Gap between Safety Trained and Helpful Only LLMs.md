@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/safety-gap-toolkit
 other_versions:
   - "https://www.far.ai/research/the-safety-gap-toolkit-evaluating-hidden-dangers-of-open-source-models"
+star: false
 tags:
   - 越狱与鲁棒性
   - 危险能力评估

@@ -5,6 +5,7 @@ lab:
 date: 2026-02-11
 source: "Transluce Docent Blog"
 url: https://transluce.org/docent/blog/terminal-bench
+star: false
 tags:
   - 评估方法
 ---

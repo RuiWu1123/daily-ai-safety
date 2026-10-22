@@ -5,6 +5,7 @@ lab:
 date: 2026-10-19
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/graft/
+star: false
 tags:
   - 奖励作弊
   - 监控与控制

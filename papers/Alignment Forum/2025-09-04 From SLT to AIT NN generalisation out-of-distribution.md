@@ -5,6 +5,7 @@ lab:
 date: 2025-09-04
 source: "Alignment Forum（Goodfire；Lucius Bushnaq）"
 url: https://www.alignmentforum.org/posts/2MX2bXreTtntB85Zy
+star: false
 tags:
   - 泛化与涌现失调
 ---

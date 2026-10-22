@@ -5,6 +5,7 @@ lab:
 date: 2026-07-23
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/monitoring/what-makes-a-good-monitoring-prompt
+star: false
 tags:
   - 监控与控制
 ---

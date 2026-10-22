@@ -5,6 +5,7 @@ lab:
 date: 2026-08-04
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing
+star: false
 tags:
   - 事故报告
   - 网络安全

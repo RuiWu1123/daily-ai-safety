@@ -5,6 +5,7 @@ lab:
 date: 2026-06-02
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/consistency-training-can-entrench-misalignment
+star: false
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

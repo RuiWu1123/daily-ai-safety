@@ -5,6 +5,7 @@ lab:
 date: 2026-03-09
 source: "Alignment Forum（Anthropic；Bartosz Cywiński, Helena Casademunt, Khoi Tran, aryaj, Sam Marks, Neel Nanda）"
 url: https://www.alignmentforum.org/posts/xq5taGA6Tz6YShCB9
+star: false
 tags:
   - 诚实与谎言检测
   - 对齐审计

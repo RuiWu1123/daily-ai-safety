@@ -5,6 +5,7 @@ lab:
 date: 2026-07-31
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/sota-alignment-assessments-dont-strongly
+star: false
 tags:
   - 对齐审计
   - 评估感知

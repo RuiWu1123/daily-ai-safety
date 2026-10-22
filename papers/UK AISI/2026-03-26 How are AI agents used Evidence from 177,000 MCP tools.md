@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/how-are-ai-agents-used-evidence-from-177-000-mcp-tools
 other_versions:
   - "https://www.aisi.gov.uk/blog/how-are-ai-agents-used-evidence-from-177000-ai-agent-tools"
+star: false
 tags:
   - 人机交互与社会影响
 ---

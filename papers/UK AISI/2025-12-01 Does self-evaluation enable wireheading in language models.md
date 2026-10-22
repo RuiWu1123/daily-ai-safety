@@ -5,6 +5,7 @@ lab:
 date: 2025-12-01
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/does-self-evaluation-enable-wireheading-in-language-models
+star: false
 tags:
   - 奖励作弊
 ---

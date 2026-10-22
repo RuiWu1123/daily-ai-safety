@@ -5,6 +5,7 @@ lab:
 date: 2025-01-17
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/thoughts-on-the-conservative-assumptions
+star: false
 tags:
   - 监控与控制
 ---

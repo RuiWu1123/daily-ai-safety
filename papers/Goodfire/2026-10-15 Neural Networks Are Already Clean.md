@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/already-clean
 other_versions:
   - "https://already-clean.goodfire.com/"
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-10
 source: "METR Notes"
 url: https://metr.org/notes/2026-03-10-many-swe-bench-passing-prs-would-not-be-merged-into-main/
+star: false
 tags:
   - 评估方法
 ---

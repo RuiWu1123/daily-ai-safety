@@ -6,6 +6,7 @@ date: 2026-10-15
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 奖励作弊

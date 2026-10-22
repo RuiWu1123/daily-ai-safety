@@ -5,6 +5,7 @@ lab:
 date: 2024-01-14
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training
+star: false
 tags:
   - 数据投毒与后门
   - 策划与欺骗

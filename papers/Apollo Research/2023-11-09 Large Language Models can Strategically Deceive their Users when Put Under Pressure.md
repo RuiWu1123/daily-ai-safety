@@ -7,6 +7,7 @@ source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/large-language-models-can-strategically-deceive-their-users-when-put-under-pressure
 other_versions:
   - "https://www.apolloresearch.ai/science/our-research-on-strategic-deception-presented-at-the-uks-ai-safety-summit"
+star: false
 tags:
   - 策划与欺骗
 ---

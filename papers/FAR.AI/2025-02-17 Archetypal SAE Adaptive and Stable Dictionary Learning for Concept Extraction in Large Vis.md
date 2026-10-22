@@ -5,6 +5,7 @@ lab:
 date: 2025-02-17
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/archetypal-sae-adaptive-and-stable-dictionary-learning-for-concept-extraction-in-large-vision-models
+star: false
 tags:
   - 可解释性
 ---

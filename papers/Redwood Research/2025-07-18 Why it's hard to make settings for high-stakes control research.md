@@ -5,6 +5,7 @@ lab:
 date: 2025-07-18
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/why-its-hard-to-make-settings-for
+star: false
 tags:
   - 监控与控制
   - 评估方法

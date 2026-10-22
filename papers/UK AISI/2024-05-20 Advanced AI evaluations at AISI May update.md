@@ -5,6 +5,7 @@ lab:
 date: 2024-05-20
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/advanced-ai-evaluations-may-update
+star: false
 tags:
   - 危险能力评估
   - 网络安全

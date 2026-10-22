@@ -5,6 +5,7 @@ lab:
 date: 2024-10-10
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/behavioral-red-teaming-is-unlikely
+star: false
 tags:
   - 策划与欺骗
   - 对齐审计

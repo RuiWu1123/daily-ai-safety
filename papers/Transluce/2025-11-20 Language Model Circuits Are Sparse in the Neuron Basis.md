@@ -5,6 +5,7 @@ lab:
 date: 2025-11-20
 source: "Transluce"
 url: https://transluce.org/neuron-circuits
+star: false
 tags:
   - 可解释性
 ---

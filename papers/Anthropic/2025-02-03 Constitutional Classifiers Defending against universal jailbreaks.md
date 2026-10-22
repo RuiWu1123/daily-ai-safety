@@ -5,6 +5,7 @@ lab:
 date: 2025-02-03
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/constitutional-classifiers
+star: false
 tags:
   - 越狱与鲁棒性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-08-15
 source: "Alignment Forum（UK AISI；Charlie Griffin, ollie, oliverfm, Rogan Inglis, Alan Cooney）"
 url: https://www.alignmentforum.org/posts/jzHhJJq2cFmisRKB2
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

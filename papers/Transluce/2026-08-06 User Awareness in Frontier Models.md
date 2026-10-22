@@ -5,6 +5,7 @@ lab:
 date: 2026-08-06
 source: "Transluce"
 url: https://transluce.org/user-awareness
+star: false
 tags:
   - 评估感知
 ---

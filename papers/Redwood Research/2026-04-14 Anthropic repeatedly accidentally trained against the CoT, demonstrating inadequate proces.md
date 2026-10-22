@@ -5,6 +5,7 @@ lab:
 date: 2026-04-14
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/anthropic-repeatedly-accidentally
+star: false
 tags:
   - CoT与可监控性
   - 事故报告

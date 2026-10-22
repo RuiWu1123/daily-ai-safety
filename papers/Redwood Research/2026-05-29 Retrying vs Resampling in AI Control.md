@@ -5,6 +5,7 @@ lab:
 date: 2026-05-29
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/retrying-vs-resampling-in-ai-control
+star: false
 tags:
   - 监控与控制
 ---

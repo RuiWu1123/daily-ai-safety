@@ -5,6 +5,7 @@ lab:
 date: 2025-12-16
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/alignment-faking-mitigations/
+star: false
 tags:
   - 伪装对齐
   - 对齐训练方法

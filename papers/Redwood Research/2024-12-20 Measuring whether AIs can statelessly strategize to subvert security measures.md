@@ -5,6 +5,7 @@ lab:
 date: 2024-12-20
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/measuring-whether-ais-can-statelessly
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

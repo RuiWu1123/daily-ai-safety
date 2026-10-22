@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/propensity-inference-environmental-contributors-to-llm-behaviour
 other_versions:
   - "https://www.aisi.gov.uk/blog/how-do-environmental-factors-impact-ai-behaviour"
+star: false
 tags:
   - 策划与欺骗
   - 评估方法

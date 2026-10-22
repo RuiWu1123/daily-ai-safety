@@ -5,6 +5,7 @@ lab:
 date: 2025-02-06
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/detecting-strategic-deception-using-linear-probes
+star: false
 tags:
   - 诚实与谎言检测
   - 可解释性

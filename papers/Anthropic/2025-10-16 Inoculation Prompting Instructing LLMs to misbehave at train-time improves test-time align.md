@@ -5,6 +5,7 @@ lab:
 date: 2025-10-16
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/inoculation-prompting/
+star: false
 tags:
   - 对齐训练方法
   - 奖励作弊

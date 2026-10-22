@@ -6,6 +6,7 @@ date: 2026-10-20
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 监控与控制

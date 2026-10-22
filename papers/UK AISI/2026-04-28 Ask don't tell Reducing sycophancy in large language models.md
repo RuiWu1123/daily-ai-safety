@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/ask-dont-tell-reducing-sycophancy-in-large-language-models
 other_versions:
   - "https://www.aisi.gov.uk/blog/ask-dont-tell-reducing-sycophancy-in-large-language-models-2"
+star: false
 tags:
   - 人机交互与社会影响
 ---

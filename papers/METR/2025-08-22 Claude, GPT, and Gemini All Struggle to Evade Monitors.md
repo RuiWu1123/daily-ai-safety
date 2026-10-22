@@ -5,6 +5,7 @@ lab:
 date: 2025-08-22
 source: "METR Notes"
 url: https://metr.org/notes/2025-08-22-claude-gpt-gemini-struggle-evade-monitors/
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

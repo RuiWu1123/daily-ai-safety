@@ -5,6 +5,7 @@ lab:
 date: 2025-11-13
 source: "Alignment Forum（Anthropic / Redwood Research；Emil Ryd, Joe Benton, Vivek Hebbar）"
 url: https://www.alignmentforum.org/posts/Cz7AKenSiNkgijdJi
+star: false
 tags:
   - 监控与控制
   - 故意藏拙

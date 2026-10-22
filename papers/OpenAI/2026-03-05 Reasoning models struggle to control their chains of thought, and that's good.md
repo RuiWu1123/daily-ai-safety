@@ -5,6 +5,7 @@ lab:
 date: 2026-03-05
 source: "OpenAI Blog"
 url: https://openai.com/index/reasoning-models-chain-of-thought-controllability/
+star: false
 tags:
   - CoT与可监控性
 ---

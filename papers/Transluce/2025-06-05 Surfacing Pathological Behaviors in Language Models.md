@@ -5,6 +5,7 @@ lab:
 date: 2025-06-05
 source: "Transluce"
 url: https://transluce.org/pathological-behaviors
+star: false
 tags:
   - 对齐审计
   - 评估方法

@@ -5,6 +5,7 @@ lab:
 date: 2026-02-21
 source: "Alignment Forum（Redwood Research；Alek Westover, Vivek Hebbar, egan）"
 url: https://www.alignmentforum.org/posts/GJTzhQgaRWLFJkPbt
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

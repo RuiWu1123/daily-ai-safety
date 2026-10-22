@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/influence-functions
 other_versions:
   - "https://www.anthropic.com/research/studying-large-language-model-generalization-with-influence-functions"
+star: false
 tags:
   - 可解释性
 ---

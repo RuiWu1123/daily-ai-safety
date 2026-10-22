@@ -5,6 +5,7 @@ lab:
 date: 2025-12-12
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/auditing-mo-replication/
+star: false
 tags:
   - 对齐审计
   - 奖励作弊

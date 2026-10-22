@@ -5,6 +5,7 @@ lab:
 date: 2026-07-31
 source: "Alignment Forum（Anthropic；Johannes Treutlein, Jan Betley, Owain_Evans）"
 url: https://www.alignmentforum.org/posts/hbMw4Yqw6RnFaExDy
+star: false
 tags:
   - CoT与可监控性
   - 诚实与谎言检测

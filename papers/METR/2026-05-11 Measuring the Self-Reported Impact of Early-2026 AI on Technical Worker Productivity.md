@@ -5,6 +5,7 @@ lab:
 date: 2026-05-11
 source: "METR Research"
 url: https://metr.org/blog/2026-05-11-ai-usage-survey/
+star: false
 tags:
   - 人机交互与社会影响
   - 危险能力评估

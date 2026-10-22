@@ -5,6 +5,7 @@ lab:
 date: 2026-04-30
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/our-evaluation-of-openais-gpt-5-5-cyber-capabilities
+star: false
 tags:
   - 网络安全
   - 危险能力评估

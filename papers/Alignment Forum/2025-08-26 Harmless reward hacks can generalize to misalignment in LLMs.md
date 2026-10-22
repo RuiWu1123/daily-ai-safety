@@ -5,6 +5,7 @@ lab:
 date: 2025-08-26
 source: "Alignment Forum（Anthropic；Mia Taylor, Owain_Evans）"
 url: https://www.alignmentforum.org/posts/CwJ2qWveb9JbaCGQ5
+star: false
 tags:
   - 奖励作弊
   - 泛化与涌现失调

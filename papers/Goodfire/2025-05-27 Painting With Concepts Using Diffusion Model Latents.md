@@ -5,6 +5,7 @@ lab:
 date: 2025-05-27
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/painting-with-concepts
+star: false
 tags:
   - 可解释性
 ---

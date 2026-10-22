@@ -5,6 +5,7 @@ lab:
 date: 2024-10-23
 source: "Transluce"
 url: https://transluce.org/observability-interface
+star: false
 tags:
   - 可解释性
 ---

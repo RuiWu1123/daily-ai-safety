@@ -5,6 +5,7 @@ lab:
 date: 2023-03-17
 source: "METR Research"
 url: https://metr.org/blog/2023-03-18-update-on-recent-evals/
+star: false
 tags:
   - 危险能力评估
 ---

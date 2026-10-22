@@ -5,6 +5,7 @@ lab:
 date: 2025-05-28
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/the-case-for-countermeasures-to-memetic
+star: false
 tags:
   - 威胁建模
   - 策划与欺骗

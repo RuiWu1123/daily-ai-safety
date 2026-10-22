@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/loss-of-oversight-how-ai-systems-may-become-harder-to-audit-monitor-and-investigate
 other_versions:
   - "https://www.aisi.gov.uk/blog/will-it-become-harder-to-oversee-ai-systems"
+star: false
 tags:
   - 监控与控制
   - CoT与可监控性

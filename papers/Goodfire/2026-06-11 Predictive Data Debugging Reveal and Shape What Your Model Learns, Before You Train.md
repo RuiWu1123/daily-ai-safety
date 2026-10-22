@@ -5,6 +5,7 @@ lab:
 date: 2026-06-11
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/predictive-data-debugging
+star: false
 tags:
   - 可解释性
   - 对齐训练方法

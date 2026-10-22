@@ -5,6 +5,7 @@ lab:
 date: 2025-12-15
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/practical-challenges-of-control-monitoring-in-frontier-ai-deployments
+star: false
 tags:
   - 监控与控制
 ---

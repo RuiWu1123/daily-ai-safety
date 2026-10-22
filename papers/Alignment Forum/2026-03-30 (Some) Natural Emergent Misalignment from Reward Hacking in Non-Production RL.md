@@ -5,6 +5,7 @@ lab:
 date: 2026-03-30
 source: "Alignment Forum（UK AISI；7vik, Sid Black, Joseph Bloom）"
 url: https://www.alignmentforum.org/posts/2ANCyejqxfqK2obEj
+star: false
 tags:
   - 泛化与涌现失调
   - 奖励作弊

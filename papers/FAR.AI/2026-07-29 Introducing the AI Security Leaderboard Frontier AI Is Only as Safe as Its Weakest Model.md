@@ -5,6 +5,7 @@ lab:
 date: 2026-07-29
 source: "FAR.AI Blog"
 url: https://www.far.ai/blog/ai-security-leaderboard
+star: false
 tags:
   - 越狱与鲁棒性
   - 评估方法

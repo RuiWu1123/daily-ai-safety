@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/avoiding-ai-deception
 other_versions:
   - "https://www.far.ai/research/preference-learning-with-lie-detectors-can-induce-honesty-or-evasion"
+star: false
 tags:
   - 诚实与谎言检测
   - 对齐训练方法

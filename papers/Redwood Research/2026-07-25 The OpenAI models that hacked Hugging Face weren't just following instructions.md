@@ -5,6 +5,7 @@ lab:
 date: 2026-07-25
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/the-openai-models-that-hacked-hugging
+star: false
 tags:
   - 事故报告
   - 奖励作弊

@@ -5,6 +5,7 @@ lab:
 date: 2025-03-29
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/notes-on-handling-non-concentrated
+star: false
 tags:
   - 监控与控制
   - 故意藏拙

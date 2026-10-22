@@ -5,6 +5,7 @@ lab:
 date: 2024-07-18
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/catastrophic-goodhart-regularizing-rlhf-with-kl-divergence-does-not-mitigate-heavy-tailed-reward-misspecification
+star: false
 tags:
   - 奖励作弊
   - 对齐训练方法

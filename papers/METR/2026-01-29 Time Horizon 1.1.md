@@ -5,6 +5,7 @@ lab:
 date: 2026-01-29
 source: "METR Research"
 url: https://metr.org/blog/2026-01-29-time-horizon-1-1/
+star: false
 tags:
   - 评估方法
   - 危险能力评估

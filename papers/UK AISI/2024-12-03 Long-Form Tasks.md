@@ -5,6 +5,7 @@ lab:
 date: 2024-12-03
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/long-form-tasks
+star: false
 tags:
   - 评估方法
   - 危险能力评估

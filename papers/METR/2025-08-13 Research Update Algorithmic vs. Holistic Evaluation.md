@@ -5,6 +5,7 @@ lab:
 date: 2025-08-13
 source: "METR Research"
 url: https://metr.org/blog/2025-08-12-research-update-towards-reconciling-slowdown-with-time-horizons/
+star: false
 tags:
   - 评估方法
 ---

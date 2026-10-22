@@ -5,6 +5,7 @@ lab:
 date: 2023-02-15
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/pretraining-language-models-with-human-preferences
+star: false
 tags:
   - 对齐训练方法
   - 知识移除

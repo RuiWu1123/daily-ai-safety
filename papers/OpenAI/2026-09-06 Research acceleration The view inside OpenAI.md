@@ -5,6 +5,7 @@ lab:
 date: 2026-09-06
 source: "OpenAI Blog"
 url: https://openai.com/index/research-acceleration-view-inside-openai/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

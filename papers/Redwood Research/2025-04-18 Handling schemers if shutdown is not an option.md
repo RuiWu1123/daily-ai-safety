@@ -5,6 +5,7 @@ lab:
 date: 2025-04-18
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/handling-schemers-if-shutdown-is
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

@@ -5,6 +5,7 @@ lab:
 date: 2026-10-08
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3
+star: false
 tags:
   - 监控与控制
   - 网络安全

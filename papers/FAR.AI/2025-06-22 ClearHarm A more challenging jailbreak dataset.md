@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/clearharm-a-more-challenging-jailbreak-dataset
 other_versions:
   - "https://www.far.ai/research/clearharm-a-more-challenging-jailbreak-dataset"
+star: false
 tags:
   - 越狱与鲁棒性
   - 评估方法

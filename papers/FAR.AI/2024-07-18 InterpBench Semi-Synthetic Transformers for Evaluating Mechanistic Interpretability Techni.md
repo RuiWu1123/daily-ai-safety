@@ -5,6 +5,7 @@ lab:
 date: 2024-07-18
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/interpbench-semi-synthetic-transformers-for-evaluating-mechanistic-interpretability-techniques
+star: false
 tags:
   - 可解释性
   - 评估方法

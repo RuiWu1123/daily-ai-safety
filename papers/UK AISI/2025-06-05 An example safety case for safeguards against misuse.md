@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/an-example-safety-case-for-safeguards-against-misuse
 other_versions:
   - "https://www.aisi.gov.uk/blog/making-safeguard-evaluations-actionable"
+star: false
 tags:
   - 威胁建模
   - 越狱与鲁棒性

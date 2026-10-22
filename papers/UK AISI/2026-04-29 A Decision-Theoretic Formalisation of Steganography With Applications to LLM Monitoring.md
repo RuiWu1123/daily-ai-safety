@@ -5,6 +5,7 @@ lab:
 date: 2026-04-29
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/a-decision-theoretic-formalisation-of-steganography-with-applications-to-llm-monitoring
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

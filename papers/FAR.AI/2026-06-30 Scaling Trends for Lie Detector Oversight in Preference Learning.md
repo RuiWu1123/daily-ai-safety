@@ -5,6 +5,7 @@ lab:
 date: 2026-06-30
 source: "FAR.AI Blog"
 url: https://www.far.ai/blog/scaling-solid
+star: false
 tags:
   - 诚实与谎言检测
   - 可扩展监督

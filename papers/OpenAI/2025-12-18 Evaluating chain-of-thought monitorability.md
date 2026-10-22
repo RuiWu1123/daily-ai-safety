@@ -5,6 +5,7 @@ lab:
 date: 2025-12-18
 source: "OpenAI Blog"
 url: https://openai.com/index/evaluating-chain-of-thought-monitorability/
+star: false
 tags:
   - CoT与可监控性
   - 评估方法

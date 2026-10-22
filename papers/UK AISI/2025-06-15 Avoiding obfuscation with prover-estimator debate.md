@@ -5,6 +5,7 @@ lab:
 date: 2025-06-15
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/avoiding-obfuscation-with-prover-estimator-debate
+star: false
 tags:
   - 可扩展监督
 ---

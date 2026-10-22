@@ -9,6 +9,7 @@ url: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation
 other_versions:
   - "https://www.redwoodresearch.org/research/hugging-face-incident"
   - "https://blog.redwoodresearch.org/p/brief-independent-investigation-of"
+star: false
 tags:
   - 事故报告
   - 多智能体

@@ -5,6 +5,7 @@ lab:
 date: 2025-01-23
 source: "Alignment Forum（Redwood Research；Joey Yudelson, Buck）"
 url: https://www.alignmentforum.org/posts/2CJyfgaJQk8pyRSCp
+star: false
 tags:
   - 监控与控制
   - 评估方法

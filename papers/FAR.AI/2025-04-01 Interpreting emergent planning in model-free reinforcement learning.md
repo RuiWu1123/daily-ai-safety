@@ -5,6 +5,7 @@ lab:
 date: 2025-04-01
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/interpreting-emergent-planning-in-model-free-reinforcement-learning
+star: false
 tags:
   - 可解释性
 ---

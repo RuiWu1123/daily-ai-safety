@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/petri-open-source-auditing
 other_versions:
   - "https://alignment.anthropic.com/2025/petri/"
+star: false
 tags:
   - 对齐审计
   - 评估方法

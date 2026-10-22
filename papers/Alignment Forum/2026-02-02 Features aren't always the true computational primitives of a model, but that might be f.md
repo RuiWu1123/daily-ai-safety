@@ -5,6 +5,7 @@ lab:
 date: 2026-02-02
 source: "Alignment Forum（METR；LawrenceC）"
 url: https://www.alignmentforum.org/posts/iEx2KjwFse749BYsD
+star: false
 tags:
   - 可解释性
 ---

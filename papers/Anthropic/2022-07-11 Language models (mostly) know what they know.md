@@ -5,6 +5,7 @@ lab:
 date: 2022-07-11
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/language-models-mostly-know-what-they-know
+star: false
 tags:
   - 诚实与谎言检测
 ---

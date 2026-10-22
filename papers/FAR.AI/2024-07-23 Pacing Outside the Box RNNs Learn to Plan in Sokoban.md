@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/pacing-outside-the-box-rnns-learn-to-plan-in-sokoban
 other_versions:
   - "https://www.far.ai/research/planning-behavior-in-a-recurrent-neural-network-that-plays-sokoban"
+star: false
 tags:
   - 可解释性
 ---

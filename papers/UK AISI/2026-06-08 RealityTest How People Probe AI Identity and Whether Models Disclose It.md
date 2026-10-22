@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/realitytest-how-people-probe-ai-identity-and-whether-models-disclose-it
 other_versions:
   - "https://www.aisi.gov.uk/blog/realitytest-do-ai-systems-disclose-their-identity-when-asked"
+star: false
 tags:
   - 人机交互与社会影响
   - 诚实与谎言检测

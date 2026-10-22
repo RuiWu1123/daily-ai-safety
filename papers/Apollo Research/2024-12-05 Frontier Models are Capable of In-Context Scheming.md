@@ -7,6 +7,7 @@ source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/frontier-models-are-capable-of-incontext-scheming
 other_versions:
   - "https://www.apolloresearch.ai/science/demo-example-scheming-reasoning-evaluations"
+star: false
 tags:
   - 策划与欺骗
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-11-17
 source: "Alignment Forum（Redwood Research；joshc, sarun0, Annie Sorkin, michaelwaves）"
 url: https://www.alignmentforum.org/posts/p6tkQ3hzYzAMqDYEi
+star: false
 tags:
   - 伪装对齐
   - 对齐审计

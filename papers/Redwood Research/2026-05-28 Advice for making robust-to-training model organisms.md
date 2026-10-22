@@ -5,6 +5,7 @@ lab:
 date: 2026-05-28
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/advice-for-making-robust-to-training
+star: false
 tags:
   - 数据投毒与后门
   - 对齐审计

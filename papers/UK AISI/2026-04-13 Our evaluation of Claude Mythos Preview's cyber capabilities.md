@@ -5,6 +5,7 @@ lab:
 date: 2026-04-13
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/our-evaluation-of-claude-mythos-previews-cyber-capabilities
+star: false
 tags:
   - 网络安全
   - 危险能力评估

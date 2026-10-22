@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/skewed-score-a-statistical-framework-to-assess-autograders
 other_versions:
   - "https://www.aisi.gov.uk/blog/llm-judges-on-trial-a-new-statistical-framework-to-assess-autograders"
+star: false
 tags:
   - 评估方法
 ---

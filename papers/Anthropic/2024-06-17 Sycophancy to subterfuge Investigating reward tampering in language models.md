@@ -5,6 +5,7 @@ lab:
 date: 2024-06-17
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/reward-tampering
+star: false
 tags:
   - 奖励作弊
   - 泛化与涌现失调

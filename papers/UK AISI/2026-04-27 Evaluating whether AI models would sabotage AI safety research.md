@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/evaluating-whether-ai-models-would-sabotage-ai-safety-research
 other_versions:
   - "https://www.aisi.gov.uk/blog/evaluating-whether-ai-models-would-sabotage-ai-safety-research"
+star: false
 tags:
   - 策划与欺骗
   - 危险能力评估

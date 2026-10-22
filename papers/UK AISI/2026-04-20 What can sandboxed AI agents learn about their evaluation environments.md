@@ -5,6 +5,7 @@ lab:
 date: 2026-04-20
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/what-can-sandboxed-ai-agents-learn-about-their-evaluation-environments
+star: false
 tags:
   - 评估感知
   - 网络安全

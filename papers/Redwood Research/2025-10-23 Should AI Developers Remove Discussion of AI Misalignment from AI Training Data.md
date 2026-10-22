@@ -5,6 +5,7 @@ lab:
 date: 2025-10-23
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/should-ai-developers-remove-discussion
+star: false
 tags:
   - 泛化与涌现失调
   - 对齐训练方法

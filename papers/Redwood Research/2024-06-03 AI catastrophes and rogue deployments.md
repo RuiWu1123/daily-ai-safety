@@ -5,6 +5,7 @@ lab:
 date: 2024-06-03
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/ai-catastrophes-and-rogue-deployments
+star: false
 tags:
   - 威胁建模
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-30
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/blocking-live-failures-with-synchronous
+star: false
 tags:
   - 监控与控制
 ---

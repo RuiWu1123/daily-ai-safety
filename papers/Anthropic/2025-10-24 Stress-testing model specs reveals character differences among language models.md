@@ -5,6 +5,7 @@ lab:
 date: 2025-10-24
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/stress-testing-model-specs/
+star: false
 tags:
   - 对齐训练方法
   - 评估方法

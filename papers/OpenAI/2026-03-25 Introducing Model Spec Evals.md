@@ -5,6 +5,7 @@ lab:
 date: 2026-03-25
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/model-spec-evals/
+star: false
 tags:
   - 对齐训练方法
   - 评估方法

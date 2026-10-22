@@ -5,6 +5,7 @@ lab:
 date: 2026-09-23
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/astra-is-much-better-at-reasoning
+star: false
 tags:
   - CoT与可监控性
   - 危险能力评估

@@ -5,6 +5,7 @@ lab:
 date: 2026-04-21
 source: "METR Notes"
 url: https://metr.org/notes/2026-04-21-ai-rd-nanogpt-progress/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

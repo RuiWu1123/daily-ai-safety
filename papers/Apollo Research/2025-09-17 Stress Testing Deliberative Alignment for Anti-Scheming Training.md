@@ -5,6 +5,7 @@ lab:
 date: 2025-09-17
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/stress-testing-deliberative-alignment-for-anti-scheming-training
+star: false
 tags:
   - 策划与欺骗
   - 对齐训练方法

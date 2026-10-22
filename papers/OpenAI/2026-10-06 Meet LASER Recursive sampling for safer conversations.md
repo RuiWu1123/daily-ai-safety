@@ -5,6 +5,7 @@ lab:
 date: 2026-10-06
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/laser/
+star: false
 tags:
   - 评估方法
   - 越狱与鲁棒性

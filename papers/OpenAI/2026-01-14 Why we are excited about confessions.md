@@ -5,6 +5,7 @@ lab:
 date: 2026-01-14
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/confessions/
+star: false
 tags:
   - 诚实与谎言检测
   - 奖励作弊

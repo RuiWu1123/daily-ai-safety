@@ -5,6 +5,7 @@ lab:
 date: 2026-09-17
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/reward-hacking-activation-monitors
+star: false
 tags:
   - 奖励作弊
   - 可解释性

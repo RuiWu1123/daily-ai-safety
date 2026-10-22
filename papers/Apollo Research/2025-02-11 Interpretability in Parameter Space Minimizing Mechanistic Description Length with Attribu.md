@@ -5,6 +5,7 @@ lab:
 date: 2025-02-11
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/interpretability-in-parameter-space-minimizing-mechanistic-description-length-with-attribution-based-parameter-decomposition
+star: false
 tags:
   - 可解释性
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-03
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/abstractive-red-teaming/
+star: false
 tags:
   - 对齐审计
   - 对齐训练方法

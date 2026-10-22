@@ -5,6 +5,7 @@ lab:
 date: 2024-05-30
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/the-local-interaction-basis-identifying-computationally-relevant-and-sparsely-interacting-features-in-neural-networks
+star: false
 tags:
   - 可解释性
 ---

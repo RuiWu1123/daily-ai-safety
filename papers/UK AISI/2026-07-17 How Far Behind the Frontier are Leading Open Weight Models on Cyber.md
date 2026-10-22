@@ -5,6 +5,7 @@ lab:
 date: 2026-07-17
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/how-far-behind-the-frontier-are-leading-open-weight-models-on-cyber
+star: false
 tags:
   - 网络安全
   - 危险能力评估

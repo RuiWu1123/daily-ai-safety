@@ -5,6 +5,7 @@ lab:
 date: 2026-08-04
 source: "Transluce Docent Blog"
 url: https://transluce.org/docent/blog/coding-agent-behaviors
+star: false
 tags:
   - 监控与控制
   - 诚实与谎言检测

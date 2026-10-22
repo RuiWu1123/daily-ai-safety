@@ -5,6 +5,7 @@ lab:
 date: 2026-04-06
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/safety-fellowship/
+star: false
 tags:
   - 评估方法
   - 越狱与鲁棒性

@@ -5,6 +5,7 @@ lab:
 date: 2025-12-22
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/helpful-assistant-features/
+star: false
 tags:
   - 泛化与涌现失调
   - 可解释性

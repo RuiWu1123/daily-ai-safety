@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/automated-alignment-researchers
 other_versions:
   - "https://alignment.anthropic.com/2026/automated-w2s-researcher/"
+star: false
 tags:
   - 可扩展监督
 ---

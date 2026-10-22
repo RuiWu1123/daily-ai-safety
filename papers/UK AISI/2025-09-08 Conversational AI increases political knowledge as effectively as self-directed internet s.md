@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/conversational-ai-increases-political-knowledge-as-effectively-as-self-directed-internet-search
 other_versions:
   - "https://www.aisi.gov.uk/blog/do-chatbots-inform-or-misinform-voters"
+star: false
 tags:
   - 人机交互与社会影响
 ---

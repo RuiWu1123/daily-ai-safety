@@ -5,6 +5,7 @@ lab:
 date: 2026-03-10
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/the-case-for-satiating-cheaply-satisfied
+star: false
 tags:
   - 模型福利
   - 奖励作弊

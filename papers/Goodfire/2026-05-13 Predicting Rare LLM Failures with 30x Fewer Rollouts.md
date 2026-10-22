@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/predicting-rare-llm-failures-with-30x-fewer-rollouts
 other_versions:
   - "https://www.lesswrong.com/posts/CempXdo6cx5yseRLt/predicting-rare-llm-failures-with-30-fewer-rollouts"
+star: false
 tags:
   - 评估方法
   - 越狱与鲁棒性

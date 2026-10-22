@@ -5,6 +5,7 @@ lab:
 date: 2025-01-24
 source: "Alignment Forum（UK AISI；Geoffrey Irving, Joseph Bloom, Tomek Korbak）"
 url: https://www.alignmentforum.org/posts/inkzPmpTFBdXoKLqC
+star: false
 tags:
   - 监控与控制
   - 可解释性

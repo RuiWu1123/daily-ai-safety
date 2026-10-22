@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2405.19550
 other_versions:
   - "https://www.lesswrong.com/posts/c4sZqhqPwNKGz3fFW/paper-stress-testing-capability-elicitation-with-password"
+star: false
 tags:
   - 故意藏拙
   - 危险能力评估

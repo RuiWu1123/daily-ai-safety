@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/transect-retaining-observability-for-long-horizon-llm-agent-evaluations
 other_versions:
   - "https://www.aisi.gov.uk/blog/transect-making-large-scale-agentic-evaluations-easier-to-understand"
+star: false
 tags:
   - 评估方法
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2025-06-24
 source: "Alignment Forum（Apollo Research；Marius Hobbhahn）"
 url: https://www.alignmentforum.org/posts/HwuMFFnb6CaTwzhye
+star: false
 tags:
   - 策划与欺骗
   - 对齐训练方法

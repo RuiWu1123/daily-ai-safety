@@ -5,6 +5,7 @@ lab:
 date: 2026-08-20
 source: "Transluce"
 url: https://transluce.org/scaling-activation-oracles
+star: false
 tags:
   - 可解释性
   - 对齐审计

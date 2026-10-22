@@ -5,6 +5,7 @@ lab:
 date: 2026-04-24
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/backdooring-classifiers/
+star: false
 tags:
   - 数据投毒与后门
   - 越狱与鲁棒性

@@ -5,6 +5,7 @@ lab:
 date: 2025-10-28
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/sabotage-risk-report/
+star: false
 tags:
   - 威胁建模
   - 策划与欺骗

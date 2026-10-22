@@ -5,6 +5,7 @@ lab:
 date: 2025-06-27
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/how-people-use-claude-for-support-advice-and-companionship
+star: false
 tags:
   - 人机交互与社会影响
 ---

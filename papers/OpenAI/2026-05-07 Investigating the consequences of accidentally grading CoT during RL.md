@@ -5,6 +5,7 @@ lab:
 date: 2026-05-07
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/accidental-cot-grading/
+star: false
 tags:
   - CoT与可监控性
   - 安全基础设施

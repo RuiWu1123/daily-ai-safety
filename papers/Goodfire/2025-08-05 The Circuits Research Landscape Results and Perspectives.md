@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/the-circuits-research-landscape
 other_versions:
   - "https://www.neuronpedia.org/graph/info"
+star: false
 tags:
   - 可解释性
 ---

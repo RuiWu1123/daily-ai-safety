@@ -5,6 +5,7 @@ lab:
 date: 2026-09-22
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/red-teaming-auto-mode
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

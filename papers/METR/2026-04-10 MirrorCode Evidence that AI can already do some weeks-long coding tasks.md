@@ -5,6 +5,7 @@ lab:
 date: 2026-04-10
 source: "METR Research"
 url: https://metr.org/blog/2026-04-10-mirrorcode-preliminary-results/
+star: false
 tags:
   - 评估方法
   - 危险能力评估

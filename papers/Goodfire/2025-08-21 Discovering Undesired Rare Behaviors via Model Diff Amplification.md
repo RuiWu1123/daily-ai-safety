@@ -5,6 +5,7 @@ lab:
 date: 2025-08-21
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/model-diff-amplification
+star: false
 tags:
   - 对齐审计
   - 泛化与涌现失调

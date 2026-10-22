@@ -5,6 +5,7 @@ lab:
 date: 2025-12-01
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/hello-world/
+star: false
 tags:
   - 可扩展监督
   - 威胁建模

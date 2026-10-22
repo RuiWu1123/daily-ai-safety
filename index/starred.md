@@ -1,11 +1,11 @@
 ## 我关注的论文
 
-在 [[my_notes/starred]] 里加的论文，按发布时间从新到旧排列。
+在任意论文页面顶部的属性栏里勾选"star"，或者在 [[papers.base|论文数据库]] 的"已星标"列直接勾选，论文就会出现在这里。
 
 ```dataview
 TABLE WITHOUT ID link(file.link, title) AS "标题", dateformat(date, "yyyy-MM-dd") AS "日期", source AS "来源", join(tags, "、") AS "主题"
-FROM outgoing([[my_notes/starred]])
-WHERE startswith(file.path, "papers/")
+FROM "papers"
+WHERE star = true
 SORT date DESC
 ```
 

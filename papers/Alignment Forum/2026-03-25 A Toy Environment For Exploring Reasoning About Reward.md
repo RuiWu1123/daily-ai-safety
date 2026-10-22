@@ -5,6 +5,7 @@ lab:
 date: 2026-03-25
 source: "Alignment Forum（OpenAI / Apollo Research；jenny, Bronson Schoen）"
 url: https://www.alignmentforum.org/posts/LhXW8ziwnn7Dd8edm
+star: false
 tags:
   - 奖励作弊
   - 评估感知

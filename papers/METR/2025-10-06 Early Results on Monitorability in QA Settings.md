@@ -5,6 +5,7 @@ lab:
 date: 2025-10-06
 source: "METR Notes"
 url: https://metr.org/notes/2025-10-06-early-results-on-monitorability-in-qa-settings/
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

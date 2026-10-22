@@ -5,6 +5,7 @@ lab:
 date: 2021-12-01
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/a-general-language-assistant-as-a-laboratory-for-alignment
+star: false
 tags:
   - 对齐训练方法
   - 诚实与谎言检测

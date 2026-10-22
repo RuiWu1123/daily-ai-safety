@@ -5,6 +5,7 @@ lab:
 date: 2025-02-25
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/forecasting-rare-behaviors
+star: false
 tags:
   - 评估方法
   - 越狱与鲁棒性

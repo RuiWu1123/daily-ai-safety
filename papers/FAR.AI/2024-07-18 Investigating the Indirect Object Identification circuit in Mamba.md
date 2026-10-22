@@ -5,6 +5,7 @@ lab:
 date: 2024-07-18
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/investigating-the-indirect-object-identification-circuit-in-mamba
+star: false
 tags:
   - 可解释性
 ---

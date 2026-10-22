@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/uncovering-latent-human-wellbeing-in-llm-embeddings
 other_versions:
   - "https://www.far.ai/research/uncovering-latent-human-wellbeing-in-language-model-embeddings"
+star: false
 tags:
   - 可解释性
 ---

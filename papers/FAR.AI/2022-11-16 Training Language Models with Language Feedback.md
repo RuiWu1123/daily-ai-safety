@@ -5,6 +5,7 @@ lab:
 date: 2022-11-16
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/training-language-models-with-language-feedback
+star: false
 tags:
   - 对齐训练方法
 ---

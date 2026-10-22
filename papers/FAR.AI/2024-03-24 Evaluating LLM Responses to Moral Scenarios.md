@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/evaluating-llm-responses-to-moral-scenarios
 other_versions:
   - "https://www.far.ai/research/evaluating-the-moral-beliefs-encoded-in-llms"
+star: false
 tags:
   - 评估方法
   - 对齐训练方法

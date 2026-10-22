@@ -5,6 +5,7 @@ lab:
 date: 2025-04-24
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/exploring-model-welfare
+star: false
 tags:
   - 模型福利
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-04-27
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/fail-safer-at-alignment-by-channeling
+star: false
 tags:
   - 奖励作弊
   - 对齐训练方法

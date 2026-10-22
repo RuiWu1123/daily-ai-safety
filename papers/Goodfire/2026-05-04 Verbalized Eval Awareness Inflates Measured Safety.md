@@ -5,6 +5,7 @@ lab:
 date: 2026-05-04
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/verbalized-eval-awareness-inflates-measured-safety
+star: false
 tags:
   - 评估感知
   - 评估方法

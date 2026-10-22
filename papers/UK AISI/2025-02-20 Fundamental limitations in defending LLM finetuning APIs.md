@@ -5,6 +5,7 @@ lab:
 date: 2025-02-20
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/fundamental-limitations-in-defending-llm-finetuning-apis-2
+star: false
 tags:
   - 越狱与鲁棒性
 ---

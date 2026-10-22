@@ -5,6 +5,7 @@ lab:
 date: 2026-05-18
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/incriminating-misaligned-ai-models
+star: false
 tags:
   - 对齐审计
   - 监控与控制

@@ -5,6 +5,7 @@ lab:
 date: 2022-12-15
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback
+star: false
 tags:
   - 对齐训练方法
   - 可扩展监督

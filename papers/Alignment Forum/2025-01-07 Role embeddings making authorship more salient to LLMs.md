@@ -5,6 +5,7 @@ lab:
 date: 2025-01-07
 source: "Alignment Forum（Anthropic；Nina Panickssery, Christopher Ackerman）"
 url: https://www.alignmentforum.org/posts/HEzNZ9gvgYwT3aZFS
+star: false
 tags:
   - 越狱与鲁棒性
   - 提示注入

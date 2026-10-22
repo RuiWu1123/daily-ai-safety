@@ -5,6 +5,7 @@ lab:
 date: 2025-08-08
 source: "METR Research"
 url: https://metr.org/blog/2025-08-08-cot-may-be-highly-informative-despite-unfaithfulness/
+star: false
 tags:
   - CoT与可监控性
 ---

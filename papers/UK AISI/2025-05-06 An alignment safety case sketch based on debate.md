@@ -5,6 +5,7 @@ lab:
 date: 2025-05-06
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/an-alignment-safety-case-sketch-based-on-debate
+star: false
 tags:
   - 可扩展监督
   - 威胁建模

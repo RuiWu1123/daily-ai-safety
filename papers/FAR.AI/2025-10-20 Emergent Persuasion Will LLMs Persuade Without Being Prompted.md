@@ -5,6 +5,7 @@ lab:
 date: 2025-10-20
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/emergent-persuasion-will-llms-persuade-without-being-prompted
+star: false
 tags:
   - 人机交互与社会影响
   - 泛化与涌现失调

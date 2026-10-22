@@ -5,6 +5,7 @@ lab:
 date: 2025-09-29
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/training-reliable-activation-probes-with-a-handful-of-positive-examples
+star: false
 tags:
   - 可解释性
   - 监控与控制

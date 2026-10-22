@@ -5,6 +5,7 @@ lab:
 date: 2026-05-19
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/sleight-bench/
+star: false
 tags:
   - 监控与控制
   - 评估方法

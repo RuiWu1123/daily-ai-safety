@@ -5,6 +5,7 @@ lab:
 date: 2025-11-25
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/honesty-elicitation/
+star: false
 tags:
   - 诚实与谎言检测
   - 可解释性

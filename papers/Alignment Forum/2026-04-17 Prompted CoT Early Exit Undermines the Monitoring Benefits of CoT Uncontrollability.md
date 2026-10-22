@@ -5,6 +5,7 @@ lab:
 date: 2026-04-17
 source: "Alignment Forum（UK AISI / Anthropic；Elle Najt, Asa Cooper Stickland, Xander Davies）"
 url: https://www.alignmentforum.org/posts/BuAPifQmHf24xB29n
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

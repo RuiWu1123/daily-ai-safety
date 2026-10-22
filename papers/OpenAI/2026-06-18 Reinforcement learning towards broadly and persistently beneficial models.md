@@ -5,6 +5,7 @@ lab:
 date: 2026-06-18
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/beneficial-rl/
+star: false
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

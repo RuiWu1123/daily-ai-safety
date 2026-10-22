@@ -5,6 +5,7 @@ lab:
 date: 2023-07-18
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/question-decomposition-improves-the-faithfulness-of-model-generated-reasoning
+star: false
 tags:
   - CoT与可监控性
 ---

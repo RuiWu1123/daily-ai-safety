@@ -5,6 +5,7 @@ lab:
 date: 2026-07-07
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/bsf-vision
+star: false
 tags:
   - 可解释性
 ---

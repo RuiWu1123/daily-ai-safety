@@ -5,6 +5,7 @@ lab:
 date: 2025-06-12
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/when-does-training-a-model-change
+star: false
 tags:
   - 策划与欺骗
   - 伪装对齐

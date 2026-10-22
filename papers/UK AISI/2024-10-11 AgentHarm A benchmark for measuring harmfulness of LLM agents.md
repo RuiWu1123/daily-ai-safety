@@ -5,6 +5,7 @@ lab:
 date: 2024-10-11
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/agentharm-a-benchmark-for-measuring-harmfulness-of-llm-agents
+star: false
 tags:
   - 越狱与鲁棒性
   - 评估方法

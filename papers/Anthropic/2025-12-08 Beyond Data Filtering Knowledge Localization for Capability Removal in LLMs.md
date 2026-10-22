@@ -5,6 +5,7 @@ lab:
 date: 2025-12-08
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/selective-gradient-masking
+star: false
 tags:
   - 知识移除
 ---

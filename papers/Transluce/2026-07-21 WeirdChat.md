@@ -5,6 +5,7 @@ lab:
 date: 2026-07-21
 source: "Transluce"
 url: https://transluce.org/weirdchat
+star: false
 tags:
   - 对齐审计
   - 人机交互与社会影响

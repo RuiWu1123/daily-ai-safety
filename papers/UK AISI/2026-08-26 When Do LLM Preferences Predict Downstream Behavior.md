@@ -5,6 +5,7 @@ lab:
 date: 2026-08-26
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/when-do-llm-preferences-predict-downstream-behavior
+star: false
 tags:
   - 故意藏拙
   - 评估方法

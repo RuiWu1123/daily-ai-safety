@@ -5,6 +5,7 @@ lab:
 date: 2026-09-18
 source: "FAR.AI Blog"
 url: https://www.far.ai/blog/jailbreaking-qoders-cyber-safeguards
+star: false
 tags:
   - 越狱与鲁棒性
   - 网络安全

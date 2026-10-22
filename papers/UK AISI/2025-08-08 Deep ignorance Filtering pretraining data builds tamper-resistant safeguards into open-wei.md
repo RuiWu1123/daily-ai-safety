@@ -5,6 +5,7 @@ lab:
 date: 2025-08-08
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/deep-ignorance-filtering-pretraining-data-builds-tamper-resistant-safeguards-into-open-weight-llms
+star: false
 tags:
   - 知识移除
   - 越狱与鲁棒性

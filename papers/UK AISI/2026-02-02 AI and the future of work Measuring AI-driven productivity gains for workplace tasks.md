@@ -5,6 +5,7 @@ lab:
 date: 2026-02-02
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/ai-and-the-future-of-work-measuring-ai-driven-productivity-gains-for-workplace-tasks
+star: false
 tags:
   - 人机交互与社会影响
   - 评估方法

@@ -5,6 +5,7 @@ lab:
 date: 2023-09-15
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/understanding-strategic-deception-and-deceptive-alignment
+star: false
 tags:
   - 策划与欺骗
   - 威胁建模

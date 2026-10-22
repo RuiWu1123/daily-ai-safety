@@ -5,6 +5,7 @@ lab:
 date: 2026-06-23
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/diffuse-ai-control/
+star: false
 tags:
   - 监控与控制
   - 故意藏拙

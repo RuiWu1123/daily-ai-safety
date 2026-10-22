@@ -5,6 +5,7 @@ lab:
 date: 2025-06
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/cheap-monitors/
+star: false
 tags:
   - 越狱与鲁棒性
   - 可解释性

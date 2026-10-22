@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/belief-dynamics-icl-steering
 other_versions:
   - "https://arxiv.org/abs/2511.00617"
+star: false
 tags:
   - 可解释性
 ---

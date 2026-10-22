@@ -5,6 +5,7 @@ lab:
 date: 2025-02
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/introducing-safeguards-research-team/index.html
+star: false
 tags:
   - 越狱与鲁棒性
   - 安全基础设施

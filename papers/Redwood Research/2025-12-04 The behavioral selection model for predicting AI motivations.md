@@ -5,6 +5,7 @@ lab:
 date: 2025-12-04
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/the-behavioral-selection-model-for
+star: false
 tags:
   - 威胁建模
 ---

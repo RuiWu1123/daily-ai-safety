@@ -5,6 +5,7 @@ lab:
 date: 2026-06-26
 source: "METR Blog"
 url: https://metr.org/blog/2026-06-26-gpt-5-6-sol/
+star: false
 tags:
   - 危险能力评估
   - 奖励作弊

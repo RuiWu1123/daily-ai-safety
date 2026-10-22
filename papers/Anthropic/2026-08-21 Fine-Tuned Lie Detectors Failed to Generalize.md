@@ -5,6 +5,7 @@ lab:
 date: 2026-08-21
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/lie-detectors/
+star: false
 tags:
   - 诚实与谎言检测
   - 故意藏拙

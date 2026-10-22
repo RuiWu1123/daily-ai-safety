@@ -5,6 +5,7 @@ lab:
 date: 2024-06-10
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/access-to-powerful-ai-might-make
+star: false
 tags:
   - 安全基础设施
   - 监控与控制

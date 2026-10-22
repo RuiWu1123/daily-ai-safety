@@ -5,6 +5,7 @@ lab:
 date: 2022-12-19
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/discovering-language-model-behaviors-with-model-written-evaluations
+star: false
 tags:
   - 评估方法
   - 评估感知

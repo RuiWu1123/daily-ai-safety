@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/async-control-stress-testing-asynchronous-control-measures-for-llm-agents
 other_versions:
   - "https://www.aisi.gov.uk/blog/stress-testing-asynchronous-monitoring-of-ai-coding-agents"
+star: false
 tags:
   - 监控与控制
 ---

@@ -6,6 +6,7 @@ date: 2026-10-09
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 奖励作弊

@@ -5,6 +5,7 @@ lab:
 date: 2025-07-22
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/inverse-scaling/
+star: false
 tags:
   - 评估方法
   - CoT与可监控性

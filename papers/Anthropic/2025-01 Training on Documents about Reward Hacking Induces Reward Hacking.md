@@ -5,6 +5,7 @@ lab:
 date: 2025-01
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/reward-hacking-ooc/index.html
+star: false
 tags:
   - 奖励作弊
   - 泛化与涌现失调

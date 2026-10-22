@@ -5,6 +5,7 @@ lab:
 date: 2023-03-27
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/improving-code-generation-by-training-with-natural-language-feedback
+star: false
 tags:
   - 对齐训练方法
   - 可扩展监督

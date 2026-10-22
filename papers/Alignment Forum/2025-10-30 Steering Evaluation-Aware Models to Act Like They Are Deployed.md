@@ -5,6 +5,7 @@ lab:
 date: 2025-10-30
 source: "Alignment Forum（Anthropic；Tim Hua, andrq, Sam Marks, Neel Nanda）"
 url: https://www.alignmentforum.org/posts/peKrvZ6t9PSCzoQDa
+star: false
 tags:
   - 评估感知
   - 可解释性

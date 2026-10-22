@@ -5,6 +5,7 @@ lab:
 date: 2025-10-10
 source: "Alignment Forum（UK AISI；Jerome Wynne, Cozmin Ududec）"
 url: https://www.alignmentforum.org/posts/e8nMZewwonifENQYB
+star: false
 tags:
   - 评估方法
   - 网络安全

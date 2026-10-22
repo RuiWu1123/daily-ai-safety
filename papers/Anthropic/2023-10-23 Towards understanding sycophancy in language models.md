@@ -5,6 +5,7 @@ lab:
 date: 2023-10-23
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/towards-understanding-sycophancy-in-language-models
+star: false
 tags:
   - 人机交互与社会影响
   - 对齐训练方法

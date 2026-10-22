@@ -5,6 +5,7 @@ lab:
 date: 2026-05-13
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/how-fast-is-autonomous-ai-cyber-capability-advancing
+star: false
 tags:
   - 网络安全
   - 危险能力评估

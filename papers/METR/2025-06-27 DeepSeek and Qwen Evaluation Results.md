@@ -5,6 +5,7 @@ lab:
 date: 2025-06-27
 source: "METR Research"
 url: https://metr.org/evaluations/deepseek-qwen-report/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

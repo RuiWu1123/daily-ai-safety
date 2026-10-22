@@ -5,6 +5,7 @@ lab:
 date: 2026-02
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/hot-mess-of-ai/
+star: false
 tags:
   - 威胁建模
   - 评估方法

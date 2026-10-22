@@ -5,6 +5,7 @@ lab:
 date: 2026-03-19
 source: "OpenAI Blog"
 url: https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

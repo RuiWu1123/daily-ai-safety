@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/bloom
 other_versions:
   - "https://alignment.anthropic.com/2025/bloom-auto-evals/"
+star: false
 tags:
   - 评估方法
   - 对齐审计

@@ -5,6 +5,7 @@ lab:
 date: 2026-07-23
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/preliminary-assessment-of-kimi-k3s-cyber-capabilities
+star: false
 tags:
   - 网络安全
   - 危险能力评估

@@ -5,6 +5,7 @@ lab:
 date: 2026-03-11
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/automated-alignment-agent/
+star: false
 tags:
   - 对齐训练方法
   - 可扩展监督

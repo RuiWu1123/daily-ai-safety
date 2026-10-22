@@ -5,6 +5,7 @@ lab:
 date: 2026-04-30
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/auto-review/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

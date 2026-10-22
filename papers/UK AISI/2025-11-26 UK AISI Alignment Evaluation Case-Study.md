@@ -7,6 +7,7 @@ source: "AISI Research"
 url: https://www.aisi.gov.uk/research/uk-aisi-alignment-evaluation-case-study
 other_versions:
   - "https://www.aisi.gov.uk/blog/investigating-models-for-misalignment"
+star: false
 tags:
   - 对齐审计
   - 策划与欺骗

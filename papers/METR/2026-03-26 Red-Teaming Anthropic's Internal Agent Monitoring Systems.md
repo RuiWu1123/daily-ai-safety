@@ -5,6 +5,7 @@ lab:
 date: 2026-03-26
 source: "METR Blog"
 url: https://metr.org/blog/2026-03-25-red-teaming-anthropic-agent-monitoring/
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

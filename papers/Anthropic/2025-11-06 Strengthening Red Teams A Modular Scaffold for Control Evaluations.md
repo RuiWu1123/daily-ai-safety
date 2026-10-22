@@ -5,6 +5,7 @@ lab:
 date: 2025-11-06
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/strengthening-red-teams/
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

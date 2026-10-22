@@ -5,6 +5,7 @@ lab:
 date: 2026-10-05
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/frontier-models-state-different-decision
+star: false
 tags:
   - 人机交互与社会影响
   - 评估感知

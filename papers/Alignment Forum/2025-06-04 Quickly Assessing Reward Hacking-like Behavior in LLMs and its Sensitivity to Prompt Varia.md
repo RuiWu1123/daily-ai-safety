@@ -5,6 +5,7 @@ lab:
 date: 2025-06-04
 source: "Alignment Forum（Redwood Research；AndresCampero）"
 url: https://www.alignmentforum.org/posts/quTGGNhGEiTCBEAX5
+star: false
 tags:
   - 奖励作弊
   - 评估方法

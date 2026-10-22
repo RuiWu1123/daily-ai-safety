@@ -5,6 +5,7 @@ lab:
 date: 2025-04-04
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/notes-on-countermeasures-for-exploration
+star: false
 tags:
   - 故意藏拙
 ---

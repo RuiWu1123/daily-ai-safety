@@ -5,6 +5,7 @@ lab:
 date: 2026-04-18
 source: "Alignment Forum（Redwood Research；Alek Westover, sebastian_prasanna, Julian Stastny, Vivek Hebbar）"
 url: https://www.alignmentforum.org/posts/mDcHzdoxB6sh3w2zG
+star: false
 tags:
   - 监控与控制
   - 评估方法

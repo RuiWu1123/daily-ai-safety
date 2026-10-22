@@ -5,6 +5,7 @@ lab:
 date: 2026-07-27
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/untrusted-advice-for-ai-control-short
+star: false
 tags:
   - 监控与控制
 ---

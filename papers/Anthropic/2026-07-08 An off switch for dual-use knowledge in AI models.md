@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/off-switch-dual-use
 other_versions:
   - "https://alignment.anthropic.com/2026/modular-pretraining/"
+star: false
 tags:
   - 知识移除
   - 越狱与鲁棒性

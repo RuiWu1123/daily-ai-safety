@@ -5,6 +5,7 @@ lab:
 date: 2022-04-12
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/training-a-helpful-and-harmless-assistant-with-reinforcement-learning-from-human-feedback
+star: false
 tags:
   - 对齐训练方法
 ---

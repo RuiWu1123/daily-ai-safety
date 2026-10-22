@@ -5,6 +5,7 @@ lab:
 date: 2024-11-18
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/why-imperfect-adversarial-robustness
+star: false
 tags:
   - 监控与控制
   - 越狱与鲁棒性

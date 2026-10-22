@@ -5,6 +5,7 @@ lab:
 date: 2026-04-29
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/research-sabotage-in-ml-codebases
+star: false
 tags:
   - 策划与欺骗
   - 对齐审计

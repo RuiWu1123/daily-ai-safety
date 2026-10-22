@@ -5,6 +5,7 @@ lab:
 date: 2025-04-30
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/how-can-we-solve-diffuse-threats
+star: false
 tags:
   - 监控与控制
   - 故意藏拙

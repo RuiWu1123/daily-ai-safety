@@ -5,6 +5,7 @@ lab:
 date: 2025-07-09
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/whats-worse-spies-or-schemers
+star: false
 tags:
   - 威胁建模
   - 监控与控制

@@ -5,6 +5,7 @@ lab:
 date: 2024-10-23
 source: "Transluce"
 url: https://transluce.org/automated-elicitation
+star: false
 tags:
   - 对齐审计
   - 越狱与鲁棒性

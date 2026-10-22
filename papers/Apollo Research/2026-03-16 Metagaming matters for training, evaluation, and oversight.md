@@ -8,6 +8,7 @@ source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/metagaming-matters-for-training-evaluation-and-oversight
 other_versions:
   - "https://alignment.openai.com/metagaming/"
+star: false
 tags:
   - 评估感知
   - CoT与可监控性

@@ -5,6 +5,7 @@ lab:
 date: 2026-08-12
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/conceptual-reasoning-index/
+star: false
 tags:
   - 评估方法
   - 可扩展监督

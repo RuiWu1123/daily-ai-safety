@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/reasoning-models-dont-say-think
 other_versions:
   - "https://drive.google.com/drive/folders/1l0pkcZxvFwMtczst_hhiCC44v-IiODlY?usp=sharing"
+star: false
 tags:
   - CoT与可监控性
 ---

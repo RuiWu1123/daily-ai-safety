@@ -5,6 +5,7 @@ lab:
 date: 2026-09-10
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/an-operationalization-of-opaque-serial
+star: false
 tags:
   - CoT与可监控性
 ---

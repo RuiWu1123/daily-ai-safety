@@ -5,6 +5,7 @@ lab:
 date: 2024-05-30
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/science/identifying-functionally-important-features-with-end-to-end-sparse-dictionary-learning
+star: false
 tags:
   - 可解释性
 ---

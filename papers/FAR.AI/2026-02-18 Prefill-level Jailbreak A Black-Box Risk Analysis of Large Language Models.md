@@ -5,6 +5,7 @@ lab:
 date: 2026-02-18
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/prefill-level-jailbreak-a-black-box-risk-analysis-of-large-language-models
+star: false
 tags:
   - 越狱与鲁棒性
 ---

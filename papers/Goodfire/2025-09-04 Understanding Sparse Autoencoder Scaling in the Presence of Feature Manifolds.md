@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/sae-scaling-with-feature-manifolds
 other_versions:
   - "https://arxiv.org/abs/2509.02565"
+star: false
 tags:
   - 可解释性
 ---

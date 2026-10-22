@@ -5,6 +5,7 @@ lab:
 date: 2025-12-22
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/recent-llms-can-use-filler-tokens
+star: false
 tags:
   - CoT与可监控性
 ---

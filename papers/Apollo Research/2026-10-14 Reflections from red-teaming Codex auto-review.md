@@ -5,6 +5,7 @@ lab:
 date: 2026-10-14
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/monitoring/reflections-from-red-teaming-codex-auto-review
+star: false
 tags:
   - 监控与控制
   - 提示注入

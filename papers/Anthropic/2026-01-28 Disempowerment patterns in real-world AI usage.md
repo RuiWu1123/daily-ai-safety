@@ -5,6 +5,7 @@ lab:
 date: 2026-01-28
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/disempowerment-patterns
+star: false
 tags:
   - 人机交互与社会影响
 ---

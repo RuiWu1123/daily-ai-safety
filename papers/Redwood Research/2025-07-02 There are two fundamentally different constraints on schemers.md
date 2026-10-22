@@ -5,6 +5,7 @@ lab:
 date: 2025-07-02
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/there-are-two-fundamentally-different
+star: false
 tags:
   - 策划与欺骗
   - 威胁建模

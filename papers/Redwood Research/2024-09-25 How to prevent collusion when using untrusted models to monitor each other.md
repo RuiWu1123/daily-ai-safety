@@ -5,6 +5,7 @@ lab:
 date: 2024-09-25
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/how-to-prevent-collusion-when-using
+star: false
 tags:
   - 监控与控制
   - 多智能体

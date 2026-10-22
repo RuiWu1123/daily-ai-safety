@@ -5,6 +5,7 @@ lab:
 date: 2024-09-25
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/should-ai-systems-behave-like-people
+star: false
 tags:
   - 人机交互与社会影响
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-07-07
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/finding-cloud-misconfigurations-with-frontier-ai-a-case-study
+star: false
 tags:
   - 网络安全
   - 危险能力评估

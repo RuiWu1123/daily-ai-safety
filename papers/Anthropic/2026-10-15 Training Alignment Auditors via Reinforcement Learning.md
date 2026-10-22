@@ -5,6 +5,7 @@ lab:
 date: 2026-10-15
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/training-alignment-auditors/
+star: false
 tags:
   - 对齐审计
   - 评估方法

@@ -5,6 +5,7 @@ lab:
 date: 2025-07-22
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/subliminal-learning/
+star: false
 tags:
   - 泛化与涌现失调
   - 数据投毒与后门

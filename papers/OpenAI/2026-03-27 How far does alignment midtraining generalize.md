@@ -5,6 +5,7 @@ lab:
 date: 2026-03-27
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/how-far-does-alignment-midtraining-generalize/
+star: false
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

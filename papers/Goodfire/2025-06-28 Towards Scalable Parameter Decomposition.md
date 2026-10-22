@@ -5,6 +5,7 @@ lab:
 date: 2025-06-28
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/stochastic-param-decomp
+star: false
 tags:
   - 可解释性
 ---

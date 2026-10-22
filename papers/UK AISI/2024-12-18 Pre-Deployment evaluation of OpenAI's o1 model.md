@@ -5,6 +5,7 @@ lab:
 date: 2024-12-18
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/pre-deployment-evaluation-of-openais-o1-model
+star: false
 tags:
   - 危险能力评估
   - 网络安全

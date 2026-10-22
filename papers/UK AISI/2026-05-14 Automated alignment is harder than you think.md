@@ -5,6 +5,7 @@ lab:
 date: 2026-05-14
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/automated-alignment-is-harder-than-you-think
+star: false
 tags:
   - 可扩展监督
   - 威胁建模

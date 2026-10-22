@@ -5,6 +5,7 @@ lab:
 date: 2026-08-14
 source: "METR Notes"
 url: https://metr.org/notes/2026-08-14-llm-contribution-to-discoveries/
+star: false
 tags:
   - 评估方法
   - 网络安全

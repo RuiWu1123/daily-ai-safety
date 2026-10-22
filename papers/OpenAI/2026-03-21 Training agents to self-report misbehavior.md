@@ -5,6 +5,7 @@ lab:
 date: 2026-03-21
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/self-incrimination/
+star: false
 tags:
   - 诚实与谎言检测
   - 策划与欺骗

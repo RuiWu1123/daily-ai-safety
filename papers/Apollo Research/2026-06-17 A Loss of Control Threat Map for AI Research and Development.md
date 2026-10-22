@@ -5,6 +5,7 @@ lab:
 date: 2026-06-17
 source: "Apollo Research"
 url: https://www.apolloresearch.ai/governance/ai-rd-threat-map
+star: false
 tags:
   - 威胁建模
 ---

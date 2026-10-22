@@ -5,6 +5,7 @@ lab:
 date: 2024-08-07
 source: "METR Research"
 url: https://metr.org/evaluations/gpt-4o-report/
+star: false
 tags:
   - 危险能力评估
   - 评估方法

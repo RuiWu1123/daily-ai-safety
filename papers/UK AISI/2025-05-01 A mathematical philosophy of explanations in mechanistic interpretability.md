@@ -5,6 +5,7 @@ lab:
 date: 2025-05-01
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/a-mathematical-philosophy-of-explanations-in-mechanistic-interpretability
+star: false
 tags:
   - 可解释性
 ---

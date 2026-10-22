@@ -5,6 +5,7 @@ lab:
 date: 2026-07-21
 source: "METR Research"
 url: https://metr.org/blog/2026-07-21-expenditure-horizon/
+star: false
 tags:
   - 评估方法
   - 危险能力评估

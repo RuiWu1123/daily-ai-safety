@@ -5,6 +5,7 @@ lab:
 date: 2026-04-28
 source: "Alignment Forum（Redwood Research；Jozdien, Alex Mallen）"
 url: https://www.alignmentforum.org/posts/q2zYtNsh62SCphitt
+star: false
 tags:
   - 威胁建模
   - 可扩展监督

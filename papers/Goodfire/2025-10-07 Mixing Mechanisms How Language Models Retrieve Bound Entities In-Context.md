@@ -7,6 +7,7 @@ source: "Goodfire Research"
 url: https://www.goodfire.com/research/mixing-mechanisms
 other_versions:
   - "https://arxiv.org/abs/2510.06182"
+star: false
 tags:
   - 可解释性
 ---

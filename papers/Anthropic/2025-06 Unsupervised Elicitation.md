@@ -5,6 +5,7 @@ lab:
 date: 2025-06
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/unsupervised-elicitation/
+star: false
 tags:
   - 可扩展监督
   - 对齐训练方法

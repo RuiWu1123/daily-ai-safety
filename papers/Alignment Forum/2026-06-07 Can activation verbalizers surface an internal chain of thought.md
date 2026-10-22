@@ -5,6 +5,7 @@ lab:
 date: 2026-06-07
 source: "Alignment Forum（Redwood Research；oakhu, ryan_greenblatt）"
 url: https://www.alignmentforum.org/posts/QQQAcKuWK6k98FivY
+star: false
 tags:
   - 可解释性
   - CoT与可监控性

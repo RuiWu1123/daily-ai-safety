@@ -5,6 +5,7 @@ lab:
 date: 2025-11-24
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/prompt-injection-defenses
+star: false
 tags:
   - 提示注入
 ---

@@ -5,6 +5,7 @@ lab:
 date: 2026-04-29
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/probe-based-data-attribution
+star: false
 tags:
   - 可解释性
   - 泛化与涌现失调

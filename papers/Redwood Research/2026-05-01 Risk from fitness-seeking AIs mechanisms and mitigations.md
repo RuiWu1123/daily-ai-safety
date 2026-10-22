@@ -5,6 +5,7 @@ lab:
 date: 2026-05-01
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/risk-from-fitness-seeking-ais-mechanisms
+star: false
 tags:
   - 威胁建模
   - 奖励作弊

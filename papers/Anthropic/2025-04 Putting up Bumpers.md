@@ -5,6 +5,7 @@ lab:
 date: 2025-04
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/bumpers/
+star: false
 tags:
   - 对齐审计
   - 威胁建模

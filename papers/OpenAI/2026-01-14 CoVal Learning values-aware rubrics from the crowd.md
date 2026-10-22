@@ -5,6 +5,7 @@ lab:
 date: 2026-01-14
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/coval/
+star: false
 tags:
   - 对齐训练方法
   - 人机交互与社会影响

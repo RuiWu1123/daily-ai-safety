@@ -5,6 +5,7 @@ lab:
 date: 2025-07-23
 source: "Alignment Forum（Anthropic；kh4dien, Helena Casademunt, Adam Karvonen, Sam Marks, Senthooran Rajamanoharan, Neel Nanda）"
 url: https://www.alignmentforum.org/posts/BxeZNpiTvoEqTXndJ
+star: false
 tags:
   - 泛化与涌现失调
   - 可解释性

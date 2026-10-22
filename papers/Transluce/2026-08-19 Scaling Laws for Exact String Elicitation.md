@@ -5,6 +5,7 @@ lab:
 date: 2026-08-19
 source: "Transluce"
 url: https://transluce.org/elicitation-scaling-laws
+star: false
 tags:
   - 可扩展监督
   - 评估方法

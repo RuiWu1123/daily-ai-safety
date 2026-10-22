@@ -5,6 +5,7 @@ lab:
 date: 2025-02
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/summarization-for-monitoring/index.html
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

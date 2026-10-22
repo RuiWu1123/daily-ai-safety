@@ -5,6 +5,7 @@ lab:
 date: 2024-10-30
 source: "METR Research"
 url: https://metr.org/evaluations/claude-3-5-sonnet-report/
+star: false
 tags:
   - 危险能力评估
 ---

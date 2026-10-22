@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://www.redwoodresearch.org/research/ai-control
 other_versions:
   - "https://arxiv.org/abs/2312.06942"
+star: false
 tags:
   - 监控与控制
   - 策划与欺骗

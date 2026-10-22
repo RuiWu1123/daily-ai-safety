@@ -5,6 +5,7 @@ lab:
 date: 2025-01-22
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/when-does-capability-elicitation
+star: false
 tags:
   - 危险能力评估
   - 故意藏拙

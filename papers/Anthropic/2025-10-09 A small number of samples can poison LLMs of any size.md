@@ -5,6 +5,7 @@ lab:
 date: 2025-10-09
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/small-samples-poison
+star: false
 tags:
   - 数据投毒与后门
 ---

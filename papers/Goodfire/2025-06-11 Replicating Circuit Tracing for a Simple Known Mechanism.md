@@ -5,6 +5,7 @@ lab:
 date: 2025-06-11
 source: "Goodfire Research"
 url: https://www.goodfire.com/research/replicating-circuit-tracing-for-a-simple-mechanism
+star: false
 tags:
   - 可解释性
 ---

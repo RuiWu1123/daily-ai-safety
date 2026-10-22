@@ -5,6 +5,7 @@ lab:
 date: 2023-05-30
 source: "FAR.AI Publications"
 url: https://www.far.ai/research/an-invariant-learning-characterization-of-controlled-text-generation
+star: false
 tags:
   - 对齐训练方法
 ---

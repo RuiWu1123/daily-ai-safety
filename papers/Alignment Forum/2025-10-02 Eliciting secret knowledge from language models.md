@@ -5,6 +5,7 @@ lab:
 date: 2025-10-02
 source: "Alignment Forum（Anthropic；Bartosz Cywiński, Arthur Conmy, Sam Marks）"
 url: https://www.alignmentforum.org/posts/Mv3yg7wMXfns3NPaz
+star: false
 tags:
   - 对齐审计
   - 诚实与谎言检测

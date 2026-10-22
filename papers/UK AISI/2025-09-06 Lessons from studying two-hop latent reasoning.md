@@ -5,6 +5,7 @@ lab:
 date: 2025-09-06
 source: "AISI Research"
 url: https://www.aisi.gov.uk/research/lessons-from-studying-two-hop-latent-reasoning
+star: false
 tags:
   - CoT与可监控性
   - 可解释性

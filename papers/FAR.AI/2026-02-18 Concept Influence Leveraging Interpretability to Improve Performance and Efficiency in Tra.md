@@ -7,6 +7,7 @@ source: "FAR.AI Blog"
 url: https://www.far.ai/blog/concept-data-attribution-02-2026
 other_versions:
   - "https://www.far.ai/research/concept-influence-leveraging-interpretability-to-improve-performance-and-efficiency-in-training-data-attribution"
+star: false
 tags:
   - 可解释性
   - 数据投毒与后门

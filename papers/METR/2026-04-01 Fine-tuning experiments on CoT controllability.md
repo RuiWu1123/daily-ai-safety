@@ -5,6 +5,7 @@ lab:
 date: 2026-04-01
 source: "METR Notes"
 url: https://metr.org/blog/2026-04-01-fine-tuning-cot-controllability/
+star: false
 tags:
   - CoT与可监控性
 ---

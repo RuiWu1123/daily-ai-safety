@@ -7,6 +7,7 @@ source: "Redwood Research"
 url: https://arxiv.org/abs/2310.18512
 other_versions:
   - "https://www.lesswrong.com/posts/9Fdd9N7Escg3tcymb/preventing-language-models-from-hiding-their-reasoning"
+star: false
 tags:
   - CoT与可监控性
 ---

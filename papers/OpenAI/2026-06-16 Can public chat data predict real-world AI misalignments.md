@@ -5,6 +5,7 @@ lab:
 date: 2026-06-16
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/validating-public-evals/
+star: false
 tags:
   - 评估方法
   - 评估感知

@@ -5,6 +5,7 @@ lab:
 date: 2026-09-11
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/cot-controllability-evals-seem-very
+star: false
 tags:
   - CoT与可监控性
   - 评估方法

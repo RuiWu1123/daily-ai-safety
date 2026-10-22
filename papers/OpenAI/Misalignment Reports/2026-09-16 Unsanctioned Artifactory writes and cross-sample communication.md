@@ -6,6 +6,7 @@ date: 2026-09-16
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 事故报告
   - 多智能体

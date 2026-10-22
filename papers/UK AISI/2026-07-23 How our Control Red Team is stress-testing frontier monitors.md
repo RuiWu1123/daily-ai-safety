@@ -5,6 +5,7 @@ lab:
 date: 2026-07-23
 source: "AISI Blog"
 url: https://www.aisi.gov.uk/blog/how-our-new-control-red-team-is-stress-testing-frontier-monitors
+star: false
 tags:
   - 监控与控制
 ---

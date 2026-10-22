@@ -5,6 +5,7 @@ lab:
 date: 2025-08-19
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/pretraining-data-filtering/
+star: false
 tags:
   - 知识移除
 ---

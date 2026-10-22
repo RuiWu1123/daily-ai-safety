@@ -5,6 +5,7 @@ lab:
 date: 2026-10-04
 source: "Transluce"
 url: https://transluce.org/investigations/blog/erroll-garner
+star: false
 tags:
   - 事故报告
   - 奖励作弊

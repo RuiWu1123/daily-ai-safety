@@ -6,6 +6,7 @@ date: 2026-09-25
 source: "OpenAI Misalignment Report"
 url: https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist/
 category: "Misalignment Reports and Notices"
+star: false
 tags:
   - 提示注入
   - 多智能体

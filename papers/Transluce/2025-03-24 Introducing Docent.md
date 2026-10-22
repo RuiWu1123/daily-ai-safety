@@ -5,6 +5,7 @@ lab:
 date: 2025-03-24
 source: "Transluce Docent Blog"
 url: https://transluce.org/docent/blog/introducing-docent
+star: false
 tags:
   - 评估方法
   - 对齐审计

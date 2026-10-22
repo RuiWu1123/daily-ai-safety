@@ -5,6 +5,7 @@ lab:
 date: 2026-04-28
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/recursive-forecasting
+star: false
 tags:
   - 可扩展监督
   - 奖励作弊

@@ -5,6 +5,7 @@ lab:
 date: 2025-10
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2025/subtle-reasoning/
+star: false
 tags:
   - CoT与可监控性
   - 监控与控制

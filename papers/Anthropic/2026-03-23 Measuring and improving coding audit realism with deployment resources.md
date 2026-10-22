@@ -5,6 +5,7 @@ lab:
 date: 2026-03-23
 source: "Anthropic Alignment Science Blog"
 url: https://alignment.anthropic.com/2026/coding-audit-realism/
+star: false
 tags:
   - 评估感知
   - 对齐审计

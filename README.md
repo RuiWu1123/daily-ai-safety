@@ -6,7 +6,8 @@
 
 ## 从哪里开始看
 
-- [我关注的论文](index/starred.md)：你在 `my_notes/starred` 里加的论文，以及你笔记里引用过的论文
+- [我关注的论文](index/starred.md)：勾了星标的论文，以及你笔记里引用过的论文
+- [论文数据库](index/papers.base)：可直接勾选星标的论文表格，按 lab 分视图
 - [最近更新](index/recent.md)：近 30 天的新论文和最近的日报
 - [按主题浏览](index/by_topic.md)：按"奖励作弊""监控与控制""可解释性"等主题分组
 - [全部论文](index/all_papers.md)

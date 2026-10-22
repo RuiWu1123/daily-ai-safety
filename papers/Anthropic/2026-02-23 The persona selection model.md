@@ -7,6 +7,7 @@ source: "Anthropic Research"
 url: https://www.anthropic.com/research/persona-selection-model
 other_versions:
   - "https://alignment.anthropic.com/2026/psm/"
+star: false
 tags:
   - 泛化与涌现失调
   - 对齐训练方法

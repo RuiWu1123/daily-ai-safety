@@ -5,6 +5,7 @@ lab:
 date: 2024-12-18
 source: "Anthropic Research"
 url: https://www.anthropic.com/research/alignment-faking
+star: false
 tags:
   - 伪装对齐
   - 策划与欺骗

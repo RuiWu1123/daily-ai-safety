@@ -5,6 +5,7 @@ lab:
 date: 2026-05-19
 source: "METR Research"
 url: https://metr.org/blog/2026-05-19-frontier-risk-report/
+star: false
 tags:
   - 危险能力评估
   - 威胁建模

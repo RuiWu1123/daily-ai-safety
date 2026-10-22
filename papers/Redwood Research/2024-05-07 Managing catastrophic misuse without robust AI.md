@@ -5,6 +5,7 @@ lab:
 date: 2024-05-07
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/managing-catastrophic-misuse-without
+star: false
 tags:
   - 越狱与鲁棒性
   - 知识移除

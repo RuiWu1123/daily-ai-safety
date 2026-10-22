@@ -5,6 +5,7 @@ lab:
 date: 2026-09-17
 source: "FAR.AI Blog"
 url: https://www.far.ai/blog/persuasion-undermining-control
+star: false
 tags:
   - 人机交互与社会影响
   - 监控与控制

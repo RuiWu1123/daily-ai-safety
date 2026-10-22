@@ -5,6 +5,7 @@ lab:
 date: 2025-06-23
 source: "Redwood Blog"
 url: https://blog.redwoodresearch.org/p/comparing-risk-from-internally-deployed
+star: false
 tags:
   - 监控与控制
   - 安全基础设施

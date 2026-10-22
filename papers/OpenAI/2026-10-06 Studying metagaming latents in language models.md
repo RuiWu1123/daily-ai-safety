@@ -5,6 +5,7 @@ lab:
 date: 2026-10-06
 source: "OpenAI Alignment Blog"
 url: https://alignment.openai.com/metagaming-latents/
+star: false
 tags:
   - 评估感知
   - 可解释性
