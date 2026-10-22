@@ -1,8 +1,8 @@
 # Goodfire
 
-收录范围：[Goodfire Research](https://www.goodfire.ai/research) 全部文章，不含 Blog，也不含生物、基因组、材料等科学应用类工作。
+收录范围：[Goodfire Research](https://www.goodfire.ai/research) 全部文章，不含 Blog，也不含生物、基因组、材料等科学应用类工作。只保留实证/技术研究（不含预测、战略 essay、agenda、指南、书单、纯工具发布）。
 
-共 36 篇，按发布时间从新到旧排列。
+共 34 篇，按发布时间从新到旧排列。
 
 ---
 
@@ -91,12 +91,6 @@ Goodfire Research 2026 May（另见LessWrong post：[Predicting Rare LLM Failure
 Goodfire Research 2026 May
 
 背景是 representation steering 通常是线性的：往 hidden state 上加一个缩放的 steering vector，这在概念沿直线分布时有效，但很多概念的表征几何是弯曲的。这篇是 Goodfire Neural Geometry 系列的一篇，接续前文"沿流形 steering 比线性 steering 控制更好"的主张，用星期几这一循环概念做案例。问 Llama-3.1 8B "周日之后五天是星期几"这类问题，分别看行为空间（输出 token 分布，用 Hellinger 距离）和激活空间，两边都出现七个簇围成的圆：行为上相邻的日子概率更高，表征上相邻的日子向量更相似，作者在两个空间各拟合一条一维流形。对比实验显示，沿表征流形 steering 时输出分布顺着行为流形的圆走，干净地把概率质量从周一依次移到周五；线性 steering 则横切行为流形，产生噪声大、脱靶的效果，甚至预测出不是星期的 token。反过来，忽略表征流形，直接优化使输出沿行为流形移动的干预，得到的激活空间路径与表征流形路径形状几乎一致，说明行为几何与表征几何存在双向对应。作者强调这种对齐并非必然，激活空间里的路径完全可能造成杂乱的输出变化，而实际却精确对应。完整论文还把结论推广到月份、字母、年龄、预设几何的合成 in-context learning 任务，以及一个预测小车在山坡上滚动位置的图像-动作模型，认为流形几何为 steering 提供了实用蓝图。
-
-### [The World Inside Neural Networks](https://www.goodfire.com/research/the-world-inside-neural-networks)
-
-Goodfire Research 2026 May
-
-这是 Goodfire Neural Geometry 系列的开篇立场文章，核心主张是神经网络内部充满反映外部世界结构的弯曲几何结构，理解这种 "neural geometry"（模型如何切分和表示世界，即其 ontology）是理解、改进和控制模型的关键前沿。作者先罗列证据：语言模型里数字、星期、月份呈环形，历史年份和一行文字中的字符位置呈平滑曲线，图像模型中颜色分布在由色相、饱和度、明度组织的曲面上，基因组模型中整棵生命树落在复杂流形上，他们自己还在一个表观基因组模型里发现了一类以干净曲线形式出现的新阿尔茨海默症 biomarker。用一个玩具例子说明几何如何带来控制：在 mountain car 环境上训练一个预测下一帧的 image-action 世界模型，小车位置的 embedding 形成一条"绳子"状结构，拟合一维流形后沿流形 steer，预测图像中的小车就平滑地上下山坡；而沿直线插值会穿过激活空间中模型处理不了的"空洞"导致输出乱码，有时直线还会撞上别的合法激活，让小车"瞬移"。作者据此认为即使是位置这样的标量概念也可能住在弯曲流形上，线性 steering vector 在几何非线性时要么无效要么让模型失去连贯性。文章把表征、计算、行为三个层次并列，认为几何结构就是神经网络的"数据结构"，不理解表征就无法完整理解计算；几何来源于训练数据中世界的统计结构，例如月份的循环关系在文本共现中留下痕迹，被模型高效压缩后再现为环形。关于 SAE，他们用一个尚未发表的无监督流形发现流程找到一个"-ore"类斜韵词流形（完全押韵在一端、差韵在另一端），而重建这个流形的 SAE feature 的 auto-interp 标签只描述局部属性（如以 "Hor""Por" 开头的词），丢掉了"词尾发音"这一整体含义，即 SAE 会把流形打碎成看似无关的碎片。作者承认 SAE 仍有大规模无监督分解的价值，但主张需要尊重几何的新方法，并把应用方向指向从基础模型中提取科学知识和 intentional design。
 
 ### [Interpreting Language Model Parameters](https://www.goodfire.com/research/interpreting-lm-parameters)
 
@@ -207,12 +201,6 @@ Goodfire 发布 Paint With Ember，一个用直接操纵图像模型内部激活
 Goodfire Research 2025 Apr
 
 Goodfire 在 671B 参数的 DeepSeek R1 上训练并开源了两个 SAE，一个用自建的通用推理数据集（数据集也开源），一个用 OpenR1-Math，号称是第一个在真正的 reasoning model、也是在这个规模的模型上公开的 interpreter model。因为 R1 太大、独立研究者难以运行，他们还放出了每个 feature 最高激活样本的 SQL 数据库，并做了 UMAP feature 地图；SAE 学到了 backtracking（模型意识到推理出错并写出 "Wait, maybe not" 之类自我纠正）等推理模型特有的 feature。文章主要分享两个在非推理模型上没见过的 steering 现象：1. 从回答第一个 token 开始 steer 会失败，必须等模型写完 "Okay, so the user has asked a question about…" 这类前缀之后才有效；attention sink（激活异常大的 token）也出现在这个前缀末尾而不是回答开头。R1 超过 95% 的英文推理链以 "Okay," 开头，作者推测模型实际把这段前缀当成 prompt 的一部分，prompt、思考链、最终回答之间 feature 分布也有明显切换，说明外部直觉的边界不一定是模型内部用的边界；例子是在"1024 乘 2"上加 division feature，强度合适时模型改去算除法。2. oversteer 反而让模型回到原本行为：在某些 feature 上一直加大强度，被 steer 的行为先消失，然后才出现不连贯输出（例如 "Answer Quickly" feature 缩短思考）。作者的工作假设是推理模型在内部激活被过度扰动时能隐式察觉到"困惑"并自我纠正，这可能和推理训练鼓励回溯有关；如果这是推理模型的普遍性质，那么用 steering 去压制不诚实之类行为可能需要更复杂的手段，因为模型会绕开修改。这些现象尚未系统研究，属于初步观察。
-
-### [Open Problems in Mechanistic Interpretability](https://www.goodfire.com/research/open-problems-in-mech-interp)
-
-Goodfire Research 2025 Jan（另见arXiv paper：[Open Problems in Mechanistic Interpretability](https://arxiv.org/abs/2501.16496)）
-
-一篇面向未来的 mechanistic interpretability 综述，由 Apollo Research 的 Lee Sharkey 和 Bilal Chughtai 牵头、代表 Schmidt Sciences 汇总了来自 Anthropic、GDM、Apollo、Goodfire（Tom McGrath）、EleutherAI、MIT、METR 等约 30 位研究者的观点，作者声明内容不代表任何个人或机构立场。它不是盘点已有成果，而是梳理领域要实现实际目标（监控危险认知、编辑模型行为、预测新情境行为与能力涌现、改进训练推理、从模型中提取知识）之前必须解决的开放问题，分三块：方法与基础、应用、社会技术问题。方法部分把研究路线分成 reverse engineering（先分解网络再解释各部件作用）和 concept-based（先定概念再找对应部件）。reverse engineering 拆成三步：1. 分解：神经元、attention head、层都不是天然的切分单位（polysemanticity、跨层表示），PCA 之类降维受维度限制，目前主流是 SAE、transcoder、crosscoder 等 sparse dictionary learning，但作者列出一长串问题，包括重建误差过大（把 1600 万 latent 的 SAE 插进 GPT-4，loss 相当于只用 10% 预训练算力的模型）、误差本身有结构、对大模型代价高、依赖线性表示假设、sparsity 不是好的可解释性代理（feature splitting、absorption）、无法解释 feature geometry、难用于 attention 和跨层表示、只分解激活而不是机制本身、latent 未必包含下游任务需要的概念且依赖训练数据集；整体上 feature 的定义、superposition 假设是根本成立还是只是实用都缺乏理论基础，也提出了 intrinsic interpretability（稀疏激活、权重稀疏、模块化、bilinear 层等）作为替代方向；2. 描述：高激活样本依赖人类先验、容易产生 interpretability illusion，attribution 方法多是一阶近似且可被对抗操纵，logit lens 只看直接效应，causal intervention 和 steering、patchscopes 各有代价，CoT 也不忠实于实际决策；3. 验证：领域长期把假设当结论，作者主张用反事实预测、解释失败案例、手工重建、ground truth 玩具模型、以及在真实任务上与 baseline 公平比较来检验，并讨论缺少公认的"model organism"和 benchmark 的问题。concept-based 部分强调 probe 只能找到预先想到的概念，且检测的是相关而非因果。后半部分讨论 circuit discovery pipeline 的流程化与研究自动化，再到应用层面的监控与审计、red-teaming、行为控制、预测新行为和训练中能力出现、microscope AI，以及如何把技术进展转化为 AI 政策与治理的抓手、领域面临的社会和哲学问题。
 
 ## 2024
 

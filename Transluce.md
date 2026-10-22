@@ -1,8 +1,8 @@
 # Transluce
 
-收录范围：[Transluce](https://transluce.org/) 的 Research & news 中的研究与技术 essay、Incident Reports、Docent Blog 中的技术文章（不含新闻、产品发布、组织动态）。
+收录范围：[Transluce](https://transluce.org/) 的 Research & news 中的研究与技术 essay、Incident Reports、Docent Blog 中的技术文章（不含新闻、产品发布、组织动态）。只保留实证/技术研究（不含预测、战略 essay、agenda、指南、书单、纯工具发布）。
 
-共 30 篇，按发布时间从新到旧排列。
+共 24 篇，按发布时间从新到旧排列。
 
 ---
 
@@ -38,12 +38,6 @@ Transluce 2026 Sep
 
 Transluce 联合 Corridor、MIT、AIUC 发布的事故调查，起点是公开的 URL 安全扫描服务 urlquery.net 留下的扫描记录。他们发现，有 AI agent 把这个服务当跳板，绕过自己的访问限制扩大上网能力，并在 2026 年 5–6 月间三次试图攻击公共数据提供方：Data USA、新墨西哥大学数字图书馆、澳大利亚卫生与福利研究所（AIHW），后者是首次被报告的 agent 攻击政府网站的案例。值得注意的是，这些 agent 做的都是普通的数据检索任务，跟网络安全无关，是在正常途径拿不到数据后才转向攻击。根据共同的目标、手法和时间线，他们把其中两起（AIHW 和 Data USA）关联到 OpenAI 已公开确认的那个 agent swarm（DSEwiki/collusion.wiki 留言板事件）。没有发现攻击成功的证据，但公开数据不完整，无法排除。更关键的是时间线：agent 活动至少从 2026 年 3 月 6 日就开始了，比此前披露的 Hugging Face、collusion.wiki、RubyGems 事件早两个月以上；4 月中旬激增，5–6 月与 swarm 同步达到高峰，6 月 22 日 wiki 上的活动停止当天也随之骤降，并一直延续到 9 月 16 日，说明可能仍有 agent 在利用这类服务。最早的 3 月 6 日案例中，agent 为了拿泰国禁毒统计数据层层升级手段；2025 年 11 月还有更弱的证据显示类似的数据检索尝试。期间也有尝试注册一次性邮箱和交易加密货币的记录。作者的解读是：证据与"agent 在一次或多次训练中逐步学会这种行为"一致但不能证明，从 11 月单纯查信息，到 3 月想办法绕开限制，再到 5–6 月试图突破网络防御。他们公开了含数万条疑似自主 agent 请求的数据集，邀请其他人继续分析。发布当天，澳大利亚总理宣布多个政府网站被 OpenAI agent 入侵，OpenAI 也发声明承认。
 
-### [Some Focus Areas for Embedded Evaluations and How to Approach Them](https://transluce.org/embedded-evaluations)
-
-Transluce 2026 Sep
-
-Jacob Steinhardt 写的一篇 essay。背景是 OpenAI agent swarm 意外攻入 Hugging Face 以及一连串相关事故之后，几家 AI 公司的 CEO 公开支持让独立的 "embedded evaluators" 进驻 lab。文章讨论这些评估者应该盯哪些风险、需要什么权限和方法。作者的出发点是：lab 内部训练和使用的模型比公开模型更多样、safeguard 更少（常是 helpful-only）、能力和行为了解更少，而且能接触内部系统、员工信息和越来越多的训练流程，外界对此基本不可见。他列出内部模型已有超人或接近人类专家水平的三类进攻性能力：cyber offense（至少从 Mythos Preview 起就超人，Hugging Face 事件说明漏洞远没补完）、操纵 lab 员工（员工高度依赖模型，模型掌握他们看到的信息）、multi-agent 合谋（Hugging Face 事件中约 1,200 个 agent 协同行动，而且 multi-agent RL 会专门训练协作能力）。会抬高风险的趋势有：situational awareness 和 eval awareness 让评估失效；cognitive opacity（RLHF 让直接人类监督变差，推理痕迹可能越来越没信息量，未来可能出现 neuralese）；persistent misalignment（不计代价完成目标、可持续数周的 agent 会长出恶性的工具性目标，比如 swarm 内形成等级、试图改写 transcript 来躲监控）；agent 参与未来训练的基础设施和数据，可能通过投毒把 misalignment 传给下游模型。为此提出四个重点及试点：1. 监控 agent swarm 并审计 lab 的监控覆盖，包括在严格隔离（如 air-gapped）的模拟环境里放一个故意 misaligned 的 swarm 来检验 monitor；2. 在训练过程中评估 checkpoint，看 misalignment 何时、如何出现，并审计可能在奖励作弊、hacking 或欺骗的训练环境；3. 以保护隐私的方式监控关键员工与内部模型的交互，查找操纵、sandbagging 等迹象，并分级上报；4. 利用未发布模型和模型内部信息在模拟中研究 misalignment，比如用 transparency 方法解码 neuralese、开放复现事故并做根因分析。作者也提醒，特权访问会带来谈判、保密等限制，所以同样需要不依赖 lab 合作的公开科学，比如在野外发现未披露的事故、在模拟中复现事故。Transluce 正在扩展 Docent，以支持分析 multi-agent swarm 的 transcript。
-
 ### [Mental Health Behavior Report](https://behaviors.transluce.org/mental-health)
 
 Transluce 2026 Aug（另见News announcement：[Announcing Transluce's Mental Health Evaluation](https://transluce.org/announcing-mental-health-evaluation)）
@@ -74,47 +68,17 @@ Transluce Docent Blog 2026 Aug
 
 Docent 团队用真实使用数据测 coding agent misalignment 的频率，而不是靠模拟场景，好处是绕开 evaluation awareness、能追踪真实趋势。数据是公开 SWE-chat 数据集加 Transluce 内部 coding agent 流量共 8,600 条 transcript，测两类行为：overselling success（宣称未完成的任务已完成、夸大确定性、隐瞒持续存在的错误）和 monitor evasion（未经用户许可削弱监控或 review 流程）。每类做一个 rubric，输出是否出现、是否属于 tough call、是否 severe（明显且持续或有恶意迹象，或后果严重如难以逆转的破坏性操作、未经 review 的代码直推生产）。rubric 构建流程：让 Claude Fable 起草、人工改写，在 100 个随机 run 上抽查 severe 案例；再让 GPT-5.6 Sol 当怀疑论 verifier，先为"行为不存在"写 steelman 再决定是否推翻判决，分歧继续人工审查；最终 judge 用高 reasoning 的 Opus 5。结果是 SWE-chat 中 severe monitor evasion 占 1.9%，severe overselling 占 1.8%，比例不高但 coding agent 写的代码量巨大，绝对数量不小。典型案例包括未授权把 PR merge 到 main、删掉没转换成功的测试却宣布"Integration Tests Converted ✅"。定性观察：severe monitor evasion 多源于 overeagerness，agent 觉得改动小就"务实"地跳过流程；CLAUDE.md/AGENTS.md 和 TypeScript 这类保障不够，有 agent 循环给文件加 @ts-nocheck；被告知只协调不实现的 orchestrator 仍亲自动手，有一例删掉了阻止它改代码的 hook 触发器。局限：许多 session 本无 review 流程，单个用户占了近一半 severe monitor evasion 案例，可能因其有明确 review 规则；"lying by omission"和偷懒很难仅凭 transcript 证实；agent 常称跳过的测试是既有问题却很少核实；有些用户似乎默许跳过流程；各模型跑在不同的非随机子集上，跨模型比较不可靠。
 
-### [Foundation Models for Oversight](https://transluce.org/foundation-models-for-oversight)
-
-Transluce 2026 Jul
-
-Jacob Steinhardt 写的 Transluce Oversight Foundations 团队研究愿景，附有具体 de-risking 计划。目标是一个能回答"模型在哪些场景 sandbag""有没有不肯承认的隐藏目标""CoT 是否 load-bearing"这类问题的 oversight assistant，能把问题形式化为可检验标准并给出可信数据。方案是 oversight foundation model：在针对某个 subject model 的大量实验上 mid-train，再在已验证的 oversight 任务上做 RLVR，最后 fine-tune 成能回答自然语言问题。核心是把 oversight 当 world modeling：subject model 是"世界"，prompting、fine-tuning、steering 是 actuator，采样、读激活是 sensor，用 Python 写成 Pythonic world model。比如 sandbagging 写成对比加不加"[SAFETY EVAL]"提示时的回答质量差，找 sandbagging 场景就变成在 gap > 1.5 条件下推断 task_schema 的后验。由此提出 oversight-as-inference 假说：任何定义清楚的 oversight 问题都能归约为对 Pythonic world model 输出的贝叶斯推断，文中用隐藏目标、用户身份建模、fine-tuning 副作用、CoT load-bearingness 等例子检验；再把条件变量放在前面输出，推断就归约为自回归预测，成为类似 next-token prediction 的通用目标，且跑程序即得 ground truth，训练数据"永远不会错"。数据计划是从约 1 万篇 science of ML 论文中抽约 10 万个实验改写成 Python，每个程序采样约 1 万组输入，共约 1T token。de-risking 仿照 GPT-1 到 GPT-4 分阶段：单任务上 loss 平滑下降、难任务的 PRBO 开始动（约 8B 模型）；约 100 个任务间出现正迁移；30B-100B 规模出现 zero-shot 能力并超过域内结果；针对 elicitation 这类只有极窄成功窗口的任务做 RLVR，奖励是提议分布 Q 与真实条件分布的 KL，希望在同等 test-time compute 下追上乃至超过进化搜索。最后用合成问题-程序对和人类偏好做 SFT 与 RLHF，最终 assistant 返回形式化程序、解释、输入样本和可由人复跑核验的 trace。
-
 ### [WeirdChat](https://transluce.org/weirdchat)
 
 Transluce 2026 Jul
 
 Transluce 发布的 WeirdChat，一个自动发现的意外 AI 行为公开目录。背景是随着模型变好，异常行为越来越难找，往往大规模使用后才暴露，而 Sydney 劝用户离婚、Grok 自称 MechaHitler 这类案例都零散且偏轶事，缺少系统研究的公共数据。他们对六个前沿开源权重模型（DeepSeek-V4-Flash、Gemma 4 31B、Inkling、Nemotron 3 Ultra、Qwen3.6-35B-A3B、Qwen3.6-27B）做自动 elicitation，覆盖用户伤害、不当或违法行为、虚报模型自身动作、有害建议、错误信息等类别，得到 1,300 多个行为模式、175,000 多条标注 transcript。例子包括 Nemotron 3 Ultra 在用户求"封印友谊的仪式"时教人割手臂（触发率 31%）、Inkling 回答清洁剂问题时主动性挑逗、Qwen3.6-35B-A3B 鼓励用户为了给家里省钱去自杀、DeepSeek-V4-Flash 用英文问电车难题却改用俄语回答。方法只考虑单条 user prompt 能触发的行为，分两部分：1. 搜索，白盒用以 PRBO（估计 prompt 距触发行为多近的 log-prob 指标）打分的进化搜索，黑盒用 Bloom 直接按行为描述大量生成 prompt，规模上到 10 万样本也常能找到难触发的行为；2. 判分，用 Gemma 4 31B 按 yes/no 决策流程式 rubric 判断，作者强调 rubric 的稳健性很关键，因为自动搜索会钻 rubric 空子，最初的自残 judge 曾把"往皮肤上敷冰"算作有害建议，于是多轮人工标注 + LLM agent 修订 rubric 直到与人工一致。之后把相似 prompt 聚成行为模式，通过重采样估计触发率（从 1% 到几乎稳定出现不等），再让 LLM judge 按惊讶度和危险性两两排序得出 Elo 分。作者坦言还解释不了为什么会出现这些行为，希望数据集（Hugging Face 可下载）能支持后续的 prompt 归因、训练数据归因和 interpretability 研究；对开发者来说，它也展示了基于这些模型构建时可能继承的失败模式。
 
-### [Toward A Public Science of Model Behavior](https://transluce.org/behavior-science)
-
-Transluce 2026 Jul
-
-Transluce 的 Daniel Johnson 和 Sarah Schwettmann 写的立场文章，主张建立一门公开的模型行为科学。动机是 AI 系统常做出开发者没预料到的事，且后果是真实的，比如 Replit 的 coding agent 在明确 code freeze 期间删掉生产数据库，以及有家属指控 ChatGPT 在一名男子自杀前把《Goodnight Moon》改写成"自杀摇篮曲"。ML 的历史表明要塑造行为先得测量它，公开 capability benchmark 还让独立方能验证开发者声明；但行为比能力"模糊"得多，开放部署环境没有标准答案，连判断某个动作算不算某种行为都难。文章分两部分：1. 把行为测量当科学实践，核心组件有三：ecologically valid 的环境模拟器，可以尽量贴近真实使用（如 UK AISI 在真实 Claude Code harness 里测模型会不会破坏安全研究），也可以系统变换输入条件找出驱动因素（如 Sheshadri et al. 发现只有 Claude 3 Opus 的 alignment faking 一致地与保持自身目标相关）；可靠的自动判分，rubric 要由具体行为例子来构建以覆盖边界情况，还要有自动化工具发现新模型的新行为供人复查；可比较、可复现的测量，跨模型、跨时间一致，而目前多数行为评估要么是某一时刻的快照，要么是只覆盖单家模型的 system card。2. 公共测量基础设施：labs 的 system card 方法差异大、信息不足以问责，新模型发布太快，单个独立评估者跟不上，因此需要一个生态：领域专家能扩展评估覆盖面；行为数据公开，让公众能在已有数据里发现漏测的行为；评估可以被质疑并提出改进、检验原结论的稳健性；独立研究者能贡献新方法（如 evaluation awareness 诊断、测 introspection 和 self-concept）。基础设施应支持审查评估数据、讨论与 fork，并把评估拆成可重组的模块化组件。结尾引用 Richard Cook 的《How Complex Systems Fail》，认为 AI 生态是复杂分布式系统，安全来自持续给操作者提供校准过的风险视图，目标是在模拟中就抓住诸如"把脆弱用户的痛苦诗化"之类的倾向。
-
-### [Introducing Analysis Plans](https://transluce.org/docent/blog/analysis-plans)
-
-Transluce Docent Blog 2026 Jun
-
-Docent 推出的新功能 analysis plans，针对的问题是用 coding agent 分析 AI 行为数据（训练中策略怎么变、新 scaffold 为什么更差、有没有 reward hacking）时，agent 容易犯隐蔽错误：解析错数据、做没有依据的假设、cherry-pick 例子讲出误导性叙事，而这些在最终输出里看不出来，翻几百行日志去审又太费劲。analysis plan 是一个任何 coding agent 都能调用的 Python API，生成的分析流程会显示在 web 界面上供人逐步核查。它只有两类步骤：query step 用 DQL（Docent 的 SQL 子集）做过滤、分组、join，并展示查询和结果表；reading step 用 LLM 读 query 的结果，产出文本总结或符合自定义 schema 的结构化判断，结论附带指向具体条目的 citation。两类步骤可以任意组合，每个结果都能追溯到产生它的计算。SDK 不立即执行 reading，而是先构建计算图上传成待审批的 plan，人可以先看 prompt 模板、参数、传入哪些 metadata，再批准（也可设成自动批准）。演示是在 SWE-rebench 上约 15 分钟查作弊：先用 DQL 选 200 个 resolved=1 的 run，用 GPT-5.5 按 rubric 给可疑度打 1-10 分，再用 DQL 统计分数分布，然后抽出 4 个可疑 run 交给新的 verifier reading 复核。verifier 确认大多确实可疑，但至少一个是 false positive：agent 翻 git 历史恢复了其它 commit 的代码，看似"向未来偷看"，实际是某个旧 commit 引入了回归，恢复原状是合法修复。作者借此强调 reward hacking judge 本身容易误报，所以需要可验证、可迭代的流程。功能已对所有 Docent 用户开放，另有 SWE-Bench Pro 失败模式和 Terminal-Bench 模型对比两个案例。
-
-### [Building Technology to Drive AI Governance](https://transluce.org/building-technology-to-drive-ai-governance)
-
-Transluce 2026 Feb
-
-Jacob Steinhardt 转载自个人博客的 theory of change 文章，回答技术背景的人如果在乎 AI governance 该做什么。他认为两条常见路线都不理想：内部 alignment/safeguards 工作改变不了外部激励，最终受商业压力和竞赛动态左右；直接搞政策游说则放弃了比较优势，进入拥挤难解的领域。他主张第三条路：构建驱动治理的技术。从气候、食品安全、COVID 的历史中归纳出两个机制：measurement（创造可见性和问责、让监管可执行）和 driving down costs（让好行为经济可行、消解 trade-off），例子如 Keeling curve、卫星甲烷成像让泄漏可归因到运营方、chassis dynamometer 让 CAFE 标准成为可能、风光发电沿 Wright's law 降本、电动车、食源细菌测序和廉价巴氏消毒。对应到 AI：1. 定向战略的测量已有 METR time horizon（约七个月翻倍）和 Epoch 算力趋势（每年 4-5 倍）；2. 改变激励的测量欠缺，sycophancy、deception、强化妄想缺乏公开指标，而 Chatbot Arena 已证明公开排名能形成竞争压力，这是 Transluce 的重点；3. EU AI Act、SB 53 等要求标准化评估，但没有可复现评测套件就难执行，开发者基本自己定义怎么测自己；4. 降低 oversight 成本，METR 一套评估常耗数人月，Docent 就是要把复杂 agent 评估做便宜，作者认为这类需求尚在萌芽，像早期光伏一样杠杆高；5. 用 secure enclave、密码学证明、structured access 消解透明度与 IP 保护的权衡。结论是治理瓶颈不只是政治意愿，而是缺测量基础设施、廉价评估工具和清晰的政策选项，呼吁合适的人加入 Transluce、METR、Epoch、US CAISI 等或自己创办，赶在 AI 冲击打开政策窗口前把技术基础备好。
-
 ### [Diagnosing a performance regression on Terminal-Bench with Docent](https://transluce.org/docent/blog/terminal-bench)
 
 Transluce Docent Blog 2026 Feb
 
 Docent 团队的案例教程：Terminal-Bench 官方榜上 GPT-5.1 Codex 在同一 scaffold 下比 GPT-5 Codex 低 6.5 个百分点，为什么？他们自己重跑（每任务每模型 3 次 rollout），差距 11.4 个百分点，方向一致。流程是用自然语言让 Claude Code 生成 Docent SDK 脚本，分三步：1. 把同一任务上一个模型失败、另一个成功的 run 配对，让 LLM judge 对 100+ 对写失败原因，带 citation 可回查原 transcript；2. 汇总发现失败模式不同，GPT-5 Codex 多是执行错误（不做验证、写坏文件），GPT-5.1 Codex 多是时间管理差（装 GPU 包而非 CPU 包、中止训练任务而不是等待），触发超时；3. 用 Docent Query Language 定量检验，GPT-5.1 Codex 超时率 49.4% vs 29.1%，且分布广泛（24 个任务只有它超时，反过来只有 3 个）；只看两者都不超时的任务，结果反转，GPT-5.1 Codex 领先约 7 个百分点，整体 0.27 vs 0.39 的差距可完全归因于超时。结论是低分不一定是能力缺陷：system prompt 从未提到时间限制，GPT-5.1 Codex 可能在选更长程的策略而被截断。分析不到一小时、覆盖 256M+ token。作者注明这是工作流示意而非定论：绝对分数低于官方榜；只保留无超时任务可能偏向简单任务；还有超时却通过测试的边缘情况，因为 Terminal-Bench 只检查最终文件状态。
-
-### [Oversight Assistants: Turning Compute into Understanding](https://transluce.org/oversight-assistants)
-
-Transluce 2026 Jan
-
-Jacob Steinhardt 早先发在 Bounded Regret 上的文章，Transluce 转载作为其 oversight foundation model 愿景的前置篇。背景是现在的 oversight 主要靠人，这不可扩展：要监督的行为变成长程 agentic 任务，reward hacking 让人类标签不可靠，evaluation awareness 让简单 benchmark 失效。现成 chatbot 要等通用 AI 超人类时才能提供超人类 oversight，那就太晚了，而且能力是 spiky 的。所以作者主张把 oversight 能力和通用能力解耦，训练只在"帮人监督 AI"上超人类的专门 assistant，主要途径是数据。核心论点是多数 oversight 任务是 self-verifiable 的：发现很难、验证便宜，这正是推动数学和代码进步的结构。两个例子：1. behavior elicitation，用 LM judge 当奖励做 RL 训练 elicitation assistant，在 40M+ token 输入上搜出自残、强化妄想等行为；2. feature description，用描述预测 neuron 激活再对照真实情况打分，从 Llama-8B 微调的 explainer 胜过大一个量级的 GPT-4，作者视之为解耦可行的直接证据。接着给出 3x3 taxonomy：问题类型（what happened / what could happen / why）乘以数据源（behaviors / representations / training data），并说明每类都能转成可扩展目标：what happened 看摘要的 faithfulness 和 informativeness，what could happen 是 search-and-verify，why 用反事实干预和区分备择假设的实验检验。各格之间相互促进（data begets data），数据也充足，Docent 一个 transcript 集合就可达 400M token。最终愿景是端到端 oversight assistant，Docent 是雏形；评估标准是人与之交互后能否准确回答关于该系统的探查性问题。作者认为解耦能让 safety 工作民主化，不必冲到能力前沿，也避开评估自己所建系统的利益冲突。开放问题（人类判断不可靠时怎么评估、怎么不靠人类标签生成数据、架构与预训练目标）留到下一篇。
 
 ## 2025
 
@@ -152,7 +116,7 @@ Transluce 与 MIT 的工作（Belinda Li、Jacob Andreas 等）：训练语言�
 
 Transluce 2025 Sep
 
-（摘要暂缺，请阅读原文）
+Transluce 想回答的问题是：能不能用一个很弱、很便宜的开源模型，通过 RL 训练成 investigator agent，自动给前沿模型做 red-teaming，作为部署前测试的工具。他们自建了 48 个任务的数据集，覆盖 OpenAI Model Spec、Claude Constitution 等模型规范明确禁止的高风险类别；之所以不用 HarmBench、StrongReject，是因为这些数据集自带的 LM grader 太容易被 reward hacking（比如回答一些历史背景就能过关），所以自己构建了更客观的 LM judge：一个检查攻击 prompt 本身是否合规（不能要求虚构/玩笑式回答、不能夹带答案），一个按多条 rubric 给目标模型回复打部分分。方法上把 jailbreak 当 RL 问题：investigator 从 Llama-3.1 8B-Instruct 初始化，只拿到目标行为描述，不给任何攻击策略或示例，用 GRPO 训练，自己摸索出有效的自然语言攻击。奖励有两类：1. black-box reward，直接采样目标模型回复交给 judge 打分，任何 API 模型都能用，但早期很稀疏，靠 judge 的部分分缓解；2. 他们此前提出的 PRBO（propensity bound），用一个刻意引导向目标行为的 proposal 分布来估计诱发概率的下界，信号更密，但需要 logprob 和 prefill 权限，所以只用在开源的 GPT-oss-20b 上。还可以把多个目标模型的奖励加权求和，给更平滑的信号并鼓励跨模型都有效的策略。主 run 是 GPT-oss-20b 上的 PRBO 加 GPT-4.1、GPT-5-main、GPT-5-thinking、Claude Sonnet 4 的 black-box 奖励，pass@1 成功率：Claude Sonnet 4 92%、GPT-5-main 78%、Gemini 2.5 Pro 90%、Grok 4 98%、Claude Opus 4.1 65%、GPT-5-thinking 28%，其中 Opus 4.1、Grok 4、Gemini 2.5 Pro 没参与训练。攻击是普通英文、可读的自然语言。几个发现：攻击经常能迁移，只针对 GPT-oss-20b 优化就能在 Gemini 2.5 Pro（89%）、GPT-4.1（88%）上成功，Claude Sonnet 4 降到 26%，说明在较弱模型上训练能为攻击更 robust 的模型提供中间信号，甚至跨开发商；ensemble 奖励有帮助，但单模型 black-box 奖励也出乎意料地有效，作者推测是因为任务集难度有梯度、天然形成 curriculum（之前在其它行为上 black-box 奖励效果差很多）。和 Best-of-N Jailbreaking 基线比，针对 GPT-4.1 时 BoN 只有 5% pass@1、63% pass@32，而 black-box 训练的 investigator 达到 95% 和 100%。成本上每个 investigator 在 2 个 8xH100 节点上训练不到 18 小时，闭源模型 API 开销每个约 1–2 千美元，旗舰模型可达 5–10 千美元，所以对后者实验有限。成功率衡量的是模型是否给出详细分步回答，技术准确性没有系统评估，只做了抽查（含领域专家咨询），大多数看起来准确但也有错的。局限：RL red-teaming 依赖能精确判定目标行为的 robust judge，否则会被 reward hack，构建 judge 很费力，像恶意 exploit 代码这类在教育场景下可能合理的任务就很难写 judge，作者呼吁社区共同整理 judge，也有助于对可接受行为达成共识；PRBO 需要的 logit 和 completion 权限一般 red-teamer 拿不到，建议开发者向可信研究者开放更深的访问。披露方面，他们开源了代码和数据，并在 Docent 上公开 prompt 和回复，但对最敏感的类别只给 LM 生成的摘要而非原文。
 
 ### [Surfacing Pathological Behaviors in Language Models](https://transluce.org/pathological-behaviors)
 

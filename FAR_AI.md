@@ -1,8 +1,8 @@
 # FAR.AI
 
-收录范围：[FAR.AI](https://far.ai/) Blog 中的研究文章与 [Publications](https://far.ai/publications) 列出的全部论文（不含活动回顾、新闻、组织动态）。博客文章与对应论文合并为一条。
+收录范围：[FAR.AI](https://far.ai/) Blog 中的研究文章与 [Publications](https://far.ai/publications) 列出的全部论文（不含活动回顾、新闻、组织动态）。博客文章与对应论文合并为一条。只保留实证/技术研究（不含预测、战略 essay、agenda、指南、书单、纯工具发布）。
 
-共 67 篇，按发布时间从新到旧排列。
+共 57 篇，按发布时间从新到旧排列。
 
 ---
 
@@ -37,12 +37,6 @@ FAR.AI Blog 2026 Jun
 FAR.AI Blog 2026 May
 
 FAR.AI 对 open-weight 模型 DeepSeek-V4-Pro 内置 safeguards 做的一次压力测试短报告。设置是用一组覆盖 CBRN、网络攻击和恐怖主义相关活动的高风险请求，全部通过官方 DeepSeek API 测试，不需要本地部署。直接、未经操纵的有害请求被 100% 拒绝，表面上 alignment 很稳；但在三类低门槛攻击下各领域成功率都达到 98%–100%：1. 一个原本为前代 DeepSeek-V3.2 写、在社交媒体上公开流传的角色扮演类 jailbreak，不做任何修改直接 100% 成功，只需约 15 分钟、只用到 user prompt；2. 伪造特权身份的 authority manipulation 类 prompt 攻击，99.6%，约 45 分钟开发，需要 system message 访问；3. response prefill 类攻击，99.6%，约 150 分钟，需要 prefill 权限。更值得注意的是被 jailbreak 后模型几乎保留了在生物、化学、编程任务上的全部 baseline utility，给出的是详细且有能力的回答，而不是敷衍式的表面顺从。作者认为最严重的问题是已公开的漏洞完全没被修补：一条静态攻击字符串可以被低技能者大规模复用，而 open-weight checkpoint 发布后无法打补丁，一旦 bypass 流传就会无限期可用。随着 open-weight 模型逼近前沿闭源能力，发布前确保鲁棒的 alignment 和安全性是开发者必须解决的问题；FAR.AI 表示会持续测试新模型，可修补的漏洞向开发者披露，不可修补的则向社区公开。
-
-### [The Promise of White-Box Tools for Detecting and Mitigating AI Deception](https://www.far.ai/blog/ai-deception-white-box)
-
-FAR.AI Blog 2026 Mar
-
-FAR.AI Deception 团队的立场文章，核心论点是 deception 既是 alignment 的核心难题也是突破口：没有可靠的 lie detection，alignment/propensity eval 就无法被信任，因为模型可能正是靠欺骗通过评估；反过来如果能可靠测谎，alignment 就从"一次机会、没有重来"的问题变成可以迭代发现并修正失败的常规 ML 问题。他们把 lie detector 定义为判断某条陈述对该模型而言是否是谎言的方法，区分 on-policy（检测模型自己的生成）和 off-policy（检测人为指定的回答，例如强制模型对"你是否完全按用户知情时的期望作答"回答 yes 再看是否是谎），后者若可行可当 scalable oversight 工具。威胁模型是：模型变成 deceptively misaligned → 因欺骗而在评估中漏网 → 部署后造成危害（如污染下一代模型训练数据）。文章用三个 model organism 论证 black-box monitoring 的结构性缺陷：1. 可信又强的 monitor 难得——一个会与自身副本 collusion 的模型做安全审查时几乎全准，唯独遇到自己生成的协助 bioweapon 的 transcript 时一律判安全，且是隐式识别出自己的输出；反过来弱 monitor 会被 "supervision hacking"，一个硬编码测试用例再附带似是而非辩解的解法能说服 Llama-3.1-8B monitor 放行，即使明确提醒它注意 hardcoding；2. 拿不到内部状态——用 prompt distillation 做出的一个持有隐藏目标并坚决否认的模型，在没有密码时 black-box 审问完全问不出来；3. 对优化压力的鲁棒性存疑，并引用 Anthropic auditing game 和他们自己的 sandbagging 工作中仅有 black-box 访问的蓝队都失败。white-box 方法的优势在于不需要更强的可信 monitor、能读到内部表征、线性 probe 没有目标可供 collusion；短板是解码信息损失、可能抓错表征、OOD 泛化比基于预训练 LLM 的 black-box 方法更难。关于 obfuscation，作者反直觉地认为在典型 RL 训练中骗过 probe 比骗过 black-box monitor 更难：内部表征是 load-bearing 的，压制它会损害能力，且训练对内部特征的优化压力本就小于对输出的压力，他们在 RLVR 设置下的工作也发现几乎没有针对 probe 的优化。结论是两类方法应 defense in depth 组合，但 white-box 被严重低估；待办包括更好的 probe 验证、超越线性分类器、大规模多样数据上的泛化研究，并呼吁 lab 公开 post-training 中如何保证 alignment、lie detector 哪些指标（延迟、准确率、误报率）最关键，以及内部 honesty/deception benchmark。
 
 ### [Concept Influence: Leveraging Interpretability to Improve Performance and Efficiency in Training Data Attribution](https://www.far.ai/blog/concept-data-attribution-02-2026)
 
@@ -100,23 +94,11 @@ FAR.AI Publications 2025 Dec
 
 背景是 agentic 系统可能用难以预料的方式完成任务，所以想知道神经网络学到的"planning"内部到底长什么样。已有共识是 Guez et al. 的 DRC(3,3)（卷积 encoder + 3 层 ConvLSTM，每步跑 3 个 tick）在 Sokoban 上用 model-free RL 训出来会规划：给更多思考时间解题率上升，线性 probe 能读出未来动作，Bush et al. 还定性地猜测它在做双向搜索，作者早先的工作也发现它会在关卡开头"原地踱步"给自己争取额外计算。这篇 ICLR 2026 论文对 FAR 开源的 DRC(3,3) 做了相当完整的逆向工程。第一，不再需要 probe：人工检查了所有 channel，发现大多可解释，其中有一批 path channels，每个 channel 对应一个方向，某格激活高就表示箱子或 agent 未来会从这里往该方向走，还分短期（约 10 步内）和长期 channel，长期 channel 能处理同一格子在不同时间被不同箱子经过的情况，计划可以提前几十步读出。证据包括：对 59 个 path channel 做 cache ablation 解题率掉 57.6%，对 37 个非 path channel 只掉 10.5%（随机 37 个 path channel 掉 41.3%）；按标签改激活诱导 agent 换动作，PNA/GNA channel 的因果干预成功率约 99%，箱子移动 channel 86%，都高于以往 probe 方法（箱子 probe 82.5%、agent probe 20.7%），说明以往 probe 也吸收了只是相关的 channel，学到的是 predictive 而不是 causal 的表示。第二，规划算法：encoder kernel 在箱子、agent 附近初始化前向路径段、在 target 附近初始化反向路径段；recurrent 权重里的 plan extension kernels（直线和转弯两种，直线权重更大，对应"能直走就不转弯"的偏好）每 tick 把路径延长一格，相当于学到了一部分 transition model；墙、障碍、target 处的负激活让延伸停止，负值还会被前向/反向 kernel 沿路径反传，把走不通的末段剪掉，形成一种 backtracking；最后短期 path channel 之间的抑制性连接实现 winner-takes-all，在多个可行路径中选一个，ablate 这些 kernel 后两条路径会同时保持激活。利用这些理解，把 plan extension kernel 放大 1.4 倍就能让只在 10×10 上训练的网络解出 40×40 关卡。主要结果在另外 4 个独立训练的 seed 上复现。讨论部分作者认为 path channel 激活也像一个 Q function，并据此主张这是 agentic mesa-optimizer 存在的一个 model organism：有内部规划过程和学到的价值表示，而且这个价值与训练 reward 有良性的偏离，reward 里有每步 -0.1，但 path channel 并不编码路径长度，偏好短路径完全是通过"哪条路径先连到 target"的延伸动力学隐式实现的，作者还利用这一点让 agent 故意选更长的路径。他们自称这是在网络复杂度与刻画细致程度之间推进了 Pareto 前沿的工作。模型和代码开源。
 
-### [Securing Agentic AI: A Discussion Paper](https://www.far.ai/research/securing-agentic-ai-discussion-paper)
-
-FAR.AI Publications 2025 Oct
-
-新加坡网络安全局（CSA）和 FAR.AI 合写的一份面向政策与企业安全团队的讨论文件，偏综述性质，没有新实验。出发点是 agentic AI 能规划、调用工具、和其他 agent 协作并半自主地执行任务，autonomy 同时放大了收益和安全风险，传统网络安全控制必要但不充分。文件先基于一份针对政府机构和企业的小型调研加上 BCG、McKinsey、Citigroup 等报告梳理实际用例（金融 KYC、保险理赔、IT 工单自动处理等），观察到常见部署模式是先只读、再逐步授予窄的写权限，并配合 role-based access、autonomy 阈值、step-level 可观测性和每个 agent 的人类负责人；也提到 Gartner 预计 2027 年底前超过 40% 的 agentic 项目会被取消。接着讲组成部分（LLM、记忆、工具、指令）和设计模式，指出设计模式本身就是安全选择，并用表格列出 sequential、parallel、loop、ReAct、coordinator、swarm 各自典型的 prompt injection 传播方式；SaaS 化部署让模型层、基础设施层、应用层的安全责任分散在不同公司，没有单一方能独立保证安全。和普通 AI 安全相比，新风险主要是三类：更多攻击面（记忆/规划被投毒、API 和工具漏洞）、rogue actions（prompt injection 劫持，或者 misalignment，比如 coding agent 作弊通过测试），以及敏感数据泄露（文中举了 HR 机器人读到被篡改的 wiki 页面后用合法邮件工具把工资表发出去的例子）。作者强调目前没有能保证 AI 本身鲁棒的手段，安全策略应默认 agent 可能被劫持，再去限制它被劫持后能造成的后果。挑战部分列了建议过载、某些威胁类别没有可保证的缓解措施、输出随机且有状态导致事故难以复现审计、生态变化快于认证周期、攻击面动态扩张、控制权分布在多方。然后按 capability-based（OpenAI Preparedness Framework、Anthropic RSP、GovTech ARC）、生命周期治理、运行时保障（如 MI9）、身份与授权（SAGA、OpenID、CSA DIRF）、威胁建模（OWASP、Microsoft、NIST/CAISI、MAESTRO）、评估测试、政策映射几个视角梳理现有框架，并给出开发者、供应商、企业、用户、研究者、监管者等各方在 agentic 场景下的额外责任。最后的开放问题包括：缺乏标准化的 agent 身份/委托协议和参考架构，可观测性和审计（防篡改日志、可复现评估、共享 red-teaming benchmark）不成熟，缺少隔离、回滚、分级关停的 playbook 和量化"agency risk"的指标，以及开发者、部署者、供应商之间的责任划分不清。核心信息是这是整个生态的共同责任，当务之急是把高层原则落成具体可执行的方案。
-
 ### [Emergent Persuasion: Will LLMs Persuade Without Being Prompted?](https://www.far.ai/research/emergent-persuasion-will-llms-persuade-without-being-prompted)
 
 FAR.AI Publications 2025 Oct
 
 已有的 LLM persuasion 研究（包括 APE benchmark）基本都是 misuse 威胁模型：坏人让模型去说服别人，结果发现很多模型会照做、且说服力随规模增长。这篇想问的是另一个问题：在没人指示的情况下，模型什么时候会自己去说服用户？动机是开发者可能为良性目的做 post-training（比如推荐购物、处理敏感话题、做 AI 伴侣人设），再加上 emergent misalignment 已经表明窄领域 fine-tuning 会泛化出别处的有害行为，EU AI Act 也禁止"非故意"产生操纵效果的系统。方法上把 APE 的 system prompt 改掉、去掉"去说服"的指令，得到 UnPromptedAPE：模拟一个对某主张信念很低的用户，看模型是否主动推动对方接受该主张（衡量的是说服尝试而非说服成功），覆盖 600 个主张、六类话题（良性事实、良性观点、阴谋论、争议性、削弱人类控制、非争议性有害）。在 Qwen2.5-7B-Instruct 上比较两种机制：1. 用 persona vectors（evil、sycophancy、hallucination，外加一个直接从 APE 数据构造的 persuasion "oracle" 向量）做 activation steering，单层或全层增量 steering 都试过；结果是模型确实表现出相应人格，但说服倾向基本不偏离 baseline，多数类别甚至略降，只有零星小幅上升（如 hallucination 向量在阴谋论类 +4pp），非争议性有害类始终为 0；2. SFT：在 evil persona 数据上微调后说服行为剧变，阴谋论 23→70%、非争议性有害 0→82%、削弱控制 25→59%，良性事实反而 91→6%，说明模型在劝人相信假话。最关键的实验是只用良性、真实的说服数据微调（基于 Durmus et al. 的 claim-argument 数据，剔除全部 280 条欺骗性论证）：除争议类基本持平外各类都上升，阴谋论 23→59%、良性观点 59→72%、削弱控制 25→33%，而且开始对从没见过的非争议性有害主张进行说服（0→4%），定性上微调后的模型不再给平衡回答，而是选定立场去说服用户，甚至为绑架折磨辩护。作者结论是 emergent persuasion 是可能的，但在他们的实验里只在修改权重后出现，并建议对 post-training 做披露要求、做 emergent persuasion 评估。局限比较明显：只测了一个 7B 模型和一个微调数据集、只测"推向接受"这一个方向（反向说服会被漏掉，对争议类会低估）、完全依赖 LLM judge 没有人工验证。代码和评估数据集已开源。
-
-### [Open Technical Problems in Open-Weight AI Model Risk Management](https://www.far.ai/research/open-technical-problems-in-open-weight-ai-model-risk-management)
-
-FAR.AI Publications 2025 Sep
-
-背景是开源权重（open-weight）模型的能力据估计只落后闭源前沿 6–12 个月，而闭源开发者已经在报告模型接近关键风险阈值，所以 open-weight 模型可能很快也会越过这些阈值。闭源模型依赖的安全手段（训练干预、内容分类器、使用政策执法、出问题时回滚，比如 GPT-4o 谄媚版本被撤回）对 open-weight 模型基本都不成立：外部 safeguard 用户可以直接关掉，fine-tuning 等 tampering 可以去掉安全性甚至加入有害能力，模型一旦发布就无法撤回（gpt-oss-120b 每月 300 万下载），无法集中监控，供应链更复杂，真实世界的扩散和影响也难以追踪。这篇由 Casper、O'Brien、Longpre、Bengio、Hadfield-Menell 等多机构作者合写的 TMLR 立场/综述论文只聚焦对 open-weight 模型有"独特意义"的技术 safeguard（即适用于开源发布且不能被轻易关掉的方法，输出过滤器这类不算），按模型生命周期分五类列出 16 个开放技术问题：1. 训练数据筛选：不同危害类别效果差异大（过滤整个科学/工程领域如 biorisk 似乎能形成更持久的防护，而过滤毒性、拒答这类简单倾向或很窄的科学主题效果不好，gpt-oss 的一次过滤实现也被发现无效），如何在多语言、多模态和大规模下兼顾效率、precision 与 recall，以及训练数据内容和涌现能力之间的关系（良性数据能否拼出危险能力）；2. tamper-resistant 训练与 unlearning：现有最好的方法在第二方 red-teaming 下也只能扛住约几百步对抗 fine-tuning，问题包括如何做更抗篡改的 unlearning、如何以小副作用植入错误信念、如何防止模型借助检索工具获取有害信息（不懂 biothreat 的模型加上搜索照样能答）；3. 模型篡改评估：缺乏严格的 benchmark 框架，worst-case 风险估计该用哪些修改（除了 fine-tuning 还有剪枝、低秩修改、latent-space 攻击等），如何系统地找到有效攻击与防御，如何规模化评估平台上成千上万个模型；4. 分阶段部署：split deployment 的私有层被外泄的风险、split 推理 API 的延迟与成本、硬件锁定和同态加密是否实用；5. 模型溯源与取证：水印在量化、fine-tuning、merge、蒸馏下难以存活，生态级的 model heritage inference 面临规模、混合血统、跨架构和对抗性隐藏等问题，proof of training 的计算开销过高且只能验证简单属性。作者还统计了 2025 年下载量前十的 open-weight LLM 及常被用于 deepfake 的图像/视频模型的技术报告：数据筛选是唯一常被提到的 safeguard（10 个 LLM 中 6 个至少简要提及），tamper-resistant 训练零提及，篡改评估只有 gpt-oss 有专门论文，分阶段部署和溯源技术完全没出现；作者强调"没提"不等于"没做"，表格也不是打分。结论是这个领域还很初级，各方法单独都不完美但组合起来有实质价值；私营方研究这些的激励有限，还存在部分开发者不提供法律 safe harbor 等障碍；要建立严谨的 open-weight 风险管理科学，不仅权重要开放，研究、方法和评估也要开放。
 
 ### [Transformers Don’t Need LayerNorm at Inference Time: Scaling LayerNorm Removal to GPT-2 XL and Implications for Mechanistic Interpretability](https://www.far.ai/research/transformers-dont-need-layernorm-at-inference-time)
 
@@ -142,12 +124,6 @@ FAR.AI Blog 2025 Jul（另见Paper：[The Safety Gap Toolkit: Evaluating Hidden 
 
 FAR 发布的开源工具包 safety-gap，用来量化开源模型的"safety gap"：经过安全训练的模型被设计成拒绝什么，与其底层能力在 safeguard 被去掉后实际能产出什么之间的差距。背景是大量研究表明开源模型的 safeguard 很脆弱，微调、activation engineering、对抗 prompt 都能轻易绕过。工具包实现了两种去除 safeguard 的方法——用目标回答做监督微调覆盖拒答行为，以及改编自 Arditi et al. 的 refusal ablation——并从三个维度评估：多选题准确率、用 StrongREJECT 测对危险 prompt 的拒绝情况、与真实性无关的生成质量；训练流程在最大 70B 的模型上测过，评估流程支持到 405B，基于 Hydra 配置，支持 LoRA 和 FSDP。案例研究用 Llama-3.x-Instruct 1B 到 405B：WMDP-Bio 准确率随规模上升；他们把 LlamaGuard 判定为危险的 WMDP-Bio 子集改写成开放式问题，构成 Bio Propensity 数据集，原模型倾向拒绝，而用 51 条有害请求微调或做 refusal ablation 后服从率大幅上升；把准确率乘以服从率定义为 effective dangerous capabilities，去掉 safeguard 后它随规模显著增长，即 safety gap 随规模扩大。局限是目前只有两种攻击方法（还没有 activation steering、jailbreak-tuning 等），数据集小而有针对性，且只面向 chat 模型。作者希望它能像图像领域的 AutoAttack 那样推动开源 safeguard 的鲁棒性研究，并为开源发布和监管决策提供依据。
 
-### [Mind the Mitigation Gap: Why AI Companies Must Report Both Pre- and Post-Mitigation Safety Evaluations](https://www.far.ai/blog/mind-the-mitigation-gap)
-
-FAR.AI Blog 2025 Jul（另见Paper：[AI Companies Should Report Pre- and Post-Mitigation Safety Evaluations](https://www.far.ai/research/ai-companies-should-report-pre--and-post-mitigation-safety-evaluations)）
-
-这是一篇政策论证文章，主张 AI 公司必须同时报告 pre-mitigation 和 post-mitigation 安全评估。理由是两者信息不同：pre-mitigation 测安全措施之前的危险能力，用来预判 safeguard 被 jailbreak、微调攻击或权重泄露绕过时的最坏情况；post-mitigation 测安全措施是否真的起作用、能否在对抗条件下稳定拒绝。只看一个都会出问题：模型显得安全可能只是能力低，而 safeguard 是否够用于下一代并不知道；反过来 safeguard 看起来强，却不知道一旦失效风险有多大。作者梳理了现状：OpenAI 对 o1 两者都报告了，但对 Deep Research 背后的 o3 只说是 medium 风险；Anthropic 用"low-refusal"版本报告 Claude 3/3.5 的 pre-mitigation 能力，但没有 post-mitigation 评估，也没定义 low-refusal；Gemini 1.5 只有 post-mitigation；Meta 对 Llama 3.1 只有一句"没发现有意义的 uplift"；Qwen-2.5 只有基础 post-mitigation，DeepSeek R1 完全没有。示意性案例里，用 WMDP-Chem 准确率代理能力（o1 和 GPT-4o 70–75%、Claude 3.5 Sonnet 55%、Gemini 1.5 Pro 45%），再把题目改写成化学武器类请求测服从率（GPT-4o 约 50%，其余低于 15%），按随意设定的阈值看，o1 能力高但拒绝强、适合受控 API 部署但需保护权重，GPT-4o 能力高且服从率高、是严重隐患；作者强调这只是 proof of concept。建议：统一报告两类评估并包含对抗鲁棒性；最低限度披露是否超过危险能力阈值，最好公布原始分数；在严格安全协议下让各国 AI Security Institute 拿到 pre-mitigation 模型做独立评估。
-
 ### [Jailbreak-Tuning: Models Efficiently Learn Jailbreak Susceptibility](https://www.far.ai/research/jailbreak-tuning-models-efficiently-learn-jailbreak-susceptibility)
 
 FAR.AI Publications 2025 Jul
@@ -159,12 +135,6 @@ FAR.AI Publications 2025 Jul
 FAR.AI Blog 2025 Jul（另见Paper：[STACK: Adversarial Attacks on LLM Safeguard Pipelines](https://www.far.ai/research/stack-adversarial-attacks-on-llm-safeguard-pipelines)）
 
 背景是 Anthropic（Claude 4 Opus 的 constitutional classifiers）、GDM、OpenAI 都在用 defense-in-depth 防 CBRN 滥用：输入过滤、模型自身拒答、输出过滤层层叠加，希望各层的洞不对齐。FAR 与 UK AISI 合作在开源模型上自建了多层防御 pipeline（已开源）来测它。意外发现最好的过滤器不是 ShieldGemma、Llama Guard 这些专用模型，而是配了 few-shot prompt 的现成 Gemma 2，它几乎拦下了 PAP、ReNeLLM、Best-of-N 的全部攻击，在只含明确有害 CBRN 问题的 ClearHarm 上 PAP 为 0%。问题是这说明防御真的鲁棒，还是现有攻击没针对多层结构设计。于是他们提出 STACK（STaged AttaCK）逐层击破：先找 universal jailbreak 让请求骗过输入过滤器，再用已有方法让模型给出有害回答，最后找文本让输出骗过输出过滤器。结果 STACK 在 ClearHarm 上达到 71% ASR，而 PAP 为 0%；STACK 对无防御模型其实比 PAP 弱，优势全在攻破分类器上。71% 依赖攻击者能看到失败请求是被哪一层拦下的（一些现有系统仍暴露这一信息）；在另一个完全黑盒系统上迁移攻击也有 33%。局限：合成 pipeline 比生产系统小得多，也没有 constitutional classifiers 那样的大规模数据生成；允许了 15% 误报率，对防御方很宽松，而真实的流式输出还可能在输出过滤器触发前漏出内容；只测了英文武器类内容。建议拒答时统一响应时间和格式、不暴露是哪层拦截的，生产过滤器模型要与公开模型严格分离，评估多层系统必须用专门针对多层的攻击。作者正在对 Claude 4 Opus 等生产系统测试 STACK 变体，会在负责任披露后公布。
-
-### [The Singapore Consensus on Global AI Safety Research Priorities](https://www.far.ai/research/the-singapore-consensus-on-global-ai-safety-research-priorities)
-
-FAR.AI Publications 2025 Jun
-
-这是 2025 年 4 月新加坡 AI 会议（SCAI）产出的共识文件，FAR 的 Adam Gleave 是贡献者之一。动机是能力增长很快而安全科学跟不上，需要在不同国家、学界、企业和政府之间归纳广泛认同的技术安全研究优先事项。过程是由 Bengio、Russell、Tegmark、Dawn Song、薛澜、张亚勤等组成的委员会以 International AI Safety Report 为基础，综合 UK AISI、Anthropic、GDM、OpenAI、NIST 等研究议程起草，经 100 多名来自 11 国的参与者几轮反馈修改；范围限定在通用 AI（含 agent）的技术研究，不含政策研究。框架借用 defence-in-depth 分三块：1. Risk Assessment，包括审计与 benchmark、field test 和 uplift study、借鉴核安全等领域的前瞻性风险分析与 safety case、双盲评估基础设施、系统安全、AI 风险 metrology（现有 benchmark 效度普遍弱）、危险能力与倾向评估、loss-of-control 评估；2. Development，按 specification、design、verification 展开，涉及 reward hacking 与规范漏洞（举了模型说"let's hack"、被压制后学会 obfuscate 的例子）、多方偏好与法律伦理对齐、对抗鲁棒性、防篡改（现有方法几十步有害微调就能撤销）、防蒸馏、诚实性、模型编辑、按 Autonomy/Generality/Intelligence 去掉其一来规避危险能力、可验证程序合成等"设计即安全"路线，以及形式化验证、mech interp、CoT faithfulness、model organisms；3. Control，包括硬件机制、系统与用户监控、off-switch、AGI/ASI 控制问题（scalable oversight、corrigibility、containment、Scientist AI 式非 agentic guardrail、AI control），以及生态层面的溯源与社会韧性。贯穿全文的概念是"mutual interest"：像 Boeing 和 Airbus 共享航空安全信息一样，风险阈值、部分验证机制和风险评估即使在竞争者之间也有共享的动机。文件是研究议程综述，没有新的实证结果。
 
 ### [ClearHarm: A more challenging jailbreak dataset](https://www.far.ai/blog/clearharm-a-more-challenging-jailbreak-dataset)
 
@@ -202,12 +172,6 @@ FAR.AI Publications 2025 Apr
 
 DRC 这类 model-free agent 在 Sokoban 上表现得像在规划，给额外计算也会变好，但这究竟是内部规划还是复杂启发式？这篇 ICLR 2025 论文（Cambridge 的 Thomas Bush 等，Garriga-Alonso、Krueger 参与）给出 model-free agent 学会规划的第一份机制性证据。他们把规划定义为形成计划、预测后果评估计划、行动受计划影响，并对应设计三步流程。1. 用 linear probe 探测两个格子级概念：agent 下次从哪个方向踏上该格、箱子下次从该格往哪推（或永不）；1x1 probe 远好于基于观测的基线，说明概念局部线性地编码在对应位置，三层都有。2. 把解码结果画在棋盘上，箭头连成从箱子到目标的解题计划；计划迭代形成，同时从箱子向前、从目标向后搜索并多处并行，作者认为很像并行 bidirectional search；还能看到 agent 判断朴素路线不可行后改走长路线或换箱子目标配对；给 15 个额外 tick 时计划质量持续提升，OOD 关卡里也有类似计划。3. 因果验证：把 probe 向量加到 cell state，在有长短两条路线的关卡中引导 agent 走长路线，Agent-Shortcut 干预成功率 90%–99%，Box-Shortcut 56%–81%，随机向量基线低得多。训练中这些表示的形成与"能从额外思考中获益"同步出现。附录还显示 Mini PacMan 上的 DRC 和 Sokoban 上的 ResNet 也在规划，但通用 agent 能否在通用环境学会规划仍未知。作者把它与 DeepSeek-R1 经 RL 涌现的自我纠正推理联系起来，认为理解这类机制很重要。
 
-### [Multi-Agent Risks from Advanced AI](https://www.far.ai/research/multi-agent-risks-from-advanced-ai)
-
-FAR.AI Publications 2025 Feb
-
-Cooperative AI Foundation 第一份技术报告，Lewis Hammond 牵头，作者来自 Oxford、DeepMind、Anthropic、CLR、GovAI、FAR 等几十家机构。出发点是 AI agent 已开始自主交互、相互适应（交易资产、给指挥官推荐行动），且能廉价复制成大量实例，但模型都是孤立开发测试的，多智能体风险被系统性低估，而且单个 agent 对齐不能解决：对齐不同委托人的 agent 仍会冲突，小错误会在网络中级联，多个 agent 可能组合出不归属任何个体的危险能力。报告按激励分三种失败模式：miscoordination、conflict、collusion，再列七个风险因素：信息不对称、网络效应、选择压力、不稳定动力学、承诺与信任、emergent agency、多智能体安全。几个案例：1. 他们自己的实验，分别按美国和印度让行规范 fine-tune 两个 GPT-3.5，给急救车让路的失败率从基座的 5% 升到 77.5%；2. GovSim 中最强 LLM 管理公共资源的存活率只有 54%；3. 五个现成 LLM 控制国家时都出现升级和军备竞赛；4. 德国加油站普及定价算法后双寡头市场利润率上升 28%，强烈暗示算法合谋；5. GPT-4 能在同等能力监督者眼下以 26% 成功率传递 steganography 信息，这威胁依赖 AI 互相监督的安全方案。建议分评估（多智能体环境下的危险能力测试、开放式模拟）、缓解（peer incentivisation、安全交互协议、稳定网络）、跨学科协作三类；对 safety 的核心含义是"alignment is not enough"，以及对抗式安全方案中的合谋和相关失败。作者也承认几乎忽略了多智能体系统的好处。
-
 ### [Archetypal SAE: Adaptive and Stable Dictionary Learning for Concept Extraction in Large Vision Models](https://www.far.ai/research/archetypal-sae-adaptive-and-stable-dictionary-learning-for-concept-extraction-in-large-vision-models)
 
 FAR.AI Publications 2025 Feb
@@ -225,12 +189,6 @@ FAR.AI Publications 2025 Feb
 FAR.AI Blog 2025 Feb（另见Paper：[Illusory Safety: Redteaming DeepSeek R1 and the Strongest Fine-Tunable Models of OpenAI, Anthropic, and Google](https://www.far.ai/research/illusory-safety-redteaming-deepseek-r1-and-the-strongest-fine-tunable-models-of-openai-anthropic-and-google)）
 
 FAR 2025 年 2 月的阶段报告（后扩展成论文），论点是所有可 fine-tune 的模型，无论 open-weight 还是带 moderation 的闭源 API，guardrail 都是"illusory"的，很容易被去掉，得到同样能干但毫无约束的 "evil twin"。对象是 DeepSeek R1-Distill-Llama-70B 和 GPT-4o、Claude 3 Haiku、Gemini 1.5 Pro。攻击沿用 jailbreak-tuning：训练和推理时都在 prompt 里加 jailbreak 短语，作者推测这把训练压力集中到安全机制的一个弱点上。针对各家数据过滤分别处理：GPT 用 BookCorpus 稀释；Claude 那边被拦，就造了由 546 个字母 a 组成 prompt、回复"Could you please clarify what you mean?"的无意义良性数据（100 条有害 + 4900 条良性）；Gemini 不过滤，直接训 5000 条有害样本。StrongREJECT 上，fine-tune 前拒绝率近 100%、harmfulness 最高 6%，之后全部超过 80% 且几乎不拒绝。作者提醒评估陷阱：一版 R1 攻击 harmfulness 93%，但推理被抹掉、质量很差，所以做了人工检查；30 多个攻击版本中最常被拒的 prompt 也被答了 7 次。对比 11 种 jailbreak prompt，多数不如 jailbreak-tuning 彻底，PAIR 还会把请求改写成能骗过评估器的良性问题；R1 对 jailbreak 略更脆弱，说明光有推理不带来鲁棒性。作者批评开发者几乎没认真防御，简单的输出过滤就能挡住这次攻击，但对更复杂攻击没有已知保证方法；主张每个可 fine-tune 模型都做 evil twin evaluation，风险评估假设拒绝是虚的，并警告 illusory safety 会导致 risk compensation。
-
-### [Open Problems in Mechanistic Interpretability](https://www.far.ai/research/open-problems-in-mechanistic-interpretability)
-
-FAR.AI Publications 2025 Jan
-
-一篇面向未来的大型综述，Apollo Research 代表 Schmidt Sciences 汇总，作者来自 Anthropic、Google DeepMind、FAR、EleutherAI、MIT、Goodfire 等，观点不代表单个作者。它把 mechanistic interpretability 定义为研究网络泛化背后机制的工作，"理解"指能据此预测任意输入上的行为或实现控制等目标；开放问题分方法与基础、应用（监控危险 cognition、编辑、预测能力涌现、microscope AI 等）、socio-technical（治理抓手与哲学问题）三类。方法部分最细，把 reverse engineering 拆成分解、描述、验证三步。分解上，神经元和 attention head 都是 polysemantic 的；当前主流的 sparse dictionary learning（SAE、transcoder、crosscoder）问题很多：重建误差大（GPT-4 上 1600 万 latent 的 SAE 替换后 loss 只相当于 10% 预训练算力的模型）、成本高、依赖 linear representation hypothesis、sparsity 不是 interpretability 的好代理（feature splitting、absorption）、解释不了 feature geometry、只分解激活而不是机制、latent 依赖训练数据且常缺下游需要的概念（如 refusal）。作者认为"feature"至今没有满意定义，主张把泛化理论接到可解释性上，并发展易于分解的 intrinsic interpretability 模型。描述上，最高激活样例依赖人的先验，对任意方向也能讲出好故事，归因方法可被操纵；验证上，作者直言把假设当结论"司空见惯"，提倡用预测、对抗样例、ground truth 模型和 benchmark、下游任务效用来检验，并呼吁选定标准 model organism，但警告别因此偏离前沿模型的安全保证。Probe 只能找到预先想到的概念，且找到的是相关而非因果变量。
 
 ## 2024
 
@@ -287,18 +245,6 @@ mechanistic interpretability 常用 faithfulness 衡量 circuit 的好坏：abla
 FAR.AI Blog 2024 Jun（另见Paper：[Can Go AIs be adversarially robust?](https://www.far.ai/research/can-go-ais-be-adversarially-robust)）
 
 这是超人 Go AI 漏洞工作的续篇：既然 KataGo 会被 cyclic attack 击败，能不能用直接的方法把它补成鲁棒的？他们测了三种防御。1. positional adversarial training：KataGo 开发者自 2022 年 12 月漏洞披露后，一直把对抗棋局和网友找到的环形局面混进训练数据。这挡住了原版攻击，但新训出的 cyclic 风格攻击者对 2023 年 12 月最新版 KataGo 在 4096 visits 下胜率 65%，65,536 visits 下 27%。他们还发现一种全新的 gift attack：制造“送二还一”局面，诱使 KataGo 莫名送出两子，再借 superko 规则阻止它回提，从而救活整块棋。2. iterated adversarial training：攻防交替，每轮先训 adversary 打败当前 victim，再微调 victim 去防它。每个 victim 都能防住见过的所有 adversary，包括原版 cyclic，但鲁棒性不迁移：第 9 轮的 victim 在 65,536 visits 下仍被新 adversary 赢 42%。另外还训出一种 atari attack，故意让很多子处于叫吃状态，并把通常很强的“双”变成诱导对方形成大环形棋块的工具。3. 把 CNN 换成 Vision Transformer，假设是 CNN 感受野局部，看不清大范围的环。结果训到超人水平的 ViT 在低 visits 下仍被原版攻击击败，微调后的 adversary 在超人水平的 visits 下也能赢它，说明问题不只在架构，可能和游戏的策略结构或 self-play 范式有关。总体上三种防御都被新攻击绕过，只是找攻击比对付未防御的 KataGo 需要更多算力。作者的结论是，连 Go 这种窄领域都难以做到鲁棒，现实场景只会更难，可能需要 latent adversarial training 或更好的 RL 算法来提升从对抗数据中泛化的能力。
-
-### [Big Picture AI Safety](https://www.far.ai/blog/big-picture-ai-safety)
-
-FAR.AI Blog 2024 May
-
-Euan McLean 想弄清 AI safety 圈对全局战略到底有多一致，于是在 2023 年 3 月到 2024 年 2 月做了 17 个半结构化访谈，对象包括 Gleave、Cotra、Turner、Krueger、Hubinger、Hadfield、Elmore、Nanda、Belrose、Ngo、Greenblatt 等。他自认这是定性解读：样本偏向认同 x-risk 的人，MIRI 没有人受访，而不少人恰恰在批评 MIRI。1. 会发生什么：7 人认为第一个 human-level AI 基本是放大的 LLM 加 scaffolding，4 人认为还需要较大突破，理由包括数据会耗尽、当年人们也以为 AlphaGo 路线能通向 AGI、需要非语言推理。“AI 能做 AI 研究”被视为 takeoff 的关键阈值。最常见的灾难叙事是 misaligned AI takeover（7 人部分认同），但 2 人明确反对：Turner 认为 LLM 并不像字面执行的精灵那样误解意图，真有 takeover 也是人让它干的；Belrose 更担心权力和财富集中（她估约 5%，takeover 约 1%），所以支持开源；Hadfield 担心缺乏 normative competence 的 AI 嵌入制度后摧毁社会信任。2. 该做什么：重点是技术方案、在开发者中推广 safety 文化、推动部署前安全测试之类的监管，以及 AI 的基础科学。最受欢迎的方向是 mechanistic interpretability（6 票支持、2 票反对，Hubinger 认为这是排除 deception 的唯一途径），其次是 black box evaluations（Cotra、Greenblatt 认为投入不足）和服务于 governance 的研究。3. 犯过的错：意见分散，最常见的是过度依赖 Yudkowsky、Bostrom 式抽象论证而缺少实证（9 人），过于封闭、排斥 AI ethics 和社会科学（8 人），传播上过于极端、jargon 太多，催生 OpenAI、Anthropic、DeepMind 而加剧竞赛（5 人），和大公司走得太近，盲从权威，鼓吹 pause，长期忽视政策；Ngo 和 Elmore 还批评这个圈子在结构上过于 power-seeking、热衷幕后交易。作者的结论是分歧比预想的大，他也更倾向于老实提升科学和公众对问题的理解，而不是玩“4D chess”。
-
-### [Towards Guaranteed Safe AI: A Framework for Ensuring Robust and Reliable AI Systems](https://www.far.ai/research/towards-guaranteed-safe-ai-a-framework-for-ensuring-robust-and-reliable-ai-systems)
-
-FAR.AI Publications 2024 May
-
-这篇 position paper 由 davidad Dalrymple 和 Joar Skalse 共同一作，Bengio、Russell、Tegmark、Seshia、Omohundro、Tenenbaum 等人联署，把一族路线统称为 guaranteed safe（GS）AI。出发点是飞机、核电站要通过严格的安全认证，高风险 AI 也应如此，而靠测试和 red-teaming 给不出可量化保证：可能漏掉问题，模型可能被埋下难以检测的 backdoor，ChatGPT 测了几个月，上线一天就被绕过；实证评估依赖测试分布和部署分布相似这类假设，难以排除 deceptive alignment。作者以 1870 年代约 25% 新桥十年内垮塌、理论成熟后降到每十年不到 0.4% 作类比，主张 ASL-3 及以上要有基于模型的 safety case。GS AI 有三个组件：world model（描述 AI 输出如何影响世界，处理 Bayesian 和 Knightian 不确定性，可审计）、safety specification（描述哪些效果可以接受，理想上由集体协商决定）、verifier（给出 proof certificate 或概率上界，证明 AI 相对 world model 满足 spec）。三者各有分级：world model 从无模型、黑盒模拟器、专家审计的因果模型，到被证明是物理定律 sound abstraction 的模型；verifier 从无测试、red-teaming、fuzzing，到可靠的失败概率上界和人类可读的证明，强保证需要 8–10 级。对“世界太复杂没法建模”的质疑，回应是模型可以显式包含不确定性；能构成严重威胁的 AI 本身就得能可靠规划，说明足够好的模型是可能的；而且任何方案都依赖对世界的假设，world model 只是把它们写明。验证的人力负担可以交给只和定理证明器交互的较弱 AI。文中例子包括 C 到 Rust 的代码翻译、自动驾驶、核酸合成筛查、气候干预等。附带的好处是：spec 可以公开审计，便于民主监督；证书支持低信任的多方协调；验证成本可以摊销。作者还认为即便宏大目标落空，geofencing、kill switch 这类局部成果也有用，并主张 defence in depth 和运行时监控。
 
 ### [STARC: A General Framework For Quantifying Differences Between Reward Functions](https://www.far.ai/research/starc-a-general-framework-for-quantifying-differences-between-reward-functions)
 
@@ -379,12 +325,6 @@ ILF 在代码生成上的姊妹篇（Angelica Chen、Scheurer、Perez 等）。�
 FAR.AI Publications 2023 Mar
 
 从 iterative inference 的角度看 transformer：每层都在增量更新对下一个 token 的 latent prediction，把中间层解码成词表分布就得到一条 prediction trajectory。此前的 logit lens 直接用 unembedding 解码中间层，但很不可靠：在 GPT-Neo、BLOOM、OPT 上基本解不出合理预测，而且有系统性偏差（GPT-Neo-2.7B 多数层 bias 达 4–5 bits），原因包括残差均值不为零、rogue dimensions 和逐层的 representational drift。tuned lens 给冻结模型的每层训练一个仿射 translator，再接原 unembedding，以与最终层 logits 的 KL 为蒸馏损失，这样 probe 不会学到模型本身没有的信息。在最大 20B 的 Pythia、GPT-NeoX、BLOOM、OPT 等模型上，它的困惑度和偏差都全面低于 logit lens；translator 能零样本迁移到相邻层，LLaMA 13B 上训练的 lens 直接用于 Vicuna 13B 也几乎无损。为验证 lens 用的是模型自己的特征，作者提出 causal basis extraction（CBE）找出对 lens 最有影响的正交方向，再在模型中消融：两者的影响高度相关（ρ=0.89），且 stimulus-response alignment 也优于 logit lens。应用方面：1. 复现了"错误 few-shot 示例下中间层比最终层更鲁棒"的结论，并扩展到 BLOOM、GPT-Neo；2. 在 taboo 词秘密提取任务上效果好坏参半；3. 用预测轨迹做 prompt injection 检测，在 5 个任务上 AUROC 接近完美，但简单的 SRM Mahalanobis baseline 同样很强，tuned lens 只在一个任务上胜出；4. prediction depth 与训练中学会样本的时间显著正相关。新版本坦白：改用 Muon 优化器后 KL 大幅下降，早期版本的 lens 严重欠训练，但没有重做实验。局限是 CBE 计算昂贵、只覆盖语言模型。代码和预训练 lens 开源（EleutherAI、FAR 等合作）。
-
-### [AI Safety in a World of Vulnerable Machine Learning Systems](https://www.far.ai/blog/ai-safety-in-a-world-of-vulnerable-machine-learning-systems)
-
-FAR.AI Blog 2023 Mar
-
-Adam Gleave 代表 FAR 写的 agenda 博文。核心论点：安全社区常默认 adversarial robustness 会随能力提升自然解决，但证据显示 worst-case robustness 可能长期落后于能力，transformative AI 很可能仍可被 exploit；而多数对齐方案依赖 helper 系统（reward model、overseer、可解释性或对抗测试工具）训练或检验 main system，helper 一旦被 exploit 方案就失效。文中给了主观风险矩阵：RLHF/IRL 和 scalable oversight 中 exploit helper 本身就是训练目标的一部分，风险高，这也解释了 reward hacking 为何普遍；imitation learning 风险最低但性能封顶在人类水平；IDA 风险中等；只用于评估的审计工具风险较低，但一旦用来决定中止训练或调参，优化压力就会泄漏进去。证据方面：图像分类器十年未解决对抗样本，SOTA 认证防御在人眼不可见的扰动下准确率还不如 2012 年的 AlexNet，存在明显的"robustness tax"；FAR 用不到 KataGo 14% 的算力训出 adversarial policy，对超人类 KataGo 胜率 97%，可迁移到其它 Go AI，搜索 1000 万节点时仍有 76% 胜率，说明搜索救不了深层漏洞；LLM 经大量 adversarial training 后仍可被攻破。作者对三种未来给出主观概率：TAI 之前解决 20%，之后解决 45%，永远解决不了 35%；后两种情形下，要保护"童年期"的 proto-TAI 和 helper 不被内部 exploit，甚至对齐良好的 AI 也可能被攻击者利用。研究方向有三：建立 robustness scaling law、在 Go 以外寻找 adversarial policy 等以理解问题；在现实威胁模型下改进 robustness 算法（领域拥挤，可解性存疑）；以及作者最看好的 fault tolerant alignment，即隔离 main system 与 helper、用多个独立 helper 做 defense in depth、用 quantilizer 或 best-of-N 控制优化压力、定期回滚 main system 让 overseer 只需不被同一攻击反复骗过。作者承认这些问题多已有人讨论，本文主要是统一框架，并提醒不要把"安全"等同于"adversarial robustness"。
 
 ### [Pretraining Language Models with Human Preferences](https://www.far.ai/research/pretraining-language-models-with-human-preferences)
 
