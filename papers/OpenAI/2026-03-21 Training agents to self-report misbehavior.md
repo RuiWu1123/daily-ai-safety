@@ -1,11 +1,11 @@
 ---
-title: "Training agents to self-report misbehavior"
+title: Training agents to self-report misbehavior
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-03-21
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/self-incrimination/
-star: false
+star: true
 tags:
   - 诚实与谎言检测
   - 策划与欺骗

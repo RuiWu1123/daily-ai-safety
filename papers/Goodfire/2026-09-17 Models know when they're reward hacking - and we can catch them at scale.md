@@ -1,11 +1,11 @@
 ---
-title: "Models know when they’re reward hacking — and we can catch them at scale"
+title: Models know when they’re reward hacking — and we can catch them at scale
 lab:
-  - "Goodfire"
+  - Goodfire
 date: 2026-09-17
-source: "Goodfire Research"
+source: Goodfire Research
 url: https://www.goodfire.com/research/reward-hacking-activation-monitors
-star: false
+star: true
 tags:
   - 奖励作弊
   - 可解释性

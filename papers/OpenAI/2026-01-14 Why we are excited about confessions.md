@@ -1,11 +1,11 @@
 ---
-title: "Why we are excited about confessions"
+title: Why we are excited about confessions
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-01-14
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/confessions/
-star: false
+star: true
 tags:
   - 诚实与谎言检测
   - 奖励作弊

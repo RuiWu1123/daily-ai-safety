@@ -1,11 +1,11 @@
 ---
-title: "Measuring no CoT math time horizon (single forward pass)"
+title: Measuring no CoT math time horizon (single forward pass)
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2025-12-26
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/measuring-no-cot-math-time-horizon
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 评估方法

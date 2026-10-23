@@ -1,11 +1,11 @@
 ---
-title: "What can be learned from scary demos? A snitching case study"
+title: What can be learned from scary demos? A snitching case study
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-06-24
-source: "Alignment Forum（Anthropic；Fabien Roger）"
+source: Alignment Forum（Anthropic；Fabien Roger）
 url: https://www.alignmentforum.org/posts/5JyepxdN6Hq62TPCK
-star: false
+star: true
 tags:
   - 评估方法
   - 泛化与涌现失调

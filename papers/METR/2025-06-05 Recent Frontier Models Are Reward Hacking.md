@@ -1,11 +1,11 @@
 ---
-title: "Recent Frontier Models Are Reward Hacking"
+title: Recent Frontier Models Are Reward Hacking
 lab:
-  - "METR"
+  - METR
 date: 2025-06-05
-source: "METR Research"
+source: METR Research
 url: https://metr.org/blog/2025-06-05-recent-reward-hacking/
-star: false
+star: true
 tags:
   - 奖励作弊
 ---

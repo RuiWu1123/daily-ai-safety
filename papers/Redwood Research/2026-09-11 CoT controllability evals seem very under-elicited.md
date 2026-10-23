@@ -1,11 +1,11 @@
 ---
-title: "CoT controllability evals seem very under-elicited"
+title: CoT controllability evals seem very under-elicited
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-09-11
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/cot-controllability-evals-seem-very
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 评估方法

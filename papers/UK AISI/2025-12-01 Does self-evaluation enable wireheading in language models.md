@@ -1,11 +1,11 @@
 ---
-title: "Does self-evaluation enable wireheading in language models?"
+title: Does self-evaluation enable wireheading in language models?
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2025-12-01
-source: "AISI Research"
+source: AISI Research
 url: https://www.aisi.gov.uk/research/does-self-evaluation-enable-wireheading-in-language-models
-star: false
+star: true
 tags:
   - 奖励作弊
 ---

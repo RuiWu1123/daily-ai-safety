@@ -1,11 +1,11 @@
 ---
-title: "When Do LLM Preferences Predict Downstream Behavior?"
+title: When Do LLM Preferences Predict Downstream Behavior?
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2026-08-26
-source: "AISI Research"
+source: AISI Research
 url: https://www.aisi.gov.uk/research/when-do-llm-preferences-predict-downstream-behavior
-star: false
+star: true
 tags:
   - 故意藏拙
   - 评估方法

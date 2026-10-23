@@ -1,11 +1,11 @@
 ---
-title: "How will we do SFT on models with opaque reasoning?"
+title: How will we do SFT on models with opaque reasoning?
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2026-02-21
-source: "Alignment Forum（Redwood Research；Alek Westover, Vivek Hebbar, egan）"
+source: Alignment Forum（Redwood Research；Alek Westover, Vivek Hebbar, egan）
 url: https://www.alignmentforum.org/posts/GJTzhQgaRWLFJkPbt
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 监控与控制

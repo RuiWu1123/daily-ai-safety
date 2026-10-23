@@ -1,11 +1,11 @@
 ---
-title: "An operationalization of opaque serial depth"
+title: An operationalization of opaque serial depth
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-09-10
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/an-operationalization-of-opaque-serial
-star: false
+star: true
 tags:
   - CoT与可监控性
 ---

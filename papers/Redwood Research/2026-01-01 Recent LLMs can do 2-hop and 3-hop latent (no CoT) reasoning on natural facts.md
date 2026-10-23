@@ -1,11 +1,11 @@
 ---
-title: "Recent LLMs can do 2-hop and 3-hop latent (no CoT) reasoning on natural facts"
+title: Recent LLMs can do 2-hop and 3-hop latent (no CoT) reasoning on natural facts
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2026-01-01
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/recent-llms-can-do-2-hop-and-3-hop
-star: false
+star: true
 tags:
   - CoT与可监控性
 ---

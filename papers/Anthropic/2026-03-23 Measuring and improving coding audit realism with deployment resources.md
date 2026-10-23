@@ -1,11 +1,11 @@
 ---
-title: "Measuring and improving coding audit realism with deployment resources"
+title: Measuring and improving coding audit realism with deployment resources
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2026-03-23
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2026/coding-audit-realism/
-star: false
+star: true
 tags:
   - 评估感知
   - 对齐审计

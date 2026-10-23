@@ -1,11 +1,11 @@
 ---
-title: "Reinforcement learning towards broadly and persistently beneficial models"
+title: Reinforcement learning towards broadly and persistently beneficial models
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-06-18
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/beneficial-rl/
-star: false
+star: true
 tags:
   - 对齐训练方法
   - 泛化与涌现失调

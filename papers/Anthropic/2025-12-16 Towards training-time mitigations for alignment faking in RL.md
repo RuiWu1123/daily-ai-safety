@@ -1,11 +1,11 @@
 ---
-title: "Towards training-time mitigations for alignment faking in RL"
+title: Towards training-time mitigations for alignment faking in RL
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-12-16
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2025/alignment-faking-mitigations/
-star: false
+star: true
 tags:
   - 伪装对齐
   - 对齐训练方法

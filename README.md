@@ -31,7 +31,7 @@
 ## 收录规则
 
 - 一项研究只记一篇笔记：发布在某 lab 自己主页上的，归到该 lab；只出现在 Alignment Forum、没有被 lab 主页收录的，归到 Alignment Forum。同一工作在同一 lab 的多个页面都有时合并为一篇，另一版本作为"另见"链接附上；两家 lab 联合发布的，笔记里同时标两家。
-- 只收录实证/技术研究（论文、研究博客、技术笔记、模型评估报告、事故调查、对具体失败模式或安全技术的技术性分析）。不收新闻、政策评论、组织动态、招聘与融资公告，也不收 AI 进展/时间线预测、战略 essay、research agenda、入门指南与书单、播客、纯工具发布（这些会出现在日报的"其它动态"里）。Anthropic 与 OpenAI 按各自指定的页面全量收录，不做这层过滤。
+- 只收录实证/技术研究（论文、研究博客、技术笔记、模型评估报告、事故调查、对具体失败模式或安全技术的技术性分析）。不收新闻、政策评论、组织动态、招聘与融资公告，也不收 AI 进展/时间线预测、战略 essay、research agenda、入门指南与书单、播客、纯工具发布（这些会出现在日报的"其它动态"里）。这条规则对所有 lab 一致适用，包括 Anthropic 与 OpenAI。
 - 收录范围：
   - Anthropic：[Alignment Science Blog](https://alignment.anthropic.com/) + [anthropic.com/research 的 Alignment team 页](https://www.anthropic.com/research/team/alignment)，全部历史
   - OpenAI：[Alignment Research Blog](https://alignment.openai.com/)，含 Misalignment Reports and Notices，全部历史

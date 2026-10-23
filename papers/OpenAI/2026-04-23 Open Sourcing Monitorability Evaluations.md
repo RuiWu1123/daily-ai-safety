@@ -1,11 +1,11 @@
 ---
-title: "Open Sourcing Monitorability Evaluations"
+title: Open Sourcing Monitorability Evaluations
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-04-23
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/monitorability-evals/
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 评估方法

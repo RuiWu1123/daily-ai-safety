@@ -1,11 +1,11 @@
 ---
-title: "Quickly Assessing Reward Hacking-like Behavior in LLMs and its Sensitivity to Prompt Variations"
+title: Quickly Assessing Reward Hacking-like Behavior in LLMs and its Sensitivity to Prompt Variations
 lab:
-  - "Alignment Forum"
+  - Alignment Forum
 date: 2025-06-04
-source: "Alignment Forum（Redwood Research；AndresCampero）"
+source: Alignment Forum（Redwood Research；AndresCampero）
 url: https://www.alignmentforum.org/posts/quTGGNhGEiTCBEAX5
-star: false
+star: true
 tags:
   - 奖励作弊
   - 评估方法

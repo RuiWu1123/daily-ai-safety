@@ -1,11 +1,11 @@
 ---
-title: "What can sandboxed AI agents learn about their evaluation environments?"
+title: What can sandboxed AI agents learn about their evaluation environments?
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2026-04-20
-source: "AISI Blog"
+source: AISI Blog
 url: https://www.aisi.gov.uk/blog/what-can-sandboxed-ai-agents-learn-about-their-evaluation-environments
-star: false
+star: true
 tags:
   - 评估感知
   - 网络安全

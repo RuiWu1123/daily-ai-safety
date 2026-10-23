@@ -1,11 +1,11 @@
 ---
-title: "User Awareness in Frontier Models"
+title: User Awareness in Frontier Models
 lab:
-  - "Transluce"
+  - Transluce
 date: 2026-08-06
-source: "Transluce"
+source: Transluce
 url: https://transluce.org/user-awareness
-star: false
+star: true
 tags:
   - 评估感知
 ---

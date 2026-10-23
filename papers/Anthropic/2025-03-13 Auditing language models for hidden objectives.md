@@ -1,11 +1,11 @@
 ---
-title: "Auditing language models for hidden objectives"
+title: Auditing language models for hidden objectives
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-03-13
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/auditing-hidden-objectives
-star: false
+star: true
 tags:
   - 对齐审计
   - 奖励作弊

@@ -1,11 +1,11 @@
 ---
-title: "When does training a model change its goals?"
+title: When does training a model change its goals?
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2025-06-12
-source: "Redwood Blog"
+source: Redwood Blog
 url: https://blog.redwoodresearch.org/p/when-does-training-a-model-change
-star: false
+star: true
 tags:
   - 策划与欺骗
   - 伪装对齐

@@ -1,11 +1,11 @@
 ---
-title: "Investigating the consequences of accidentally grading CoT during RL"
+title: Investigating the consequences of accidentally grading CoT during RL
 lab:
-  - "OpenAI"
+  - OpenAI
 date: 2026-05-07
-source: "OpenAI Alignment Blog"
+source: OpenAI Alignment Blog
 url: https://alignment.openai.com/accidental-cot-grading/
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 安全基础设施

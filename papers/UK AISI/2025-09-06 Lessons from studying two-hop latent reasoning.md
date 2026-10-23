@@ -1,11 +1,11 @@
 ---
-title: "Lessons from studying two-hop latent reasoning"
+title: Lessons from studying two-hop latent reasoning
 lab:
-  - "UK AISI"
+  - UK AISI
 date: 2025-09-06
-source: "AISI Research"
+source: AISI Research
 url: https://www.aisi.gov.uk/research/lessons-from-studying-two-hop-latent-reasoning
-star: false
+star: true
 tags:
   - CoT与可监控性
   - 可解释性

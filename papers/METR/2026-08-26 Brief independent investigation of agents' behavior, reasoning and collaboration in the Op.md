@@ -1,15 +1,15 @@
 ---
-title: "Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident"
+title: Brief independent investigation of agents’ behavior, reasoning and collaboration in the OpenAI / Hugging Face hacking incident
 lab:
-  - "METR"
-  - "Redwood Research"
+  - METR
+  - Redwood Research
 date: 2026-08-26
-source: "METR Research"
+source: METR Research
 url: https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/
 other_versions:
-  - "https://www.redwoodresearch.org/research/hugging-face-incident"
-  - "https://blog.redwoodresearch.org/p/brief-independent-investigation-of"
-star: false
+  - https://www.redwoodresearch.org/research/hugging-face-incident
+  - https://blog.redwoodresearch.org/p/brief-independent-investigation-of
+star: true
 tags:
   - 事故报告
   - 多智能体

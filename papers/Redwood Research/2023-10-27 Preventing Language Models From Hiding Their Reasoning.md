@@ -1,13 +1,13 @@
 ---
-title: "Preventing Language Models From Hiding Their Reasoning"
+title: Preventing Language Models From Hiding Their Reasoning
 lab:
-  - "Redwood Research"
+  - Redwood Research
 date: 2023-10-27
-source: "Redwood Research"
+source: Redwood Research
 url: https://arxiv.org/abs/2310.18512
 other_versions:
-  - "https://www.lesswrong.com/posts/9Fdd9N7Escg3tcymb/preventing-language-models-from-hiding-their-reasoning"
-star: false
+  - https://www.lesswrong.com/posts/9Fdd9N7Escg3tcymb/preventing-language-models-from-hiding-their-reasoning
+star: true
 tags:
   - CoT与可监控性
 ---

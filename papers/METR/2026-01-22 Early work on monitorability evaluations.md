@@ -1,11 +1,11 @@
 ---
-title: "Early work on monitorability evaluations"
+title: Early work on monitorability evaluations
 lab:
-  - "METR"
+  - METR
 date: 2026-01-22
-source: "METR Research"
+source: METR Research
 url: https://metr.org/blog/2026-01-19-early-work-on-monitorability-evaluations/
-star: false
+star: true
 tags:
   - 监控与控制
   - CoT与可监控性
