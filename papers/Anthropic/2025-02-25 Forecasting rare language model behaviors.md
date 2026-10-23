@@ -1,11 +1,11 @@
 ---
-title: "Forecasting rare language model behaviors"
+title: Forecasting rare language model behaviors
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-02-25
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/forecasting-rare-behaviors
-star: false
+star: true
 tags:
   - 评估方法
   - 越狱与鲁棒性

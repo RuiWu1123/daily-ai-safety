@@ -1,11 +1,11 @@
 ---
 title: "From shortcuts to sabotage: Natural emergent misalignment from reward hacking"
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-11-21
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/emergent-misalignment-reward-hacking
-star: false
+star: true
 tags:
   - 奖励作弊
   - 泛化与涌现失调

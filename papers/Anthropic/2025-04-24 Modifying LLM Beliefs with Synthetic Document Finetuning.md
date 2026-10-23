@@ -1,11 +1,11 @@
 ---
-title: "Modifying LLM Beliefs with Synthetic Document Finetuning"
+title: Modifying LLM Beliefs with Synthetic Document Finetuning
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-04-24
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2025/modifying-beliefs-via-sdf/
-star: false
+star: true
 tags:
   - 知识移除
   - 对齐训练方法

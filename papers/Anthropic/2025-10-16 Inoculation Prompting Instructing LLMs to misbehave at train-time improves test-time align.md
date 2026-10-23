@@ -1,11 +1,11 @@
 ---
 title: "Inoculation Prompting: Instructing LLMs to misbehave at train-time improves test-time alignment"
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2025-10-16
-source: "Anthropic Alignment Science Blog"
+source: Anthropic Alignment Science Blog
 url: https://alignment.anthropic.com/2025/inoculation-prompting/
-star: false
+star: true
 tags:
   - 对齐训练方法
   - 奖励作弊

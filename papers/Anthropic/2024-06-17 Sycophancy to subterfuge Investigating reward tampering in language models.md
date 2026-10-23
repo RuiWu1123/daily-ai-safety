@@ -1,11 +1,11 @@
 ---
 title: "Sycophancy to subterfuge: Investigating reward tampering in language models"
 lab:
-  - "Anthropic"
+  - Anthropic
 date: 2024-06-17
-source: "Anthropic Research"
+source: Anthropic Research
 url: https://www.anthropic.com/research/reward-tampering
-star: false
+star: true
 tags:
   - 奖励作弊
   - 泛化与涌现失调
