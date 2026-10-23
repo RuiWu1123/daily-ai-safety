@@ -803,6 +803,7 @@ https://openai.com/index/daybreak-models-are-now-available-on-aws
 https://openai.com/index/daybreak-securing-the-world
 https://openai.com/index/debate
 https://openai.com/index/decagon
+https://openai.com/index/decisions-api
 https://openai.com/index/deep-double-descent
 https://openai.com/index/deep-research
 https://openai.com/index/deep-research-system-card
@@ -1429,6 +1430,7 @@ https://openai.com/index/openai-launches-the-deployment-company
 https://openai.com/index/openai-licenses-gpt-3-technology-to-microsoft
 https://openai.com/index/openai-lp
 https://openai.com/index/openai-models-google-cloud
+https://openai.com/index/openai-nask-ai-safety-security-partnership
 https://openai.com/index/openai-nvidia-systems-partnership
 https://openai.com/index/openai-o1-mini-advancing-cost-efficient-reasoning
 https://openai.com/index/openai-o1-system-card
@@ -2363,6 +2365,7 @@ https://www.anthropic.com/news/developing-nuclear-safeguards-for-ai-through-publ
 https://www.anthropic.com/news/disrupting-AI-espionage
 https://www.anthropic.com/news/distillation-defenses
 https://www.anthropic.com/news/donate-public-first-action
+https://www.anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation
 https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation
 https://www.anthropic.com/news/donation-public-first-action
 https://www.anthropic.com/news/dxc-anthropic-alliance
@@ -2434,6 +2437,7 @@ https://www.anthropic.com/news/narasimhan-board
 https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust
 https://www.anthropic.com/news/new-offices-in-paris-and-munich-expand-european-presence
 https://www.anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government
+https://www.anthropic.com/news/open-call-guest-investigators-life-sciences
 https://www.anthropic.com/news/opening-our-tokyo-office
 https://www.anthropic.com/news/our-approach-to-understanding-and-addressing-ai-harms
 https://www.anthropic.com/news/our-framework-for-developing-safe-and-trustworthy-agents
@@ -2605,6 +2609,7 @@ https://www.anthropic.com/research/exploit-evals
 https://www.anthropic.com/research/exploring-model-welfare
 https://www.anthropic.com/research/features-as-classifiers
 https://www.anthropic.com/research/forecasting-rare-behaviors
+https://www.anthropic.com/research/formal-verification
 https://www.anthropic.com/research/formalizing-fermats-last-theorem
 https://www.anthropic.com/research/global-workspace
 https://www.anthropic.com/research/golden-gate-claude
