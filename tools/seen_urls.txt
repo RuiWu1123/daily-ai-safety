@@ -2769,6 +2769,7 @@ https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3
 https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-evaluations
 https://www.apolloresearch.ai/science/we-need-a-science-of-evals
 https://www.goodfire.com/blog/a-practical-guide-to-saes
+https://www.goodfire.com/blog/accelerating-interpretability
 https://www.goodfire.com/blog/ai-safety-still-needs-great-engineers
 https://www.goodfire.com/blog/announcing-goodfire-research-grants
 https://www.goodfire.com/blog/announcing-our-50m-series-a
