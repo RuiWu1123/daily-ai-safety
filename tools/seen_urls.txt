@@ -1278,6 +1278,7 @@ https://openai.com/index/learning-to-reason-with-llms
 https://openai.com/index/learning-to-summarize-with-human-feedback
 https://openai.com/index/learning-with-opponent-learning-awareness
 https://openai.com/index/legalon-halves-codex-costs
+https://openai.com/index/legora
 https://openai.com/index/legora-agentic-operating-system-for-legal-work
 https://openai.com/index/legora-financial-statement-review-with-astra
 https://openai.com/index/lenfest-ai-collaborative-expansion
@@ -1468,6 +1469,7 @@ https://openai.com/index/openai-scholars-2019-meet-our-scholars
 https://openai.com/index/openai-scholars-2020
 https://openai.com/index/openai-scholars-2020-final-projects
 https://openai.com/index/openai-scholars-2021-final-projects
+https://openai.com/index/openai-servicenow-partnership-expansion
 https://openai.com/index/openai-submits-confidential-s-1
 https://openai.com/index/openai-summer-fellows-2018
 https://openai.com/index/openai-support-model
@@ -1715,6 +1717,7 @@ https://openai.com/index/the-eternal-complement
 https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic
 https://openai.com/index/the-five-ai-value-models-driving-business-reinvention
 https://openai.com/index/the-full-stack-behind-abundant-intelligence
+https://openai.com/index/the-future-of-the-firm
 https://openai.com/index/the-instruction-hierarchy
 https://openai.com/index/the-international-2018-results
 https://openai.com/index/the-met-museum
@@ -2153,6 +2156,7 @@ https://www.alignmentforum.org/posts/cmaJ76Sy9DfZ4EHaZ/language-models-know-what
 https://www.alignmentforum.org/posts/dKpC6wHFqDrGZwnah/ais-can-now-often-do-massive-easy-to-verify-swe-tasks-and-i
 https://www.alignmentforum.org/posts/dYHFtEnKc4BdJEYY4/my-most-common-research-advice-do-quick-sanity-checks
 https://www.alignmentforum.org/posts/dfoty34sT7CSKeJNn/the-persona-selection-model
+https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-2026
 https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-25
 https://www.alignmentforum.org/posts/e7Pd4Q9TF7jFdmPgz/imprecise-beliefs-a-tiny-introduction
 https://www.alignmentforum.org/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters
@@ -2268,6 +2272,7 @@ https://www.anthropic.com/news/acquires-vercept
 https://www.anthropic.com/news/activating-asl3-protections
 https://www.anthropic.com/news/advancing-claude-for-education
 https://www.anthropic.com/news/advancing-claude-for-financial-services
+https://www.anthropic.com/news/ai-for-science-expands-foundations-research-institutions
 https://www.anthropic.com/news/ai-for-science-program
 https://www.anthropic.com/news/alberta-government-claude-cybersecurity
 https://www.anthropic.com/news/an-ai-policy-tool-for-today-ambitiously-invest-in-nist
