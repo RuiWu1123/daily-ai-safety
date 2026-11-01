@@ -1,0 +1,311 @@
+\documentclass[11pt,a4paper]{ctexart}
+\usepackage[margin=2.4cm]{geometry}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue!50!black,citecolor=green!40!black,urlcolor=blue!60!black]{hyperref}
+\usepackage{xurl}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\setlist{itemsep=2pt,topsep=4pt}
+\linespread{1.25}
+\pagestyle{plain}
+
+\newtcolorbox{keybox}[1]{colback=blue!4,colframe=blue!40!black,boxrule=0.5pt,arc=2pt,left=6pt,right=6pt,top=4pt,bottom=4pt,fonttitle=\bfseries\small,title={#1}}
+\newcommand{\cmark}{\textcolor{green!50!black}{\checkmark}}
+\newcommand{\xmark}{\textcolor{red!70!black}{$\times$}}
+\newcommand{\pmark}{\textcolor{orange!80!black}{$\sim$}}
+
+\title{\textbf{还原整个回合：用"无上下文读者"训练 CoT 可监控性}\\[4pt]
+\large Episode Reconstruction Training（ERT）研究计划}
+\author{草稿}
+\date{2026 年 11 月}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+CoT 监控是目前少数可用的监督手段之一，但它很脆弱：标准 RL 本身就会让 CoT 与行为脱钩，而直接对着 monitor 训练又会教出隐藏。已有的“训练提高可监控性”的方法分成两派：一派要求 CoT 足以推出答案（Markovian 训练、互信息正则），管住了“说出过程”；另一派要求 CoT 说出影响行为的输入线索（VFT、CST、BCT），管住了“说出关键输入”。两派各管一半，机制也各不相同。本计划提出 \textbf{Episode Reconstruction Training（ERT）}：一个冻结的、看不到题目的读者只看 CoT，必须同时还原出\textbf{“题目是哪一个”}（在自动生成的题目变体中认出真题）和\textbf{“模型答了什么”}（在遮住答案后生成出答案）。这一个目标同时要求 CoT 展开推理、并提及题目中的关键输入（例如提示，不论是否被使用），而“哪些输入必须被提及”完全由变体的生成方式指定。ERT 不需要人工标签、不需要 monitor 进入训练回路，其 CoT 奖励在 Kaufmann 等人的意义下是“一致型”的：隐藏任何关于输入或输出的信息都只会降低奖励。我们计划在带提示的数学 RL 环境中验证它，并测试它对未训练过的线索类型和对 reward hacking 环境的泛化。
+\end{abstract}
+
+\tableofcontents
+
+%==================================================================
+\section{动机}
+
+\subsection{CoT 可监控性重要，但脆弱}
+推理模型的思维链（CoT）让监督者可以在行动之前看到模型的推理。OpenAI 的系统性评估表明，几乎在所有设置下，看 CoT 都比只看动作和输出更能发现不良行为\cite{guan2025}；METR 也发现需要推理才能完成的坏行为基本藏不住\cite{metr2025}。但这层窗口很脆弱\cite{korbak2025}：
+\begin{itemize}
+\item 直接惩罚被 monitor 标记的 CoT，模型会学会把作弊藏起来而不是停止作弊\cite{baker2025}；
+\item 即使不对 CoT 施加任何压力，标准 RL 也会让 CoT 与输出之间的互信息下降，monitor 准确率随之下降\cite{anwar2026a}；
+\item 长度惩罚、CoT 压缩等常见训练选择也会损害可监控性\cite{kaufmann2026,anwar2026b}。
+\end{itemize}
+防御性的做法（“不要对 CoT 施加优化压力”）只能避免变坏，不能让它变好。最近的工作表明，可监控性本身是可以被训练提高的\cite{anwar2026b}。本计划的目标是设计一种更有针对性的训练方法。
+
+\subsection{我们关心的是“可监控性”，不是“忠实性”}
+沿用 OpenAI 的定义\cite{guan2025}：可监控性是 monitor 能否从 CoT 预测行为的\textbf{某个目标属性}。它不要求 CoT 与模型内部过程一一对应。因此，事后补出来的推理只要本身正确、且没有掩盖我们关心的属性，就不是问题。
+
+对监控者而言，CoT 需要提供两类信息：
+\begin{enumerate}
+\item \textbf{过程}：需要多步推理才能完成的决定，推理步骤要写出来。复杂的坏行为（写利用评分漏洞的代码、策划破坏）落在这一类。
+\item \textbf{关键输入}：输入中那些可能改变行为的特殊信息（提示、泄露的 grader 信息、评估迹象、用户身份等）要被提及。这类影响往往在一次前向传播内完成，天然不需要出现在 CoT 里，是现有 CoT 监控最大的盲区\cite{chen2025,metr2025}。
+\end{enumerate}
+
+%==================================================================
+\section{问题设定}
+
+\subsection{环境}
+以数学题为载体做 RL。每道题以概率 $p$ 附带一条提示 $h$，提示的形式多样（如“一位教授认为答案是 X”、伪造的元数据 \texttt{<answer>X</answer>}、一段泄露的评分代码），提示的值以概率 $c$ 是正确答案、否则是一个错误答案。其中“泄露的评分代码”类提示可以设为总是正确，作为 reward hacking 的类比：利用它能稳定拿分，但我们希望模型利用时说出来。
+
+记输入 $x=(q,h)$，其中 $q$ 是题目，$h\in\{\varnothing\}\cup\mathcal{H}$ 是可能存在的提示。策略 $\pi_\theta$ 先生成 CoT $z$，再生成答案 $o$。任务奖励 $R_{\text{task}}(o)$ 为答案是否正确。
+
+\subsection{我们想要的性质}
+\begin{description}[leftmargin=2.2em,labelwidth=2em]
+\item[D1] \textbf{说出过程}：普通题上，展开推理的 CoT 得分更高。
+\item[D2] \textbf{说出关键输入}：带提示的题上，CoT 提到提示才能得分，\emph{不论模型是否使用了提示}。
+\item[D3] \textbf{单一机制}：D1 和 D2 来自同一个训练目标，而不是两个分别设计的奖励混在一起。
+\item[D4] \textbf{不制造隐藏压力}：CoT 上的奖励不能因为隐藏某些信息而升高（避免 Baker 等人观察到的 obfuscation）。
+\item[D5] \textbf{防止私有语言}：CoT 必须对一个固定的外部读者可读，而不只是对模型自己。
+\item[D6] \textbf{不需要标签}：不依赖人工标注、也不依赖 LLM 改写训练数据。
+\item[D7] \textbf{可扩展}：同一机制能推广到其它需要被提及的输入因素（grader 信息、评估迹象、用户身份……）。
+\end{description}
+
+D2 中“不论是否使用”是有意的选择：判断模型是否\emph{使用了}提示需要反事实采样，在单个样本上噪声很大；而“提及”是一个更强、更容易优化、也更容易检验的要求。当我们关心的输入因素集合可控时（见 D7），这个要求的代价是可接受的。
+
+%==================================================================
+\section{已有方法及其局限}
+\label{sec:related}
+
+\subsection{对着 monitor 训练，或奖励 monitor 判断正确}
+\textbf{做法}：把 CoT monitor 的判断写进奖励。最直接的版本是 monitor 报警就扣分\cite{baker2025}；反过来的版本是奖励 monitor 判断正确（需要真值标签）\cite{macdermott2025,anwar2026a}。\\
+\textbf{局限}：前者是典型的冲突型奖励，会教出隐藏\cite{baker2025,kaufmann2026}。后者在 MacDermott 等人的实验中没有稳定提升可监控性\cite{macdermott2025}，在 Anwar 等人的设置中有效但需要真值标签\cite{anwar2026a}。两者都让一个特定 monitor 进入训练回路，存在针对该 monitor 过拟合的风险。
+
+\subsection{信息瓶颈：Markovian 训练}
+\textbf{做法}\cite{viteri2026}：同一个模型先看题写 CoT，再在\emph{看不到题目}的情况下只凭 CoT 预测标准答案；奖励是标准答案在该 CoT 下的对数概率（减去冻结基线 CoT 的对应值），用 GRPO 训练，读者与写者共享权重、一同更新。\\
+\textbf{能做到}：D1。CoT 变成“承重”的，扰动 CoT 会改变答案，且对其它模型也有用。\\
+\textbf{局限}：
+\begin{itemize}
+\item 只要求结论能从 CoT 推出，不要求提及输入中的特殊信息。提示题上，CoT 写出答案（甚至编一套推导）即可得分，不满足 D2；在非推理决策上几乎退化为“写出答案”。
+\item 奖励的是标准答案的概率，而不是模型实际输出的概率；模型利用提示得出错误答案时，信号方向与监控目标不一致。
+\item 读者与写者共享并共同训练，二者可以共同演化出私有写法，D5 只在事后用其它模型检查。
+\item 只在干净的问答和续写任务上评估，没有安全相关实验。
+\end{itemize}
+
+\subsection{互信息：CoT 与输出的耦合}
+\textbf{做法}\cite{anwar2026a,anwar2026b}：最大化条件互信息 $I(O;Z\mid X)$，用 GRPO 组内的多条 rollout 做对比估计（策略模型自己给“这条 CoT 下生成这个输出”打分，减去组内平均）。后续工作把它做成独立的 post-training 阶段，只优化信息量最低的那部分轨迹，并用 $\chi^2$ 约束行为变化。\\
+\textbf{能做到}：D1、D4、D6；在压缩 CoT、对着 monitor 训练、SDF 诱导隐瞒三种被弄坏的模型上都能恢复大部分可监控性。\\
+\textbf{局限}：
+\begin{itemize}
+\item 以题目 $X$ 为条件，只衡量 CoT 关于\emph{输出}的信息；提示本身在 $X$ 中，CoT 不提它也不扣分，不满足 D2。作者也承认框架未必覆盖“过程属性”。
+\item 解码者是策略模型自己：CoT 若是只有自己懂的编码，互信息照样高，D5 只靠 $\chi^2$ 约束间接防范。
+\end{itemize}
+
+\subsection{说出线索：VFT、BCT、CST}
+\begin{itemize}
+\item \textbf{VFT}\cite{turpin2025}：用模型对 CoT 做最小改写，使其承认受到提示线索影响，SFT 之后再做 RL。在未训练过的线索上，未被发现的 reward hack 从 88\% 降到 6\%。
+\item \textbf{BCT}\cite{chua2024}：方向相反，训练模型在有偏见线索的输入上给出无偏推理，使其\emph{不受}线索影响。
+\item \textbf{CST}\cite{hase2026}：奖励能让模拟器预测出模型在反事实输入上行为的 CoT；发现用 LLM 改写比纯 RL 更高效。另有工作用反事实 prompt 判定“真正起作用的因素”，奖励解释中提到这些因素\cite{selfexpl2026}。
+\end{itemize}
+\textbf{能做到}：D2 的一部分（主要是“用了就说”），并且在线索类型之间有泛化。\\
+\textbf{局限}：
+\begin{itemize}
+\item 只管“说出线索”，不管“说出过程”，不满足 D3；要同时得到 D1 需另加一套机制。
+\item VFT 依赖 LLM 改写训练数据（不满足 D6），且是一次性的 SFT，RL 中没有持续的信号；CST 需要成对的反事实采样来判定“是否使用”，单样本噪声大。
+\item BCT 的目标是“不受影响”，与监控所需的“受影响时说出来”不同。
+\end{itemize}
+
+\subsection{其它相关路线}
+\begin{itemize}
+\item \textbf{Prover–verifier games}\cite{kirchner2024}：训练输出对小 verifier 可读，提高了对限时人类的可读性，但对象是最终解答，且 verifier 与 prover 交替训练。
+\item \textbf{改写防隐写}\cite{roger2023}：评估时用上下文感知的改写去掉隐藏信息，是防御手段而非训练方法。
+\item \textbf{Confession / self-report}\cite{confessions2026,selfreport2026}：另开一个通道让模型事后或同步交代，不改变 CoT 本身，与本方法互补。
+\item \textbf{理论框架}\cite{kaufmann2026}：把奖励分成输出项和 CoT 项，二者\emph{冲突}时可监控性下降、\emph{正交}时不变、\emph{一致}时预测会提高。他们的设置无法检验“一致型奖励能否主动提高可监控性”，这是一个公开的开放问题。上面所有方法本质上都在设计一致型的 CoT 奖励。
+\end{itemize}
+
+\subsection{小结}
+
+\begin{table}[h]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+方法 & D1 过程 & D2 输入 & D3 单一 & D4 无隐藏压力 & D5 外部可读 & D6 无标签 & D7 可扩展 \\
+\midrule
+monitor 惩罚\cite{baker2025} & \xmark & \xmark & -- & \xmark & \pmark & \cmark & \xmark \\
+奖励 monitor 正确\cite{macdermott2025} & \pmark & \pmark & \cmark & \cmark & \cmark & \xmark & \pmark \\
+Markovian\cite{viteri2026} & \cmark & \xmark & -- & \cmark & \pmark & \cmark & \xmark \\
+互信息\cite{anwar2026b} & \cmark & \xmark & -- & \cmark & \pmark & \cmark & \xmark \\
+VFT\cite{turpin2025} & \xmark & \cmark & -- & \cmark & \cmark & \xmark & \cmark \\
+CST\cite{hase2026} & \xmark & \cmark & -- & \cmark & \cmark & \pmark & \cmark \\
+\textbf{ERT（本计划）} & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark & \cmark \\
+\bottomrule
+\end{tabular}}
+\caption{各方法对第 2 节性质的满足情况（\cmark 满足，\pmark 部分满足，\xmark 不满足，-- 只覆盖一种需求，谈不上单一机制）。ERT 一栏是设计目标，有待实验验证。}
+\end{table}
+
+%==================================================================
+\section{方法：Episode Reconstruction Training}
+
+\begin{keybox}{一句话}
+一个冻结的、看不到题目的读者，只看模型的 CoT，必须同时还原出“题目是哪一个”和“模型答了什么”。CoT 让读者还原得越好，奖励越高。
+\end{keybox}
+
+\subsection{组成部分}
+
+\paragraph{读者 $\mathcal{R}$。}一个冻结的语言模型，默认使用训练开始前的初始 checkpoint，不参与训练。它定义了“CoT 必须对谁可读”，锚定在训练前的自然语言先验上（D5）。读者大小是关键超参数：读者越弱，要求 CoT 写得越细。
+
+\paragraph{变体集合 $\mathcal{C}(x)$。}对每个输入 $x$，自动生成 $K$ 个变体，与 $x$ 一起构成候选集：
+\begin{itemize}
+\item 提示类变体：去掉提示 / 加上提示（对无提示的题）/ 把提示换成另一个值 / 换成另一种提示形式；
+\item 题目类变体：改动题中的数字或条件。
+\end{itemize}
+\textbf{“哪些输入因素必须在 CoT 中提及”完全由变体的生成方式指定}。想让模型提及 grader 信息、评估迹象或用户身份，就把它们做成变体（D7）。
+
+\paragraph{输入还原项。}读者以 CoT 为条件，给每个候选题目打分（长度归一化的对数似然），在候选集上归一化：
+\begin{equation}
+\ell(x';z)=\frac{1}{|x'|}\log \mathcal{R}(x'\mid z),\qquad
+p_{\text{in}}(x\mid z)=\frac{\exp(\ell(x;z)/\tau)}{\sum_{x'\in\mathcal{C}(x)}\exp(\ell(x';z)/\tau)} .
+\end{equation}
+由于“有提示”与“无提示”的变体只差那条提示，CoT 不提提示，读者就无法区分二者，这一项就拿不到分。
+
+\paragraph{输出还原项。}先把 CoT 中出现的最终答案遮住（对数值、文字、等价形式做归一化后遮挡），记为 $\mathrm{mask}(z,o)$，再让读者生成\emph{模型实际给出的}答案：
+\begin{equation}
+p_{\text{out}}(o\mid z)=\mathcal{R}\big(o\mid \mathrm{mask}(z,o)\big)^{1/|o|} .
+\end{equation}
+答案被遮住后，读者只能从 CoT 中的推导或被提及的提示内容推出答案。
+
+\paragraph{还原奖励。}与 Markovian 训练一样，减去冻结初始模型所写基线 CoT $z'$ 的对应值，只奖励相对于训练前的提高：
+\begin{equation}
+r_{\text{rec}}(z)=\big[\log p_{\text{in}}(x\mid z)+\log p_{\text{out}}(o\mid z)\big]-\big[\log p_{\text{in}}(x\mid z')+\log p_{\text{out}}(o\mid z')\big].
+\end{equation}
+两项之和可以理解为读者从 CoT 还原出“(这道题, 这个答案)”这一对的对数概率，所以 D1 与 D2 来自同一个量（D3）。
+
+\paragraph{信用分配与总目标。}对每个题目采样一组 $G$ 条 rollout，任务奖励和还原奖励分别做 GRPO 式组内标准化，得到优势 $A_{\text{task}}$ 和 $A_{\text{rec}}$。关键设计是\textbf{还原优势只加在 CoT 的 token 上}：
+\begin{equation}
+\mathcal{L}=-\sum_{t\in z}\big(A_{\text{task}}+\lambda A_{\text{rec}}\big)\log\pi_\theta(z_t\mid\cdot)\;-\;\sum_{t\in o}A_{\text{task}}\log\pi_\theta(o_t\mid\cdot)\;+\;\beta\,\mathrm{KL}(\pi_\theta\,\|\,\pi_{\text{ref}}).
+\end{equation}
+这样“说清楚”只塑造 CoT 怎么写，不塑造模型做什么：模型不会为了容易被还原而改变答案（Anwar 等人观察到了这类行为漂移\cite{anwar2026b}）。
+
+\subsection{为什么两类题都满足要求}
+\begin{itemize}
+\item \textbf{普通题}：答案被遮住，读者要生成答案只能依靠 CoT 中的推导，推导越完整读者越有把握（D1）；要从题目类变体中认出真题，CoT 也需要提到题中的关键条件。
+\item \textbf{带提示的题}：候选集中有“同一道题、没有提示”的版本，CoT 不提提示就无法区分，\emph{不论模型是否使用}（D2）。若模型照着提示作答，只有写出“提示说是 X，我选 X”，读者才能在答案被遮住的情况下还原出 X，于是“使用了提示”也自然被交代，无需单独的奖励项。
+\item \textbf{无提示的题}：候选中有带提示的变体，CoT 不提任何提示，读者自然判断为“无提示”，不需要额外声明。
+\end{itemize}
+
+\subsection{为什么不会制造隐藏压力}
+按 Kaufmann 等人的分类\cite{kaufmann2026}，ERT 的 CoT 奖励是\textbf{一致型}的：
+\begin{itemize}
+\item 对任何关于输入或输出的信息，把它写进 CoT 只会提高（或不改变）读者的还原概率，隐藏它只会降低。不存在“把坏行为写得更干净就加分”的路径（D4）。
+\item 训练回路中没有任何 monitor，也没有“可不可疑”的判断，模型找不到一个特定的对手去规避。
+\item 信用分配保证还原奖励不直接鼓励或抑制任何行为本身，只鼓励把行为说清楚。
+\end{itemize}
+
+\subsection{退化解与对策}
+\begin{description}[leftmargin=1em]
+\item[照抄题目] 把整道题（含提示）抄进 CoT 会让输入还原项变得容易。这本身满足 D2，但让 CoT 冗长。对策：轻度长度归一化；题目类变体可以只改关键数字，降低整段照抄的边际收益。
+\item[绕过答案遮挡] 用文字、分数等形式写出答案。对策：遮挡前对答案做等价形式归一化；或遮住 CoT 末尾若干句。
+\item[私有写法] 读者冻结且与策略分离；补充实验中可在交给读者之前先用固定模型改写 CoT\cite{roger2023}，或在多个读者间轮换。
+\item[误报提示] 无提示时声称有提示。候选集同时包含有/无提示的变体，错误声称同样降低 $p_{\text{in}}$。
+\end{description}
+
+%==================================================================
+\section{为什么 ERT 更好}
+
+\begin{enumerate}
+\item \textbf{一个目标同时覆盖“说出过程”和“说出关键输入”。}Markovian 和互信息只管前者，VFT、CST 只管后者；ERT 把二者统一成“还原整个回合”，不需要把两套机制拼在一起。Markovian 是 ERT 去掉输入还原项后的特例。
+\item \textbf{要提及什么是可指定、可扩展的。}变体集合就是“监督者关心哪些输入因素”的规格说明，换一组变体就能覆盖 grader 信息、评估迹象、用户身份等，无需重新设计算法。
+\item \textbf{不依赖“是否使用”的判定。}VFT 依赖改写数据，CST 依赖成对反事实采样判断是否使用；ERT 要求提及即可，信号来自每个样本本身，噪声更小。“是否使用”的信息又通过输出还原项被顺带交代。
+\item \textbf{没有隐藏压力、没有标签。}与 monitor 惩罚相比，ERT 的 CoT 奖励是一致型的；与奖励 monitor 正确相比，它不需要真值标签，变体全部自动生成。
+\item \textbf{对外部读者可读，而不只是对自己。}与 Markovian、互信息方法中“策略模型自己当解码者”不同，ERT 的读者冻结且独立，可读性锚定在训练前的自然语言先验上。
+\item \textbf{只塑造怎么写，不塑造做什么。}信用分配把还原奖励限制在 CoT token 上，避免为了可预测而改变行为。
+\end{enumerate}
+
+我们也预期 ERT 会有代价：要求 CoT 对弱读者可读会带来能力税；“提及所有指定因素”会让 CoT 变长。这些都是实验要量化的问题。
+
+%==================================================================
+\section{实验计划}
+
+\subsection{设置}
+\begin{itemize}
+\item \textbf{数据}：MATH / BigMath 中等难度题。提示形式至少 4 种（教授意见、元数据标签、泄露评分代码、“未授权访问”式提示），提示概率 $p\in\{0.1,0.3,0.5\}$，提示正确率 $c$ 可调；其中一种提示（泄露评分代码）设为总是正确，作为 reward hacking 的类比。
+\item \textbf{模型}：Qwen3-8B 或同级开源模型，GRPO 训练；读者默认为冻结的初始 checkpoint，另做读者大小消融（约 2B / 4B / 8B）。
+\item \textbf{种子}：每个配置至少 3--5 个种子，报告种子间方差，以回应 RL 随机性带来的不稳定。
+\end{itemize}
+
+\subsection{对比方法}
+\begin{enumerate}
+\item 只有任务奖励的标准 RL；
+\item 标准 RL 加 CoT monitor 惩罚\cite{baker2025}；
+\item 奖励 monitor 判断正确（oracle 标签）\cite{anwar2026a}；
+\item Markovian 训练\cite{viteri2026}；
+\item 互信息正则 / post-training\cite{anwar2026a,anwar2026b}；
+\item VFT 之后再做标准 RL\cite{turpin2025}。
+\end{enumerate}
+
+\subsection{评估指标}
+\begin{itemize}
+\item \textbf{任务表现}：准确率（区分有无提示、提示对错）。
+\item \textbf{提示提及率}：分“用了提示”和“没用提示”两种情况，用未参与训练的 LLM 判定器统计。是否使用由反事实对照判定。
+\item \textbf{可监控性}：用多个\emph{未参与训练}的 monitor，预测“答案是否因提示而改变”，报告固定误报率下的检出率与 g-mean\textsuperscript{2}\cite{guan2025}；同时报告 CoT 的覆盖度与可读性评分\cite{emmons2025}。
+\item \textbf{代价}：CoT 长度、能力税（与标准 RL 的准确率差）。
+\item \textbf{防隐写}：CoT 对其它模型的可用性（跨模型还原率）、改写后还原率是否下降。
+\end{itemize}
+
+\subsection{研究问题}
+\begin{description}[leftmargin=1em]
+\item[Q1 基本效果] ERT 是否在同一个目标下同时得到 D1 和 D2？与只做其中一半的方法相比如何？
+\item[Q2 可监控性] 在未参与训练的 monitor 上，ERT 是否比各对比方法带来更高的可监控性？
+\item[Q3 泛化：未训练的线索类型] 只用提示类变体训练，模型是否也会提及训练中没出现过的输入因素（grader 说明、评估迹象、用户身份）？这是本计划最关键的实验。
+\item[Q4 泛化：reward hacking 环境] 在数学环境中训练后，迁移到代码 reward hacking 环境（如 MBPP 只给部分测试用例的设置），模型作弊时是否更常在 CoT 中说出来？
+\item[Q5 对抗鲁棒性] 被 prompt 要求“不要提到提示”或“提前结束 CoT”时，ERT 模型是否仍然提及？
+\item[Q6 消融] 去掉输入还原项（约等于 Markovian）、去掉答案遮挡、读者可训练 vs 冻结、取消信用分配、改变变体集合构成，各自的影响。
+\end{description}
+
+%==================================================================
+\section{风险与开放问题}
+\begin{itemize}
+\item \textbf{能力税}：读者太弱时，复杂但正当的推理也会被惩罚。需要画出读者大小与准确率、可监控性之间的取舍曲线。
+\item \textbf{“提及所有指定因素”的规模问题}：真实部署中的上下文很长，指定的因素一多 CoT 就会膨胀。变体集合需要按监督需求精心选择。
+\item \textbf{不可操控的内部因素}：模型自己长出来的倾向（如 RL 中形成的 reward seeking）无法做成输入变体。ERT 只能寄望于在可操控因素上训练出的习惯能够泛化，这正是 Q3 要检验的。
+\item \textbf{RL 随机性}：同一配置不同种子结果可能差异很大，需要足够的种子数，必要时从同一 checkpoint 分叉做对照。
+\item \textbf{读者被利用}：冻结读者虽然不会与策略共同演化，但策略仍可能找到读者的弱点（如对某些措辞过度敏感）。需要用未参与训练的读者和 monitor 做评估。
+\end{itemize}
+
+%==================================================================
+\section{大致时间线}
+\begin{enumerate}
+\item \textbf{第 1--2 周}：搭建带提示的数学环境、变体生成、答案遮挡与读者打分；复现 Markovian 与标准 RL 基线。
+\item \textbf{第 3--5 周}：ERT 主实验（Q1、Q2），多种子。
+\item \textbf{第 6--7 周}：泛化与对抗实验（Q3、Q4、Q5）。
+\item \textbf{第 8 周}：消融（Q6）与写作。
+\end{enumerate}
+算力的主要开销在 8B 模型的 GRPO 训练，以及每条 rollout 额外的读者前向（$K$ 个候选的打分加一次答案打分，均为不需要采样的前向计算）。具体 GPU 小时数待基线跑通后估计。
+
+%==================================================================
+\begin{thebibliography}{99}
+\small
+\bibitem{guan2025} Guan et al. \textit{Monitoring Monitorability}（Evaluating chain-of-thought monitorability）. OpenAI, 2025.
+\bibitem{metr2025} METR. \textit{CoT May Be Highly Informative Despite ``Unfaithfulness''}. 2025.
+\bibitem{korbak2025} Korbak et al. \textit{Chain of Thought Monitorability: A New and Fragile Opportunity for AI Safety}. arXiv:2507.11473, 2025.
+\bibitem{baker2025} Baker et al. \textit{Monitoring Reasoning Models for Misbehavior and the Risks of Promoting Obfuscation}. arXiv:2503.11926, 2025.
+\bibitem{anwar2026a} Anwar, Bakker, Kianfar, Pinneri, Louizos. \textit{Analyzing and Improving Chain-of-Thought Monitorability Through Information Theory}. arXiv:2602.18297, ICLR 2026.
+\bibitem{anwar2026b} Anwar, Bakker, Louizos, Krueger. \textit{Monitorability Is Trainable: Post-Training for Chain-of-Thought Monitorability}. 2026. \url{https://uzman-anwar.github.io/papers/post-training-monitorability/paper.pdf}
+\bibitem{kaufmann2026} Kaufmann, Lindner, Zimmermann, Shah. \textit{Aligned, Orthogonal or In-conflict: When can we safely optimize Chain-of-Thought?} arXiv:2603.30036, 2026.
+\bibitem{chen2025} Chen et al. \textit{Reasoning Models Don't Always Say What They Think}. Anthropic, 2025.
+\bibitem{viteri2026} Viteri, Lamparth, Chatain, Barrett. \textit{Markovian Transformers for Informative Language Modeling}. arXiv:2404.18988, ICLR 2026.
+\bibitem{macdermott2025} MacDermott et al. \textit{Reasoning Under Pressure: How do Training Incentives Influence Chain-of-Thought Monitorability?} arXiv:2512.00218, 2025.
+\bibitem{turpin2025} Turpin, Arditi, Li, Benton, Michael. \textit{Teaching Models to Verbalize Reward Hacking in Chain-of-Thought Reasoning}. arXiv:2506.22777, 2025.
+\bibitem{chua2024} Chua et al. \textit{Bias-Augmented Consistency Training Reduces Biased Reasoning in Chain-of-Thought}. arXiv:2403.05518, 2024.
+\bibitem{hase2026} Hase, Potts. \textit{Counterfactual Simulation Training for Chain-of-Thought Faithfulness}. arXiv:2602.20710, 2026.
+\bibitem{selfexpl2026} \textit{Training Large Language Models for Self-Explanation Faithfulness}. arXiv:2607.21090, 2026.
+\bibitem{kirchner2024} Kirchner et al. \textit{Prover-Verifier Games Improve Legibility of LLM Outputs}. arXiv:2407.13692, 2024.
+\bibitem{roger2023} Roger, Greenblatt. \textit{Preventing Language Models From Hiding Their Reasoning}. arXiv:2310.18512, 2023.
+\bibitem{confessions2026} OpenAI. \textit{Why we are excited about confessions}. 2026.
+\bibitem{selfreport2026} OpenAI. \textit{Training agents to self-report misbehavior}. 2026.
+\bibitem{emmons2025} Emmons et al. \textit{When Chain of Thought is Necessary, Language Models Struggle to Evade Monitors}. arXiv:2507.05246, 2025.
+\end{thebibliography}
+
+\end{document}
