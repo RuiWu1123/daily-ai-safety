@@ -106,6 +106,7 @@ https://alignment.openai.com/sae-latent-attribution
 https://alignment.openai.com/safety-fellowship
 https://alignment.openai.com/scaling-code-verification
 https://alignment.openai.com/self-incrimination
+https://alignment.openai.com/training-activation-classifiers
 https://alignment.openai.com/validating-public-evals
 https://already-clean.goodfire.com
 https://arxiv.org/abs/2205.01663
@@ -252,6 +253,7 @@ https://blog.redwoodresearch.org/p/the-thinking-machines-tinker-api
 https://blog.redwoodresearch.org/p/there-are-two-fundamentally-different
 https://blog.redwoodresearch.org/p/thoughts-on-the-conservative-assumptions
 https://blog.redwoodresearch.org/p/to-be-legible-evidence-of-misalignment
+https://blog.redwoodresearch.org/p/towards-understanding-score-seeking
 https://blog.redwoodresearch.org/p/training-time-schemers-vs-behavioral
 https://blog.redwoodresearch.org/p/trust-me-bro-just-one-more-rl-scale
 https://blog.redwoodresearch.org/p/two-proposed-projects-on-abstract
@@ -805,6 +807,7 @@ https://openai.com/index/dall-e-api-now-available-in-public-beta
 https://openai.com/index/dall-e-introducing-outpainting
 https://openai.com/index/dall-e-now-available-in-beta
 https://openai.com/index/dall-e-now-available-without-waitlist
+https://openai.com/index/dan-driscoll-joins-openai
 https://openai.com/index/data-partnerships
 https://openai.com/index/databricks
 https://openai.com/index/datadog
@@ -1059,6 +1062,7 @@ https://openai.com/index/grab
 https://openai.com/index/grab-openai-ai-skills-southeast-asia
 https://openai.com/index/gradient-labs
 https://openai.com/index/greptile-code-review-codex-astra
+https://openai.com/index/grid-protectors-program
 https://openai.com/index/group-chats-in-chatgpt
 https://openai.com/index/grupo-boticario
 https://openai.com/index/grupo-folha-grupo-uol-partnership
@@ -1073,6 +1077,7 @@ https://openai.com/index/healthbench
 https://openai.com/index/healthify
 https://openai.com/index/hearst
 https://openai.com/index/hebbia
+https://openai.com/index/heimstaden
 https://openai.com/index/helen-toner-joins
 https://openai.com/index/hello-gpt-4o
 https://openai.com/index/helping-build-shared-standards-for-advanced-ai
@@ -1292,6 +1297,7 @@ https://openai.com/index/legora-financial-statement-review-with-astra
 https://openai.com/index/lenfest-ai-collaborative-expansion
 https://openai.com/index/lenfest-institute
 https://openai.com/index/lifespan
+https://openai.com/index/lifeval
 https://openai.com/index/localiza-generative-ai
 https://openai.com/index/loveholidays
 https://openai.com/index/low-resource-programming-languages
@@ -1544,6 +1550,7 @@ https://openai.com/index/prediction-and-control-with-temporal-segment-models
 https://openai.com/index/premium-seats-chatgpt-business
 https://openai.com/index/preparing-for-future-ai-capabilities-in-biology
 https://openai.com/index/preparing-for-malicious-uses-of-ai
+https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai
 https://openai.com/index/preply
 https://openai.com/index/previewing-gpt-5-6-sol
 https://openai.com/index/previewing-ultrafast
@@ -1560,6 +1567,7 @@ https://openai.com/index/put-ai-to-work-for-your-product-team
 https://openai.com/index/put-data-to-work
 https://openai.com/index/putting-frontier-cyber-models-in-more-trusted-hands
 https://openai.com/index/pvh-future-of-fashion
+https://openai.com/index/qodo-codex-plugin
 https://openai.com/index/quantifying-generalization-in-reinforcement-learning
 https://openai.com/index/radisson
 https://openai.com/index/rakuten
@@ -1584,6 +1592,7 @@ https://openai.com/index/retool
 https://openai.com/index/retro-contest
 https://openai.com/index/retro-contest-results
 https://openai.com/index/review-completed-altman-brockman-to-continue-to-lead-openai
+https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties
 https://openai.com/index/ringcentral
 https://openai.com/index/ringg
 https://openai.com/index/rl2
@@ -1610,6 +1619,7 @@ https://openai.com/index/scaling-ai-for-everyone
 https://openai.com/index/scaling-ai-research-for-complex-biological-data
 https://openai.com/index/scaling-codex-to-enterprises-worldwide
 https://openai.com/index/scaling-coordinated-vulnerability-disclosure
+https://openai.com/index/scaling-git-at-openai
 https://openai.com/index/scaling-kubernetes-to-2500-nodes
 https://openai.com/index/scaling-kubernetes-to-7500-nodes
 https://openai.com/index/scaling-laws-for-neural-language-models
@@ -2045,9 +2055,11 @@ https://www.alignmentforum.org/posts/43vKjWuH4goLwrFHA/modular-pretraining-enabl
 https://www.alignmentforum.org/posts/4foFK5Lz65ywSz4eo/axrp-episode-48-guive-assadi-on-ai-property-rights
 https://www.alignmentforum.org/posts/4hXWSw8tzoK9PM7v6/metagaming-matters-for-training-evaluation-and-oversight
 https://www.alignmentforum.org/posts/58zFSWp8Tmxij6ckK/value-generalisation-1-a-research-and-deployment-program
+https://www.alignmentforum.org/posts/5a4tuSNDNodPsiS26/some-coherence-arguments-are-two-different-things-in-a
 https://www.alignmentforum.org/posts/5kEezahvkEiQuWEfx/should-we-benchmark-conceptual-capabilities-using-judgment
 https://www.alignmentforum.org/posts/6ek6n7yZ5DzfarJHy/towards-surfacing-model-algorithms-with-meta-tokens-in-the-j
 https://www.alignmentforum.org/posts/6m29SfjbittooYojj/latent-reasoning-architectures-would-likely-undermine-cot
+https://www.alignmentforum.org/posts/6qDn6H5XG5Hc6BJFe/additional-course-context-for-ai-safety-fundamentals
 https://www.alignmentforum.org/posts/7RyAefESvb6BQ3tMz/mechanistic-estimation-for-expectations-of-random-products
 https://www.alignmentforum.org/posts/7gp76q4rWLFi6sFqm/test-your-interpretability-techniques-by-de-censoring-1
 https://www.alignmentforum.org/posts/7noKve57za3yg2LEb/you-can-only-build-safe-asi-if-asi-is-globally-banned-1
@@ -2706,6 +2718,7 @@ https://www.anthropic.com/research/project-vend-1
 https://www.anthropic.com/research/project-vend-2
 https://www.anthropic.com/research/prompt-injection-defenses
 https://www.anthropic.com/research/property-based-testing
+https://www.anthropic.com/research/provable-inference
 https://www.anthropic.com/research/question-decomposition-improves-the-faithfulness-of-model-generated-reasoning
 https://www.anthropic.com/research/reasoning-models-dont-say-think
 https://www.anthropic.com/research/red-teaming-language-models-to-reduce-harms-methods-scaling-behaviors-and-lessons-learned
