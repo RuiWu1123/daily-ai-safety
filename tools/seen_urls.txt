@@ -71,6 +71,7 @@ https://alignment.openai.com/beneficial-rl
 https://alignment.openai.com/beyond-gmean-squared
 https://alignment.openai.com/confessions
 https://alignment.openai.com/coval
+https://alignment.openai.com/eval-production-behavior-gap
 https://alignment.openai.com/hello-world
 https://alignment.openai.com/helpful-assistant-features
 https://alignment.openai.com/how-far-does-alignment-midtraining-generalize
@@ -212,6 +213,7 @@ https://blog.redwoodresearch.org/p/notes-on-cooperating-with-unaligned
 https://blog.redwoodresearch.org/p/notes-on-countermeasures-for-exploration
 https://blog.redwoodresearch.org/p/notes-on-fatalities-from-ai-takeover
 https://blog.redwoodresearch.org/p/notes-on-handling-non-concentrated
+https://blog.redwoodresearch.org/p/openai-agents-keep-disabling-monitoring
 https://blog.redwoodresearch.org/p/openai-cot
 https://blog.redwoodresearch.org/p/paper-distillation-for-incrimination
 https://blog.redwoodresearch.org/p/planning-for-extreme-ai-risks
@@ -517,6 +519,7 @@ https://openai.com/academy/what-is-ai
 https://openai.com/academy/working-with-files
 https://openai.com/academy/workspace-agents
 https://openai.com/academy/writing
+https://openai.com/ads/customers/evernote
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
 https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents
@@ -596,6 +599,7 @@ https://openai.com/index/aarp-partnership-older-adults-online-safety
 https://openai.com/index/academy-courses-applying-ai-at-work
 https://openai.com/index/accelerating-biological-research-in-the-wet-lab
 https://openai.com/index/accelerating-cyber-defense-ecosystem
+https://openai.com/index/accelerating-engineering-for-the-physical-world
 https://openai.com/index/accelerating-life-sciences-research-with-retro-biosciences
 https://openai.com/index/accelerating-science-gpt-5
 https://openai.com/index/accelerating-the-next-phase-ai
@@ -749,6 +753,7 @@ https://openai.com/index/chime-vineet-mehra
 https://openai.com/index/choco
 https://openai.com/index/circles
 https://openai.com/index/cisco
+https://openai.com/index/cisco-cyber
 https://openai.com/index/clay
 https://openai.com/index/clip
 https://openai.com/index/cloudflare-cyber
@@ -1256,6 +1261,7 @@ https://openai.com/index/japan-economic-blueprint
 https://openai.com/index/japan-teen-safety-blueprint
 https://openai.com/index/jetbrains
 https://openai.com/index/jetbrains-2025
+https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer
 https://openai.com/index/john-deere-justin-rose
 https://openai.com/index/joint-statement-from-openai-and-microsoft
 https://openai.com/index/jukebox
@@ -2125,6 +2131,7 @@ https://www.alignmentforum.org/posts/MgYCraoxMwfWwgWa5/an-anytime-algorithm-for-
 https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb
 https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb/measuring-non-verbalised-eval-awareness-by-implanting-eval
 https://www.alignmentforum.org/posts/MuLvZxMcy5WaKJu3H/my-research-a-computational-cognitive-neuroscience
+https://www.alignmentforum.org/posts/MuQDLAJyKJPFkw6q9/automating-subtle-emergent-misalignment-research
 https://www.alignmentforum.org/posts/NQLCdfeNsQHZaJ8iC/preface-to-the-computational-agent-theory-and-asi-alignment
 https://www.alignmentforum.org/posts/Pc789vx2oHgEXYZZH/new-rfp-on-interpretability-from-schmidt-sciences-1
 https://www.alignmentforum.org/posts/QBuJ3suRZxrrxSTtv/does-diffusiongemma-do-latent-reasoning
@@ -2250,6 +2257,7 @@ https://www.alignmentforum.org/posts/rp4sB5a6HaPpfD4rA/endogenous-alignment-requ
 https://www.alignmentforum.org/posts/rreDwHXgnhEDKxkro/new-version-of-intro-to-brain-like-agi-safety
 https://www.alignmentforum.org/posts/sFhW3ZnPMJdnB4Dd6/thousand-dimensional-structure-1
 https://www.alignmentforum.org/posts/sSHbioPoHWtm4zuti/openai-can-t-self-police-because-it-fires-the-people-raising
+https://www.alignmentforum.org/posts/sqjti8dxcKSvZJikd/desiderata-for-the-theory-of-agents
 https://www.alignmentforum.org/posts/suRWiTNnazrRsoBKR/a-conceptual-framework-for-exploration-hacking
 https://www.alignmentforum.org/posts/tDJWZLQNN7poqCwKa/test-your-best-methods-on-our-hard-cot-interp-tasks
 https://www.alignmentforum.org/posts/tK8vqHDxaRGcysNJQ
