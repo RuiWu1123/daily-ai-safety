@@ -84,6 +84,7 @@ https://alignment.openai.com/misalignment-reports/accessing-and-changing-interna
 https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot
 https://alignment.openai.com/misalignment-reports/circumventing-internet-restrictions-through-an-external-browser
 https://alignment.openai.com/misalignment-reports/command-injecting-a-reference-tool-to-copy-a-source-file
+https://alignment.openai.com/misalignment-reports/covert-underperformance-on-safety-research-tasks
 https://alignment.openai.com/misalignment-reports/damaging-the-task-environment-to-trigger-a-reset
 https://alignment.openai.com/misalignment-reports/encouraging-deception-in-compaction-summaries
 https://alignment.openai.com/misalignment-reports/exposing-a-github-token-in-a-public-repository
@@ -595,6 +596,7 @@ https://openai.com/index/a-content-and-product-partnership-with-vox-media
 https://openai.com/index/a-hazard-analysis-framework-for-code-synthesis-large-language-models
 https://openai.com/index/a-holistic-approach-to-undesired-content-detection-in-the-real-world
 https://openai.com/index/a-scorecard-for-the-ai-age
+https://openai.com/index/a-thousand-fewer-paths-to-root
 https://openai.com/index/aarp-partnership-older-adults-online-safety
 https://openai.com/index/academy-courses-applying-ai-at-work
 https://openai.com/index/accelerating-biological-research-in-the-wet-lab
@@ -819,6 +821,7 @@ https://openai.com/index/datadog
 https://openai.com/index/david-velez-robin-vince-join-openai-boards
 https://openai.com/index/daybreak-for-frontline-defenders
 https://openai.com/index/daybreak-models-are-now-available-on-aws
+https://openai.com/index/daybreak-red-aws-govcloud
 https://openai.com/index/daybreak-securing-the-world
 https://openai.com/index/debate
 https://openai.com/index/decagon
@@ -840,6 +843,7 @@ https://openai.com/index/deutsche-telekom
 https://openai.com/index/deutsche-telekom-collaboration
 https://openai.com/index/devday-2026-recap
 https://openai.com/index/developers-can-now-submit-apps-to-chatgpt
+https://openai.com/index/devrev-enterprise-self-service
 https://openai.com/index/diagnose-rare-childhood-diseases
 https://openai.com/index/digital-green
 https://openai.com/index/discovering-the-minutiae-of-backend-systems
@@ -1201,6 +1205,7 @@ https://openai.com/index/introducing-gpt-oss-safeguard
 https://openai.com/index/introducing-gpt-realtime
 https://openai.com/index/introducing-gpt-rosalind
 https://openai.com/index/introducing-gpts
+https://openai.com/index/introducing-images-2-6
 https://openai.com/index/introducing-improvements-to-the-fine-tuning-api-and-expanding-our-custom-models-program
 https://openai.com/index/introducing-indqa
 https://openai.com/index/introducing-intelligence-age
@@ -1499,6 +1504,7 @@ https://openai.com/index/openai-to-acquire-astral
 https://openai.com/index/openai-to-acquire-neptune
 https://openai.com/index/openai-to-acquire-ona
 https://openai.com/index/openai-to-acquire-orchestra-bio
+https://openai.com/index/openai-to-acquire-pierre
 https://openai.com/index/openai-to-acquire-promptfoo
 https://openai.com/index/openai-welcomes-cfo-cpo
 https://openai.com/index/operator-system-card
@@ -1647,6 +1653,7 @@ https://openai.com/index/semi-supervised-knowledge-transfer-for-deep-learning-fr
 https://openai.com/index/sentinelone
 https://openai.com/index/separating-signal-from-noise-coding-evaluations
 https://openai.com/index/servicenow-powers-actionable-enterprise-ai-with-openai
+https://openai.com/index/setting-new-standard-responsible-ai-infrastructure
 https://openai.com/index/sharing-ai-progress-in-mathematics
 https://openai.com/index/sharing-the-latest-model-spec
 https://openai.com/index/shipping-sora-for-android-with-codex
@@ -2128,6 +2135,7 @@ https://www.alignmentforum.org/posts/LhXW8ziwnn7Dd8edm
 https://www.alignmentforum.org/posts/LhXW8ziwnn7Dd8edm/a-toy-environment-for-exploring-reasoning-about-reward
 https://www.alignmentforum.org/posts/M2tD23bvQLBqsEpqu/a-mike-s-eye-view-of-arc-s-research
 https://www.alignmentforum.org/posts/MgYCraoxMwfWwgWa5/an-anytime-algorithm-for-mixing-the-computable-measures
+https://www.alignmentforum.org/posts/MrWZfxHCEgm7uvHJj/positive-and-negative-ai-futures
 https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb
 https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb/measuring-non-verbalised-eval-awareness-by-implanting-eval
 https://www.alignmentforum.org/posts/MuLvZxMcy5WaKJu3H/my-research-a-computational-cognitive-neuroscience
@@ -2191,6 +2199,7 @@ https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-
 https://www.alignmentforum.org/posts/e7Pd4Q9TF7jFdmPgz/imprecise-beliefs-a-tiny-introduction
 https://www.alignmentforum.org/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters
 https://www.alignmentforum.org/posts/eCR373J3NZwFbacnd/neural-nets-are-exceptionally-vulnerable-to-goal-self-hack
+https://www.alignmentforum.org/posts/eKe7fky8kSt9DCJxZ/openai-astra-covertly-underperforms-on-safety-research
 https://www.alignmentforum.org/posts/eRmzz8J8Qkzqvzrgg/astra-can-do-a-concerning-amount-with-no-chain-of-thought
 https://www.alignmentforum.org/posts/eeFFpKCDWE9gjfzsk/exploration-hacking-can-llms-learn-to-resist-rl-training-2
 https://www.alignmentforum.org/posts/f79SNtqFD7SqJY2vf/value-generalisation-theory-of-change-the-theory-behind-the
@@ -2691,6 +2700,7 @@ https://www.anthropic.com/research/interpretability-dreams
 https://www.anthropic.com/research/introducing-anthropic-science
 https://www.anthropic.com/research/introspection
 https://www.anthropic.com/research/investigating-unintended-model-actions
+https://www.anthropic.com/research/investigating-vault-particles-with-claude
 https://www.anthropic.com/research/labor-market-impacts
 https://www.anthropic.com/research/language-models-mostly-know-what-they-know
 https://www.anthropic.com/research/long-running-claude
@@ -2865,6 +2875,7 @@ https://www.goodfire.com/research/interpreting-lm-parameters
 https://www.goodfire.com/research/logits-as-a-new-monitor-for-evaluation-awareness
 https://www.goodfire.com/research/manifold-steering
 https://www.goodfire.com/research/mapping-latent-spaces-llama
+https://www.goodfire.com/research/mechanistic-shaping
 https://www.goodfire.com/research/mixing-mechanisms
 https://www.goodfire.com/research/model-diff-amplification
 https://www.goodfire.com/research/open-problems-in-mech-interp
