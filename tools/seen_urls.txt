@@ -158,6 +158,7 @@ https://blog.redwoodresearch.org/p/announcing-controlconf-2026
 https://blog.redwoodresearch.org/p/anthropic-repeatedly-accidentally
 https://blog.redwoodresearch.org/p/are-ais-more-likely-to-pursue-on
 https://blog.redwoodresearch.org/p/are-we-existentially-threatened-by
+https://blog.redwoodresearch.org/p/astra-covertly-underperforming-on
 https://blog.redwoodresearch.org/p/astra-is-much-better-at-reasoning
 https://blog.redwoodresearch.org/p/attaching-requirements-to-model-releases
 https://blog.redwoodresearch.org/p/basharena-and-control-setting-design
@@ -328,6 +329,7 @@ https://far.ai/blog/scientists-call-for-international-cooperation-on-ai-red-line
 https://far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards
 https://far.ai/blog/seoul-alignment-workshop-2026
 https://far.ai/blog/singapore-alignment-workshop-2025
+https://far.ai/blog/synthdeception
 https://far.ai/blog/technical-innovations-for-ai-policy
 https://far.ai/blog/technical-innovations-for-ai-policy-2025
 https://far.ai/blog/technical-innovations-for-ai-policy-2026
@@ -739,6 +741,7 @@ https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan
 https://openai.com/index/chatgpt-agent-system-card
 https://openai.com/index/chatgpt-can-now-see-hear-and-speak
 https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources
+https://openai.com/index/chatgpt-enterprise-aws-marketplace
 https://openai.com/index/chatgpt-enterprise-spend-controls
 https://openai.com/index/chatgpt-expanding-world-of-work
 https://openai.com/index/chatgpt-for-academic-researchers
@@ -764,10 +767,12 @@ https://openai.com/index/cisco
 https://openai.com/index/cisco-cyber
 https://openai.com/index/clay
 https://openai.com/index/clip
+https://openai.com/index/closing-ai-guidance-gap-education
 https://openai.com/index/cloudflare-cyber
 https://openai.com/index/cloudflare-openai-agent-cloud
 https://openai.com/index/cna-walter-fernandez
 https://openai.com/index/coderabbit
+https://openai.com/index/coderabbit-codex-daybreak
 https://openai.com/index/codex-apps
 https://openai.com/index/codex-collaborator-creative-team
 https://openai.com/index/codex-flexible-pricing-for-teams
@@ -795,6 +800,7 @@ https://openai.com/index/consistency-models
 https://openai.com/index/content-partnership-with-financial-times
 https://openai.com/index/continuing-microsoft-partnership
 https://openai.com/index/continuous-voice-interaction-with-gpt-live
+https://openai.com/index/control-room
 https://openai.com/index/cooley-gopublic
 https://openai.com/index/cooperation-on-safety
 https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities
@@ -1098,6 +1104,7 @@ https://openai.com/index/heimstaden
 https://openai.com/index/helen-toner-joins
 https://openai.com/index/hello-gpt-4o
 https://openai.com/index/helping-build-shared-standards-for-advanced-ai
+https://openai.com/index/helping-caregivers-use-ai-in-everyday-life
 https://openai.com/index/helping-disaster-response-teams-asia
 https://openai.com/index/helping-older-adults-use-ai-in-everyday-life
 https://openai.com/index/helping-people-when-they-need-it-most
@@ -1283,6 +1290,7 @@ https://openai.com/index/jump-trading
 https://openai.com/index/k-12-educators-practical-skills
 https://openai.com/index/khan-academy
 https://openai.com/index/klarna
+https://openai.com/index/kuken
 https://openai.com/index/language-model-safety-and-misuse
 https://openai.com/index/language-models-are-few-shot-learners
 https://openai.com/index/language-models-can-explain-neurons-in-language-models
@@ -2303,6 +2311,7 @@ https://www.alignmentforum.org/posts/vPaXtarnJ37kGfPdJ/independent-alignment-of-
 https://www.alignmentforum.org/posts/virawHQekJsozwotz/paper-stringological-sequence-prediction-iii
 https://www.alignmentforum.org/posts/vjAM7F8vMZS7oRrrh/how-do-we-more-safely-defer-to-ais
 https://www.alignmentforum.org/posts/vzHtHHBJoKATi5SeK/empowerment-corrigibility-etc-are-simple-abstractions-of-a
+https://www.alignmentforum.org/posts/wPrpnfaNL5JP9i6KT/where-is-all-the-ai-safety-research-uplift
 https://www.alignmentforum.org/posts/wq5PfGiHvnx6XipDi/prism-automating-science-of-evals-research
 https://www.alignmentforum.org/posts/wt4kk6vFPEhkXvF8Q/how-good-are-slop-vestigators
 https://www.alignmentforum.org/posts/wyZRNgpeiPeRXB6eT/why-do-naive-sft-filters-for-safety-properties-fail
@@ -2553,6 +2562,7 @@ https://www.anthropic.com/news/reflect-with-claude
 https://www.anthropic.com/news/reflections-on-our-responsible-scaling-policy
 https://www.anthropic.com/news/releasing-claude-instant-1-2
 https://www.anthropic.com/news/responsible-scaling-policy-v3
+https://www.anthropic.com/news/roadshow-launch
 https://www.anthropic.com/news/rwandan-government-partnership-ai-education
 https://www.anthropic.com/news/s1-sec
 https://www.anthropic.com/news/safeguards
@@ -2646,6 +2656,7 @@ https://www.anthropic.com/research/claude-code-best-practices
 https://www.anthropic.com/research/claude-code-expertise
 https://www.anthropic.com/research/claude-code-sandboxing
 https://www.anthropic.com/research/claude-discovers-novel-enzyme-system
+https://www.anthropic.com/research/claude-electronics-design
 https://www.anthropic.com/research/claude-personal-guidance
 https://www.anthropic.com/research/claude-plays-robotics
 https://www.anthropic.com/research/claude-scorpion-toxin-binder-design
@@ -2903,6 +2914,7 @@ https://www.goodfire.com/research/mapping-latent-spaces-llama
 https://www.goodfire.com/research/mechanistic-shaping
 https://www.goodfire.com/research/mixing-mechanisms
 https://www.goodfire.com/research/model-diff-amplification
+https://www.goodfire.com/research/neurons-as-an-interpretable-basis
 https://www.goodfire.com/research/open-problems-in-mech-interp
 https://www.goodfire.com/research/painting-with-concepts
 https://www.goodfire.com/research/phylogeny-manifold
@@ -2911,6 +2923,7 @@ https://www.goodfire.com/research/predictive-data-debugging
 https://www.goodfire.com/research/priors-in-time
 https://www.goodfire.com/research/probe-based-data-attribution
 https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3
+https://www.goodfire.com/research/public_neuron_atlas
 https://www.goodfire.com/research/rakuten-sae-probes-for-pii-detection
 https://www.goodfire.com/research/reasoning-theater
 https://www.goodfire.com/research/replicating-circuit-tracing-for-a-simple-mechanism
