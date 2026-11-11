@@ -50,6 +50,7 @@ https://alignment.anthropic.com/2026/coding-audit-realism
 https://alignment.anthropic.com/2026/conceptual-reasoning-index
 https://alignment.anthropic.com/2026/diffuse-ai-control
 https://alignment.anthropic.com/2026/graft
+https://alignment.anthropic.com/2026/homeopathic-learning
 https://alignment.anthropic.com/2026/hot-mess-of-ai
 https://alignment.anthropic.com/2026/introspection-adapters
 https://alignment.anthropic.com/2026/lie-detectors
@@ -71,6 +72,7 @@ https://alignment.openai.com/auto-review
 https://alignment.openai.com/beneficial-rl
 https://alignment.openai.com/beyond-gmean-squared
 https://alignment.openai.com/confessions
+https://alignment.openai.com/cot-monitorability-model-lifecycle
 https://alignment.openai.com/coval
 https://alignment.openai.com/eval-production-behavior-gap
 https://alignment.openai.com/hello-world
@@ -265,6 +267,7 @@ https://blog.redwoodresearch.org/p/trust-me-bro-just-one-more-rl-scale
 https://blog.redwoodresearch.org/p/two-proposed-projects-on-abstract
 https://blog.redwoodresearch.org/p/untrusted-advice-for-ai-control-short
 https://blog.redwoodresearch.org/p/untrusted-smart-models-and-trusted
+https://blog.redwoodresearch.org/p/we-dont-understand-whether-gdm-intentionally
 https://blog.redwoodresearch.org/p/what-does-10x-ing-effective-compute
 https://blog.redwoodresearch.org/p/what-training-data-should-developers
 https://blog.redwoodresearch.org/p/whats-going-on-with-ai-progress-and
@@ -327,6 +330,7 @@ https://far.ai/blog/scaling-solid
 https://far.ai/blog/scientists-call-for-global-ai-safety-preparedness-to-avert-catastrophic-risks
 https://far.ai/blog/scientists-call-for-international-cooperation-on-ai-red-lines
 https://far.ai/blog/security-stress-test-deepseek-v4-pros-safeguards
+https://far.ai/blog/security-stress-test-kimi-k3-1-pro-safeguards
 https://far.ai/blog/seoul-alignment-workshop-2026
 https://far.ai/blog/singapore-alignment-workshop-2025
 https://far.ai/blog/synthdeception
@@ -528,6 +532,8 @@ https://openai.com/academy/workspace-agents
 https://openai.com/academy/writing
 https://openai.com/ads/customers/evernote
 https://openai.com/ads/customers/flipsnack
+https://openai.com/business/customer-stories/ada
+https://openai.com/business/customer-stories/blue-j
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
 https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents
@@ -545,9 +551,14 @@ https://openai.com/business/learn/connect-internal-knowledge-from-google-drive
 https://openai.com/business/learn/create-on-brand-visuals-with-image-generation
 https://openai.com/business/learn/creating-a-contextual-workspace-in-chatgpt
 https://openai.com/business/learn/delegate-work-to-chatgpt-agent
+https://openai.com/business/learn/enabling-a-data-driven-workforce-webinar
+https://openai.com/business/learn/fine-tuning-gpt-4o-webinar
 https://openai.com/business/learn/gpt-5-our-best-model-for-work
 https://openai.com/business/learn/how-openai-uses-chatgpt-atlas-at-work
+https://openai.com/business/learn/how-openai-uses-codex
 https://openai.com/business/learn/market-research-with-chatgpt
+https://openai.com/business/learn/new-in-chatgpt-for-business-april-updates-2025
+https://openai.com/business/learn/new-in-chatgpt-for-work-march-updates-2025
 https://openai.com/business/learn/personalize-chatgpt-with-custom-instructions
 https://openai.com/business/learn/prototyping-with-canvas-in-chatgpt
 https://openai.com/business/learn/shipping-code-to-your-ide-with-chatgpt
@@ -640,6 +651,7 @@ https://openai.com/index/ai-as-the-greatest-source-of-empowerment-for-all
 https://openai.com/index/ai-chemist-improves-reaction
 https://openai.com/index/ai-clinical-copilot-penda-health
 https://openai.com/index/ai-education-opportunity
+https://openai.com/index/ai-effect-on-freelance-work
 https://openai.com/index/ai-first-hire-small-business
 https://openai.com/index/ai-literacy-resources-for-teens-and-parents
 https://openai.com/index/ai-mental-health-research-grants
@@ -753,6 +765,7 @@ https://openai.com/index/chatgpt-for-your-most-ambitious-work
 https://openai.com/index/chatgpt-memory-dreaming
 https://openai.com/index/chatgpt-plugins
 https://openai.com/index/chatgpt-plus
+https://openai.com/index/chatgpt-plus-for-veterans
 https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations
 https://openai.com/index/chatgpt-shopping-research
 https://openai.com/index/chatgpt-study-mode
@@ -783,6 +796,7 @@ https://openai.com/index/codex-maxxing-long-running-work
 https://openai.com/index/codex-now-generally-available
 https://openai.com/index/codex-quantum-computing-experiments
 https://openai.com/index/codex-security-now-in-research-preview
+https://openai.com/index/cogent-security
 https://openai.com/index/cognition-devin-testing-with-astra
 https://openai.com/index/collective-alignment-aug-2025-updates
 https://openai.com/index/color-health
@@ -1018,6 +1032,7 @@ https://openai.com/index/generative-models
 https://openai.com/index/genmab
 https://openai.com/index/genspark
 https://openai.com/index/gilbert-tobin
+https://openai.com/index/gilbert-tobin-sam-nickless
 https://openai.com/index/global-news-partnerships-le-monde-and-prisa-media
 https://openai.com/index/glow
 https://openai.com/index/gotta-learn-fast
@@ -1175,6 +1190,7 @@ https://openai.com/index/introducing-admin-plugin
 https://openai.com/index/introducing-agentkit
 https://openai.com/index/introducing-apps-in-chatgpt
 https://openai.com/index/introducing-b2b-signals
+https://openai.com/index/introducing-businesses-chatgpt
 https://openai.com/index/introducing-canvas
 https://openai.com/index/introducing-chatgpt-agent
 https://openai.com/index/introducing-chatgpt-and-whisper-apis
@@ -1680,6 +1696,7 @@ https://openai.com/index/shipping-sora-for-android-with-codex
 https://openai.com/index/sim-to-real-transfer-of-robotic-control-with-dynamics-randomization
 https://openai.com/index/simplex
 https://openai.com/index/simplifying-stabilizing-and-scaling-continuous-time-consistency-models
+https://openai.com/index/singapore-airlines-travel-work
 https://openai.com/index/singular-bank
 https://openai.com/index/small-business-ai-jam
 https://openai.com/index/snowflake-partnership
@@ -2169,6 +2186,7 @@ https://www.alignmentforum.org/posts/MruTFazc4iu6zPtyb/measuring-non-verbalised-
 https://www.alignmentforum.org/posts/MuLvZxMcy5WaKJu3H/my-research-a-computational-cognitive-neuroscience
 https://www.alignmentforum.org/posts/MuQDLAJyKJPFkw6q9/automating-subtle-emergent-misalignment-research
 https://www.alignmentforum.org/posts/N5AmYkRks5CqAxvBg/metr-independent-assessment-of-ai-r-and-d-acceleration-at
+https://www.alignmentforum.org/posts/NFkj9J2BBLSjNuH5G/how-i-m-thinking-about-different-types-of-automated
 https://www.alignmentforum.org/posts/NQLCdfeNsQHZaJ8iC/preface-to-the-computational-agent-theory-and-asi-alignment
 https://www.alignmentforum.org/posts/Pc789vx2oHgEXYZZH/new-rfp-on-interpretability-from-schmidt-sciences-1
 https://www.alignmentforum.org/posts/QBuJ3suRZxrrxSTtv/does-diffusiongemma-do-latent-reasoning
@@ -2194,6 +2212,7 @@ https://www.alignmentforum.org/posts/WewsByywWNhX9rtwi/current-ais-seem-pretty-m
 https://www.alignmentforum.org/posts/WisQvECYPGebryRPD/the-refined-counterfactual-prisoner-s-dilemma-an-attempt-to
 https://www.alignmentforum.org/posts/WjaGAA4xCAXeFpyWm/my-picture-of-the-present-in-ai
 https://www.alignmentforum.org/posts/WpYFAmJDH3zuAq2ha/open-distillation-of-hereditary-traits-1
+https://www.alignmentforum.org/posts/XNLhpWgzhF8GYZ4Er/delaying-internal-deployments-until-after-x-days-of-safety
 https://www.alignmentforum.org/posts/XP794SHDuXYfWLrvJ/deployment-awareness-matters-more-than-evaluation-awareness
 https://www.alignmentforum.org/posts/XcrgeMWr8E4G3PGxW/agi-is-here
 https://www.alignmentforum.org/posts/Xzf3eMnhTko7AxnEy/can-governments-quickly-and-cheaply-slow-ai-training
@@ -2233,6 +2252,7 @@ https://www.alignmentforum.org/posts/eRmzz8J8Qkzqvzrgg/astra-can-do-a-concerning
 https://www.alignmentforum.org/posts/eeFFpKCDWE9gjfzsk/exploration-hacking-can-llms-learn-to-resist-rl-training-2
 https://www.alignmentforum.org/posts/f79SNtqFD7SqJY2vf/value-generalisation-theory-of-change-the-theory-behind-the
 https://www.alignmentforum.org/posts/f8R3B2zqqTJZjSAsm/deconfusing-corrigibility
+https://www.alignmentforum.org/posts/f9PajMLmBYzmWzyDv/q3-5-timelines-update-looks-like-the-intelligence-explosion
 https://www.alignmentforum.org/posts/fGpQ4cmWsXo2WWeyn/personality-self-replicators
 https://www.alignmentforum.org/posts/fsG4m6sRMpomd7Rk6/mechanistic-estimation-for-wide-random-mlps
 https://www.alignmentforum.org/posts/ft9hzw82v7FRDKmpn/notes-on-take-off-speeds-and-rsi
