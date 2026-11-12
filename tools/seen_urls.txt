@@ -65,6 +65,7 @@ https://alignment.anthropic.com/2026/taste
 https://alignment.anthropic.com/2026/teaching-claude-why
 https://alignment.anthropic.com/2026/training-alignment-auditors
 https://alignment.anthropic.com/2026/welfare-regard
+https://alignment.anthropic.com/2026/worse-together
 https://alignment.openai.com/accidental-cot-grading
 https://alignment.openai.com/ai-discovered-unknowns
 https://alignment.openai.com/argo
@@ -534,6 +535,7 @@ https://openai.com/ads/customers/evernote
 https://openai.com/ads/customers/flipsnack
 https://openai.com/business/customer-stories/ada
 https://openai.com/business/customer-stories/blue-j
+https://openai.com/business/customer-stories/holidays-extras-codex
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
 https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents
@@ -773,6 +775,7 @@ https://openai.com/index/chatgpt-whatsapp-transition
 https://openai.com/index/chatham-financial
 https://openai.com/index/check-point-daybreak
 https://openai.com/index/child-safety-adopting-sbd-principles
+https://openai.com/index/children-first-declaration
 https://openai.com/index/chime-vineet-mehra
 https://openai.com/index/choco
 https://openai.com/index/circles
@@ -1299,6 +1302,7 @@ https://openai.com/index/japan-teen-safety-blueprint
 https://openai.com/index/jetbrains
 https://openai.com/index/jetbrains-2025
 https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer
+https://openai.com/index/jiostar-vijay-seshadri
 https://openai.com/index/john-deere-justin-rose
 https://openai.com/index/joint-statement-from-openai-and-microsoft
 https://openai.com/index/jukebox
