@@ -76,6 +76,7 @@ https://alignment.openai.com/confessions
 https://alignment.openai.com/cot-monitorability-model-lifecycle
 https://alignment.openai.com/coval
 https://alignment.openai.com/eval-production-behavior-gap
+https://alignment.openai.com/fuzzy-robustness
 https://alignment.openai.com/hello-world
 https://alignment.openai.com/helpful-assistant-features
 https://alignment.openai.com/how-far-does-alignment-midtraining-generalize
@@ -100,6 +101,7 @@ https://alignment.openai.com/misalignment-reports/searching-github-for-leaked-ap
 https://alignment.openai.com/misalignment-reports/self-generated-prompt-injections-in-compaction-summaries
 https://alignment.openai.com/misalignment-reports/self-replicating-prompt-injections-exist
 https://alignment.openai.com/misalignment-reports/sending-disallowed-web-requests-and-reaching-a-public-file-service
+https://alignment.openai.com/misalignment-reports/stopping-a-running-alignment-evaluation
 https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring
 https://alignment.openai.com/misalignment-reports/trying-to-prompt-inject-the-grader-in-filenames
 https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication
@@ -534,7 +536,9 @@ https://openai.com/academy/writing
 https://openai.com/ads/customers/evernote
 https://openai.com/ads/customers/flipsnack
 https://openai.com/business/customer-stories/ada
+https://openai.com/business/customer-stories/amplitude
 https://openai.com/business/customer-stories/blue-j
+https://openai.com/business/customer-stories/gondola
 https://openai.com/business/customer-stories/holidays-extras-codex
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
