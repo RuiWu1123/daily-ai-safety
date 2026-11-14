@@ -540,6 +540,7 @@ https://openai.com/business/customer-stories/amplitude
 https://openai.com/business/customer-stories/blue-j
 https://openai.com/business/customer-stories/gondola
 https://openai.com/business/customer-stories/holidays-extras-codex
+https://openai.com/business/customer-stories/shield
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
 https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents
@@ -1215,6 +1216,7 @@ https://openai.com/index/introducing-chatgpt-pulse
 https://openai.com/index/introducing-chatgpt-search
 https://openai.com/index/introducing-chatgpt-small-business-program
 https://openai.com/index/introducing-chatgpt-team
+https://openai.com/index/introducing-chatgpt-wallet
 https://openai.com/index/introducing-child-safety-blueprint
 https://openai.com/index/introducing-codex
 https://openai.com/index/introducing-company-knowledge
@@ -2671,6 +2673,7 @@ https://www.anthropic.com/research/bloom
 https://www.anthropic.com/research/building-ai-cyber-defenders
 https://www.anthropic.com/research/building-c-compiler
 https://www.anthropic.com/research/building-effective-agents
+https://www.anthropic.com/research/building-strong-safety-evaluations
 https://www.anthropic.com/research/circuits-updates-april-2024
 https://www.anthropic.com/research/circuits-updates-august-2024
 https://www.anthropic.com/research/circuits-updates-july-2024
