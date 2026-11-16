@@ -1358,6 +1358,7 @@ https://openai.com/index/low-resource-programming-languages
 https://openai.com/index/lowes
 https://openai.com/index/lowes-chandhu-nair
 https://openai.com/index/lseg
+https://openai.com/index/lvmh-media-division-partnership
 https://openai.com/index/ly-corporation
 https://openai.com/index/machine-learning-unconference
 https://openai.com/index/making-chatgpt-better-for-clinicians
@@ -1567,6 +1568,7 @@ https://openai.com/index/our-approach-to-localization
 https://openai.com/index/our-approach-to-the-model-spec
 https://openai.com/index/our-commitment-to-community-safety
 https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex
+https://openai.com/index/our-new-blog-for-science
 https://openai.com/index/our-principles
 https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack
 https://openai.com/index/our-views-on-ai-policy-and-political-advocacy
@@ -1742,6 +1744,7 @@ https://openai.com/index/stargate-sb-energy-partnership
 https://openai.com/index/start-using-chatgpt-instantly
 https://openai.com/index/state-of-minnesota
 https://openai.com/index/statement-on-openai-nonprofit-and-pbc
+https://openai.com/index/step-toward-defining-the-standard-model
 https://openai.com/index/steuerrecht
 https://openai.com/index/stochastic-neural-networks-for-hierarchical-reinforcement-learning
 https://openai.com/index/strategic-content-partnership-with-time
@@ -1799,6 +1802,7 @@ https://openai.com/index/the-full-stack-behind-abundant-intelligence
 https://openai.com/index/the-future-of-the-firm
 https://openai.com/index/the-instruction-hierarchy
 https://openai.com/index/the-international-2018-results
+https://openai.com/index/the-kings-trust-and-openai
 https://openai.com/index/the-met-museum
 https://openai.com/index/the-next-chapter-for-ai-in-the-eu
 https://openai.com/index/the-next-chapter-for-uk-sovereign-ai
