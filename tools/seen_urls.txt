@@ -192,6 +192,7 @@ https://blog.redwoodresearch.org/p/four-places-where-you-can-put-llm
 https://blog.redwoodresearch.org/p/frontier-ai-companies-probably-cant
 https://blog.redwoodresearch.org/p/frontier-models-state-different-decision
 https://blog.redwoodresearch.org/p/full-automation-of-ai-r-and-d-probably
+https://blog.redwoodresearch.org/p/gemini-4-safety-reports-dont-demonstrate
 https://blog.redwoodresearch.org/p/getting-50-sota-on-arc-agi-with-gpt
 https://blog.redwoodresearch.org/p/guide
 https://blog.redwoodresearch.org/p/handling-schemers-if-shutdown-is
@@ -503,6 +504,7 @@ https://metr.org/notes/2026-07-22-economics-of-recursive-self-improvement
 https://metr.org/notes/2026-07-24-metrics-of-model-ability
 https://metr.org/notes/2026-08-14-llm-contribution-to-discoveries
 https://metr.org/notes/2026-09-27-implementing-a-basic-blocking-action-monitor
+https://metr.org/notes/2026-11-16-measuring-alignment-eval-tells
 https://openai.com/academy/applications-of-ai
 https://openai.com/academy/brainstorming
 https://openai.com/academy/chatgpt-sites
@@ -539,7 +541,9 @@ https://openai.com/business/customer-stories/ada
 https://openai.com/business/customer-stories/amplitude
 https://openai.com/business/customer-stories/blue-j
 https://openai.com/business/customer-stories/gondola
+https://openai.com/business/customer-stories/holiday-extras-dots
 https://openai.com/business/customer-stories/holidays-extras-codex
+https://openai.com/business/customer-stories/revolut
 https://openai.com/business/customer-stories/shield
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
@@ -635,6 +639,7 @@ https://openai.com/index/ada
 https://openai.com/index/adebayo-ogunlesi-joins-openais-board-of-directors
 https://openai.com/index/advanced-account-security
 https://openai.com/index/advancing-ai-safety-through-state-and-federal-action
+https://openai.com/index/advancing-computer-use-for-healthcare-teams
 https://openai.com/index/advancing-computer-use-with-ironclad
 https://openai.com/index/advancing-content-provenance
 https://openai.com/index/advancing-independent-research-ai-alignment
@@ -985,6 +990,7 @@ https://openai.com/index/evolved-policy-gradients
 https://openai.com/index/evolving-our-structure
 https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads
 https://openai.com/index/expanding-ai-access-us-government
+https://openai.com/index/expanding-chatgpt-for-academic-researchers
 https://openai.com/index/expanding-data-residency-access-to-business-customers-worldwide
 https://openai.com/index/expanding-daybreak-as-the-cyber-defense-window-narrows
 https://openai.com/index/expanding-economic-opportunity-with-ai
@@ -1391,6 +1397,7 @@ https://openai.com/index/modeling-ai-jobs-transition
 https://openai.com/index/moderna
 https://openai.com/index/more-enterprise-grade-features-for-api-customers
 https://openai.com/index/more-on-dota-2
+https://openai.com/index/more-ways-to-move-care-forward-with-chatgpt-for-healthcare
 https://openai.com/index/more-ways-to-work-with-your-team
 https://openai.com/index/morgan-stanley
 https://openai.com/index/moving-ai-governance-forward
@@ -1568,6 +1575,7 @@ https://openai.com/index/our-approach-to-localization
 https://openai.com/index/our-approach-to-the-model-spec
 https://openai.com/index/our-commitment-to-community-safety
 https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex
+https://openai.com/index/our-first-phase-of-embedded-assessments
 https://openai.com/index/our-new-blog-for-science
 https://openai.com/index/our-principles
 https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack
@@ -1691,6 +1699,7 @@ https://openai.com/index/scaling-storage-one-billion-users-part-two
 https://openai.com/index/scaling-trusted-access-for-cyber-defense
 https://openai.com/index/scania
 https://openai.com/index/schoolai
+https://openai.com/index/science-at-the-frontier
 https://openai.com/index/scientific-computing-agentic-ai
 https://openai.com/index/scout24
 https://openai.com/index/sea-david-chen
@@ -1752,6 +1761,8 @@ https://openai.com/index/strengthening-americas-ai-leadership-with-the-us-nation
 https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations
 https://openai.com/index/strengthening-cyber-resilience
 https://openai.com/index/strengthening-democratic-oversight-in-national-security
+https://openai.com/index/strengthening-nato-allied-cyber-defences-ai
+https://openai.com/index/strengthening-online-child-safety
 https://openai.com/index/strengthening-safety-with-external-testing
 https://openai.com/index/strengthening-societal-resilience-with-rosalind-biodefense
 https://openai.com/index/strengthening-the-us-ai-supply-chain
@@ -2708,6 +2719,7 @@ https://www.anthropic.com/research/confidential-inference-trusted-vms
 https://www.anthropic.com/research/constitutional-ai-harmlessness-from-ai-feedback
 https://www.anthropic.com/research/constitutional-classifiers
 https://www.anthropic.com/research/contextual-retrieval
+https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines
 https://www.anthropic.com/research/critical-infrastructure-defense
 https://www.anthropic.com/research/crosscoder-model-diffing
 https://www.anthropic.com/research/cyber-competitions
@@ -2854,6 +2866,7 @@ https://www.apolloresearch.ai/blog/apollo-update-may-2026
 https://www.apolloresearch.ai/blog/embedded-evaluators-are-necessary-for-meaningful-external-testing
 https://www.apolloresearch.ai/blog/on-testifying-on-misaligned-ai-in-the-us-senate
 https://www.apolloresearch.ai/blog/our-norms-coi-security-science-communication
+https://www.apolloresearch.ai/blog/pilot-towards-embedded-evaluations
 https://www.apolloresearch.ai/blog/principles-for-embedded-evaluations
 https://www.apolloresearch.ai/blog/security-at-apollo-research
 https://www.apolloresearch.ai/blog/the-first-year-of-apollo-research
@@ -2914,6 +2927,7 @@ https://www.goodfire.com/blog/accelerating-interpretability
 https://www.goodfire.com/blog/ai-safety-still-needs-great-engineers
 https://www.goodfire.com/blog/announcing-goodfire-research-grants
 https://www.goodfire.com/blog/announcing-our-50m-series-a
+https://www.goodfire.com/blog/announcing-our-collaboration-with-openai
 https://www.goodfire.com/blog/ap293-guest-lectures-25
 https://www.goodfire.com/blog/feature-steering-for-reliable-and-expressive-ai-engineering
 https://www.goodfire.com/blog/fellowship-fall-25
