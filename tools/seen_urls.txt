@@ -200,6 +200,7 @@ https://blog.redwoodresearch.org/p/how-can-we-solve-diffuse-threats
 https://blog.redwoodresearch.org/p/how-do-we-more-safely-defer-to-ais
 https://blog.redwoodresearch.org/p/how-might-we-safely-pass-the-buck
 https://blog.redwoodresearch.org/p/how-much-novel-security-critical
+https://blog.redwoodresearch.org/p/how-should-we-define-capabilities
 https://blog.redwoodresearch.org/p/how-to-prevent-collusion-when-using
 https://blog.redwoodresearch.org/p/how-training-gamers-might-function
 https://blog.redwoodresearch.org/p/how-useful-is-the-information-you
@@ -535,8 +536,10 @@ https://openai.com/academy/what-is-ai
 https://openai.com/academy/working-with-files
 https://openai.com/academy/workspace-agents
 https://openai.com/academy/writing
+https://openai.com/ads/blog/chatgpt-ads-increases-its-market-presence
 https://openai.com/ads/customers/evernote
 https://openai.com/ads/customers/flipsnack
+https://openai.com/ads/customers/vistaprint
 https://openai.com/business/customer-stories/ada
 https://openai.com/business/customer-stories/amplitude
 https://openai.com/business/customer-stories/blue-j
@@ -692,6 +695,7 @@ https://openai.com/index/arvind-kc-chief-people-officer
 https://openai.com/index/asana
 https://openai.com/index/asana-browser-agent
 https://openai.com/index/astra-for-law
+https://openai.com/index/astra-law-6-2
 https://openai.com/index/asu
 https://openai.com/index/asymmetric-actor-critic-for-image-based-robot-learning
 https://openai.com/index/atlassian-partnership
@@ -1212,6 +1216,7 @@ https://openai.com/index/introducing-chatgpt-atlas
 https://openai.com/index/introducing-chatgpt-edu
 https://openai.com/index/introducing-chatgpt-enterprise
 https://openai.com/index/introducing-chatgpt-financial-services
+https://openai.com/index/introducing-chatgpt-for-sales
 https://openai.com/index/introducing-chatgpt-futures-class-of-2026
 https://openai.com/index/introducing-chatgpt-go
 https://openai.com/index/introducing-chatgpt-health
@@ -1243,6 +1248,7 @@ https://openai.com/index/introducing-gpt-5-5
 https://openai.com/index/introducing-gpt-5-for-developers
 https://openai.com/index/introducing-gpt-6-1-sol
 https://openai.com/index/introducing-gpt-6-1-terra
+https://openai.com/index/introducing-gpt-6-2-astra-sol
 https://openai.com/index/introducing-gpt-6-cyber
 https://openai.com/index/introducing-gpt-6-sol-and-luna
 https://openai.com/index/introducing-gpt-live
@@ -1264,6 +1270,7 @@ https://openai.com/index/introducing-nextgenai
 https://openai.com/index/introducing-o3-and-o4-mini
 https://openai.com/index/introducing-openai
 https://openai.com/index/introducing-openai-dublin
+https://openai.com/index/introducing-openai-for-chile
 https://openai.com/index/introducing-openai-for-nonprofits
 https://openai.com/index/introducing-openai-for-singapore
 https://openai.com/index/introducing-openai-frontier
@@ -1330,6 +1337,7 @@ https://openai.com/index/language-unsupervised
 https://openai.com/index/large-scale-study-of-curiosity-driven-learning
 https://openai.com/index/launchdarkly-claire-vo
 https://openai.com/index/launching-sora-responsibly
+https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership
 https://openai.com/index/leadership-expansion-with-fidji-simo
 https://openai.com/index/leadership-team-update
 https://openai.com/index/leadership-updates-march-2025
@@ -2963,6 +2971,7 @@ https://www.goodfire.com/research/mapping-latent-spaces-llama
 https://www.goodfire.com/research/mechanistic-shaping
 https://www.goodfire.com/research/mixing-mechanisms
 https://www.goodfire.com/research/model-diff-amplification
+https://www.goodfire.com/research/neuron-communities
 https://www.goodfire.com/research/neurons-as-an-interpretable-basis
 https://www.goodfire.com/research/open-problems-in-mech-interp
 https://www.goodfire.com/research/painting-with-concepts
