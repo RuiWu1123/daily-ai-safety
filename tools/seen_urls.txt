@@ -548,6 +548,7 @@ https://openai.com/business/customer-stories/holiday-extras-dots
 https://openai.com/business/customer-stories/holidays-extras-codex
 https://openai.com/business/customer-stories/revolut
 https://openai.com/business/customer-stories/shield
+https://openai.com/business/customer-stories/sumitomo-life
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/fine-tuning-gpt-4o-webinar
 https://openai.com/business/guides-and-resources/a-practical-guide-to-building-ai-agents
@@ -642,6 +643,7 @@ https://openai.com/index/ada
 https://openai.com/index/adebayo-ogunlesi-joins-openais-board-of-directors
 https://openai.com/index/advanced-account-security
 https://openai.com/index/advancing-ai-safety-through-state-and-federal-action
+https://openai.com/index/advancing-chip-design-with-our-models
 https://openai.com/index/advancing-computer-use-for-healthcare-teams
 https://openai.com/index/advancing-computer-use-with-ironclad
 https://openai.com/index/advancing-content-provenance
@@ -1194,6 +1196,7 @@ https://openai.com/index/industrial-policy-for-the-intelligence-age
 https://openai.com/index/infrastructure-for-deep-learning
 https://openai.com/index/ingredients-for-robotics-research
 https://openai.com/index/inside-our-in-house-data-agent
+https://openai.com/index/inside-the-codex-sandbox
 https://openai.com/index/insights-from-global-conversations
 https://openai.com/index/instacart-partnership
 https://openai.com/index/instruction-following
@@ -1378,6 +1381,7 @@ https://openai.com/index/machine-learning-unconference
 https://openai.com/index/making-chatgpt-better-for-clinicians
 https://openai.com/index/malta-chatgpt-plus-partnership
 https://openai.com/index/managing-ai-investments-in-agentic-era
+https://openai.com/index/managing-frontier-ai-risk
 https://openai.com/index/mapping-ai-jobs-transition-eu
 https://openai.com/index/march-20-chatgpt-outage
 https://openai.com/index/march-funding-updates
@@ -1658,6 +1662,7 @@ https://openai.com/index/replit
 https://openai.com/index/report-from-the-self-organizing-conference
 https://openai.com/index/reptile
 https://openai.com/index/requests-for-research-2
+https://openai.com/index/research-acceleration-jagged-frontier
 https://openai.com/index/research-acceleration-view-inside-openai
 https://openai.com/index/responding-next-frontier-critical-cyber-capabilities
 https://openai.com/index/response-to-nyt-data-demands
@@ -1828,6 +1833,7 @@ https://openai.com/index/the-next-chapter-for-uk-sovereign-ai
 https://openai.com/index/the-next-evolution-of-the-agents-sdk
 https://openai.com/index/the-next-phase-of-education-for-countries
 https://openai.com/index/the-power-of-continuous-learning
+https://openai.com/index/the-silent-consensus
 https://openai.com/index/the-state-of-enterprise-ai-2025-report
 https://openai.com/index/the-work-now-within-reach
 https://openai.com/index/thinking-with-images
@@ -2330,6 +2336,7 @@ https://www.alignmentforum.org/posts/nBjo6yniFjmy2uaYa
 https://www.alignmentforum.org/posts/nBjo6yniFjmy2uaYa/clarifying-the-role-of-the-behavioral-selection-model
 https://www.alignmentforum.org/posts/nLrrYweeFxgXACSmS/sft-drives-gemini-s-safety-properties-1
 https://www.alignmentforum.org/posts/nv8oedrnLXKRzNEL9/r-lens-making-j-lens-more-faithful-on-early-layers
+https://www.alignmentforum.org/posts/nvrFYAwciyyj9T5ir/solomonoff-induction-with-reflective-oracles
 https://www.alignmentforum.org/posts/oXSAYrogo8cfBeFhP/practical-challenges-of-control-monitoring-in-frontier-ai
 https://www.alignmentforum.org/posts/oeYesesaxjzMAktCM/natural-language-autoencoders-produce-unsupervised
 https://www.alignmentforum.org/posts/p4iJpumHt6Ay9KnXT/the-inaugural-redwood-research-podcast
@@ -2429,6 +2436,7 @@ https://www.anthropic.com/news/anthropic-partners-with-google-cloud
 https://www.anthropic.com/news/anthropic-partners-with-menlo-ventures-to-launch-anthology-fund
 https://www.anthropic.com/news/anthropic-partners-with-the-university-of-chicago-s-becker-friedman-institute-on-ai-economic
 https://www.anthropic.com/news/anthropic-partners-with-u-s-national-labs-for-first-1-000-scientist-ai-jam
+https://www.anthropic.com/news/anthropic-prices-initial-public-offering
 https://www.anthropic.com/news/anthropic-raises-124-million-to-build-more-reliable-general-ai-systems
 https://www.anthropic.com/news/anthropic-raises-30-billion-series-g-funding-380-billion-post-money-valuation
 https://www.anthropic.com/news/anthropic-raises-series-b-to-build-safe-reliable-ai
@@ -2704,6 +2712,7 @@ https://www.anthropic.com/research/circuits-updates-june-2024
 https://www.anthropic.com/research/circuits-updates-may-2023
 https://www.anthropic.com/research/circuits-updates-sept-2024
 https://www.anthropic.com/research/claude-4-cyber
+https://www.anthropic.com/research/claude-black-hole-physics
 https://www.anthropic.com/research/claude-character
 https://www.anthropic.com/research/claude-code-auto-mode
 https://www.anthropic.com/research/claude-code-best-practices
@@ -2928,6 +2937,7 @@ https://www.apolloresearch.ai/science/the-local-interaction-basis-identifying-co
 https://www.apolloresearch.ai/science/towards-safety-cases-for-ai-scheming
 https://www.apolloresearch.ai/science/understanding-strategic-deception-and-deceptive-alignment
 https://www.apolloresearch.ai/science/update-aware-reasoning-glm-5-3
+https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-assessments
 https://www.apolloresearch.ai/science/we-need-3rd-party-training-run-evaluations
 https://www.apolloresearch.ai/science/we-need-a-science-of-evals
 https://www.goodfire.com/blog/a-practical-guide-to-saes
