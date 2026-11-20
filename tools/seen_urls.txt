@@ -138,6 +138,7 @@ https://arxiv.org/abs/2511.01836
 https://arxiv.org/abs/2512.15688
 https://arxiv.org/abs/2605.29548
 https://arxiv.org/abs/2608.19611
+https://arxiv.org/abs/2610.41014
 https://behaviors.transluce.org/mental-health
 https://blog.redwoodresearch.org/p/7-tractable-directions-in-ai-control
 https://blog.redwoodresearch.org/p/a-basic-case-for-accelerating-conceptual
@@ -561,11 +562,14 @@ https://openai.com/business/guides-and-resources/inside-gpt5-our-best-model-for-
 https://openai.com/business/guides-and-resources/staying-ahead-in-the-age-of-ai
 https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report
 https://openai.com/business/learn/automate-complex-workflows-with-openai-o3
+https://openai.com/business/learn/codex-security-plugin-demo
 https://openai.com/business/learn/collaborate-and-write-with-gpt-4o
 https://openai.com/business/learn/connect-internal-knowledge-from-google-drive
 https://openai.com/business/learn/create-on-brand-visuals-with-image-generation
 https://openai.com/business/learn/creating-a-contextual-workspace-in-chatgpt
+https://openai.com/business/learn/daybreak-blue-onboarding-demo
 https://openai.com/business/learn/delegate-work-to-chatgpt-agent
+https://openai.com/business/learn/deploying-daybreak-red
 https://openai.com/business/learn/enabling-a-data-driven-workforce-webinar
 https://openai.com/business/learn/fine-tuning-gpt-4o-webinar
 https://openai.com/business/learn/gpt-5-our-best-model-for-work
@@ -575,6 +579,7 @@ https://openai.com/business/learn/market-research-with-chatgpt
 https://openai.com/business/learn/new-in-chatgpt-for-business-april-updates-2025
 https://openai.com/business/learn/new-in-chatgpt-for-work-march-updates-2025
 https://openai.com/business/learn/personalize-chatgpt-with-custom-instructions
+https://openai.com/business/learn/pr-scans-demo
 https://openai.com/business/learn/prototyping-with-canvas-in-chatgpt
 https://openai.com/business/learn/shipping-code-to-your-ide-with-chatgpt
 https://openai.com/business/learn/strategic-planning-with-chatgpt
@@ -1164,6 +1169,7 @@ https://openai.com/index/how-countries-can-end-the-capability-overhang
 https://openai.com/index/how-enterprises-put-ai-to-work
 https://openai.com/index/how-news-organizations-are-using-ai
 https://openai.com/index/how-openai-is-approaching-2024-worldwide-elections
+https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast
 https://openai.com/index/how-people-are-using-chatgpt
 https://openai.com/index/how-should-ai-systems-behave
 https://openai.com/index/how-the-voices-for-chatgpt-were-chosen
@@ -2365,6 +2371,7 @@ https://www.alignmentforum.org/posts/tkLSeGeemcabAmLkv/the-case-for-satiating-ch
 https://www.alignmentforum.org/posts/u67JAa6FKKpQJPp3m/when-should-we-train-against-a-scheming-monitor
 https://www.alignmentforum.org/posts/uECnWtbQ95dDWqBKD/increasing-ai-strategic-competence-as-a-safety-approach
 https://www.alignmentforum.org/posts/uMKGaEKRDpoqnZyBh/value-generalisation-3-pre-aligned-ais
+https://www.alignmentforum.org/posts/uxsDuWWHNTpKrsF6P/looping-a-transformer-increases-no-cot-capabilities-more
 https://www.alignmentforum.org/posts/uy6B5rEPvcwi55cBK/research-note-a-simpler-ai-timelines-model-predicts-99-ai-r
 https://www.alignmentforum.org/posts/vLFh8HP3hyNy9MCwe/returning-to-arc
 https://www.alignmentforum.org/posts/vPaXtarnJ37kGfPdJ/independent-alignment-of-language-models
@@ -2888,6 +2895,7 @@ https://www.apolloresearch.ai/blog/principles-for-embedded-evaluations
 https://www.apolloresearch.ai/blog/security-at-apollo-research
 https://www.apolloresearch.ai/blog/the-first-year-of-apollo-research
 https://www.apolloresearch.ai/blog/theories-of-change-for-ai-auditing
+https://www.apolloresearch.ai/blog/towards-embedded-evaluations-for-ai-monitoring
 https://www.apolloresearch.ai/blog/towards-embedded-evaluations-for-scheming-propensities
 https://www.apolloresearch.ai/governance/ai-behind-closed-doors-a-primer-on-the-governance-of-internal-deployment
 https://www.apolloresearch.ai/governance/ai-rd-threat-map
@@ -2992,6 +3000,7 @@ https://www.goodfire.com/research/priors-in-time
 https://www.goodfire.com/research/probe-based-data-attribution
 https://www.goodfire.com/research/production-cyber-monitors-on-kimi-k3
 https://www.goodfire.com/research/public_neuron_atlas
+https://www.goodfire.com/research/public_neuron_atlas/all_labels
 https://www.goodfire.com/research/rakuten-sae-probes-for-pii-detection
 https://www.goodfire.com/research/reasoning-theater
 https://www.goodfire.com/research/replicating-circuit-tracing-for-a-simple-mechanism
