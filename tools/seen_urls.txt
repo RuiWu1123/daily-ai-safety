@@ -1619,6 +1619,7 @@ https://openai.com/index/path-to-astra
 https://openai.com/index/paul-christiano-joins-openai-foundation-board
 https://openai.com/index/people-first-ai-fund
 https://openai.com/index/people-first-ai-fund-grantees
+https://openai.com/index/perplexity-and-intelligence
 https://openai.com/index/perplexity-improving-accuracy-with-astra
 https://openai.com/index/personal-finance-chatgpt
 https://openai.com/index/philips
