@@ -56,6 +56,8 @@ https://alignment.anthropic.com/2026/introspection-adapters
 https://alignment.anthropic.com/2026/lie-detectors
 https://alignment.anthropic.com/2026/modular-pretraining
 https://alignment.anthropic.com/2026/msm
+https://alignment.anthropic.com/2026/neuron-basis-applications
+https://alignment.anthropic.com/2026/neuron-basis-theory
 https://alignment.anthropic.com/2026/petri-v2
 https://alignment.anthropic.com/2026/psm
 https://alignment.anthropic.com/2026/red-teaming-auto-mode
@@ -550,6 +552,7 @@ https://openai.com/business/customer-stories/hebbia
 https://openai.com/business/customer-stories/holiday-extras-dots
 https://openai.com/business/customer-stories/holidays-extras-codex
 https://openai.com/business/customer-stories/revolut
+https://openai.com/business/customer-stories/richpanel-ai-customer-support
 https://openai.com/business/customer-stories/shield
 https://openai.com/business/customer-stories/sumitomo-life
 https://openai.com/business/enabling-a-data-driven-workforce-webinar
@@ -567,6 +570,7 @@ https://openai.com/business/learn/automate-complex-workflows-with-openai-o3
 https://openai.com/business/learn/codex-security-plugin-demo
 https://openai.com/business/learn/collaborate-and-write-with-gpt-4o
 https://openai.com/business/learn/connect-internal-knowledge-from-google-drive
+https://openai.com/business/learn/connected-intelligence-for-in-house-legal
 https://openai.com/business/learn/create-on-brand-visuals-with-image-generation
 https://openai.com/business/learn/creating-a-contextual-workspace-in-chatgpt
 https://openai.com/business/learn/daybreak-blue-onboarding-demo
@@ -1298,6 +1302,7 @@ https://openai.com/index/introducing-operator
 https://openai.com/index/introducing-our-next-generation-audio-models
 https://openai.com/index/introducing-parental-controls
 https://openai.com/index/introducing-prism
+https://openai.com/index/introducing-shirudo
 https://openai.com/index/introducing-simpleqa
 https://openai.com/index/introducing-stargate-norway
 https://openai.com/index/introducing-stargate-uae
@@ -2021,6 +2026,7 @@ https://www.aisi.gov.uk/blog/announcing-the-alignment-project
 https://www.aisi.gov.uk/blog/announcing-the-uk-and-france-ai-research-institutes-collaboration
 https://www.aisi.gov.uk/blog/announcing-the-uk-and-us-aisi-partnership
 https://www.aisi.gov.uk/blog/ask-dont-tell-reducing-sycophancy-in-large-language-models-2
+https://www.aisi.gov.uk/blog/attack-policy-selection-can-make-monitor-evaluations-misleading
 https://www.aisi.gov.uk/blog/auditing-games-for-sandbagging-detection
 https://www.aisi.gov.uk/blog/boundary-point-jailbreaking-a-new-way-to-break-the-strongest-ai-defences
 https://www.aisi.gov.uk/blog/building-a-more-secure-environment-for-evaluating-dangerous-capabilities
@@ -2123,6 +2129,7 @@ https://www.aisi.gov.uk/research/an-alignment-safety-case-sketch-based-on-debate
 https://www.aisi.gov.uk/research/an-example-safety-case-for-safeguards-against-misuse
 https://www.aisi.gov.uk/research/ask-dont-tell-reducing-sycophancy-in-large-language-models
 https://www.aisi.gov.uk/research/async-control-stress-testing-asynchronous-control-measures-for-llm-agents
+https://www.aisi.gov.uk/research/attack-policy-selection-can-mislead-monitor-evaluators
 https://www.aisi.gov.uk/research/automated-alignment-is-harder-than-you-think
 https://www.aisi.gov.uk/research/avoiding-obfuscation-with-prover-estimator-debate
 https://www.aisi.gov.uk/research/boundary-point-jailbreaking-of-black-box-llms
@@ -2318,6 +2325,7 @@ https://www.alignmentforum.org/posts/dYHFtEnKc4BdJEYY4/my-most-common-research-a
 https://www.alignmentforum.org/posts/dfoty34sT7CSKeJNn/the-persona-selection-model
 https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-2026
 https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-25
+https://www.alignmentforum.org/posts/e758PJCpwAwyodvEj/comparing-ai-r-and-d-compute-caps-and-deployment-lags
 https://www.alignmentforum.org/posts/e7Pd4Q9TF7jFdmPgz/imprecise-beliefs-a-tiny-introduction
 https://www.alignmentforum.org/posts/eAQZaiC3PcBhS4HjM/linkpost-interpreting-language-model-parameters
 https://www.alignmentforum.org/posts/eCR373J3NZwFbacnd/neural-nets-are-exceptionally-vulnerable-to-goal-self-hack
@@ -2909,6 +2917,7 @@ https://www.anthropic.com/research/trustworthy-agents
 https://www.anthropic.com/research/values-wild
 https://www.anthropic.com/research/vibe-physics
 https://www.anthropic.com/research/what-work-can-robots-do
+https://www.anthropic.com/research/working-with-ai
 https://www.anthropic.com/research/writing-tools-for-agents
 https://www.anthropic.com/research/your-thoughts-on-ai
 https://www.anthropic.com/research/zero-days
