@@ -481,6 +481,7 @@ https://metr.org/blog/2026-10-22-red-teaming-openai-agent-monitoring
 https://metr.org/blog/2026-11-05-anthropic-ai-rd-acceleration-assessment
 https://metr.org/blog/2026-11-05-rd-section-anthropic-risk-report-august-2026-review
 https://metr.org/blog/2026-11-20-q4-2026-capability-update
+https://metr.org/blog/2026-11-24-interpreting-a-recent-acceleration-in-pretraining-loss
 https://metr.org/evaluations/claude-3-5-sonnet-report
 https://metr.org/evaluations/claude-3-7-report
 https://metr.org/evaluations/deepseek-qwen-report
@@ -547,10 +548,13 @@ https://openai.com/ads/customers/vistaprint
 https://openai.com/business/customer-stories/ada
 https://openai.com/business/customer-stories/amplitude
 https://openai.com/business/customer-stories/blue-j
+https://openai.com/business/customer-stories/clay-plugins-openai
 https://openai.com/business/customer-stories/gondola
 https://openai.com/business/customer-stories/hebbia
 https://openai.com/business/customer-stories/holiday-extras-dots
 https://openai.com/business/customer-stories/holidays-extras-codex
+https://openai.com/business/customer-stories/ifood
+https://openai.com/business/customer-stories/intentful-dots
 https://openai.com/business/customer-stories/revolut
 https://openai.com/business/customer-stories/richpanel-ai-customer-support
 https://openai.com/business/customer-stories/shield
@@ -1125,6 +1129,7 @@ https://openai.com/index/gpt-6-1-sol-coderabbit-code-security
 https://openai.com/index/gpt-6-astra
 https://openai.com/index/gpt-6-astra-next-generation-work
 https://openai.com/index/gpt-6-for-everyone
+https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities
 https://openai.com/index/gpt-oss-model-card
 https://openai.com/index/gpt-oss-safeguard-technical-report
 https://openai.com/index/gpts-are-gpts
@@ -1733,6 +1738,7 @@ https://openai.com/index/scientific-computing-agentic-ai
 https://openai.com/index/scout24
 https://openai.com/index/sea-david-chen
 https://openai.com/index/searchgpt-prototype
+https://openai.com/index/searching-for-distant-planets-with-astra
 https://openai.com/index/securing-our-frontier-model-training-environment
 https://openai.com/index/security-on-the-path-to-agi
 https://openai.com/index/semi-supervised-knowledge-transfer-for-deep-learning-from-private-training-data
@@ -3015,6 +3021,7 @@ https://www.goodfire.com/research/already-clean
 https://www.goodfire.com/research/belief-dynamics-icl-steering
 https://www.goodfire.com/research/better-biosecurity-monitors
 https://www.goodfire.com/research/bsf-vision
+https://www.goodfire.com/research/building-stronger-biological-reasoning-models
 https://www.goodfire.com/research/can-saes-capture-neural-geometry
 https://www.goodfire.com/research/covariance-pooling
 https://www.goodfire.com/research/evee-explaining-genetic-variants
