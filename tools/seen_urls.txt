@@ -2386,6 +2386,7 @@ https://www.alignmentforum.org/posts/nBjo6yniFjmy2uaYa/clarifying-the-role-of-th
 https://www.alignmentforum.org/posts/nLrrYweeFxgXACSmS/sft-drives-gemini-s-safety-properties-1
 https://www.alignmentforum.org/posts/nv8oedrnLXKRzNEL9/r-lens-making-j-lens-more-faithful-on-early-layers
 https://www.alignmentforum.org/posts/nvrFYAwciyyj9T5ir/solomonoff-induction-with-reflective-oracles
+https://www.alignmentforum.org/posts/o9dPGxEbpQrnasgDB/i-don-t-expect-superposition-in-transformer-mlp-neurons
 https://www.alignmentforum.org/posts/oXSAYrogo8cfBeFhP/practical-challenges-of-control-monitoring-in-frontier-ai
 https://www.alignmentforum.org/posts/oeYesesaxjzMAktCM/natural-language-autoencoders-produce-unsupervised
 https://www.alignmentforum.org/posts/p4iJpumHt6Ay9KnXT/the-inaugural-redwood-research-podcast
